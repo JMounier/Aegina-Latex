@@ -16,12 +16,13 @@
 \tableofcontents
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Introduction}
-Ce cahier des charges a été fait pour le jeu Aegina, projet du second Semestre de la première année de la prepa intégré d'EPITA. Ce projet est réalisé par le groupe d'étudiant AI$M^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
+Ce cahier des charges a été fait pour le jeu Aegina, projet du second Semestre de la première année de la prepa intégrée d'EPITA. Ce projet est réalisé par le groupe d'étudiant AI$M^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
 \chapter{Origine et nature du projet}
 \section{Présentation de l'équipe}
 \subsection{Florian Amsallem}
 Je suis Florian Amsallem j'ai 18 ans. Je viens d'une filière générale et je possède un bac scientifique, spécialité informatique science du numérique. Je vais principalement apporter mon expérience en programmation et en algorithimie.
 \subsection{Théo Issarni}
+Je m'appelle Théo Issarni j'ai 18 ans. L'année dernière j'étais en terminale scientifique option SVT spécialité mathématiques dans le lycée général René Cassin. On me fait souvent la remarque de penser de manière différente des autres, dans le cas de notre projet je pense que cela peut être intéressant, dans la mesure où l'on risque à certain moment d'être coincé, une approche différente du problème pourra alors peut être le résoudre. 
 \subsection{Julien Mounier}
 \subsection{Romain Mounier}
 Je suis Romain Mounier j'ai 18 ans et je suis le frère Jumeau de Julien Mounier. Comme lui je suis passé par une terminale S SVT option math au Lycée polyvalent Robert Schuman avant d'aller à l'EPITA. Je peux apporter au groupe une bonne dose d'imagination voire de folie (malheureusement mes idées comme utiliser un ordinateur en bois pour crafter en "hackant le jeu" sont rarement accepter). Je possède un très bon niveau en Maths et Physique et un bon niveau d'algo et de programation ce qui permet à mes algorithme de bien fonctionner mais je possède une mauvaise organisation et une esprit un peu alambiqué ce qui peut nuire à la compréhension de mes algorithmes (et qui m'oblige souvent à les réorganiser à la demande d'un autre membre de mon groupe).
@@ -38,36 +39,50 @@ Nous avons choisis le nom du jeu après avoir choisi comment celui-ci serait. On 
 \section{Interêt du projet}
 \chapter{Découpage du projet}
 \section{Gestion du personnage, de sa camera et de son interaction avec l'environnement}
-Le personnage doit posséder une camera et se déplacer en fonction de l'orientation de celle-ci. Il doit pourvoir effectuer différentes actions comme marcher,courir,sauter,miner etc... enfin il doit pouvoir repérer les éléments de l'environnement avec lesquels il peut réagir et réagir avec ces derniers. Il ne doit pas passer à travers les autres éléments du décor et enfin il doit avoir la capacité de mourir et de réapparaître à un point donner.
+Le personnage doit posséder une camera et se déplacer en fonction de l'orientation de celle-ci. Il doit pourvoir effectuer différentes actions comme marcher,courir,sauter,miner etc... Il doit pouvoir repérer les éléments de l'environnement avec lesquels il peut interagir et interagir avec ces derniers et il doit pouvoir récupérer des items du monde 3D pour les rajouter dans son inventaire. Il ne doit pas passer à travers les autres éléments du décor et enfin il doit avoir la capacité de mourir et de réapparaître à un point donner. 
 \section{Gestion du système de survie (cycle jour nuit , vie , faim etc)}
 \section{Environnement 3D (animation et model 3D)}
 \section{Environnement 2D (interfaces)}
-Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, les inventaires, l'interface de craft et une map. l'ouverture de ces interfaces doivent se gérer dans une pile et certains de ces interfaces ne peut pas s'ouvrir pendant que d'autres sont présents (on ne peut pas ouvrir l'inventaire dans le menu par exemple). Le menu doit pouvoir quitter le jeu ainsi que gérer le volume du son et la langue du jeu. L'inventaire doit permettre de gérer des objets sous forme de stack et doit posséder des emplacement spéciaux pout les objets équipés ainsi qu'une barre de raccourcis disponible même lorsque l'inventaire et fermé. La map doit représenter la carte du monde généré autours du joueur ainsi qu'indiqué ou se trouve le joueur. Enfin l'interface de craft doit montrer les crafts disponibles sous forme de menu défilant.
+Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, les inventaires, l'interface de craft et une map. l'ouverture de ces interfaces doivent se gérer dans une pile et certaines de ces interfaces ne peuvent pas s'ouvrir pendant que d'autres sont présents (on ne peut pas ouvrir l'inventaire dans le menu par exemple). Le menu doit pouvoir quitter le jeu ainsi que gérer le volume du son et la langue du jeu. L'inventaire doit permettre de gérer des objets sous forme de stack et doit posséder des emplacement spéciaux pour les objets équipés ainsi qu'une barre de raccourcis disponible même lorsque l'inventaire et fermé. La map doit représenter la carte du monde généré autours du joueur ainsi qu'indiqué ou se trouve le joueur. Enfin l'interface de craft doit montrer les crafts disponibles sous forme de menu défilant.
 \section{Item et Craft}
-Le jeu doit posséder un système d'item et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum une id, un nom et une description. Il doit y avoir plusieurs catégories d'item :les consommables, les Armures, Les outils et le reste. La gestion des crafts se font comme dans don't starve avec une nécessité d'être à proximité de certain objet pour pouvoir faire certains crafts et une mémoires des crafts déjà réalisés perdant de refaire des crafts déjà fait n'importe où.
+Le jeu doit posséder un système d'item et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum une id, un nom et une description. Il doit y avoir plusieurs catégories d'item :les consommables, les Armures, Les outils et le reste. La gestion des crafts se font comme dans don't starve avec une nécessité d'être à proximité de certain objet pour pouvoir faire certains crafts et une mémoires des crafts déjà réalisés permetant de refaire n'importe où des crafts déjà faits.
 \section{Multiplayer}
 \section{Génération aléatoire}
 \section{Musique}
 \section{Mode FPS (facultatif)}
 \pagebreak
 \section{Répartition des tâches}
-\begin{center}    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c @{\,{\vrule width 1pt}\,} }
- \hline    Tache & Florian Amsallem & Théo Issarni & Julien Mounier & Romain Mounier \\ \hline    Gestion du personnage &   & X & X & X \\ \hline     Système de survie &  & X & X & \\ \hline    Environnement 3D &  & X &X & \\ \hline
+\begin{center}
+    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c @{\,{\vrule width 1pt}\,} }
+ \hline
+    Tache & Florian Amsallem & Théo Issarni & Julien Mounier & Romain Mounier \\ \hline
+    Gestion du personnage &   & X & X & X \\ \hline 
+    Système de survie &  & X & X & \\ \hline
+    Environnement 3D &  & X &X & \\ \hline
     Environnement 2D & X & & & X \\ \hline
     Item et Craft & X & & & X \\ \hline
     Multiplayer & X & & & X \\ \hline
     Génération aléatoire & X & & X & \\ \hline
     Son & & X (et P.A) & & \\ \hline
-    Ennemis & à voir & à voir & à voir & à voir \\ \hline    \end{tabular}\end{center}
+    Ennemis & à voir & à voir & à voir & à voir \\ \hline
+    \end{tabular}
+\end{center}
 \section{Planning du projet}
-\begin{center}    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,} }
- \hline    Tache &  Première soutenance & Deuxième soutenance & Soutenance finale \\ \hline    Gestion du personnage & 50 \% & 90 \% & 100 \%  \\ \hline     Gestion du système de survie & 10 \% & 60 \% & 100 \% \\ \hline    Environnement 3D & 40 \% & 50 \% & 100 \% \\ \hline
+\begin{center}
+    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,} }
+ \hline
+    Tache &  Première soutenance & Deuxième soutenance & Soutenance finale \\ \hline
+    Gestion du personnage & 50 \% & 90 \% & 100 \%  \\ \hline 
+    Gestion du système de survie & 10 \% & 60 \% & 100 \% \\ \hline
+    Environnement 3D & 40 \% & 50 \% & 100 \% \\ \hline
     Environnement 2D & 70 \% & 90 \% & 100 \%  \\ \hline
     Item et Craft & 20 \% & 70 \% & 100 \% \\ \hline
     Multiplayer & 80 \% &  90 \% & 100 \% \\ \hline
     Génération aléatoire & 30 \% & 50 \% & 100 \%  \\ \hline
     Son & 33 \% & 67 \% & 100 \% \\ \hline
-    Ennemis & X \% & X \% & X \% \\ \hline    \end{tabular}\end{center}
+    Ennemis & X \% & X \% & X \% \\ \hline
+    \end{tabular}
+\end{center}
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Conclusion}
 \chapter*{Remerciements}
