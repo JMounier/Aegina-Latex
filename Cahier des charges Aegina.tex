@@ -20,7 +20,7 @@ Ce cahier des charges a été fait pour le jeu Aegina, projet du second Semestre d
 \chapter{Origine et nature du projet}
 \section{Présentation de l'équipe}
 \subsection{Florian Amsallem}
-Je suis Florian Amsallem j'ai 18 ans. Je viens d'une filière générale et je possède un bac scientifique, spécialité informatique science du numérique. Je vais principalement apporter mon expérience en programmation et en algorithimie.
+Je suis Florian Amsallem j'ai 18 ans. Je viens du lycée Emmanuel Mounier où j'y ai étudié des matières générales. J'ai passé avec succé un bac scientifique, spécialité informatique science du numérique. Mon expérience en programmation et en algorithimie sera utile pour le groupe, notamment pour la structure du projet et pour certains scripts tels que la génération du monde.
 \subsection{Théo Issarni}
 Je m'appelle Théo Issarni j'ai 18 ans. L'année dernière j'étais en terminale scientifique option SVT spécialité mathématiques dans le lycée général René Cassin. On me fait souvent la remarque de penser de manière différente des autres, dans le cas de notre projet je pense que cela peut être intéressant, dans la mesure où l'on risque à certain moment d'être coincé, une approche différente du problème pourra alors peut être le résoudre. 
 \subsection{Julien Mounier}
@@ -50,7 +50,9 @@ Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, 
 \section{Item et Craft}
 Le jeu doit posséder un système d'item et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum une id, un nom et une description. Il doit y avoir plusieurs catégories d'item :les consommables, les Armures, Les outils et le reste. La gestion des crafts se font comme dans don't starve avec une nécessité d'être à proximité de certain objet pour pouvoir faire certains crafts et une mémoires des crafts déjà réalisés permettant de refaire n'importe où des crafts déjà faits.
 \section{Multiplayer}
+Un aspect important du projet est le multijoueur. Nous devons pouvoir au final pouvoir jouer à plusieurs simultanément dans le même monde. Les joueurs pourront interagir entre eux et s'entre aider. La connexion entre les joueurs se fera en local, la possibilité de jouer hors local sera facultative.
 \section{Génération aléatoire}
+Nous souhaitons que le monde dans lequel se dévellope les joueurs soit ouvert et générer aléatoirement. Pour cela nous alons utiliser un system de chunk, où chaque chunk sera relié par des ponts. Les îles à l'intérieur des chunks seront générer aléatoirement, elles auront un biome aléatoire et des objets (roches, arbres...) seront générer par un system d'ancre.
 \section{Musique}
 Le jeu devra posséder une musique crée pour lui. Cette musique différera en fonction des iles où le joueur se trouve mais aussi en fonction de l'avancement de la journée dans le jeu c'est à dire s'il fait jour ou s'il fait nuit. Le jeu devra aussi posséder certain bruit afin de le rendre plus réaliste comme les bruit des pat du personnage. 
 \section{Mode FPS (facultatif)}
