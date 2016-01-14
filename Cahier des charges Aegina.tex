@@ -9,33 +9,35 @@
 \selectlanguage{french}
 
 \begin{document}
+
 \title{Aegina : cahier des charges}
-\author{Florian Amsallem, Théo Issarni, Julien Mounier, Romain Mounier}
+\author{Florian \bsc{Amsallem}, Théo \bsc{Issarni}, Julien \bsc{Mounier}, Romain \bsc{Mounier}}
 \date{}
 \maketitle
+\chead{Cahier des charges : Aegina}
 \tableofcontents
+\linespread{1.6}
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Introduction}
 Ce cahier des charges a été fait pour le jeu Aegina, projet du second semestre de la première année de la prepa intégrée d'EPITA. Ce projet est réalisé par le groupe d'étudiants AI$M^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
 
 Aegina sera un jeu de survie dans un environnement hostile dans lequel on incarne une personne se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver (une histoire simple sans beaucoup de détails et très peu recherchée qui ne nous donne aucune limite sur la création du jeu à part notre imagination et nos capacités à le créer). Cette personne aura alors pour but de découvrir qui elle est, pourquoi elle est ici et surtout comment survivre.
 
-Le jeu sera développé sur unity3D en C\# en utilisant visual studio. On utilisera aussi Blender pour faire les modèles 3D ainsi que GIMP pour faire les textures 2D que nous n'auront pas pu trouver ailleurs (sur un texture pack de minecraft par exemple).
+Le jeu sera développé sur unity3D en C\# en utilisant visual studio. On utilisera aussi Blender pour faire les modèles 3D ainsi que GIMP pour faire les textures 2D que nous n'auront pas pu trouver ailleurs (sur un texture pack de minecraft par exemple). Pour communiquer notre code entre nous nous utiliserons Git et enfin pour écrire ce cahier des charges, nos futurs plan de soutenance et rapports de projets.
 
 L'ensemble contiendra de nombreux algorithmes intéressants comme des systèmes de sauvegardes, de la gestion d'inventaire et de menu ou encore de la génération aléatoire. De quoi occuper notre semestre et, nous l'espérons, ravir le jury.
 \chapter{Origine et nature du projet}
 \section{Présentation de l'équipe}
-\subsection{Florian Amsallem}
+\subsection{Florian \bsc{Amsallem}}
 Je suis Florian Amsallem, j'ai 18 ans. Je viens du lycée Emmanuel Mounier à Châtenay-Malabry. J'ai passé avec succès un bac scientifique option SVT, avec spécialité informatique science du numérique. Mon expérience en programmation et en algorithmique sera utile pour le groupe, notamment pour la structure du projet et pour certains scripts complexes tels que la génération du monde ou le mode multi-joueurs.
-\subsection{Théo Issarni}
+\subsection{Théo \bsc{Issarni}}
 Je m'appelle Théo Issarni, j'ai 18 ans. L'année dernière j'étais en terminale scientifique option SVT spécialité mathématiques dans le lycée général René Cassin. On me fait souvent remarquer que je pense de manière différente. Dans le cas de notre projet, je pense que cela peut être intéressant, dans la mesure où nous risquons à certains moments d'être coincés, une approche différente du problème pourra alors peut être le résoudre. 
-\subsection{Julien Mounier}
+\subsection{Julien \bsc{Mounier}}
 Je m'appelle Julien Mounier, j'ai le même âge que les deux premiers. J'ai étudié au Lycée polyvalent Robert Schuman et j'y ai suivi une terminale S SVT avec spécialité Mathématiques. Je pense être assez méticuleux et j'essaie de prévoir le plus de cas de figure pour prévenir de potentiels bugs. J'apporterai également ma touche graphique à ce projet car j'ai un sens artistique suffisant pour ne pas me contenter de simples cubes blancs comme environnement.
-\subsection{Romain Mounier}
+\subsection{Romain \bsc{Mounier}}
 Je suis Romain Mounier, j'ai 18 ans et je suis le frère jumeau de Julien Mounier. Comme lui je suis passé par une terminale S SVT option math au Lycée polyvalent Robert Schuman avant d'aller à l'EPITA. Je peux apporter au groupe une bonne dose d'imagination voire de folie (malheureusement mes idées comme utiliser un ordinateur en bois pour crafter en "hackant le jeu" sont rarement acceptées). Je possède un très bon niveau en Maths et Physique et un bon niveau d'algo et de programmation ce qui permet à mes algorithmes de bien fonctionner mais je possède une mauvaise organisation et un esprit un peu alambiqué ce qui peut nuire à la compréhension de mes algorithmes (et qui m'oblige souvent à les réorganiser à la demande "justifiée" d'un autre membre de mon groupe).
 \section{Nom du groupe}
 Le nom du groupe a été trouvé après l'idée et le nom du jeu. C'est en effet après avoir trouvé l'idée et le nom de notre jeu que nous avons appris qu'il nous fallait un nom de groupe. Pour trouver ce nom ce fut assez rapide, nous avons commencé par prendre les quatre initiales de nos noms de famille A, M, M et I et nous avons tenté de créer un mot avec ces 4 lettres mais AMMI, IMMA,  AMIM, MAIM, AIMM, IAMM , MMAI, MIMA et MMIA ne voulaient rien dire et MAMI, MIAM et IMAM n'était pas des options viables. Nous avons résolu ce problème en remplaçant les deux M par M2 (ou 2M) et nous avons recommencé en plaçant le M2 (ou 2M) en fin (ou en début de mot). Nous avons alors obtenu 4 options différentes : AIM2, IAM2 , 2MAI , 2MIA dont deux options viables 2MAI et AIM2. Comme avoir le nom d'une date était à peine mieux que de s'appeler MAMI, nous avons opté pour AIM2 que nous avons reformulé en AIM$^{2}$ et qui est devenu officiellement notre nom de groupe.
-\pagebreak
 \section{Idée du jeu}
 Notre groupe avait initialement plusieurs idées différentes pour le jeu. Pour être exact chacun avait sa propre idée de jeu et donc pour ne pas délaisser l'opinion de quelqu'un nous avons abandonné toutes ces idées. Nous avons fait un brainstorming en écrivant tous les types de jeux que nous connaissons puis un mot-clef : île flottante (mot qui a été approuvé par le groupe entier). Nous avons ensuite choisi quel serait le type de jeu en se basant sur ce mot-clef et nous avons fini par choisir un jeu de survie dans un environnement hostile sur des îles volantes en 3D. C'est à ce moment là que nous avons aussi choisi que notre jeu serait un jeu multi-joueurs et en vue à la troisième personne (avec peut-être une option FPS).
 
@@ -43,7 +45,13 @@ Notre groupe avait initialement plusieurs idées différentes pour le jeu. Pour êt
 Nous avons choisi le nom du jeu après avoir défini ses caractéristiques principales. Nous avons eu de nombreuses difficultés à nous mettre d'accord pour ce nom. Certains ont commencé à créer des noms à partir des initiales des prénoms des membres du projet mais "The Fantastic Journey of Redmond" n'a même pas était considéré comme une option viable. D'autres ont essayé de déformer le nom de certains jeux cultes pour trouver le nôtre mais les propositions ont plus servi de divertissement que de réelles options. C'est finalement au bout du quatrième essai que nous avons enfin trouvé ce que nous cherchions (le troisième essai consistant à utiliser un générateur de nom aléatoire). Nous avons utilisé un traducteur pour traduire île dans le plus de langues différentes. Nous avons choisi la traduction grecque Aegina (qui finalement n'est peut-être pas réellement la traduction d'île en grec  mais seulement le nom d'une île grecque).
 
 \chapter{Objet de l'étude}
-\section{Interêt du projet}
+\section{Intérêt du projet}
+L'intérêt principal de ce projet est qu'il soit un projet de groupe. En effet à part le TPE nous n'avons quasiment jamais travaillé en groupe dans le but de produire autre chose qu'un banal exposé (le TPE étant une sorte moins banale d'exposé).
+Ici nous ne pouvons pas tous travailler ensemble sur les même points, il y a tellement de chose à faire que nous sommes obliger de diviser le travail. Cependant comme nous codons il faut que ces différentes partie puissent communiquer chacune avec les autres donc nous ne pouvons pas non plus nous isoler dans notre travail. Il faut véritablement travailler en équipe.
+Toutes ces capacités sont nécessaire dans le travail d'ingénieur vers lequel nous nous destinons dans un avenir proche. Ce projet va donc nous permettre d'acquérir ces capacités.
+
+Grâce à ce projet nous allons acquérir une certaine rigueur dans l'écriture de notre code (nous sommes en effet forcé d'écrire tous nos scripts dans un style conforme aux exigence d'un membre spécifique de notre groupe). Nous allons apprendre à utiliser des logiciels comme Git pour partager notre code qui nous sera très utiles dans notre future vie d'étudiant comme d'ingénieur. Nous allons devoir accepter les critiques et changer notre code ou apprendre à le défendre face aux avis des autre membre du groupe. Enfin ce projet est aussi une expérience sociale car il n'est pas forcément agréable de passer six mois à travailler avec des personnes avec qui nous ne nous entendons pas. Il nous faudra donc peut-être gérer des tensions et modifier notre comportement si cela devient nécessaire.
+
 \chapter{Découpage du projet}
 
 \section{Gestion du personnage, de sa camera et de son interaction avec l'environnement}
@@ -62,10 +70,10 @@ Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, 
 Le jeu doit posséder un système d'items et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum un identifiant, un nom et une description. Il doit y avoir plusieurs catégories d'items : les consommables, les armures, les outils et le reste. La gestion des crafts se fait comme dans "Don't starve" dans lequel il est nécessaire d'être à proximité de certains objets pour pouvoir faire certains crafts et qui gère une mémoire des crafts déjà réalisés permettant ainsi de les refaire n'importe où (la contrainte de proximité n'est alors plus présente).
 
 \section{Multi-joueurs}
-Un aspect important du projet est le mode multi-joueurs. Plusieurs joueurs doivent pouvoir évoluer simultanément dans le même monde. Les joueurs pourront interagir entre eux et s'entraider. La connexion entre les joueurs se fera sur un réseau local. Nous verrons si nous pourrons étendre cette connexion à un réseau distant mais nous ne nous engageons pas à le faire.
+Un aspect important du projet est le mode multi-joueurs. Plusieurs joueurs doivent pouvoir évoluer simultanément dans le même monde. Les joueurs pourront interagir entre eux et s'entraider. La connexion entre les joueurs se fera sur un serveur host et non dédié. Chaque joueurs pourra héberger son propre serveur afin que d'autres utilisateurs puissent s'y connecter. De plus, l'hébergeur devra enregistrer sur sa machine l'état du monde et des joueurs. 
 
 \section{Génération aléatoire}
-Nous souhaitons que le monde dans lequel évoluent les joueurs soit ouvert et généré aléatoirement. Pour cela nous allons utiliser un système de chunk, où chaque chunk sera relié par des ponts. Les îles à l'intérieur des chunks seront générées aléatoirement, elles auront un biome propre et des objets (roches, arbres \dots) seront eux aussi générés aléatoirement et localisés sur les îles grace à un système d'ancre.
+Nous souhaitons que le monde dans lequel évoluent les joueurs soit ouvert et généré aléatoirement. Pour cela nous allons utiliser un système de chunk, où chaque chunk sera relié par des ponts. Les îles à l'intérieur des chunks seront générées aléatoirement, elles auront un biome propre et des objets (roches, arbres \dots) seront eux aussi générés aléatoirement et localisés sur les îles grâce à un système d'ancres. Cependant les ancres en limiterons pas la pose d'objets par les joueurs.
 
 \section{Musique}
 Le jeu devra posséder une musique originale. Cette musique différera en fonction des îles où le joueur se trouve mais aussi en fonction de l'avancement de la journée. Le jeu devra aussi posséder certains bruits afin de le rendre plus réaliste comme les bruits des pas du personnage. 
@@ -75,7 +83,7 @@ Si nous avons le temps, nous souhaitons intégrer des ennemis dans l'environnemen
 \pagebreak
 \section{Répartition des tâches}
 \begin{center}
-    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c @{\,{\vrule width 1pt}\,} }
+    \begin{tabular}{| c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c | }
  \hline
     Tâche & Florian Amsallem & Théo Issarni & Julien Mounier & Romain Mounier \\ \hline
     Gestion du personnage &   & X & X & X \\ \hline 
@@ -91,7 +99,7 @@ Si nous avons le temps, nous souhaitons intégrer des ennemis dans l'environnemen
 \end{center}
 \section{Planning du projet}
 \begin{center}
-    \begin{tabular}{ @{\,{\vrule width 1pt}\,}c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,} }
+    \begin{tabular}{ | c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c | }
  \hline
     Tâche &  Première soutenance & Deuxième soutenance & Soutenance finale \\ \hline
     Gestion du personnage & 50 \% & 90 \% & 100 \%  \\ \hline 
@@ -107,5 +115,8 @@ Si nous avons le temps, nous souhaitons intégrer des ennemis dans l'environnemen
 \end{center}
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Conclusion}
-\chapter*{Remerciements}
+Aegina a de l'avenir et vous le savez. Il est innovant par son style graphique et son espérance de vie quasi infini.Vous pourrez y jouer des heures et des heures et cela en solo ou multi-joueurs.    
+Parlons maintenant de chose sérieuses, une alpha devrait être disponible dés mars 2016. En validant ce projet dès aujourd'hui nous vous garantissons une livraison du produit final avant le 20 juin.
+\section*{Remerciements}
+Nous tenons à remercier Paul-Alexis \bsc{Mandengué} pour s'être proposé pour la création des musiques originales.
 \end{document}
