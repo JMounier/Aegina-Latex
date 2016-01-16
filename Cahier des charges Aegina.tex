@@ -12,7 +12,7 @@
 \begin{document}
 
 \title{Aegina : cahier des charges}
-\author{Florian \bsc{Amsallem} amsall\_f , Théo \bsc{Issarni} issarn\_t, \\Julien \bsc{Mounier} mounie\_a, Romain \bsc{Mounier} mounie\_r}
+\author{Florian \bsc{Amsallem} (amsall\_f) , Théo \bsc{Issarni} (issarn\_t), \\Julien \bsc{Mounier} (mounie\_a), Romain \bsc{Mounier} (mounie\_r)}
 \date{AIM$^{2}$}
 \maketitle
 \chead{Cahier des charges : Aegina}
@@ -88,44 +88,43 @@ Le jeu doit posséder un personnage principal ayant un certain nombre d'animation
 \addcontentsline{toc}{subsection}{\protect\numberline{}Environnement 2D (interfaces)}
 Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, les inventaires, l'interface de craft et une carte. Certaines de ces interfaces ne peuvent pas s'ouvrir en même temps que d'autres (on ne peut pas ouvrir l'inventaire dans le menu par exemple). Le menu doit permettre de quitter le jeu ainsi que gérer le volume du son et la langue du jeu. L'inventaire doit permettre de gérer des objets sous forme de "stack" (qu'il gère une quantité d'objet si vous préférez; nous n'allons évidemment pas utiliser une pile pour ça) et doit posséder des emplacements spéciaux pour les objets équipés ainsi qu'une barre de raccourcis disponible même lorsque l'inventaire est fermé.  Enfin l'interface de craft doit montrer les crafts disponibles sous forme de menu déroulant.
 
-\subsection*{ Cristal et joueur contre joueur}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Conquête d'île}
-Les îles du jeux doivent pouvoir être conquises si elle à été vidée de toutes ses ressources. Elles vont alors avoir différents effets sur l'environnement  comme refaire pousser les ressources, se défendre contre les ennemies etc. Elles doivent ensuite pouvoir être améliorer pour mieux remplir leur fonction ou être plus polyvalente. Enfin comme sous-entendu précédemment elles doivent être sensibles aux intempéries et aux ennemies et se détruire si elles prennent trop de dégâts.
+\subsection*{ Cristal }
+\addcontentsline{toc}{subsection}{\protect\numberline{}Cristal}
+
+\subsubsection{Cristal}
+Les îles du jeux doivent pouvoir être conquises si elle possède un cristal. Elles vont alors avoir différents effets sur l'environnement  comme refaire pousser les ressources, se défendre contre les ennemies etc. Elles doivent ensuite pouvoir être améliorer pour mieux remplir leur fonction ou être plus polyvalente. Enfin comme sous-entendu précédemment elles doivent être sensibles aux intempéries et aux ennemies et se détruire si elles prennent trop de dégâts.
+
+\subsubsection{Solo/Coop}
+En coopération le joueurs devront interagir entre eux et s'entraider pour finir l'histoire. Leur principale menace sera l'environnement et surtout les cataclysmes. Ils devront s'organiser pour protéger toutes leurs infrastructures de ces désastres tout en avançant d'en la quête principale.
 
 \subsubsection{Versus}
-Ces cristaux induisent directement un mode de jeu : Le versus
- 
-En versus Les Team posséderont chacun une île de départ éloigné ainsi que de quoi conquérir quelques îles. Leur but sera d'éliminer toute les équipes adverses en les tuants assez de fois, en détruisants toute leurs îles ou en finissant une version simplifier de l'histoire.
+En versus Les Team posséderont chacun une île de départ éloigné . Leur but sera d'éliminer toute les équipes adverses  en libérant toute leurs îles. Contrairement au coop/solo le monde du versus sera un monde fini.
 
 \subsection*{Items et Craft}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Items et Crafts}
 Le jeu doit posséder un système d'items et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum un identifiant, un nom et une description. Il doit y avoir plusieurs catégories d'items : les consommables, les armures, les outils et les ressources . La gestion des crafts se fait comme dans "Don't starve" dans lequel il est nécessaire d'être à proximité de certains objets pour pouvoir faire certains crafts
 
-\subsection*{Recherches}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Recherches}
-Le jeu doit aussi posséder un arbre de recherche permettant, en réalisant différents exploits, de débloquer de nouveaux crafts ou des améliorations du personnage. Cette arbre de recherche fait office de quête subsidiaire pour le jeux même si il contiendra des recherches nécessaire à la quête principale.
+\subsection*{Succès}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Succès}
+Le jeu doit aussi posséder des succès permettant, en réalisant différents exploits, de débloquer des améliorations du personnage. Cette arbre de recherche fait office de quête subsidiaire pour le jeux même s'il contiendra des succès nécessaire à la quête principale.
 
 
 \subsection*{Multi-joueurs}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Multi-joueurs}
-Un aspect important du projet est le mode multi-joueurs. Jusqu'à quatres joueurs doivent pouvoir évoluer simultanément dans le même monde. La connexion entre les joueurs se fera sur un serveur host et non dédié. Chaque joueurs pourra héberger son propre serveur afin que d'autres utilisateurs puissent s'y connecter. De plus, l'hébergeur devra enregistrer sur sa machine l'état du monde et des joueurs.
-
-\subsubsection{Coopération}
-En coopération le joueurs devront interagir entre eux et s'entraider pour finir l'histoire. Leur principale menace sera l'environnement et surtout les cataclysmes. Ils devront s'organiser pour protéger toutes leurs infrastructures de ces désastres tout en avançant d'en la quête principale.
+Un aspect important du projet est le mode multi-joueurs. Les joueurs doivent pouvoir évoluer simultanément dans le même monde. La connexion entre les joueurs se fera sur un serveur host et non dédié. Chaque joueurs pourra héberger son propre serveur afin que d'autres utilisateurs puissent s'y connecter. De plus, l'hébergeur devra enregistrer sur sa machine l'état du monde et des joueurs.
 
 \subsection*{Génération aléatoire}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Génération aléatoire}
 Nous souhaitons que le monde dans lequel évoluent les joueurs soit ouvert et généré aléatoirement. Pour cela nous allons utiliser un système de chunk, où chaque chunk sera relié par des ponts. Les îles à l'intérieur des chunks seront générées aléatoirement, elles auront un biome propre et des objets (roches, arbres \dots) seront eux aussi générés aléatoirement et localisés sur les îles grâce à un système d'ancres. Cependant les ancres ne concerneront pas les objets déposés par les joueurs.
+La quête principale est liée à cette génération aléatoire ce qui permettra de rendre chaque partie unique.
 
 \subsection*{Ennemis}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Ennemis}
-Si nous avons le temps, nous souhaitons intégrer des ennemis dans l'environnement du joueur. Le jeu pourra posséder des ennemis passifs et/ou agressifs qui tenteront d'attaquer et pourquoi pas de tuer le joueur. Il faudra s'assurer que les ennemis ne se suicident pas en sautant dans le vide et que le joueur soit récompensé par diverses ressources s'il arrive à vaincre un ennemi. Après tout nous ne voulons pas obliger nos joueurs à jouer les végétariens et nous aimerions leur donner la possibilité de croquer dans de la viande fraîche. Les ennemis pourront donc être des animaux, nous ne souhaitons pas non plus obliger les joueurs à devenir cannibales.
+\subsubsection{Créature}
+Nous intégrerons des créatures dans l'environnement du joueur. Le jeu pourra posséder des créatures passifs et agressifs qui tenteront d'attaquer et pourquoi pas de tuer le joueur. Il faudra s'assurer que les créatures ne se suicident pas en sautant dans le vide à l'aide d'une IA et que le joueur soit récompensé par diverses ressources s'il arrive à les vaincre. Après tout nous ne voulons pas obliger nos joueurs à jouer les végétariens et nous aimerions leur donner la possibilité de croquer dans de la viande fraîche.
 
-\subsubsection{Les cataclysmes}
-Les ennemis dans Aegina ne seront pas seulement les animaux mais aussi l'environnement lui même. le monde d'Aegina est un monde instable à cause du floatium faisant voler les îles. Cette instabilité pourra provoquer de nombreux cataclysme naturelles comme des tempêtes ou des invasions de monstres ( des animaux ayant muté à cause du floatium ). Ces cataclysmes ne seront pas seulement dangereux pour le joueur mais aussi pour toutes ses infrastructures qu'il devra protéger.
-
-\subsection*{Histoire et archive}
-Notre jeux possédera une histoire ainsi qu'une version simplifier pour le versus. Cette histoire ne sera pas juste une introduction du monde mais elle évoluera au fil du jeu et possédera une fin (qui sera aussi la fin du jeu) avec des fin alternatifs.Enfin la progression du jeux pourra être sauvegarder.
+\subsection*{Histoire}
+Notre jeux possédera une histoire. Cette histoire ne sera pas juste une introduction du monde mais elle évoluera au fil du jeu et possédera plusieurs développement alternatif. Enfin la progression du jeux pourra être sauvegardée.
 
 \subsection*{Musique}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Musique}
@@ -135,6 +134,7 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
 
 \subsection*{Répartition des tâches}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Répartition des tâches}
+\addtolength{\oddsidemargin}{-4cm}
 \begin{center}
     \begin{tabular}{| c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c | }
  \hline
@@ -149,13 +149,15 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
     Multi-joueurs & X & & & X \\ \hline
     Génération aléatoire & X & & X & \\ \hline
     Son & & X & & X \\ \hline
-    Histoire et archive & & X & & X \\ \hline
+    Histoire & & X & & X \\ \hline
     Ennemis & X & X &  &  \\ \hline
     \end{tabular}
 \end{center}
+\addtolength{\oddsidemargin}{4cm}
 
 \subsection*{Planning du projet}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Planning du projet}
+\addtolength{\oddsidemargin}{-4cm}
 \begin{center}
     \begin{tabular}{ | c  @{\,{\vrule width 2pt}\,}c   @{\,{\vrule width 1pt}\,}c   @{\,{\vrule width 1pt}\,}c | }
  \hline
@@ -174,10 +176,11 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
     Ennemis & 0 \% & 50 \% & 100 \% \\ \hline
     \end{tabular}
 \end{center}
+\addtolength{\oddsidemargin}{4cm}
 \pagebreak
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
-Nous sommes convaincus qu'Aegina a de l'avenir et nous espérons que maintenant vous l'êtes aussi. L'espérance de vie du jeu sera quasi infinie. Vous pourrez y jouer des heures et des heures et cela en mode solo ou multi-joueurs.  Son style graphique sera innovant, vous vous promènerez dans un monde tel que vous n'en avez jamais vu où il est possible de croiser un cactus enneigé au détour d'un chemin. Vous devrez vaincre les éléments  et assembler divers objets les uns avec les autres pour survivre et subvenir à vos besoins vitaux. Vous pourrez rencontrer d'autres personnages, mais faites attention s'agit-il d'amis ?
+Nous sommes convaincus qu'Aegina a de l'avenir et nous espérons que maintenant vous l'êtes aussi. L'espérance de vie du jeu sera quasi infinie. Vous pourrez y jouer des heures et des heures et cela en mode solo ou multi-joueurs. Son style graphique sera innovant, vous vous promènerez dans un monde tel que vous n'en avez jamais vu où il est possible de croiser un cactus enneigé au détour d'un chemin. Vous devrez vaincre les éléments  et assembler divers objets les uns avec les autres pour survivre et subvenir à vos besoins vitaux. Vous pourrez conquérir des îles et affronter vos amis et vous pourrez rencontrer d'autres personnages, mais faites attention s'agit-il d'amis ?
  
 Vous êtes impatients mais rassurez-vous, une version alpha devrait être disponible dès mars 2016 et en validant ce projet dès aujourd'hui nous vous garantissons une livraison du produit final au plus tard le 20 juin 2016.
 \section*{Remerciements}
