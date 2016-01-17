@@ -6,27 +6,36 @@
 \usepackage[french]{babel}
 \usepackage{listings}
 \usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
 \pagestyle{plain}
 \selectlanguage{french}
 
 \begin{document}
-
-\title{Aegina : cahier des charges}
-\author{Florian \bsc{Amsallem} (amsall\_f) , Théo \bsc{Issarni} (issarn\_t), \\Julien \bsc{Mounier} (mounie\_a), Romain \bsc{Mounier} (mounie\_r)}
-\date{AIM$^{2}$}
-\maketitle
-\chead{Cahier des charges : Aegina}
+\begin{titlepage}
+\begin{center} 
+\huge
+\vspace*{5cm}
+Aegina : cahier des charges\\
+\vspace*{2em}
+\large
+Florian \bsc{Amsallem} (amsall\_f) , Théo \bsc{Issarni} (issarn\_t), \\Julien \bsc{Mounier} (mounie\_a), Romain \bsc{Mounier} (mounie\_r)\\
+\vspace{2em}
+AIM$^{2}$\\
+\vspace{2cm}
+\includegraphics[width=12cm]{logo.jpg}
+\end{center} 
+\end{titlepage}
 \onehalfspacing
 \tableofcontents
 \pagebreak
 \section*{Introduction}
-
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
-Ce cahier des charges a été fait pour le jeu Aegina, projet du second semestre de la première année de la prepa intégrée d'EPITA. Ce projet est réalisé par le groupe d'étudiants AI$M^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
+Ce document est le cahier des charges  du jeu Aegina, projet du second semestre de la première année de la prepa intégrée d'EPITA. Ce projet est réalisé par le groupe d'étudiants AIM$^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
 
-Aegina sera un jeu de survie dans un environnement hostile dans lequel on incarne une personne se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver (une histoire simple sans beaucoup de détails et très peu recherchée qui ne nous donne aucune limite sur la création du jeu à part notre imagination et nos capacités à le créer). Cette personne aura alors pour but de découvrir qui elle est, pourquoi elle est ici et surtout comment survivre.
+Aegina sera un jeu de survie dans un environnement hostile dans lequel le joueur incarne une personne se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver (une histoire simple sans beaucoup de détails et très peu recherchée qui ne nous donne aucune limite sur la création du jeu à part notre imagination et nos capacités à le créer). Cette personne aura alors pour but de découvrir qui elle est, pourquoi elle est ici et surtout comment survivre.
 
-Le jeu sera développé sur unity3D en C\# en utilisant visual studio. On utilisera aussi Blender pour faire les modèles 3D ainsi que GIMP pour faire les textures 2D que nous n'auront pas pu trouver ailleurs (sur un texture pack de minecraft par exemple). Pour partager notre code, nous  utiliserons Git et enfin nous utiliserons \LaTeX pour écrire ce cahier des charges, nos futurs plan de soutenance et rapports de projets.
+Le jeu sera développé sur unity3D en C\# en utilisant visual studio. On utilisera aussi Blender pour faire les modèles 3D ainsi que GIMP pour faire les textures 2D que nous n'auront pas pu trouver ailleurs (sur un texture pack de {\it Minecraft} par exemple). Pour partager notre code, nous  utiliserons Git et enfin nous utiliserons \LaTeX pour écrire ce cahier des charges, nos futurs plans de soutenance et rapports de projets.
 
 L'ensemble contiendra de nombreux algorithmes intéressants comme des systèmes de sauvegardes, de la gestion d'inventaire et de menu ou encore de la génération aléatoire. De quoi occuper notre semestre et, nous l'espérons, ravir le jury.
 \pagebreak
@@ -44,17 +53,15 @@ Je m'appelle Julien Mounier, j'ai le même âge que les deux premiers. J'ai étudié
 Je suis Romain Mounier, j'ai 18 ans et je suis le frère jumeau de Julien Mounier. Comme lui je suis passé par une terminale S SVT option math au Lycée polyvalent Robert Schuman avant d'aller à l'EPITA. Je peux apporter au groupe une bonne dose d'imagination voire de folie (malheureusement mes idées comme utiliser un ordinateur en bois pour crafter en "hackant le jeu" sont rarement acceptées). Je possède un très bon niveau en Maths et Physique et un bon niveau d'algo et de programmation ce qui permet à mes algorithmes de bien fonctionner mais je possède une mauvaise organisation et un esprit un peu alambiqué ce qui peut nuire à la compréhension de mes algorithmes (et qui m'oblige souvent à les réorganiser à la demande "justifiée" d'un autre membre de mon groupe).
 \subsection*{Nom du groupe}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Nom du groupe}
-Le nom du groupe a été trouvé après l'idée et le nom du jeu. C'est en effet après avoir trouvé l'idée et le nom de notre jeu que nous avons appris qu'il nous fallait un nom de groupe. Pour trouver ce nom ce fut assez rapide, nous avons commencé par prendre les quatre initiales de nos noms de famille A, M, M et I et nous avons tenté de créer un mot avec ces 4 lettres mais AMMI, IMMA,  AMIM, MAIM, AIMM, IAMM , MMAI, MIMA et MMIA ne voulaient rien dire et MAMI, MIAM et IMAM n'était pas des options viables. Nous avons résolu ce problème en remplaçant les deux M par M2 (ou 2M) et nous avons recommencé en plaçant le M2 (ou 2M) en fin (ou en début de mot). Nous avons alors obtenu 4 options différentes : AIM2, IAM2 , 2MAI , 2MIA dont deux options viables 2MAI et AIM2. Comme avoir le nom d'une date était à peine mieux que de s'appeler MAMI, nous avons opté pour AIM2 que nous avons reformulé en AIM$^{2}$ et qui est devenu officiellement notre nom de groupe.
+Le nom du groupe a été trouvé après l'idée et le nom du jeu. C'est en effet après avoir trouvé l'idée et le nom de notre jeu que nous avons appris qu'il nous fallait un nom de groupe. Pour trouver ce nom ce fut assez rapide, nous avons commencé par prendre les quatre initiales de nos noms de famille A, M, M et I et nous avons tenté de créer un mot avec ces 4 lettres mais AMMI, IMMA,  AMIM, MAIM, AIMM, IAMM , MMAI, MIMA et MMIA ne voulaient rien dire et MAMI, MIAM et IMAM n'était pas des options viables. Nous avons résolu ce problème en remplaçant les deux M par M2 (ou 2M) et nous avons recommencé en plaçant le M2 (ou 2M) en fin (ou en début de mot). Nous avons alors obtenu 4 options différentes : AIM2, IAM2, 2MAI, 2MIA dont deux options viables 2MAI et AIM2. Comme avoir le nom d'une date était à peine mieux que de s'appeler MAMI, nous avons opté pour AIM2 que nous avons reformulé en AIM$^{2}$ et qui est devenu officiellement notre nom de groupe.
 \subsection*{Idée du jeu}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Idée du jeu}
-Notre groupe avait initialement plusieurs idées différentes pour le jeu. Pour être exact chacun avait sa propre idée de jeu et donc pour ne pas délaisser l'opinion de quelqu'un nous avons abandonné toutes ces idées. Nous avons fait un brainstorming en écrivant tous les types de jeux que nous connaissons puis un mot-clef : île flottante (mot qui a été approuvé par le groupe entier). Nous avons ensuite choisi quel serait le type de jeu en se basant sur ce mot-clef et nous avons fini par choisir un jeu de survie dans un environnement hostile sur des îles volantes en 3D. C'est à ce moment là que nous avons aussi choisi que notre jeu serait un jeu multi-joueurs et en vue à la troisième personne avec la possibilité de passer en première personne.
+Notre groupe avait initialement plusieurs idées différentes pour le jeu. Pour être exact chacun avait sa propre idée de jeu et donc pour ne pas délaisser l'opinion de quelqu'un nous avons abandonné toutes ces idées. Nous avons fait un brainstorming en écrivant tous les types de jeux que nous connaissons puis un mot-clef : île flottante (mot qui a été approuvé par le groupe entier). Nous avons ensuite choisi quel serait le type de jeu en se basant sur ce mot-clef et nous avons fini par choisir un jeu de survie dans un environnement hostile sur des îles volantes en 3D. C'est à ce moment là que nous avons aussi décidé que notre jeu serait un jeu multi-joueurs et en vue à la troisième personne avec la possibilité de passer en première personne.
 
-Cependant Le jeu juste comme ça ressemblait beaucoup trop à minecraft et avec moins de gameplay car notre jeux est basé beaucoup plus sur la destruction que la construction (minecraft sans pouvoir construire n'est pas très amusant). Nous avons donc décider d'amener à notre jeux une facette RPG avec une progression du personnage grâce à des recherches et une histoire et une facette "tower defense" et "expansion" avec de la conquête d'île qui doivent résister à la nature (et aux monstres) ou aux autres joueurs. Avec ce derniers ajout nous avons également décider de scinder Le multi-joueurs en deux partie bien distincte : la coopération et le versus qui se joueront de deux à quatre joueurs (la coopération à un joueur étant l'aventure solo).
-
+Cependant cette version simple du jeu ressemblait beaucoup trop à {\it Minecraft} mais avec moins de gameplay car notre jeu est basé beaucoup plus sur la destruction que la construction ({\it Minecraft} sans pouvoir construire n'est pas très amusant). Nous avons donc décidé d'apporter à notre jeu des facettes RPG, "tower defense" et "expansion". L'aspect RPG sera mis en \oe{}uvre par une progression du personnage grâce à des succès, des crafts évolutifs et un scénario. Les aspects "tower defense" et "expansion" seront réalisés grâce à la conquête d'îles qui devront être défendues face aux monstres ou aux autres joueurs. Nous avons également décidé de scinder le mode multi-joueurs en deux parties bien distinctes : la coopération pour évoluer dans le scénario et le versus avec la conquête d'îles qui se jouera de deux à quatre équipes.
 \subsection*{Nom du jeu}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Nom du Jeu}
 Nous avons choisi le nom du jeu après avoir défini ses caractéristiques principales. Nous avons eu de nombreuses difficultés à nous mettre d'accord pour ce nom. Certains ont commencé à créer des noms à partir des initiales des prénoms des membres du projet mais "The Fantastic Journey of Redmond" n'a même pas était considéré comme une option viable. D'autres ont essayé de déformer le nom de certains jeux cultes pour trouver le nôtre mais les propositions ont plus servi de divertissement que de réelles options. C'est finalement au bout du quatrième essai que nous avons enfin trouvé ce que nous cherchions (le troisième essai consistant à utiliser un générateur de nom aléatoire). Nous avons utilisé un traducteur pour traduire île dans le plus de langues différentes. Nous avons choisi la traduction grecque Aegina (qui finalement n'est peut-être pas réellement la traduction d'île en grec  mais seulement le nom d'une île grecque).
-
 \section*{Objet de l'étude}
 \addcontentsline{toc}{section}{\protect\numberline{}Objet de l'étude}
 \subsection*{Intérêt du projet}
@@ -68,70 +75,50 @@ Vu l'ampleur du travail à fournir, nous ne pouvons pas tous travailler ensemble 
 Grâce à ce projet nous allons acquérir une certaine rigueur dans l'écriture de notre code (nous sommes en effet forcés d'écrire tous nos scripts dans un style conforme aux exigences d'un membre spécifique de notre groupe). Nous allons apprendre à utiliser des logiciels comme Git pour partager notre code, ce qui nous sera très utile dans notre future vie d'étudiant comme d'ingénieur. Nous allons devoir accepter les critiques et changer notre point de vue ou apprendre à le défendre face aux avis des autres membres du groupes. Enfin ce projet est aussi une expérience sociale car il n'est pas forcément facile de passer six mois à travailler avec un groupe de personnes. Il y aura presque obligatoirement des moments où les relations seront plus tendues. Il nous faudra donc peut-être gérer des conflits et modifier notre comportement si cela devient nécessaire. 
 
 Toutes ces capacités sont nécessaires dans le travail d'ingénieur vers lequel nous nous destinons dans un avenir proche. Ce projet va donc nous permettre de commencer à les acquérir.
-
 \section*{Découpage du projet}
 \addcontentsline{toc}{section}{\protect\numberline{}Découpage du projet}
-
 \subsection*{Gestion du personnage, de sa camera et de son interaction avec l'environnement}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Gestion du personnage, de sa camera et de son interaction avec l'environnement}
 Le personnage doit posséder une camera et se déplacer en fonction de l'orientation de celle-ci. Il doit pouvoir effectuer différentes actions comme marcher, courir, sauter, miner, etc.  Il doit pouvoir repérer les éléments de l'environnement avec lesquels il peut interagir et il doit pouvoir récupérer des items du monde 3D pour les rajouter dans son inventaire. Il ne doit pas passer à travers les autres éléments du décor et enfin il doit avoir la capacité de mourir et de réapparaître à un point donné. 
-
 \subsection*{Gestion du système de survie (cycle jour nuit, vie, faim, etc.)}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Gestion du système de survie (cycle jour nuit, vie, faim, etc.)}
 Cette partie englobe la majorité des mécaniques de jeu auxquelles sera confronté le joueur. Chaque personnage devra posséder au moins trois caractéristiques qui lui sont propres : sa santé, sa faim et sa soif. De plus il devra être capable de marcher et de courir pour fuir un danger par exemple. Le jeu devra se dérouler en deux phases : une phase de nuit et une phase de jour. Ces deux phases devront être facilement distinguables. De plus, les personnages devront, en interagissant avec leur environnement, être capables d'augmenter leurs chances de survie.
-
 \subsection*{Environnement 3D (animation et model 3D)}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Environnement 3D (animation et model 3D)}
-Le jeu doit posséder un personnage principal ayant un certain nombre d'animations, parmi lesquelles nous pourrons trouver : se reposer, marcher, courir, sauter, manger, miner, couper du bois et attaquer. Il aura différents outils (pioche, hache et une épée) qu'il pourra acquérir au fil de jeu. Il devra y avoir différents types d'îles comme par exemple l'île de type "forêt", "savane" ou encore "hiver". Chacune de ces îles devra posséder ses propres arbres, plantes, rochers, etc. qui différeront des autres îles. Elles pourront aussi abriter un nid de monstre .Il devra y avoir une interaction entre l'inventaire du joueur et l'environnement, c'est-à-dire qu'il devra être possible de sortir un object de l'inventaire et le voir apparaître en 3D dans le jeu.  
-
+Le jeu doit posséder un personnage principal ayant un certain nombre d'animations, parmi lesquelles nous pourrons trouver : se reposer, marcher, courir, sauter, manger, miner, couper du bois et attaquer. Il aura différents outils (pioche, hache et une épée) qu'il pourra acquérir au fil de jeu. Il devra y avoir différents types d'îles comme par exemple l'île de type "forêt", "savane" ou encore "hiver". Chacune de ces îles devra posséder ses propres arbres, plantes, rochers, etc. qui différeront des autres îles. Elles pourront aussi abriter un nid de monstres ou un cristal de conquête. Il devra y avoir une interaction entre l'inventaire du joueur et l'environnement, c'est-à-dire qu'il devra être possible de sortir un object de l'inventaire et le voir apparaître en 3D dans le jeu.  
 \subsection*{Environnement 2D (interfaces)}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Environnement 2D (interfaces)}
 Le jeu doit posséder plusieurs interfaces notamment l'écran d'accueil, le menu, les inventaires, l'interface de craft et une carte. Certaines de ces interfaces ne peuvent pas s'ouvrir en même temps que d'autres (on ne peut pas ouvrir l'inventaire dans le menu par exemple). Le menu doit permettre de quitter le jeu ainsi que gérer le volume du son et la langue du jeu. L'inventaire doit permettre de gérer des objets sous forme de "stack" (qu'il gère une quantité d'objet si vous préférez; nous n'allons évidemment pas utiliser une pile pour ça) et doit posséder des emplacements spéciaux pour les objets équipés ainsi qu'une barre de raccourcis disponible même lorsque l'inventaire est fermé.  Enfin l'interface de craft doit montrer les crafts disponibles sous forme de menu déroulant.
-
-\subsection*{ Cristal }
-\addcontentsline{toc}{subsection}{\protect\numberline{}Cristal}
-
-\subsubsection{Cristal}
-Les îles du jeux doivent pouvoir être conquises si elle possède un cristal. Elles vont alors avoir différents effets sur l'environnement  comme refaire pousser les ressources, se défendre contre les ennemies etc. Elles doivent ensuite pouvoir être améliorer pour mieux remplir leur fonction ou être plus polyvalente. Enfin comme sous-entendu précédemment elles doivent être sensibles aux intempéries et aux ennemies et se détruire si elles prennent trop de dégâts.
-
+\subsection*{ Cristaux de conquête}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Cristaux de conquête}
+\subsubsection{Cristaux}
+Si une île possède un cristal de conquête, elle peut alors être conquise par un joueur qui devient propriétaire du cristal. Le cristal peut avoir plusieurs effets sur l'environnement  comme faire repousser les ressources ou se défendre contre les ennemis. Il doit ensuite pouvoir être amélioré pour mieux remplir ses fonctions ou être plus polyvalent. Enfin,  il doit être sensible aux attaques ennemies. S'il subit trop de dégâts, le joueur perd la propriété du cristal et donc de l'île. Ces derniers redeviennent libres.
 \subsubsection{Solo/Coop}
-En coopération le joueurs devront interagir entre eux et s'entraider pour finir l'histoire. Leur principale menace sera l'environnement et surtout les cataclysmes. Ils devront s'organiser pour protéger toutes leurs infrastructures de ces désastres tout en avançant d'en la quête principale.
-
+En mode coopération les joueurs devront interagir entre eux et s'entraider pour avancer dans l'histoire. Leur principale menace sera l'environnement. Ils devront s'organiser pour protéger tous leurs cristaux des monstres  tout en avançant dans la quête principale.
 \subsubsection{Versus}
-En versus Les Team posséderont chacun une île de départ éloigné . Leur but sera d'éliminer toute les équipes adverses  en libérant toute leurs îles. Contrairement au coop/solo le monde du versus sera un monde fini.
-
+En mode versus les équipes posséderont initialement une île raisonnablement éloignée de celles des autres équipes. Leur but sera d'éliminer toutes les équipes adverses en libérant toutes leurs îles. Contrairement au mode coop/solo, le monde du versus sera un monde fini.
 \subsection*{Items et Craft}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Items et Crafts}
-Le jeu doit posséder un système d'items et craft. La liste des items et la liste des crafts doivent se trouver dans des base de données. Les Items doivent posséder au minimum un identifiant, un nom et une description. Il doit y avoir plusieurs catégories d'items : les consommables, les armures, les outils et les ressources . La gestion des crafts se fait comme dans "Don't starve" dans lequel il est nécessaire d'être à proximité de certains objets pour pouvoir faire certains crafts
-
+Le jeu devra posséder un système d'items et craft. La liste des items et la liste des crafts devront se trouver dans des bases de données. Les items devront posséder au minimum un identifiant, un nom et une description. Il devra y avoir plusieurs catégories d'items : les consommables, les armures, les outils et les ressources. La gestion des crafts se fera comme dans "Don't starve" dans lequel il est nécessaire d'être à proximité de certains objets pour pouvoir faire certains crafts.
 \subsection*{Succès}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Succès}
-Le jeu doit aussi posséder des succès permettant, en réalisant différents exploits, de débloquer des améliorations du personnage. Cette arbre de recherche fait office de quête subsidiaire pour le jeux même s'il contiendra des succès nécessaire à la quête principale.
-
-
+Le jeu devra aussi posséder des succès permettant, en réalisant différents exploits, de débloquer des améliorations du personnage. Ces succès induiront une progression du personnage. Ils feront aussi office de quête secondaire pour le jeu, certains seront cependant nécessaires pour la quête principale.
 \subsection*{Multi-joueurs}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Multi-joueurs}
-Un aspect important du projet est le mode multi-joueurs. Les joueurs doivent pouvoir évoluer simultanément dans le même monde. La connexion entre les joueurs se fera sur un serveur host et non dédié. Chaque joueurs pourra héberger son propre serveur afin que d'autres utilisateurs puissent s'y connecter. De plus, l'hébergeur devra enregistrer sur sa machine l'état du monde et des joueurs.
-
+Un aspect important du projet est le mode multi-joueurs. Les joueurs doivent pouvoir évoluer simultanément dans le même monde. La connexion entre les joueurs se fera sur un serveur host et non dédié. Chaque joueur pourra héberger son propre serveur afin que d'autres utilisateurs puissent s'y connecter. De plus, l'hébergeur devra enregistrer sur sa machine l'état du monde et des joueurs.
 \subsection*{Génération aléatoire}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Génération aléatoire}
-Nous souhaitons que le monde dans lequel évoluent les joueurs soit ouvert et généré aléatoirement. Pour cela nous allons utiliser un système de chunk, où chaque chunk sera relié par des ponts. Les îles à l'intérieur des chunks seront générées aléatoirement, elles auront un biome propre et des objets (roches, arbres \dots) seront eux aussi générés aléatoirement et localisés sur les îles grâce à un système d'ancres. Cependant les ancres ne concerneront pas les objets déposés par les joueurs.
-La quête principale est liée à cette génération aléatoire ce qui permettra de rendre chaque partie unique.
-
+Nous souhaitons que le monde dans lequel évoluent les joueurs soit ouvert et généré aléatoirement. Pour cela nous allons utiliser un système de chunks reliés par des ponts. Les îles à l'intérieur des chunks seront générées aléatoirement, elles auront un biome propre et des objets (roches, arbres \dots) seront eux aussi générés aléatoirement et localisés sur les îles grâce à un système d'ancres. Cependant, les ancres ne concerneront pas les objets déposés par les joueurs.
+La quête principale est liée à cette génération aléatoire, ce qui permettra de rendre chaque partie unique.
 \subsection*{Ennemis}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Ennemis}
-\subsubsection{Créature}
-Nous intégrerons des créatures dans l'environnement du joueur. Le jeu pourra posséder des créatures passifs et agressifs qui tenteront d'attaquer et pourquoi pas de tuer le joueur. Il faudra s'assurer que les créatures ne se suicident pas en sautant dans le vide à l'aide d'une IA et que le joueur soit récompensé par diverses ressources s'il arrive à les vaincre. Après tout nous ne voulons pas obliger nos joueurs à jouer les végétariens et nous aimerions leur donner la possibilité de croquer dans de la viande fraîche.
-
+Nous intègrerons des créatures dans l'environnement du joueur. Le jeu pourra posséder des créatures passives ou agressives qui tenteront d'attaquer et pourquoi pas de tuer le joueur. Il faudra s'assurer que les créatures ne se suicident pas en sautant dans le vide à l'aide d'une IA et que le joueur soit récompensé par diverses ressources s'il arrive à les vaincre. Après tout nous ne voulons pas obliger nos joueurs à jouer des végétariens et nous aimerions leur donner la possibilité de croquer dans de la viande fraîche.
 \subsection*{Histoire}
-Notre jeux possédera une histoire. Cette histoire ne sera pas juste une introduction du monde mais elle évoluera au fil du jeu et possédera plusieurs développement alternatif. Enfin la progression du jeux pourra être sauvegardée.
-
+Notre jeux possédera une histoire. Cette histoire ne sera pas juste une introduction du monde mais elle évoluera au fil du jeu et possédera plusieurs développements alternatifs. Enfin la progression du jeu pourra être sauvegardée.
 \subsection*{Musique}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Musique}
 Le jeu devra posséder une musique originale. Cette musique différera en fonction des îles où le joueur se trouve mais aussi en fonction de l'avancement de la journée. Le jeu devra aussi posséder certains bruits afin de le rendre plus réaliste comme les bruits des pas du personnage. 
-
 \pagebreak
-
 \subsection*{Répartition des tâches}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Répartition des tâches}
 \addtolength{\oddsidemargin}{-4cm}
@@ -143,7 +130,7 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
     Système de survie &  & X & X & \\ \hline
     Environnement 3D &  & X &X & \\ \hline
     Environnement 2D & X & & & X \\ \hline
-    Cristal et JcJ & & & X & X \\ \hline
+    Cristaux et JcJ & & & X & X \\ \hline
     Item et Craft & X & & & X \\ \hline
     Succès & X & & X & \\ \hline
     Multi-joueurs & X & & & X \\ \hline
@@ -154,7 +141,6 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
     \end{tabular}
 \end{center}
 \addtolength{\oddsidemargin}{4cm}
-
 \subsection*{Planning du projet}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Planning du projet}
 \addtolength{\oddsidemargin}{-4cm}
@@ -166,7 +152,7 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
     Gestion du système de survie & 10 \% & 60 \% & 100 \% \\ \hline
     Environnement 3D & 40 \% & 50 \% & 100 \% \\ \hline
     Environnement 2D & 70 \% & 90 \% & 100 \%  \\ \hline
-    Cristal et JcJ & 30 \% & 70 \% & 100 \% \\ \hline
+    Cristaux et JcJ & 30 \% & 70 \% & 100 \% \\ \hline
     Item et Craft & 20 \% & 70 \% & 100 \% \\ \hline
     Succès & 0 \% & 90 \% & 100 \% \\ \hline
     Multi-joueurs & 80 \% &  90 \% & 100 \% \\ \hline
@@ -181,7 +167,7 @@ Le jeu devra posséder une musique originale. Cette musique différera en fonction
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
 Nous sommes convaincus qu'Aegina a de l'avenir et nous espérons que maintenant vous l'êtes aussi. L'espérance de vie du jeu sera quasi infinie. Vous pourrez y jouer des heures et des heures et cela en mode solo ou multi-joueurs. Son style graphique sera innovant, vous vous promènerez dans un monde tel que vous n'en avez jamais vu où il est possible de croiser un cactus enneigé au détour d'un chemin. Vous devrez vaincre les éléments  et assembler divers objets les uns avec les autres pour survivre et subvenir à vos besoins vitaux. Vous pourrez conquérir des îles et affronter vos amis et vous pourrez rencontrer d'autres personnages, mais faites attention s'agit-il d'amis ?
- 
+\\
 Vous êtes impatients mais rassurez-vous, une version alpha devrait être disponible dès mars 2016 et en validant ce projet dès aujourd'hui nous vous garantissons une livraison du produit final au plus tard le 20 juin 2016.
 \section*{Remerciements}
 Nous tenons à remercier Paul-Alexis \bsc{Mandengué} pour s'être proposé pour la création des musiques originales.
