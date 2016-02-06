@@ -1,0 +1,50 @@
+html, body {
+ margin: 0;
+ padding: 0;
+ }
+
+body {
+ background-color: rgb(237,237,233);
+ background-image: url('https://ssl.gstatic.com/docs/forms/themes/images/v1/8e0a20cdc63c45fdf8ae64b4d46a179d82e90e46d70c10e000677e7f68e85452/game-night-bg.png');
+ background-repeat: repeat;
+ background-position: left top;
+ }
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+ font-size: 150%; 
+ color: red; 
+ padding-left: 15px;
+ }
+
+p,ul,li,td {
+ color: black; 
+ }
+
+a:link {
+ color: black;
+ text-decoration: oblique;
+ }
+
+a:visited {
+ color: black;
+ text-decoration: oblique;
+ }
+
+a:hover {
+ color: blue;
+ text-decoration: none;
+}
+
+a:active, a:focus {
+ color: blue;
+}
