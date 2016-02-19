@@ -19,7 +19,7 @@ Les ajouts principaux depuis la derniere version sont:
 * Un système d'inventaire ;
 * Le control du personnage, marche, course et saut ;
 * Le multijoueur ;
-* Un chat (qui lit du code HTML) avec des cheats codes (commme minecraft).
+* Un chat (qui lit du code HTML) avec des cheats codes (comme minecraft).
 
 #### Rejoignez l'Alpha ! 
 
