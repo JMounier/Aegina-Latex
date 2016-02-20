@@ -42,4 +42,4 @@ Pour pouvoir améliorer le jeu, merci de bien vouloir répondre à ce formulaire
 
 Le formulaire : [Merci de votre particitation !](https://docs.google.com/forms/d/1Oq0TMjaWIWbIhSqc6B1jFfrch2K2kU7ql6mxHOFKWYc/viewform)
 
-*L'éauipe AIM².*
+*L'équipe AIM².*
