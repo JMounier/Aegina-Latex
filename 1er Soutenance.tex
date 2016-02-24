@@ -38,41 +38,45 @@ AIM$^{2}$\\
 \pagebreak
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
 
-\section{Concepts et réflexions}
+\section{Univers du jeu}
 
-\subsection{Gameplay}
+\subsection{Aegina}
 
-\subsection{Univers du jeu}
+\subsection{Ille}
 
-\subsubsection{Aegina}
-
-\subsubsection{Il}
-
-\subsubsection{Le floatium et le sunkium}
+\subsection{Les minerais}
 
 
 \pagebreak
 
-\section{réalisation}
+\section{Réalisation}
 
 \subsection{Pré-janvier}
 
 \subsubsection{Cycle jour/nuit (Julien)}
-
+Dans un premier temps, on a du déterminer la durée d'une journée que l'on a subdiviser en 30 phases. Ces phases servent à changer d'image de skybox. Seulement cette méthode à causé quelque problèmes. Entre autre, le changement de skybox était trop brusque et les differentes skybox n'etaient pas homogenes. C'est pourquoi nous avons du trouver une autre methode : La \textit{directional light}.
+\\
+La \textit{directional light} est un gameobject propose par unity. Son interet majeur est que l'orientation de cette lumiere influance la skybox du monde. De plus nous pouvons choisir la couleur de cette lumiere. Pour ce faire nous avons utilise une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous avons represente le spectre solaire a l'aide d'une fonction mathematique.
+$$255((3.25t - 4)x^2 + (-4t + 4)x)$$
+% Mettre un graph de ouf super qui dechire tout !
+% TO DO
 \subsubsection{Inventaire (Romain et Florian)}
-
+Nous avons creer un inventaire, celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un element, qui peut etre deplacer grace a un drag and drop. De plus le joueur peut avoir une description de chacun des elements en passant sa souris sur celui ci.
 \subsubsection{Animation 3D (Théo)}
-
+Ille est un personnage que nous avons telecharger depuis l'asset store qui possedais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
+A partir de ce moment nous avons decide de faire les animations des nos personnage nous meme. 
+Le premier probleme que nous avons rencontre : notre personnage n'etait pas accessible depuis notre version de blender, trop recente pour le modele 3D aue nous avons. 
+Il nous a donc fallut trouver une encienne version de blender compatible avec notre model 3D. Depuis nous essayons d'ameliorer nos animation dans le but d'etre le plus realiste possible.
 \subsubsection{Déplacement du personnage et de sa camera (Théo et Julien)}
 
-\subsubsection{models 3D (Julien)}
+\subsubsection{Models 3D (Julien)}
 
 
 \subsection{Janvier}
 
-\subsubsection{barre de selection (Florian)}
-
-\subsubsection{menus (Romain et Florian)}
+\subsubsection{Barre de selection (Florian)}
+Nous avons ajoute une barre de selection synchronise avec la 4$^{eme}$ ligne de notre inventaire. De plus le joueur peut selectionner une case de cette barre et utiliser l'objet s'y trouvant. 
+\subsubsection{Menus (Romain et Florian)}
 
 \subsubsection{Class \textit{Item} (Romain)}
 
@@ -108,7 +112,7 @@ AIM$^{2}$\\
 
 \pagebreak
 
-\section{prévision}
+\section{Prévision}
 
 \subsection{Les quatre grand axe}
 
@@ -125,7 +129,7 @@ AIM$^{2}$\\
 
 \subsubsection{Survie}
 
-\subsubsection{Génération aléatoire}
+\subsubsection{Génération aléatoire et sauvegarde}
 
 \subsubsection{Histoire}
 
