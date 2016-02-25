@@ -42,25 +42,25 @@ AIM$^{2}$\\
 
 \subsection{Aegina}
 
-Le monde d'Aegina est constitue d'une casi-infinite d'ile volante. Ce monde ne possede pas de sol, tombe d'une ile engendre une chute sans fin ou du moins c'est ce que l'on suppose. Apres tout personne n'est revenue des trefonds de se monde. Justement ce monde n'est pas tres peuple, seul quelque especes de plante et d'animaux vivent sur ces iles.Cependant on peut y trouver certaine traces de presence humaine notamment en la personne de Ille.
+Le monde d'Aegina est constitue d'une quasi infinité d'ile volante. Ce monde ne possède pas de sol, tombe d'une ile engendre une chute sans fin ou du moins c'est ce que l'on suppose. Apres tout personne n'est revenue des tréfonds de se monde. Justement ce monde n'est pas très peuple, seul quelque espèces de plante et d'animaux vivent sur ces iles.Cependant on peut y trouver certaine traces de presence humaine notamment en la personne de Ille.
 
 \subsection{Ille}
 
-Ille est le personnqge principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En verite Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la memoire et ne s'en souviens donc plus.
+Ille est le personnage principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En vérité Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la memoire et ne s'en souviens donc plus.
 
 \subsection{Les minerais}
 
 \subsubsection{Mithril}
 
-Le mithril dans le monde d'Aegina et un mineral rose un peu plus solide que le fer. Son interet est sa sensibilite particulieres aux forces etranges qui existe dans Aegina.
+Le mithril dans le monde d'Aegina et un mineral rose un peu plus solide que le fer. Son intérêt est sa sensibilité particulières aux forces étranges qui existe dans Aegina.
 
 \subsubsection{Floatium}
 
-Le floatium et un mineral casi-transparent ayant la capacite d'etre plus leger que l'air. C'est un melange de floatium et de mithril qui est responsable de la levitation des iles de Aeagina.
+Le floatium et un mineral quasi transparent ayant la capacité d'être plus léger que l'air. C'est un melange de floatium et de mithril qui est responsable de la levitation des iles de Aegina.
 
 \subsubsection{sunkium}
 
-Le sunkium et un mineral d'un noir profond qui semble absorber la lumiere. C'est le mineral le plus lourd et le plus dur du monde d'Aegina.
+Le sunkium et un mineral d'un noir profond qui semble absorber la lumière. C'est le mineral le plus lourd et le plus dur du monde d'Aegina.
 \pagebreak
 
 \section{Réalisation}
@@ -68,22 +68,32 @@ Le sunkium et un mineral d'un noir profond qui semble absorber la lumiere. C'est
 \subsection{Pré-janvier}
 
 \subsubsection{Cycle jour/nuit (Julien)}
-Dans un premier temps, on a du déterminer la durée d'une journée que l'on a subdiviser en 30 phases. Ces phases servent à changer d'image de skybox. Seulement cette méthode à causé quelque problèmes. Entre autre, le changement de skybox était trop brusque et les differentes skybox n'etaient pas homogenes. C'est pourquoi nous avons du trouver une autre methode : La \textit{directional light}.
+Dans un premier temps, on a du déterminer la durée d'une journée que l'on a subdiviser en 30 phases. Ces phases servent à changer d'image de skybox. Seulement cette méthode à causé quelque problèmes. Entre autre, le changement de skybox était trop brusque et les différentes skybox n'étaient pas homogènes. C'est pourquoi nous avons du trouver une autre méthode : La \textit{directional light}.
 \\
-La \textit{directional light} est un gameobject propose par unity. Son interet majeur est que l'orientation de cette lumiere influance la skybox du monde. De plus nous pouvons choisir la couleur de cette lumiere. Pour ce faire nous avons utilise une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous avons represente le spectre solaire a l'aide d'une fonction mathematique.
+La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la skybox du monde. De plus nous pouvons choisir la couleur de cette lumière. Pour ce faire nous avons utilise une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous avons représente le spectre solaire a l'aide d'une fonction mathématique.
 $$255((3.25t - 4)x^2 + (-4t + 4)x)$$
 % Mettre un graph de ouf super qui dechire tout !
 % TO DO
 \subsubsection{Inventaire (Romain et Florian)}
-Nous avons creer un inventaire, celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un element, qui peut etre deplacer grace a un drag and drop. De plus le joueur peut avoir une description de chacun des elements en passant sa souris sur celui ci. Cette inventaire s'ouvre lorsaue l'on appui sur la touche \textit{inventaire} qui est de base la touche i et peut ensuite etre ferme avec la touche \textit{inventaire} ou la touche escape. Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger 
 
-Lorsque l'inventaire 
+Nous avons créé un inventaire, celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un element, qui peut être déplacé grace a un drag and drop. De plus le joueur peut avoir une description de chacun des elements en passant sa souris sur celui ci. Cette inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} qui est de base la touche i et peut ensuite être ferme avec la touche \textit{inventaire} ou la touche escape. Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger 
+
 \subsubsection{Animation 3D (Théo)}
-Ille est un personnage que nous avons telecharger depuis l'asset store qui possedais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
+
+Ille est un personnage que nous avons télécharger depuis l'asset store qui possédais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
 A partir de ce moment nous avons decide de faire les animations des nos personnage nous meme. 
-Le premier probleme que nous avons rencontre : notre personnage n'etait pas accessible depuis notre version de blender, trop recente pour le modele 3D aue nous avons. 
-Il nous a donc fallut trouver une encienne version de blender compatible avec notre model 3D. Depuis nous essayons d'ameliorer nos animation dans le but d'etre le plus realiste possible.
+Le premier problème que nous avons rencontre : notre personnage n'était pas accessible depuis notre version de blender, trop récente pour le modele 3D que nous avons. 
+Il nous a donc fallut trouver une ancienne version de blender compatible avec notre model 3D. Depuis nous essayons d'améliorer nos animation dans le but d'être le plus réaliste possible.
+
 \subsubsection{Déplacement du personnage et de sa camera (Théo et Julien)}
+
+Nous avons permis à notre personnage de se déplacer en fonction de ce que l'utilisateur souhaite faire, avancer (avec la touche "w" ou "up"), reculer (avec la touche "s" ou "down"), s'orienter vers la droite (avec la touche "q" ou "right") et s'orienter vers la gauche (avec la touche "d" ou "left").
+Notre personnage peut courir si ce dernier se déplace et que l'utilisateur appuie sur la touche "shift", il peut aussi sauter si l'utilisateur appuie sur la barre d'espace.
+A partir de ce moment notre personnage était devenue opérationnel mais à quoi cela servirait il si nous ne pouvions le voir ? 
+Nous avons alors décider de créer une camera qui suivrais notre personnage où qu'il aille.
+Cette caméra n'est pas une simple caméra fixe, elle possède des caractéristiques variées grâce auxquelles une grande liberté est accordé au joueur.
+A la troisième personne le joueur peut vois son personnage de cotés, de devant ou encore de derrière tout cela en étant en étant proche ou éloigné de son personnage.
+A la première personnage notre camera permet au joueur de voir exactement ce que son personnage vois.
 
 \subsubsection{Models 3D (Julien)}
 
@@ -92,19 +102,23 @@ Il nous a donc fallut trouver une encienne version de blender compatible avec no
 
 \subsubsection{Barre de selection (Florian)}
 
-Nous avons ajoute une barre de selection synchronise avec la 4$^{eme}$ ligne de notre inventaire. De plus le joueur peut selectionner une case de cette barre et utiliser l'objet s'y trouvant. Cette barre apparait meme quand le joueur n'est pas dans son inventaire
+Nous avons ajoute une barre de selection synchronise avec la 4$^{eme}$ ligne de notre inventaire. De plus le joueur peut sélectionner une case de cette barre et utiliser l'objet s'y trouvant. Cette barre apparait meme quand le joueur n'est pas dans son inventaire
 
 \subsubsection{Menus (Romain et Florian)}
 
-Nous avons cree des menus  permetant de modifier la langue et le volume du son du jeu. Ces menus s'ouvre avec la touche escape quand aucune autre interface n'est ouvert et ce ferme avec la touche escape ou avec le bouton \textit{continuer}. Dans le menu le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire et ouvert.
+Nous avons cree des menus  permettant de modifier la langue et le volume du son du jeu. Ces menus s'ouvre avec la touche escape quand aucune autre interface n'est ouvert et ce ferme avec la touche escape ou avec le bouton \textit{continuer}. Dans le menu le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire et ouvert.
 
 \subsubsection{Class \textit{Item} (Romain)}
 
-Dans l'inventaire nous voulons parfois des objets en grandes quantite nous avons alors cree des classes \textit{Item} et \textit{Itemstack} 
+Dans l'inventaire nous voulons parfois des objets en grandes quantité nous avons alors cree des classes \textit{Item} et \textit{Itemstack} 
 
 \subsubsection{Multi-joueurs (Florian)}
 
 \subsubsection{Son (Théo et Romain)}
+
+Afin de ne pas avoir un jeu fade, nous avons introduit quelque sons. Ces sons nous permette d'avoir une base que l'on pourras enrichir au fur et à mesure que notre jeu avancera.
+Nous avons commencer par ajouter un son pour l'ouverture et la fermeture de notre inventaire, mais aussi lorsque nous interagissons avec notre menu.
+Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage marcher ou courir, par manque de réalisme nous avons synchronisé ces sons afin que les autres joueurs jouant avec nous les entendent aussi.
 
 
 \subsection{Février}
