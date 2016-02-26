@@ -9,7 +9,7 @@ Bonjour, vous êtes invité à rejoindre l'Alpha du jeu Aegina. Vous trouverez c
 
 #### Presentation
 
-*Aegina* est un jeu de survie dans un environnement hostile dans lequel vous incarnez un personage se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver. Qui êtes vous ? Pourquoi êtes vous ici ? Et surtout comment survivre ?
+*Aegina* est un jeu de survie dans un environnement hostile dans lequel vous incarnez un personnage se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver. Qui êtes vous ? Pourquoi êtes vous ici ? Et surtout comment survivre ?
 
 #### Note de version
 
