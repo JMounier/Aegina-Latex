@@ -136,14 +136,14 @@ Nous avons cree des menus  permettant de modifier la langue et le volume du son 
 
 Dans l'inventaire nous voulons parfois des objets en grandes quantité nous avons alors cree des classes \textit{Item} et \textit{Itemstack} 
 
-\subsubsection{Multi-joueurs (Florian)}
+\subsubsection{Multijoueur (Florian)}
 
-Le multi-joueurs est une part importante du projet car celle ci permettra la cooperation des joueurs pour progresser dans le jeu.
-Nous avons dans un premier temps utilise les fonctionnalitees de  \textit{Unet} pour pouvoir creer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grace a son addresse ip.
+Le multijoueur est une part importante du projet car celle-ci permettra la cooperation des joueurs pour progresser dans le jeu.
+Nous avons dans un premier temps utilise les fonctionnalites de  \textit{Unet} pour pouvoir creer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grace a son addresse ip.
 \\
-Nous avons dans un second temps synchroniser la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons coder nous meme un script permettant la synchronisation des personnages. De plus pour rendre les deplacements le plus fluide possible nous utilisons le principe d'interpolation.  
+Nous avons dans un second temps synchronise la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons code nous-memes un script permettant la synchronisation des personnages. De plus pour rendre les deplacements le plus fluide possible nous utilisons le principe d'interpolation.  
 \\
-Pour finir nous avons synchronise les elements, les sons et les caracteristique du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'etat de la journee (jour/nuit) ou bien les arbres.
+Pour finir nous avons synchronise les elements, les sons et les caracteristiques du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'etat de la journee (jour/nuit) ou bien les arbres.
 
 \subsubsection{Son (Théo et Romain)}
 
@@ -156,11 +156,11 @@ Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage
 
 \subsubsection{Génération aléatoire (Florian et Julien)}
 
-Comme nous l'avions specifie dans notre cahier des charges, le monde du jeu est genere proceduralement. Pour cette premiere soutenance, nous avons implemente la generation aleatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde compose de quatre chunks chaccun relies par des ponts.
+Comme nous l'avions specifie dans notre cahier des charges, le monde du jeu est genere proceduralement. Pour cette premiere soutenance, nous avons implemente la generation aleatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde compose de quatre chunks chacun relies par des ponts.
 \\
-Nous avons creer 2 formats de chunk differents possedant chaccun une ile. Sur ces iles sont poses des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la generation du monde de choisir des 3 biomes aleatoirement (foret, desert ou neige), puis de creer sur les ancres un objet coherent avec le biome. Par exemple dans un biome desert nous pouvons faire apparaitre un cactus alors que dans le biome neige cela est impossible.
+Nous avons creer 2 formats de chunk differents possedants chacun une ile. Sur ces iles sont pose des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la generation du monde de choisir un biome aleatoirement parmi foret, desert ou neige, puis de creer sur les ancres un objet coherent avec le biome. Par exemple dans un biome desert nous pouvons faire apparaitre un cactus alors que dans le biome neige cela est impossible.
 \\
-Nous avons donc tous les elements pour creer des chunks, il ne restera plus qu'a faire apparaitre les chunks proceduralement avec un agencement correcte. Puis il sera aussi necessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportees. 
+Nous avons donc tous les elements pour creer des chunks, il ne restera plus qu'a faire apparaitre les chunks proceduralement avec un agencement correct. Puis il sera aussi necessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportees. 
 
 \subsubsection{Drop d'Item (Florain et Julien)}
 
@@ -176,6 +176,18 @@ Nous avons donc tous les elements pour creer des chunks, il ne restera plus qu'a
 \subsubsection{Cristal (Romain et Julien)}
 
 \subsubsection{Chat (Florian)}
+
+Comme deja preciser la cooperation est un element important du jeu, pour cela la communication est primordiale. Nous avons donc ajoute un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes, en voici l'enumeration :
+
+\begin{description}
+\item[/help :] Enumere les commandes avec leurs arguments ;
+\item[/time <value> :] Met l'heure de la journee a une certaine valeur ;
+\item[/give <id> <quantity> :] Donne une certaine quantite de l'objet correspondant a cet identifiant ; 
+\item[/nick <name> :] Permet de changer son nom ; 
+\item[/msg <player> <message> :] Permet d'envoyer un message prive au player indique ; 
+\end{description}
+
+Certaines de ces commandes sont surchargees, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zenith. D'autres comandes ont des alias par exemple la commande \textit{/msg} peut aussi etre ecrit \textit{/m}.
 
 \subsubsection{Musique (Théo)}
 
