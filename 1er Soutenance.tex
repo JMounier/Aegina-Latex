@@ -138,6 +138,13 @@ Dans l'inventaire nous voulons parfois des objets en grandes quantité nous avons
 
 \subsubsection{Multi-joueurs (Florian)}
 
+Le multi-joueurs est une part importante du projet car celle ci permettra la cooperation des joueurs pour progresser dans le jeu.
+Nous avons dans un premier temps utilise les fonctionnalitees de  \textit{Unet} pour pouvoir creer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grace a son addresse ip.
+\\
+Nous avons dans un second temps synchroniser la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons coder nous meme un script permettant la synchronisation des personnages. De plus pour rendre les deplacements le plus fluide possible nous utilisons le principe d'interpolation.  
+\\
+Pour finir nous avons synchronise les elements, les sons et les caracteristique du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'etat de la journee (jour/nuit) ou bien les arbres.
+
 \subsubsection{Son (Théo et Romain)}
 
 Afin de ne pas avoir un jeu fade, nous avons introduit quelque sons. Ces sons nous permette d'avoir une base que l'on pourras enrichir au fur et à mesure que notre jeu avancera.
@@ -148,6 +155,12 @@ Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage
 \subsection{Février}
 
 \subsubsection{Génération aléatoire (Florian et Julien)}
+
+Comme nous l'avions specifie dans notre cahier des charges, le monde du jeu est genere proceduralement. Pour cette premiere soutenance, nous avons implemente la generation aleatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde compose de quatre chunks chaccun relies par des ponts.
+\\
+Nous avons creer 2 formats de chunk differents possedant chaccun une ile. Sur ces iles sont poses des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la generation du monde de choisir des 3 biomes aleatoirement (foret, desert ou neige), puis de creer sur les ancres un objet coherent avec le biome. Par exemple dans un biome desert nous pouvons faire apparaitre un cactus alors que dans le biome neige cela est impossible.
+\\
+Nous avons donc tous les elements pour creer des chunks, il ne restera plus qu'a faire apparaitre les chunks proceduralement avec un agencement correcte. Puis il sera aussi necessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportees. 
 
 \subsubsection{Drop d'Item (Florain et Julien)}
 
