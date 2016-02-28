@@ -52,7 +52,7 @@ La principale source de l'instabilité de ce monde sont les cristaux que l'on peu
 
 \subsection{Ille}
 
-Ille est le personnage principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En vérité Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la memoire et ne s'en souviens donc plus.
+Ille est le personnage principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En vérité Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la mémoire et ne s'en souviens donc plus.
 
 \subsection{Les minerais}
 
@@ -107,33 +107,48 @@ Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger vi
 \subsubsection{Animation 3D (Théo)}
 
 Ille est un personnage que nous avons télécharger depuis l'asset store qui possédais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
-A partir de ce moment nous avons decide de faire les animations des nos personnage nous meme. 
+A partir de ce moment nous avons décidé de faire les animations des nos personnage nous même. 
 Le premier problème que nous avons rencontre : notre personnage n'était pas accessible depuis notre version de blender, trop récente pour le modele 3D que nous avons. 
-Il nous a donc fallut trouver une ancienne version de blender compatible avec notre model 3D. Depuis nous essayons d'améliorer nos animation dans le but d'être le plus réaliste possible.
+Il nous a donc fallut trouver une ancienne version de blender compatible avec notre model 3D. Depuis nous essayons d'améliorer nos animation dans le but d'être le plus réaliste possible mais s'en expérience dans ce domaine il est difficile de faire des animations convenables et celle-ci sont systématiquement remise en question et modifié.
 
 \subsubsection{Déplacement du personnage et de sa camera (Théo et Julien)}
 
-Nous avons permis à notre personnage de se déplacer en fonction de ce que l'utilisateur souhaite faire, avancer (avec la touche "w" ou "up"), reculer (avec la touche "s" ou "down"), s'orienter vers la droite (avec la touche "q" ou "right") et s'orienter vers la gauche (avec la touche "d" ou "left").
+Nous avons permis à notre personnage de se déplacer en fonction de ce que l'utilisateur souhaite faire. Celui-ci peut avancer (avec la touche "w" ou "up"), reculer (avec la touche "s" ou "down"), s'orienter vers la droite (avec la touche "q" ou "right") et s'orienter vers la gauche (avec la touche "d" ou "left").
 Notre personnage peut courir si ce dernier se déplace et que l'utilisateur appuie sur la touche "shift", il peut aussi sauter si l'utilisateur appuie sur la barre d'espace.
-A partir de ce moment notre personnage était devenue opérationnel mais à quoi cela servirait il si nous ne pouvions le voir ? 
+
+Le saut à d'ailleurs été un élément problématique à implanté car notre personnage ne devait pouvoir sauter que quand celui-ci est sur le sol pour éviter qu'il s'envole en enchainant des sauts dans les airs. Nous avons donc créer des restriction permettant au personnage de ne sauter que depuis certain éléments du décors (qui regroupe presque tout les éléments).
+
+A partir de ce moment notre personnage était devenue opérationnel mais à quoi cela servirait il si nous ne pouvions pas le voir ? 
+
 Nous avons alors décider de créer une camera qui suivrais notre personnage où qu'il aille.
-Cette caméra n'est pas une simple caméra fixe, elle possède des caractéristiques variées grâce auxquelles une grande liberté est accordé au joueur.
-A la troisième personne le joueur peut vois son personnage de cotés, de devant ou encore de derrière tout cela en étant en étant proche ou éloigné de son personnage.
-A la première personnage notre camera permet au joueur de voir exactement ce que son personnage vois.
+Cette caméra n'est pas une simple caméra fixe, elle possède des caractéristiques variées grâce auxquelles une grande liberté est accordé au joueur. Celle-ci s'oriente grâce à la souris et même si on dit qu'elle suit le joueur l'orientation des mouvements du joueur ne dépendent que de l'orientation de la caméra par exemple faire reculer le joueur le fait en réalité se diriger vers le caméra.
+
+A la troisième personne le joueur peut vois son personnage de cotés, de devant ou encore de derrière tout cela en étant en étant proche ou éloigné de son personnage. cette éloignement de la caméra se contrôle avec la molette de la souris il est donc malheureusement indispensable de posséder une souris à molette pour profiter à 100\% de la caméra (le trackpad d'une ordinateur portable peut lui aussi permettre de profiter de la liberté de la caméra).
+
+A la première personnage notre camera permet au joueur de voir exactement ce que son personnage voit. Cette vue est accessible en rapprochant la caméra du joueur assez près de celui-ci en troisième personne et elle se quitte dés que l'utilisateur tente d'éloigné la caméra du personnage.
 
 \subsubsection{Models 3D (Julien)}
 
 Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons cherché l'inspiration en parcourant l'assetstore. Nous y avons trouvé le modèle de notre personnage principal et nous nous sommes accordés pour un univers cartoon.
-Nous avons donc commencé la réalisation de notre première île mais ce fut un échec. Nous n'avions pas assez bien définie la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération procédurale du monde. 
 
-\begin{center} \includegraphics[width=12cm]{Photo_1_premiere_ile.png}
+Nous avons donc commencé la réalisation de notre première île mais ce fut un échec. Nous n'avions pas assez bien définie la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération procédurale du monde. 
+
+\begin{center} 
+\includegraphics[width=12cm]{Photo_1_premiere_ile.png}
 
 première île
-\end{center}Nous avons alors décidé de réaliser tous nos future modèle grâce au logiciel Blender et d'importer le moins possible depuis l'assetstore. Nous nous sommes donc recentré sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher.
-\begin{center} \includegraphics[width=12cm]{environment.png}
+\end{center}
+
+Nous avons alors décidé de réaliser tous nos future modèle grâce au logiciel Blender et d'importer le moins possible depuis l'assetstore. Nous nous sommes donc recentré sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher.
+\begin{center} 
+\includegraphics[width=12cm]{environment.png}
 
 premiers élements
-\end{center}La réalisation des modèles suivants s'est fait et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
+\end{center}
+
+
+La réalisation des modèles suivants s'est fait et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
+
 
 \subsection{Janvier}
 
@@ -159,14 +174,14 @@ Comme dit précédemment dans notre jeu il existe un inventaire et celui-ci contie
 
 La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuable. Par exemple le bois un objet qui possède deux noms (un français et un anglais), deux descriptions, un identifiant pour le reconnaître, une quantité maximal, une texture 2D un élément correspondant à l'objet lorsqu'il est lui même dans le monde 3D. Cependant Lorsqu'un objet se trouve dans l'inventaire il peut se trouver en plus grande quantité qu'un exemplaire unique. Les objets présents dans l'inventaire sont donc une nouvelle class appelé \textit{ItemStack} contenant une quantité (inférieur à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi Il y a un grand gain de performance et la modification de la quantité d'un objet dans l'inventaire ne change pas la quantité de tous les objets du même type.
 
-\subsubsection{Multijoueur (Florian)}
+\subsubsection{Multi-joueurs (Florian)}
 
-Le multijoueur est une part importante du projet car celle-ci permettra la cooperation des joueurs pour progresser dans le jeu.
-Nous avons dans un premier temps utilise les fonctionnalites de  \textit{Unet} pour pouvoir creer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grace a son addresse ip.
+Le multi-joueurs est une part importante du projet car celle-ci permettra la coopération des joueurs pour progresser dans le jeu.
+Nous avons dans un premier temps utilise les fonctionnalités de  \textit{Unet} pour pouvoir créer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grâce a son adresse ip.
 \\
-Nous avons dans un second temps synchronise la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons code nous-memes un script permettant la synchronisation des personnages. De plus pour rendre les deplacements le plus fluide possible nous utilisons le principe d'interpolation.  
+Nous avons dans un second temps synchronise la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons codé nous-mêmes un script permettant la synchronisation des personnages. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation.  
 \\
-Pour finir nous avons synchronise les elements, les sons et les caracteristiques du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'etat de la journee (jour/nuit) ou bien les arbres.
+Pour finir nous avons synchronise les éléments, les sons et les caractéristiques du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'état de la journée (jour/nuit) ou bien les arbres.
 
 \subsubsection{Son (Théo et Romain)}
 
@@ -179,15 +194,15 @@ Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage
 
 \subsubsection{Génération aléatoire (Florian et Julien)}
 
-Comme nous l'avions specifie dans notre cahier des charges, le monde du jeu est genere proceduralement. Pour cette premiere soutenance, nous avons implemente la generation aleatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde compose de quatre chunks chacun relies par des ponts.
+Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relies par des ponts.
 \\
-Nous avons creer 2 formats de chunk differents possedants chacun une ile. Sur ces iles sont pose des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la generation du monde de choisir un biome aleatoirement parmi foret, desert ou neige, puis de creer sur les ancres un objet coherent avec le biome. Par exemple dans un biome desert nous trouverons des cactus et des rochers alors que dans un biome foret nous trouverons des arbres et des fleurs.
+Nous avons créé 2 formats de chunk différents possédants chacun une ile. Sur ces iles sont posé des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome foret nous trouverons des arbres et des fleurs.
 \\
-Nous avons donc tous les elements pour creer des chunks, il ne restera plus qu'a faire apparaitre les chunks proceduralement avec un agencement correct. Puis il sera aussi necessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportees. 
+Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaitre les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
 
 \subsubsection{Drop d'Item (Florain et Julien)}
 
-Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilite depuis son inventaire de  glisser un tas d'objet a cote de celui-ci. Il peut aussi grace a une touche, lancer l'objet selectionne dans sa barre d'outil. Ces actions vont instancier l'objet dans le monde et puis le lancer a quelques metre du personnage. Dans cet etat n'importe quel joueur peut alors ramasser l'objet, du moment qu'il se trouve assez proche de celui-ci. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objet et donc d'ameliorer les performances du jeu. D'autre part les objets dans cet etat depuis plus d'une minute disparraissent, cela permet encore une fois d'ameliorer les performances. 
+Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objet a cote de celui-ci. Il peut aussi grâce a une touche, lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont instancier l'objet dans le monde et puis le lancer a quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet, du moment qu'il se trouve assez proche de celui-ci. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objet et donc d'améliorer les performances du jeu. D'autre part les objets dans cet état depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances. 
 
 \subsubsection{Bibliothèque (Florian, Romain et Théo)}
 
@@ -202,7 +217,7 @@ Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cel
 
 \subsubsection{Chat (Florian)}
 
-Comme deja preciser la cooperation est un element important du jeu, pour cela la communication est primordiale. Nous avons donc ajoute un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes, en voici l'enumeration :
+Comme déjà préciser la coopération est un élément important du jeu, pour cela la communication est primordiale. Nous avons donc ajouté un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes (communément appelé \textit{cheatcode}), en voici l'énumération :
 
 \begin{description}
 \item[/help :] Enumere les commandes avec leurs arguments ;
@@ -212,25 +227,25 @@ Comme deja preciser la cooperation est un element important du jeu, pour cela la
 \item[/msg <player> <message> :] Permet d'envoyer un message prive au player indique ; 
 \end{description}
 
-Certaines de ces commandes sont surchargees, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zenith. D'autres comandes ont des alias par exemple la commande \textit{/msg} peut aussi etre ecrit \textit{/m}.
+Certaines de ces commandes sont surchargées, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
 
 \subsubsection{Musique (Théo)}
 
 Afin de compléter l'univers que nous essayons de créer à travers notre jeu, nous avons ajouté des musiques de fond. 
-Nous avons ajouté pour l'instant quatre musique à notre jeu, la première est une musique qui se lance dès que l'on arrive sur le menu de notre jeu, il s'agit du seul endroit où vous pourrez entendre cette musique qui est consacré à notre menu.
+Nous avons ajouté pour l'instant quatre musique à notre jeu, la première est une musique qui se lance dès que l'on arrive sur le menu principal de notre jeu, il s'agit du seul endroit où vous pourrez entendre cette musique qui est consacré à notre menu.
 Trois autres musique on part la suite étaient ajouté, avec trois thèmes différents qui sont : la foret, le désert et la neige. Pour le moment le choix de la musique écouté se fait aléatoirement.
 
 \subsubsection{Survie (Théo)}
 
 \subsubsection{Alpha (Florian)}
 
-La derniere etape avant la soutenance est de partager notre premiere version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapporte etaient :
+La dernière étape avant la soutenance est de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapporte étaient :
 \begin{itemize}
-\item Le respawn du joueur qui parfois disfonctionnait ;
-\item Un bug graphique au niveau de l'element proche lorsque la camera etait a l'interieur ;
-\item La musique qui en multijoueur pouvait se superposer avec la musique des autres joueurs alentour. 
+\item Le respawn du joueur qui parfois ne fonctionnait pas ;
+\item Un bug graphique au niveau de l'élément proche lorsque la camera était a l'intérieur ;
+\item La musique qui en multi-joueurs pouvait se superposer avec la musique des autres joueurs alentour. 
 \end{itemize}
-Par la suite nous avons corrige la totalite des bugs rapportes pour former la version \textit{v1.1-alpha}, la version presente lors de la premiere soutenance.
+Par la suite nous avons corrige la totalité des bugs rapportes pour former la version \textit{v1.1-alpha}, la version présenté lors de la première soutenance.
 
 \pagebreak
 
