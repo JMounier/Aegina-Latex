@@ -154,7 +154,7 @@ La réalisation des modèles suivants s'est fait et continuera à se faire petit à 
 
 \subsubsection{Barre de selection (Florian)}
 
-Lorsque nous sommes entrain de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des consommables pour survivre nous voulons que ceci soit facile d'accès et ne nécessite pas de s'arrêter (pour que l'on puisse boire une potion de santé alors que l'on se fait courser par un slime par exemple).
+Lorsque nous sommes entrain de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des consommables pour survivre nous voulons que ceci soit facile d'accès et ne nécessite pas de s'arrêter (pour que l'on puisse boire une potion de santé alors que l'on se fait poursuivre par un slime par exemple).
 
 Nous avons donc ajouté une barre de sélection synchronise avec la 4$^{eme}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparait même quand le joueur n'est pas dans son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
 
@@ -208,6 +208,11 @@ Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cel
 
 \subsubsection{Histoire (Romain et Théo)}
 
+En plus du fait que le backround de notre monde soit fournie, le jeu lui même va tourner autours d'une histoire. Cependant actuellement l'histoire n'est pas en core finie et celle-ci n'est pas implémentée dans le jeu.
+
+ Il existe néanmoins un script (au sens théâtrale du terme) racontant le début du jeu et sa fin (plus qu'a trouvé quoi mettre entre). Ce script contient entre autre un didacticiel censée permettre au joueur de comprendre les bases du jeu. 
+ 
+ Il est important de noté que les éléments se trouvant dans la partie Univers du jeu de ce rapport ne seront pas tous directement accessible aux joueurs lors de l'aventure, certaines parties devront être découverte durant l'aventure notamment tout ce qui concerne le fonctionnement du monde d'Aegina et l'influence négative des cristaux. 
 
 \subsection{Mars}
 
@@ -253,7 +258,7 @@ Par la suite nous avons corrige la totalité des bugs rapportes pour former la ve
 
 \subsection{Les quatre grand axe}
 
-\subsubsection{Creation d'objet}
+\subsubsection{Création d'objet}
 
 \subsubsection{Ajout des créatures}
 
@@ -278,4 +283,120 @@ Par la suite nous avons corrige la totalité des bugs rapportes pour former la ve
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
+
+\pagebreak
+
+\section*{Annexe}
+\addcontentsline{toc}{section}{\protect\numberline{}Annexe}
+
+\subsection*{Script de l'histoire}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Script de l'histoire}
+
+\subsubsection*{Légende}
+\begin{itemize}
+\item structure
+\item \textbf{monologue du narrateur}
+\item \textit{\underline{indications scéniques}}
+\end{itemize}
+
+\subsubsection*{Histoire}
+
+L'histoire sera racontée par un narrateur.
+Nom actuel du personnage : Ille (i majuscule deux l minuscule et un e minuscule)
+\\
+La narration sera découper en deux parties :
+\\
+\begin{itemize}
+\item Les cinématique qui seront les points importants de l'histoire qui permettront au jeux d'avancer (cinématique sous forme de dessin qui se suivent ou de jeux de caméra dans le monde 3D)
+\item Les \og monologues\fg du narrateur qui auront lieu pendant que le personnage bouge et n'interrompront pas le dit personnage. Ces monologues auront comme but de préciser le but du personnage ou de faire des remarque anodines sur l'environnement. 
+\end{itemize}
+ Début : 
+\\
+but concret : premier pas (tutoriel)
+\\
+\textit{\underline{Personnage bloqué}}
+\\
+\textbf{En ouvrant les yeux Ille sentit l'air et les doux rayons du soleil caresser son visage. Ille avait l'impression d?avoir dormi très longtemps à telle point que Ille doutait de savoir encore se mouvoir. Ille décida alors de se lever et de faire un peu d'exercice pour faire passer cette impression.}
+\\
+\textit{\underline{Personnage débloqué}}
+\\
+Sous but :
+\\
+\textbf{Ille commença par se déplacer un petit peu pour se réhabituer à ses jambes (touche droite gauche haut et bas)}
+\begin{itemize}
+\item se déplacer
+\end{itemize}
+\textbf{S'étant habituer à ces jambes Il décida de se mettre à courir ( touche shift enfoncer)}
+\begin{itemize}
+\item courir
+\end{itemize}
+\textbf{Ille était tellement en forme qu'il pensait même pouvoir se permettre de sauter sans problème (touche espace)}
+\begin{itemize}
+\item sauter
+\end{itemize}
+\textbf{Juste après avoir sauter Il entendit un sinistre grognement.} 
+\\
+\textit{\underline{petite pause dramatique}}
+\\
+\textbf {Ille avait faim. Cependant dans cette contrée sauvage Il savait qu'il devrait chasser sa nourriture mais pour chasser Il avait besoin d'une arme. Justement Il remarque un bâton sur le chemin, L'arme parfaite pour lui. (ramasser les objets en avançant dessus)}
+\begin{itemize}
+\item récupérer un item au sol (un bâton par exemple)
+\end{itemize}
+\textbf{Après avoir mis le bâton dans sa poche Il se dit qu'il devrait peut être le sortir de celle-ci pour que son arme soit efficace  (ouvrer l'inventaire avec I et faite glisser le bâton dans la 4$^{eme}$ ligne correspondant aux équipements rapide)}
+\begin{itemize}
+\item ouvrir l'inventaire
+\item mettre le bâton dans la barre de raccourcis
+\end{itemize}
+\textbf{Il se mit à la recherche de la viande et il ne lui suffit que de se retourner pour tomber nez à nez avec un lapin. Ni une ni deux Il attaqua son petit déjeuner.( attaquer en ...)}
+\begin{itemize}
+\item utiliser le bâton pour tuer un lapin
+\end{itemize}
+\textbf{Cependant Il avait un vague souvenir que la viande cru n'était pas très digeste au petit déjeuner. faute de feu Il décida d?au moins manger sa viande préparer en brochette.(ouvrer l?inventaire pour créer une brochette)}
+\begin{itemize}
+\item créer de la nourriture à partir du bâton et du lapin tuer (brochette)
+\end{itemize}
+\textbf{Finalement le repas de Ille était près. Il ne lui suffisait plus que de consumer sa brochette et le grondement de son ventre cesserait.(utiliser un consommable avec clic droit)}
+\begin{itemize}
+\item utiliser un consommable (ici la nourriture)
+\end{itemize}
+but concret : activer le premier cristal 
+\\
+\textit{\underline{Personnage bloqué}}
+\\
+\textbf{maintenant que Ille avait trouvé de quoi survivre Ille pouvait enfin se reposer. Jusqu'à présent  Ille n'avait penser qu'a manger mais une fois le ventre rempli Ille se mit à penser et à se questionner \og Mais où suis-je? Qu'elle est cet endroit ?\fg En effet cet archipel d'île volante ne lui était pas familier \og Attend !!! Des îles volantes ?? Mais ce n'est pas possible ça ne peut pas exister\fg Et pourtant ce qui s'étendait à perte de vue n'était pas une illusion. Ille ne se trouvait plus chez lui, peut être même plus dans son monde.}  \textit{\underline{petite pause}}
+\\
+\textbf{Quand Ille eu assimilé ce qui lui arrivait Il prit une décision \og Il faut absolument que je comprenne où je suis et pour ça il faut que j'explore ces drôles d'îles\fg Et c'est ainsi que Ille commença son aventure.}
+\\
+\textit{\underline{Personnage débloqué}}
+\\
+sous but : 
+\\
+\textbf{Pour commencer son exploration la première chose que Ille fit fut de traverser un pont séparant deux îles.}
+\begin{itemize}
+\item emprunter un pont
+\end{itemize}
+\textbf{Il ne manqua pas de se demander ce qu'un pont pouvait bien faire dans cet archipel ayant pourtant l'air abandonné et espéra que celui-ci n'allait pas s'écrouler sous son poids\dots heureusement cela n'arriva pas. en traversant ce pont ,Ille vit à l'horizon une sorte de reflet et intrigué décida de chercher sa source.}
+\begin{itemize}
+\item trouver un cristal
+\end{itemize}
+\textbf{Le reflet venait d'un gigantesque cristal taillé comme un prisme mais le plus impressionnant était que celui-ci lévitait\dots malgré sa stupeur Ille se ressaisit assez vite \og hum pas si étonnant que ça vu que je me trouve actuellement sur une île volant dans le ciel\fg. Après être redevenue calme et posé Il vit que le cristal réagissait à sa présence et plus précisément au métal de sa boucle de ceinture qui semblait attiré vers le cristal. Ille décida donc d'aller chercher du métal pour tester ces étranges réactions et s'éloigna rapidement ne voulant pas perdre sa précieuse ceinture.
+En s'éloignant Il se dit que pour récupérer du métal cela allait être plus dur que de ramasser du bois ou de tuer des lapins. Il devait donc fabriquer quelque chose pour récupérer et raffiner le métal.}
+\begin{itemize}
+\item fabriquer une pioche
+\item créer une forge
+\end{itemize}
+\textbf{Maintenant qu'il possédait une minuscule forge Il pouvait enfin produire du métal pour le cristal.}
+\begin{itemize}
+\item récolter les ressources pour activer le cristal
+\item activer le cristal
+\end{itemize}
+\textit{\underline{Cinématique !!}}
+\\
+première/mauvaise fin :
+\\
+\textbf{Ille avait finalement réussi. Après tout ces efforts il avait recréer un portail lui permettant de revenir chez lui. C'est avec hâte qu'il effaça ses derniers doutes et plongea dans le portail. Il ne savait toujours pas qui il était mais cela n'avait plus d'importance  Il pourrait facilement répondre à ces questions un fois chez lui. Cependant Il avait oublier un dernier détail. S'il se trouvait ici ce n'était sûrement pas par coïncidence. Quelque chose ou  quelqu'un avait du l?envoyer et peut-être que rien n?empêcherait cette chose de le renvoyer ici\dots ou pire.}
+\\
+\textit{\underline{Cri d'agonie au loin}}
+\\
+seconde/bonne fin : à écrire
 \end{document}
