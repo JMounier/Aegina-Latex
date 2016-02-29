@@ -5,10 +5,12 @@
 \usepackage{amsfonts}
 \usepackage[french]{babel}
 \usepackage{listings}
+\usepackage{pst-eucl}
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
+\usepackage{color}
 \geometry{vmargin=3.5cm,hmargin=2.25cm}
 \pagestyle{plain}
 
@@ -40,50 +42,51 @@ Aegina\\
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
 
 \section{Univers du jeu}
+\textcolor{red}{je mettrais quand même un petit paragraphe expliquant le jeu en général}
 
 \subsection{Aegina}
 
-Le monde d'Aegina est constitue d'une quasi infinité d'ile volante se trouvant au dessus d'un vide béant appelé les \textit{abysses}. Se monde contrairement au notre est instable, il ne partage pas nos lois de l'équilibre et de nombreux phénomènes étranges s'y déroule sans que l'on puisse les expliquer la présence des \textit{abysses} n'étant qu'un de ses phénomènes. 
+Le monde d'Aegina est constitué d'une quasi infinité d'îles volantes se trouvant au dessus d'un vide béant appelé les \textit{abysses}. Ce monde, contrairement au nôtre, est instable. Il ne partage pas nos lois de l'équilibre et de nombreux phénomènes étranges s'y déroulent sans que l'on puisse les expliquer. La présence des \textit{abysses} n'étant qu'un de ces phénomènes. 
 
-La principale source de l'instabilité de ce monde sont les cristaux que l'on peut trouver sur certaines îles. Ceux-ci sont capable des déchirer les trames de l'espace et du temps permettant de réaliser des miracles comme le retour dans le temps ou la téléportation. Malgré toute ces instabilité un écosystème ses tout de même développée dans ce monde. Des animaux comme ceux que l'on connait tel que des lapins, papillons et moutons peuple les îles d'Aegina. Mais d'autres espèces plus agressifs et plus exotiques sont apparue suite à l'instabilité du monde comme les slimes. Un instinct naturel pousse toute ces créatures agressifs à s'attaqué aux cristaux si ceux-ci sont activé pour les empêché de rendre le monde plus instable qu'il ne l'est actuellement.
+L'instabilité de ce monde est principalement due à la présence de cristaux sur certaines îles. Ceux-ci sont capables de déchirer les trames de l'espace et du temps permettant de réaliser des miracles comme le retour dans le temps ou la téléportation. La puissance des cristaux est amplifiée lorsqu'ils sont activés. Malgré toutes ces instabilités un écosystème s'est tout de même développé. Des animaux tels que des lapins, papillons et moutons peuplent les îles d'Aegina. Mais d'autres espèces plus agressives et plus exotiques sont apparues suite à l'instabilité du monde. Parmi elles nous trouvons les \textit{slimes}. Un instinct naturel pousse toutes ces créatures agressives à s'attaquer aux cristaux lorsqu'ils sont activés pour les empêcher de rendre le monde plus instable qu'il ne l'est déjà.
 
- On pourrait donc penser que sans personnes pour activer les cristaux et avec une telle armée de créature près à défendre ce monde celui-ci aurait trouver une certaine forme d'équilibre. Mais c'étais sans compté la présence d'envahisseurs, d'être extérieur à ce monde qui utilise celui-ci à des fins barbares, les êtres humains. Bien que ne vivant pas directement dans ce monde et n'ayant aucune information sur celui-ci les êtres humains on trouvé un moyen de \og téléporter \fg leurs déchets dans un néant qui n'est autre que Aegina. Lorsque les déchets sont seulement des restes  et que ceux-ci tombent directement dans les \textit{abysses} cela ne rend pas Aegina plus instable, au contraire cela peut créer un apport de ressource à ce monde si ils ne tombent pas directement dans les \textit{abysses}.
+ L'activation des cristaux ne  peut être réalisée que par un être doué de raison. On pourrait donc penser qu'en l'absence d'un tel être sur Aegina et avec une telle armée de créatures prêtes à défendre ce monde celui-ci aurait trouvé une certaine forme d'équilibre. Mais c'était sans compter la présence d'envahisseurs, d'êtres extérieurs à ce monde qui utilisent celui-ci à des fins barbares, les êtres humains. Bien que ne vivant pas dans ce monde et n'ayant aucune information sur celui-ci, les êtres humains on trouvé un moyen de \og téléporter \fg{} leurs déchets dans un néant qui n'est autre qu'Aegina. Lorsque les déchets arrivent directement dans les  \textit{abysses}, ils n'ont aucune influence sur la stabilité d'Aegina.  S'ils tombent sur une île, ile peuvent représenter un apport de ressource pour Aegina. L'aspect néfaste pour Aegina provient d'une sorte très particulière de déchets.
  
-  Mais certaines autorités humaines utilise se moyen pour se débarrasser de déchets plus embêtant :  d'autres humains. Malheureusement une fois dans le monde d'Aegina ceux-ci tente désespérément de survivre et ils font alors appelle aux cristaux et à la pouvoir quasi divin leur permettant d'échapper à la faim et à la mort. certains voyagent alors d'île en île créant quelques infrastructure telle que des ponts pour s'aider, laissant leur trace dans ce monde mais l'amenant petit à petit à sa fin sans le savoir. Heureusement jusqu'a présent ils ont tous finit par périr sous l'assaut des créatures d'Aegina ou par suicide ne pouvant rentrer chez eux mais il arrivera bien un jour ou l'un d'eux emportera ce monde avec lui dans sa chute. 
+ Certaines autorités humaines utilisent la \og téléportation \fg{} pour se débarrasser d'autres humains. Malheureusement une fois dans le monde d'Aegina ceux-ci tentent désespérément de survivre. Ils finissent en général par arriver à activer les cristaux dont les pouvoirs quasi divins leur permettent d'échapper à la faim et à la mort. Certains ont alors voyagé d'île en île, créant quelques infrastructures telles que des ponts, laissant leur trace dans ce monde mais l'amenant petit à petit à sa fin sans le savoir. Heureusement pour ce monde, jusqu'à présent ils ont tous fini par périr sous l'assaut des créatures locales ou se sont suicidés en se jetant dans les \textit{abysses} ne pouvant rentrer chez eux. Il arrivera bien un jour où l'un d'eux emportera ce monde avec lui dans sa chute. 
 
 \subsection{Ille}
 
-Ille est le personnage principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En vérité Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la mémoire et ne s'en souviens donc plus.
+Ille est le personnage principal de notre jeu. Il a l'apparence d'un bucheron roux et barbu. En vérité Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la mémoire et ne s'en souvient donc plus. \textcolor{red}{C'est le personnage incarné par le joueur ? Si oui il faut le préciser, que se passe-t-il en mode multi-joueurs ?}
 
 \subsection{Les minerais}
-
+\textcolor{red}{ phrase d'intro, que sont les minerais, à quoi servent-ils ? Et les cristaux, il faudrait peut-être en parler un peu plus, en fait j'ajouterais une subsubsection cristaux avant de parler du mithril. Vous parlez de minerais et de minéraux, il faut être cohérents}
 \subsubsection{Mithril}
 
-Le mithril dans le monde d'Aegina et un minéral vert clair un peu plus solide que le fer. Assez rare sur la surface des îles on en trouve toujours en petite quantité à l'intérieur de celle-ci puisque le mithril et un des deux minéraux nécessaire à la survie d'une île. Le mithril à l'étrange particularité de réagir avec les phénomènes étranges d'Aegina parfois les amplifiants d'autres fois les stabilisant. Il est impossible de savoir comment celui-ci va réagir avant d'avoir testé. 
+Le mithril, dans le monde d'Aegina, est un minerai vert clair un peu plus solide que le fer. Assez rare à la surface des îles, on en trouve toujours en petite quantité en sous-sol puisqu'il est l'un des deux minéraux nécessaires à la \og survie \fg{} d'une île. Le mithril a l'étrange particularité d'interagir avec les phénomènes étranges d'Aegina parfois en les amplifiant d'autres fois en les stabilisant. Il est impossible de savoir comment celui-ci va réagir avant de l'utiliser.
 
-A l'état naturel il catalyses ces instabilités et les relâchent sous formes de vagues d'énergie rendant le minéral chaud au touché. Une fois épurée le mithril continue de catalyser les instabilités mais peut relâcher son énergie sous de nombreuses autres formes que la chaleur comme le ferait un cristal mais à bien plus faible échelle. 
+A l'état naturel il catalyse les instabilités et les relâche sous forme de vagues d'énergie rendant le minerai chaud au toucher. Une fois épuré, le mithril continue de catalyser les instabilités mais peut alors relâcher son énergie sous de nombreuses autres formes que la chaleur comme le ferait un cristal mais à bien plus faible échelle. 
 
-D'ailleurs l'énergie catalysé et stocké par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie entre eux. Ainsi quelques chercheurs hérétiques qui se sont trouvés sur Aegina on supposés que les cristaux était formé d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard tués par des sangliers après avoir déchargé leur cristal à l'aide de mithril. 
+D'ailleurs l'énergie catalysée et stockée par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie entre eux. Ainsi quelques chercheurs hérétiques qui se sont trouvés sur Aegina ont supposé que les cristaux était formés d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard tués par des sangliers après avoir déchargé leur cristal à l'aide de mithril \textcolor{red}{ Je ne comprends pas ce que veut dire  \og décharger le cristal \og }. 
 
 \subsubsection{Floatium}
 
-Le floatium et un minéral quasi transparent que l'on peut trouvé dans Aegina. Les humains qui arrive dans Aegina le confonde souvent avec du quartz lorsqu'ils en voient dans la roche mais celui-ci est bien plus transparent et s'apparenterait plus à du verre ou de la glace. La vrai particularité du floatium se remarque une fois le minerai épurée de toute impureté. La première constatation et que celui-ci est bien plus solide que ce à quoi on peut penser, sa dureté égale celle du fer, mais surtout il est impossible de le faire tombé par terre. En effet une fois celui-ci lâché il flotte. 
+Le floatium est un minerai quasi transparent que l'on peut trouver dans Aegina. Les humains qui arrivent dans Aegina le confondent souvent avec du quartz lorsqu'ils en voient dans la roche. Mais celui-ci est bien plus transparent et s'apparenterait plus à du verre ou de la glace. La vrai particularité du floatium se remarque une fois le minerai nettoyé de toute impureté. La première constatation est que celui-ci est bien plus solide que ce à quoi on peut penser, sa dureté égale celle du fer, mais surtout il est impossible de le faire tomber par terre. En effet une fois celui-ci lâché il flotte. 
 
-Ce minéral est encore un mystère d'Aegina car personne ne sait pourquoi il flotte. Il n'est pas plus léger que l'air puisqu'il reste à une distance fixe du sol mais il ne semble pas s'agir non plus de force magnétique. De toute façon peu d'expérience on eu lieu sur le floatium car ,dans Aegina, en plus d'être un minerai très rare, les personnes capable de faire des expérimentations scientifique dessus le sont encore plus.
+Ce minerai est encore un mystère d'Aegina car personne ne sait pourquoi il flotte. Il n'est pas plus léger que l'air puisqu'il reste à une distance fixe du sol mais il ne semble pas s'agir non plus de force magnétique. De toute façon peu d'expériences ont eu lieu sur le floatium car, dans Aegina, en plus d'être un minerai très rare, les personnes capables de faire des expérimentations scientifiques le sont encore plus.
 
- La seule information sur est que le floatum est, avec le mithril, l'un des deux composants permettant aux îles de voler. Cependant les cristaux et le floatium peuvent réagir entre eux , le cristal semble pouvoir enlever ces capacités au floatium tandis que le floatium est responsable de la rotation et de la lévitation du cristal, mais tout cela reste de la théorie. 
+ La seule information sûre est que le floatium est, avec le mithril, l'un des deux composants permettant aux îles de voler. Cependant les cristaux et le floatium peuvent réagir entre eux , le cristal semble pouvoir enlever ses capacités au floatium tandis que le floatium est responsable de la rotation et de la lévitation du cristal, mais tout cela reste de la théorie. 
  
- Néanmoins il est possible de conjecturer que si un cristal à une trop grande influence sur une île il pourrait provoquer sa chute. Mais les seuls personne connaissant la vérité sur cette hypothèse sont surement mort.
+ Néanmoins il est possible de conjecturer que si un cristal à une trop grande influence sur une île il pourrait provoquer sa chute. Mais les seules personnes connaissant la vérité sur cette hypothèse sont sûrement mortes.
 
-\subsubsection{sunkium}
+\subsubsection{Sunkium}
 
-Le sunkium et un minéral d'une couleur mauve très sombre. C'est un minerai légendaire qui renferme de nombreuse qualité car il est le minerai le plus rare, le plus lourd et le plus sombre, le plus solide, le plus cool, le plus classe, le plus \textit{dark} et le plus unique d'Aegina. Pourtant malgré sa solidité il ne pas si difficile à extraire des roches car il semble repousser les autres minerai lors de sa formation ce qui permet de le trouver dans des alvéoles formé par la roche. Cependant une fois extrait son poids reste tout de même un problème pour le transporter.
+Le sunkium est un minerai d'une couleur mauve très sombre. C'est un minerai légendaire qui possède de nombreuses qualités car il est le minerai le plus rare, le plus lourd et le plus sombre, le plus solide, le plus cool, le plus classe, le plus \textit{dark} et le plus unique d'Aegina. Pourtant malgré sa solidité il n'est pas si difficile à extraire des roches car il semble repousser les autres minerai lors de sa formation ce qui permet de le trouver dans des alvéoles formées par la roche. Cependant une fois extrait son poids reste tout de même un problème pour le transporter.
 
- Mais ce qui fait de ce minerai le minerai le plus cool est qu'il peut être utiliser très simplement pour la création d'épée ou d'armure. En effet ce minerai nécessite la même température que le fer pour fondre et une fois mélanger avec du mithril il chauffe et refroidie à une vitesse exceptionnelle. De plus la couleur sombre des armures formé avec le sunkium apporte un coté cool et \textit{dark} à toute personne les utilisants. Mais malheureusement cet impression ne reste que quelques secondes car rare sont ceux capables de se mouvoir avec une telle armure, le plupart se retrouvent coincé dans celle-ci incapable de bouger ou de l'enlever amenant à la mort la plus stupide d'Aegina.
+ Mais ce qui fait de ce minerai le minerai le plus cool est qu'il peut être utilisé très simplement pour la création d'épées ou d'armures. En effet ce minerai a la même température de fusion que le fer et une fois mélangé à du mithril il chauffe et refroidi à une vitesse exceptionnelle. De plus la couleur sombre des armures formées avec le sunkium apporte un côté cool et \textit{dark} à toute personne les utilisant. Mais malheureusement cette impression ne dure que quelques secondes car rares sont ceux capables de se mouvoir avec une telle armure. Le plupart se retrouvent coincés dans celle-ci, incapables de bouger ou de l'enlever, amenant à la mort la plus stupide d'Aegina.
  
- Le sunkium, comme le mithril et le floatium, réagit avec les cristaux mais sa réaction est peut être la plus impressionnante des trois, après tout c'est le minerai le plus cool. Le sunkium change de taille et de masse sous l'influence du cristal mais pas comme tout le monde s'y attendrait car plus le sunkium devient petit plus il devient lourd. Il se met alors à absorber de la lumière assombrissant les alentours. Le cristal quand à lui peut absorber le sunkium mais personne ne sait réellement ce que ça lui apporte. 
+ Le sunkium, comme le mithril et le floatium, réagit avec les cristaux mais sa réaction est peut être la plus impressionnante des trois, après tout c'est le minerai le plus cool. Le sunkium change de volume et de masse sous l'influence du cristal mais pas comme tout le monde s'y attendrait car plus son volume diminue, plus il devient lourd. Il se met alors à absorber de la lumière assombrissant les alentours. Le cristal quant à lui peut absorber le sunkium mais personne ne sait réellement ce que ça lui apporte. 
 
-Certaine théorie stipulerait que les pouvoir du cristal viendrait de minuscules morceau de sunkium qui déformerait l'espace temps ce qui permettrait d'expliquer tout les pouvoirs du cristal. Mais cette théorie s'appuyant sur d'autres théories qui n'ont pas été prouvé sa véracité est plus que discutable. Sans la présence des cristaux le sunkium serait aussi le minerai le plus mystérieux d'Aegina.
+Certaines théories stipulent que les pouvoirs du cristal viendraient de minuscules particules de sunkium qui déformeraient l'espace temps. Mais cette théorie s'appuyant sur d'autres théories qui n'ont pas été prouvées, sa véracité est plus que discutable. Sans la présence des cristaux, le sunkium serait  le minerai le plus mystérieux d'Aegina.
 
 
 \pagebreak
@@ -93,127 +96,157 @@ Certaine théorie stipulerait que les pouvoir du cristal viendrait de minuscules 
 \subsection{Pré-janvier}
 
 \subsubsection{Cycle jour/nuit (Julien)}
-Dans un premier temps, on a du déterminer la durée d'une journée que l'on a subdiviser en 30 phases. Ces phases servent à changer d'image de skybox. Seulement cette méthode à causé quelque problèmes. Entre autre, le changement de skybox était trop brusque et les différentes skybox n'étaient pas homogènes. C'est pourquoi nous avons du trouver une autre méthode : La \textit{directional light}.
-\\
-La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la skybox du monde. De plus nous pouvons choisir la couleur de cette lumière. Pour ce faire nous avons utilise une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous avons représente le spectre solaire a l'aide d'une fonction mathématique.
-$$255((3.25t - 4)x^2 + (-4t + 4)x)$$
-% Mettre un graph de ouf super qui dechire tout !
-% TO DO
+\textcolor{red}{Expliquer skybox: je suppose que c'est l'élément qui permet de définir le ciel, que vous avez voulu le faire évoluer pour représenter les différents moments de la journée/nuit}
+Dans un premier temps, nous avons dû déterminer la durée d'une journée que l'on a divisée en 30 phases. Chacune d'elle correspondant à une image de skybox. Seulement cette méthode à présenté quelques inconvénients. Entre autre, le changement de skybox était trop brusque et les différentes skybox n'étaient pas homogènes. C'est pourquoi nous avons dû trouver une autre méthode : la \textit{directional light}.
+La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la skybox du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante : 
+$$255 * ((3.25t - 4)x^2 + (-4t + 4)x +(0,08 (t-1)))$$
+Nous utilisons cette même fonction en fixant $t = 0$ pour définir l'intensité lumineuse.
+\begin{center}
+\includegraphics[width = 12cm]{DNgraph.png}
+
+\textit{évolution du spectre lumineux en fonction du temps}
+\end{center}
+La courbe bleu ($t=0$) représente le spectre quand le soleil est au zénith et la courbe rouge ($t = 1$) le spectre au moment du coucher du soleil. Les courbes vertes ($t=0,3$ et $t = 0,6$) montrent quand à elle l'évolution de la courbe. A chaque instant, nous échantillonnons la courbe actuelle tous les 10 nm (de 380 à 780 nm), ce qui nous donne un tableau des couleurs (en RGB) que notre astre est censé émettre. Ce tableau contient environ 40 valeurs or une \textit{directional light} ne possède qu'une seule couleur. Il a donc fallu trouver un moyen pour réunir c'est 40 couleur en une seule. Pour ce faire, nous parcourons toutes les valeurs du tableau et  nous formons une nouvelle couleur en choisissant les plus grandes valeurs de rouge, de vert et de bleu rencontrées.
+
+Nous avons ensuite implémenté la rotation et le déplacement de la \textit{directional light}. Ce fut assez simple car nous étudions les mouvements circulaire en cours de physique. Il nous a donc suffis de copier les équations paramétrique horaire en base cartésienne. C'est a dire :
+$$ x(t) = R cos(wt)$$
+$$ z(t)= R sin(wt)$$
+\begin{center}
+\textit{Où R est le rayon de l'orbite et w la vitesse angulaire.}
+\end{center}
+Ainsi, la \textit{directional light} suit une orbite circulaire autour du point de coordonnées (0,0,0). L'orientation de la \textit{directional light} est définie grâce a la fonction \textit{lookat} qui oriente un \textit{gameobject} vers un autre \textit{gameobject}, le point (0,0,0) dans notre cas. 
+
+Un procédé similaire est utilisé pour la première scène du jeu. En effet, dans cette scène, la caméra orbite autour d'une île et nous nous servons de la fonction \textit{lookat} pour orienter la camera vers l'île. Mais, contrairement au cas de la \textit{directional light}, le déplacement utilise les propriétés de la base polaire. En effet, comme l'objet est toujours orienté vers le centre de sont orbite, il suffit de lui appliquer une vitesse constante pour qu'il décrive une trajectoire circulaire.
 \subsubsection{Inventaire (Romain et Florian)}
+\textcolor{red}{il faut différencier la programmation (inventaire = tableau de X cases permettant de regrouper dans chaque case un nombre d'objets identiques et la représentation graphique}
+Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui et donc se déplacer assez facilement nous avons créé un inventaire. Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
 
-Pour que notre personnage puisse posséder un grand nombre d'objets de toute sorte et se déplacer avec facilement nous avons créé un inventaire. Celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce a un \textit{drag and drop}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui ci. Cet inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} (touche \textit{i} par défaut)et peut ensuite être ferme avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était entrain de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
 
-Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était entrain de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenue s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
+\textcolor{red}{Mettre une copie d'écran}
 
 \subsubsection{Animation 3D (Théo)}
 
-Ille est un personnage que nous avons télécharger depuis l'asset store qui possédais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
-A partir de ce moment nous avons décidé de faire les animations des nos personnage nous même. 
-Le premier problème que nous avons rencontre : notre personnage n'était pas accessible depuis notre version de blender, trop récente pour le modele 3D que nous avons. 
-Il nous a donc fallut trouver une ancienne version de blender compatible avec notre model 3D. Depuis nous essayons d'améliorer nos animation dans le but d'être le plus réaliste possible mais s'en expérience dans ce domaine il est difficile de faire des animations convenables et celle-ci sont systématiquement remise en question et modifié.
+Ille est un personnage que nous avons téléchargé depuis l'asset store de unity qui possédait initialement deux animations, \og marcher \fg{} et \og rester immobile \fg{}. Cependant ces deux seules animations ne nous suffisaient pas.
+Nous avons alors décidé de faire les animations des nos personnages nous-même. 
+Le premier problème que nous avons rencontré est que notre personnage n'était pas accessible depuis notre version de \textit{blender}, trop récente pour le modele 3D que nous avons. 
+Il nous a donc fallu trouver une ancienne version de \textit{blender} compatible avec notre model 3D. Depuis nous essayons d'améliorer nos animations dans le but d'être le plus réaliste possible mais sans expérience dans ce domaine il est difficile de faire des animations convenables et celles-ci sont systématiquement remises en questions par les membres de l'équipe et donc modifiées.
 
 \subsubsection{Déplacement du personnage et de sa camera (Théo et Julien)}
 
-Nous avons permis à notre personnage de se déplacer en fonction de ce que l'utilisateur souhaite faire. Celui-ci peut avancer (avec la touche "w" ou "up"), reculer (avec la touche "s" ou "down"), s'orienter vers la droite (avec la touche "q" ou "right") et s'orienter vers la gauche (avec la touche "d" ou "left").
-Notre personnage peut courir si ce dernier se déplace et que l'utilisateur appuie sur la touche "shift", il peut aussi sauter si l'utilisateur appuie sur la barre d'espace.
+Le joueur détermine les déplacements de son personnage. Celui-ci peut avancer (avec la touche  \og w  \fg{}  ou  \og up  \fg{} ), reculer (avec la touche  \og s  \fg{}  ou  \og down  \fg{} ), s'orienter vers la droite (avec la touche  \og q  \fg{}  ou  \og right  \fg{} ) et s'orienter vers la gauche (avec la touche  \og d  \fg{}  ou  \og left  \fg{} ).
+Notre personnage peut courir si ce dernier se déplace et que l'utilisateur appuie sur la touche  \og shift  \fg{}, il peut aussi sauter si l'utilisateur appuie sur la barre d'espace.
 
-Le saut à d'ailleurs été un élément problématique à implanté car notre personnage ne devait pouvoir sauter que quand celui-ci est sur le sol pour éviter qu'il s'envole en enchainant des sauts dans les airs. Nous avons donc créer des restriction permettant au personnage de ne sauter que depuis certain éléments du décors (qui regroupe presque tout les éléments).
+Le saut à d'ailleurs été un élément problématique à implanter car notre personnage ne devait pouvoir sauter qu'à partir du sol pour éviter qu'il ne s'envole en enchaînant des sauts dans les airs. Nous avons donc créé des restrictions permettant au personnage de ne sauter que depuis certains éléments du décors (qui regroupent presque tous les éléments).
 
-A partir de ce moment notre personnage était devenue opérationnel mais à quoi cela servirait il si nous ne pouvions pas le voir ? 
+A partir de ce moment notre personnage était devenu opérationnel mais à quoi cela servait-il si nous ne pouvions pas le voir ? 
 
-Nous avons alors décider de créer une camera qui suivrais notre personnage où qu'il aille.
-Cette caméra n'est pas une simple caméra fixe, elle possède des caractéristiques variées grâce auxquelles une grande liberté est accordé au joueur. Celle-ci s'oriente grâce à la souris et même si on dit qu'elle suit le joueur l'orientation des mouvements du joueur ne dépendent que de l'orientation de la caméra par exemple faire reculer le joueur le fait en réalité se diriger vers le caméra.
+Nous avons alors décidé de créer une camera qui suivrait notre personnage où qu'il aille.
+Cette caméra n'est pas une simple caméra fixe, elle possède des caractéristiques variées grâce auxquelles une grande liberté est accordée au joueur. Celle-ci s'oriente grâce à la souris et même si on dit qu'elle suit le joueur l'orientation des mouvements du joueur ne dépendent que de l'orientation de la caméra. Par exemple faire reculer le joueur le fait en réalité se diriger vers le caméra.
 
-A la troisième personne le joueur peut vois son personnage de cotés, de devant ou encore de derrière tout cela en étant en étant proche ou éloigné de son personnage. cette éloignement de la caméra se contrôle avec la molette de la souris il est donc malheureusement indispensable de posséder une souris à molette pour profiter à 100\% de la caméra (le trackpad d'une ordinateur portable peut lui aussi permettre de profiter de la liberté de la caméra).
+La vue à la troisième personne permet au joueur de voir son personnage de coté, de devant ou encore de derrière.  Tout cela en étant proche ou éloigné de son personnage, ce qui permet aussi d'avoir une vision plus générale de l'environnement.  L'éloignement de la caméra et du personnage se contrôle avec la molette de la souris, il est donc malheureusement indispensable de posséder une souris à molette pour profiter à 100\% de la caméra (le trackpad d'une ordinateur portable peut lui aussi permettre de profiter de la liberté de la caméra).
 
-A la première personnage notre camera permet au joueur de voir exactement ce que son personnage voit. Cette vue est accessible en rapprochant la caméra du joueur assez près de celui-ci en troisième personne et elle se quitte dés que l'utilisateur tente d'éloigné la caméra du personnage.
+La vue à la première personne permet au joueur de voir exactement ce que son personnage voit. La passage d'une vue à l'autre se fait automatiquement en approchant ou éloignant la caméra du personnage.
 
 \subsubsection{Models 3D (Julien)}
 
-Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons cherché l'inspiration en parcourant l'assetstore. Nous y avons trouvé le modèle de notre personnage principal et nous nous sommes accordés pour un univers cartoon.
+Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons cherché l'inspiration en parcourant l'asset store. Nous y avons trouvé le modèle de notre personnage principal et nous nous sommes accordés pour un univers cartoon.
 
-Nous avons donc commencé la réalisation de notre première île mais ce fut un échec. Nous n'avions pas assez bien définie la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération procédurale du monde. 
+Nous avons donc commencé la réalisation de notre première île mais ce fut un échec (figure~\ref{premierIle}). Nous n'avions pas assez bien défini la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération procédurale du monde. 
 
-\begin{center} 
-\includegraphics[width=12cm]{Photo_1_premiere_ile.png}
 
-première île
+\begin{figure}[ht]
+\begin{center}\includegraphics[width=11cm]{Photo_1_premiere_ile.png}
+\caption{Première île} 
+\label{premierIle}
 \end{center}
+\end{figure}
 
-Nous avons alors décidé de réaliser tous nos future modèle grâce au logiciel Blender et d'importer le moins possible depuis l'assetstore. Nous nous sommes donc recentré sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher.
-\begin{center} 
-\includegraphics[width=12cm]{environment.png}
+Nous avons alors décidé de réaliser tous nos futures modèles grâce au logiciel Blender et d'importer le moins possible depuis l'asset store. Nous nous sommes donc recentrés sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher (figure~\ref{premiersElements}).
 
-premiers élements
+\begin{figure}[ht]
+\begin{center}\includegraphics[width=12cm]{environment.png}
+\caption{Premiers éléments} 
+\label{premiersElements}
 \end{center}
+\end{figure}
 
 
-La réalisation des modèles suivants s'est fait et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
+
+
+La réalisation des modèles suivants s'est faite et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
 
 
 \subsection{Janvier}
 
 \subsubsection{Barre de selection (Florian)}
 
-Lorsque nous sommes entrain de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des consommables pour survivre nous voulons que ceci soit facile d'accès et ne nécessite pas de s'arrêter (pour que l'on puisse boire une potion de santé alors que l'on se fait poursuivre par un slime par exemple).
+Lorsque nous sommes en train de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des ressources pour survivre et interagir avec l'environnement, nous voulons que ces dernières soient facilement accessibles sans devoir s'arrêter (pour pouvoir boire une potion de santé alors qu'un slime nous poursuit par exemple).
 
-Nous avons donc ajouté une barre de sélection synchronise avec la 4$^{eme}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparait même quand le joueur n'est pas dans son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
+Nous avons donc ajouté une barre de sélection synchronisée avec la 4$^{eme}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparaît même quand le joueur n'a pas affiché son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
+
+\textcolor{red}{insérer copie d'écran, comment faire la correspondance entre les touches alphanumériques et les case de la barre ?}
 
 \subsubsection{Menus (Romain et Florian)}
 
-Un élément essentiel à tous jeu et indéniablement de pouvoir le quitter et le commencer. Cela paraît évident mais il a tout de même fallut créer des interfaces permettant ces actions au début du jeu (pour commencer une partie) et au milieu du jeu (pour arrêter de jouer).
+Un élément essentiel à tout jeu est indéniablement de pouvoir le quitter et le commencer. Cela paraît évident mais il a tout de même fallu créer des interfaces permettant ces actions au début du jeu (pour commencer une partie) et au milieu du jeu (pour arrêter de jouer).
 
-pour cela nous avons créé des menus permettant non-seulement de démarrer une partie ou de quitter le jeu mais aussi de modifié de nombreuses option. 
+Pour cela nous avons créé des menus permettant non seulement de démarrer une partie ou de quitter le jeu mais aussi de modifier de nombreuses options. 
 
-Actuellement le menu permet de modifier la langue et le volume sonore du jeu. Ces menus s'ouvre avec la touche \textit{escape} quand aucune autre interface n'est ouvert et ce ferme avec la touche escape ou avec le bouton \textit{continuer}. Dans le menu le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire et ouvert. Lors du lancement du jeu on arrive directement à un menu mais celui ne se ferme pas avec la touche \textit{escape} par contre il est possible d'utiliser le raccourci pour accéder aux options. 
+Actuellement le menu permet de modifier la langue et le volume sonore du jeu. Ces menus s'ouvrent avec la touche \textit{escape} quand aucune autre interface n'est ouverte et se ferment avec la même touche  ou avec le bouton \textit{continuer}. Lorsque le menu est ouvert, le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire est ouvert. Lors du lancement du jeu on arrive directement à un menu mais celui ne se ferme pas avec la touche \textit{escape} par contre il est possible d'utiliser le raccourci pour accéder aux options. 
 
-L'apparence graphique des menus à longtemps était discuté. Un rectangle simple coloré comme l'inventaire ne plaisait pas donc nous avons essayé de mettre comme fond un parchemin. Cependant le placement des écritures sur ce parchemin ne paraissait pas centré et celui-ci pouvait prendre des formes bizarres lorsque la dimension de la fenêtre était changé. Nous avons finalement décidés de ne pas mettre de fond au menu et seulement ajouté des boutons dans le vide ce qui est finalement très acceptable esthétiquement. 
+\textcolor{red}{insérer copie d'écran}
+
+L'apparence graphique des menus à longtemps était discutée. Un rectangle simple coloré comme l'inventaire ne plaisait pas donc nous avons essayé de mettre comme fond un parchemin. Cependant le placement des écritures sur ce parchemin ne paraissait pas centré et celui-ci pouvait prendre des formes bizarres lorsque la dimension de la fenêtre était changée. Nous avons alors décidé de ne pas mettre de fond au menu, ce qui est finalement très acceptable esthétiquement. 
 
 \subsubsection{Class \textit{Item} (Romain)}
+\textcolor{red}{ça arrive un peu tard, je ne comprend pas comment vous avez pu associer un aspect graphique à des objets qui n'existaient pas encore ??}
 
-Comme dit précédemment dans notre jeu il existe un inventaire et celui-ci contient des objets. Seulement ces objets n'existé pas directement dans unity et leur comportement non plus. Il a donc fallu les créer grâce à une class que l'on a tous simplement appelé \textit{Item}.
+Pour pouvoir gérer les ressources que possède un joueur, nous avons dû créer une classe que nous avons tout simplement choisi d'appeler \textit{Item}. 
 
-La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuable. Par exemple le bois un objet qui possède deux noms (un français et un anglais), deux descriptions, un identifiant pour le reconnaître, une quantité maximal, une texture 2D un élément correspondant à l'objet lorsqu'il est lui même dans le monde 3D. Cependant Lorsqu'un objet se trouve dans l'inventaire il peut se trouver en plus grande quantité qu'un exemplaire unique. Les objets présents dans l'inventaire sont donc une nouvelle class appelé \textit{ItemStack} contenant une quantité (inférieur à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi Il y a un grand gain de performance et la modification de la quantité d'un objet dans l'inventaire ne change pas la quantité de tous les objets du même type.
+La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuables qui sont le nom (dans chacune des langues disponible, pour le moment il s'agit du français et de l'anglais), la description (elle aussi dans chacune des langues proposées), un identifiant unique, une quantité maximale par personnage, une texture 2D et un élément correspondant à l'objet 3D. Cependant Lorsqu'un objet se trouve dans l'inventaire il peut y être en plusieurs exemplaires. Les objets présents dans l'inventaire sont donc une nouvelle classe appelée \textit{ItemStack} contenant une quantité (inférieure à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi, les informations communes à plusieurs exemplaires d'un objet similaires ne sont pas dupliquées, seules les quantités sont propres à chaque inventaire. Il y a alors un grand gain de performance (\textcolor{red}{Vous pouvez quantifier ce grand gain ? Votre représentation permet un gain en mémoire mais sinon je ne pense pas que le gain soit véritable}). 
 
 \subsubsection{Multi-joueurs (Florian)}
 
-Le multi-joueurs est une part importante du projet car celle-ci permettra la coopération des joueurs pour progresser dans le jeu.
-Nous avons dans un premier temps utilise les fonctionnalités de  \textit{Unet} pour pouvoir créer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grâce a son adresse ip.
-\\
-Nous avons dans un second temps synchronise la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilise le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons codé nous-mêmes un script permettant la synchronisation des personnages. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation.  
-\\
-Pour finir nous avons synchronise les éléments, les sons et les caractéristiques du monde, que ce soit les iles, les biomes, les bruits de pas des joueurs, l'état de la journée (jour/nuit) ou bien les arbres.
+Le mode multi-joueurs est une part importante du projet car celle-ci permettra la coopération des joueurs pour progresser dans le jeu.
+Nous avons dans un premier temps utilisé les fonctionnalités de  \textit{Unet} pour pouvoir créer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grâce a son adresse IP.
+
+Nous avons dans un second temps synchronisé la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilisé le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons codé nous-même un script permettant la synchronisation des personnages. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation.  
+
+Pour finir nous avons synchronisé les éléments, les sons et les caractéristiques du monde, que ce soient les îles, les biomes, les bruits de pas des joueurs, l'état de la journée (jour/nuit) ou bien les arbres.
+
+\textcolor{red}{Il faut détailler, comment gérez vous la synchronisation, quel est le principe d'interpolation, en quoi rend-il les déplacements plus fluides ?}
 
 \subsubsection{Son (Théo et Romain)}
 
-Afin de ne pas avoir un jeu fade, nous avons introduit quelque sons. Ces sons nous permette d'avoir une base que l'on pourras enrichir au fur et à mesure que notre jeu avancera.
-Nous avons commencer par ajouter un son pour l'ouverture et la fermeture de notre inventaire, mais aussi lorsque nous interagissons avec notre menu.
-Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage marcher ou courir, par manque de réalisme nous avons synchronisé ces sons afin que les autres joueurs jouant avec nous les entendent aussi.
+Afin de ne pas avoir un jeu fade, nous avons introduit quelques sons. Ces sons nous permettent d'avoir une base que l'on pourra enrichir au fur et à mesure de l'avancée du développement de notre jeu.
+Nous avons tout d'abord ajouté un son pour l'ouverture et la fermeture de l'inventaire et menu.
+Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnage marcher ou courir. Par souci de réalisme nous avons synchronisé ces sons afin qu'ils soient entendus par tous les joueurs.
 
 
 \subsection{Février}
 
 \subsubsection{Génération aléatoire (Florian et Julien)}
+\textcolor{red}{faites-vous une différence entre aléatoire et procédure, si non, il y en a une !}
 
-Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relies par des ponts.
+Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relié par des ponts.
 \\
-Nous avons créé 2 formats de chunk différents possédants chacun une ile. Sur ces iles sont posé des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
+Nous avons créé 2 formats de chunk différents possédant chacun une île. Sur ces îles sont posées des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
 \\
-Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'à faire apparaitre les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
+Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaître les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
 
+\textcolor{red}{différence entre chunk et île ? Il est question de 2 formats, lesquels sont-ils ?}
 \subsubsection{Drop d'Item (Florain et Julien)}
 
-Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objet à coté de celui-ci. Il peut aussi grâce a une touche, lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont instancier l'objet dans le monde et puis le lancer à quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet, du moment qu'il se trouve assez proche de celui-ci. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objet et donc d'améliorer les performances du jeu. D'autre part les objets dans cet état depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances. 
+Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objets hors de l'inventaire. Il peut aussi grâce a une touche (la touche \og Q\fg par défault), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde et le lancer a quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
 
 \subsubsection{Bibliothèque (Florian, Romain et Théo)}
 
 \subsubsection{Histoire (Romain et Théo)}
 
-En plus du fait que le backround de notre monde soit fournie, le jeu lui même va tourner autours d'une histoire. Cependant actuellement l'histoire n'est pas en core finie et celle-ci n'est pas implémentée dans le jeu.
-
- Il existe néanmoins un script (au sens théâtrale du terme) racontant le début du jeu et sa fin (plus qu'a trouvé quoi mettre entre). Ce script contient entre autre un didacticiel censée permettre au joueur de comprendre les bases du jeu. 
+En plus du fait que le contexte de notre monde soit fourni, le jeu lui même va tourner autour d'une histoire. Cependant actuellement l'histoire n'est pas encore définie et elle n'a donc pas encore pu être implémentée dans le jeu. Il existe néanmoins un script (au sens théâtrale du terme) racontant le début du jeu et sa fin. Ce script contient entre autre un didacticiel devant permettre au joueur de comprendre les bases du jeu. 
  
- Il est important de noté que les éléments se trouvant dans la partie Univers du jeu de ce rapport ne seront pas tous directement accessible aux joueurs lors de l'aventure, certaines parties devront être découverte durant l'aventure notamment tout ce qui concerne le fonctionnement du monde d'Aegina et l'influence négative des cristaux. 
+ Il est important de noter que les éléments se trouvant dans la partie Univers du jeu de ce rapport ne seront pas tous directement accessibles aux joueurs lors de l'aventure. Certaines parties devront être découvertes durant l'aventure, notamment tout ce qui concerne le fonctionnement du monde d'Aegina et l'influence négative des cristaux. 
 
 \subsection{Mars}
 
@@ -226,32 +259,38 @@ En plus du fait que le backround de notre monde soit fournie, le jeu lui même va
 Comme déjà précisé la coopération est un élément important du jeu, pour cela la communication est primordiale. Nous avons donc ajouté un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes (communément appelé \textit{cheatcode}), en voici l'énumération :
 
 \begin{description}
-\item[/help :] Enumére les commandes avec leurs arguments ;
-\item[/time <value> :] Met l'heure de la journée à une certaine valeur ;
-\item[/give <id> <quantity> :] Donne une certaine quantité de l'objet correspondant à cet identifiant ; 
-\item[/nick <name> :] Permet de changer son nom ; 
-\item[/msg <player> <message> :] Permet d'envoyer un message privé au player indiqué ; 
+\item[/help :] énumère les commandes avec leurs arguments ;
+\item[/time <value> :] détermine l'heure de la journée ;
+\item[/give <id> <quantity> :] ajoute à l'inventaire du joueur la quantité passée en paramètre de l'objet dont l'identifiant est passé en paramètre ; 
+\item[/nick <name> :] change le nom du personnage; 
+\item[/msg <player> <message> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
 \end{description}
 
-Certaines de ces commandes sont surchargées, c'est à dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepté et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
+Certaines de ces commandes sont surchargées, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
+
+\textcolor{red}{il faut préciser les types des paramètres, sinon on ne voit pas en quoi day ne correspond pas au type de <value>}
 
 \subsubsection{Musique (Théo)}
 
 Afin de compléter l'univers que nous essayons de créer à travers notre jeu, nous avons ajouté des musiques de fond. 
-Nous avons ajouté pour l'instant quatre musique à notre jeu, la première est une musique qui se lance dès que l'on arrive sur le menu principal de notre jeu, il s'agit du seul endroit où vous pourrez entendre cette musique qui est consacré à notre menu.
-Trois autres musique on part la suite étaient ajouté, avec trois thèmes différents qui sont : la foret, le désert et la neige. Pour le moment le choix de la musique écouté se fait aléatoirement.
+Nous avons d'abord ajouté une musique qui est associée au menu principal uniquement.
+Trois autres musiques ont par la suite étaient ajoutées, chacune d'elles est associée à un thème différent, la forêt, le désert ou la neige, qui correspond chacun à un des biomes possibles pour les îles. Pour le moment le choix de la musique écouté se fait aléatoirement, il devra ensuite se faire en fonction de l'île sur laquelle se trouve le personnage. 
+En multi-joueurs chaque personne peut se retrouver avec des musiques différentes au même moment.
+
 
 \subsubsection{Survie (Théo)}
 
+La survie étant le thème de notre jeu il nous fallait, construire de bonnes bases pour le développement de ce dernier. Aujourd'hui les éléments clés de notre survie son présent, parmi ces éléments il y aura trois barres très importantes pour l'aventure. Deux barres, une symbolisant la soif de votre personne et l'autre la faim seront en haut à droite de votre écran tandis que la troisième barre symbolisant la santé se trouvera au dessus de la barre de selection. lorsque le barre de faim ou de soif sera vide vos point de vies commenceront à descendre. Cependant ces deux barres ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidé de sauter dans le vide vous perdrez aussi des points de vie car malgré sa force et ses capacités Ille ne sait pas voler. Quand vous vous retrouvez sans points de vie vous sentirez vos force disparaître car oui c'est ce que l'on appelle la mort, cependant dans notre grande bonté nous avons décidé que la mort ne serait pas tout de suite définitif et donc chaque mort sera accompagné d'un nouveau début. La seul façon de réellement mourir dans le jeu est donc de quitter celui-ci.
+
 \subsubsection{Alpha (Florian)}
 
-La dernière étape avant la soutenance est de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapporté étaient :
+La dernière étape avant la soutenance était de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapportés étaient :
 \begin{itemize}
 \item Le respawn du joueur qui parfois ne fonctionnait pas ;
-\item Un bug graphique au niveau de l'élément proche lorsque la camera était à l'intérieur ;
+\item Un bug graphique au niveau de l'élément proche lorsque la camera était a l'intérieur ;
 \item La musique qui en multi-joueurs pouvait se superposer avec la musique des autres joueurs alentour. 
 \end{itemize}
-Par la suite nous avons corrigé la totalité des bugs rapportés pour former la version \textit{v1.1-alpha}, la version présenté lors de la première soutenance.
+Par la suite nous avons corrigé la totalité des bugs rapportés pour former la version \textit{v1.1-alpha} qui est la version présentée lors de la première soutenance.
 
 \pagebreak
 
@@ -305,11 +344,11 @@ Par la suite nous avons corrigé la totalité des bugs rapportés pour former la ve
 L'histoire sera racontée par un narrateur.
 Nom actuel du personnage : Ille (i majuscule deux l minuscule et un e minuscule)
 \\
-La narration sera découper en deux parties :
+La narration sera découpée en deux parties :
 \\
 \begin{itemize}
-\item Les cinématique qui seront les points importants de l'histoire qui permettront au jeux d'avancer (cinématique sous forme de dessin qui se suivent ou de jeux de caméra dans le monde 3D)
-\item Les \og monologues\fg du narrateur qui auront lieu pendant que le personnage bouge et n'interrompront pas le dit personnage. Ces monologues auront comme but de préciser le but du personnage ou de faire des remarque anodines sur l'environnement. 
+\item Les cinématiques, les points importants de l'histoire, qui permettront au jeuxd'avancer (cinématique sous forme de dessin qui se suivent ou de jeux de caméra dans le monde 3D)
+\item Les \og monologues\fg{} du narrateur qui auront lieu pendant que le personnage bouge et n'interrompront pas les actions du personnage. Ces monologues auront comme but de préciser le but du jeu ou de faire des remarque anodines sur l'environnement. 
 \end{itemize}
  Début : 
 \\
@@ -317,85 +356,89 @@ but concret : premier pas (tutoriel)
 \\
 \textit{\underline{Personnage bloqué}}
 \\
-\textbf{En ouvrant les yeux Ille sentit l'air et les doux rayons du soleil caresser son visage. Ille avait l'impression d?avoir dormi très longtemps à telle point que Ille doutait de savoir encore se mouvoir. Ille décida alors de se lever et de faire un peu d'exercice pour faire passer cette impression.}
+\textbf{En ouvrant les yeux Ille sentit l'air et les doux rayons du soleil caresser son visage. Ille avait l'impression d'avoir dormi très longtemps à tel point que Ille doutait de savoir encore se mouvoir. Ille décida alors de se lever et de faire un peu d'exercice pour faire passer cette impression.}
 \\
 \textit{\underline{Personnage débloqué}}
 \\
 Sous but :
 \\
-\textbf{Ille commença par se déplacer un petit peu pour se réhabituer à ses jambes (touche droite gauche haut et bas)}
+\textbf{Ille commence par se déplacer un petit peu pour se réhabituer à ses jambes (touche droite gauche haut et bas)}
 \begin{itemize}
 \item se déplacer
 \end{itemize}
-\textbf{S'étant habituer à ces jambes Il décida de se mettre à courir ( touche shift enfoncer)}
+\textbf{S'étant habitué à ses jambes, iI décide de se mettre à courir ( touche shift enfoncée)}
 \begin{itemize}
 \item courir
 \end{itemize}
-\textbf{Ille était tellement en forme qu'il pensait même pouvoir se permettre de sauter sans problème (touche espace)}
+\textbf{Ille est tellement en forme qu'il pense même pouvoir se permettre de sauter sans problème (touche espace)}
 \begin{itemize}
 \item sauter
 \end{itemize}
-\textbf{Juste après avoir sauter Il entendit un sinistre grognement.} 
+\textbf{Juste après avoir sauté, il entend un sinistre grognement.} 
 \\
 \textit{\underline{petite pause dramatique}}
 \\
-\textbf {Ille avait faim. Cependant dans cette contrée sauvage Il savait qu'il devrait chasser sa nourriture mais pour chasser Il avait besoin d'une arme. Justement Il remarque un bâton sur le chemin, L'arme parfaite pour lui. (ramasser les objets en avançant dessus)}
+\textbf {Ille a faim. Cependant dans cette contrée sauvage, Il devine qu'il doit chasser sa nourriture. Mais pour chasser Il a besoin d'une arme. Justement Il remarque un bâton sur le chemin, L'arme parfaite pour lui (ramasser les objets en avançant dessus)}
 \begin{itemize}
 \item récupérer un item au sol (un bâton par exemple)
 \end{itemize}
-\textbf{Après avoir mis le bâton dans sa poche Il se dit qu'il devrait peut être le sortir de celle-ci pour que son arme soit efficace  (ouvrer l'inventaire avec I et faite glisser le bâton dans la 4$^{eme}$ ligne correspondant aux équipements rapide)}
+\textbf{Après avoir mis le bâton dans sa poche, il se dit qu'il devrait peut être le sortir de celle-ci pour que son arme soit utilisable  (ouvrez l'inventaire avec I et faites glisser le bâton dans la 4$^{eme}$ ligne correspondant aux équipements rapides)}
 \begin{itemize}
 \item ouvrir l'inventaire
 \item mettre le bâton dans la barre de raccourcis
 \end{itemize}
-\textbf{Il se mit à la recherche de la viande et il ne lui suffit que de se retourner pour tomber nez à nez avec un lapin. Ni une ni deux Il attaqua son petit déjeuner.( attaquer en ...)}
+\textbf{Il se met à la recherche de nourriture et il en se retournant tombe nez à nez avec un lapin. Ni une ni deux, il attaque son petit déjeuner ( attaquer en ...)}
 \begin{itemize}
 \item utiliser le bâton pour tuer un lapin
 \end{itemize}
-\textbf{Cependant Il avait un vague souvenir que la viande cru n'était pas très digeste au petit déjeuner. faute de feu Il décida d?au moins manger sa viande préparer en brochette.(ouvrer l?inventaire pour créer une brochette)}
+\textbf{Cependant, il avait un vague souvenir que la viande crue n'était pas très digeste au petit déjeuner. Faute de feu Il décida quand même de manger sa viande préparée en brochette. ouvrez l'inventaire puis créez une brochette)}
 \begin{itemize}
-\item créer de la nourriture à partir du bâton et du lapin tuer (brochette)
+\item créer de la nourriture à partir du bâton et du lapin tué (brochette)
 \end{itemize}
-\textbf{Finalement le repas de Ille était près. Il ne lui suffisait plus que de consumer sa brochette et le grondement de son ventre cesserait.(utiliser un consommable avec clic droit)}
+\textbf{Finalement le repas de Ille est près. Il ne lui suffit plus que de consommer sa brochette et le grondement de son ventre cessera (utiliser un consommable avec clic droit)}
 \begin{itemize}
 \item utiliser un consommable (ici la nourriture)
 \end{itemize}
+
+\bigskip
 but concret : activer le premier cristal 
-\\
+
 \textit{\underline{Personnage bloqué}}
 \\
-\textbf{maintenant que Ille avait trouvé de quoi survivre Ille pouvait enfin se reposer. Jusqu'à présent  Ille n'avait penser qu'a manger mais une fois le ventre rempli Ille se mit à penser et à se questionner \og Mais où suis-je? Qu'elle est cet endroit ?\fg En effet cet archipel d'île volante ne lui était pas familier \og Attend !!! Des îles volantes ?? Mais ce n'est pas possible ça ne peut pas exister\fg Et pourtant ce qui s'étendait à perte de vue n'était pas une illusion. Ille ne se trouvait plus chez lui, peut être même plus dans son monde.}  \textit{\underline{petite pause}}
+\textbf{Maintenant que Ille a trouvé de quoi survivre, il peutt enfin se reposer. Jusqu'à présent  Ille n'a pensé qu'à manger mais une fois le ventre rempli il se mit à penser et à se questionner \og Mais où suis-je? Quel est cet endroit ?\fg{} En effet cet archipel d'îles volantes ne lui est pas familier \og Attend !!! Des îles volantes ?? Mais ce n'est pas possible, ça ne peut pas exister\fg{} Et pourtant ce qui s'étend à perte de vue n'est pas une illusion. Ille ne se trouve plus chez lui, peut être même plus dans son monde.}  \textit{\underline{petite pause}}
 \\
-\textbf{Quand Ille eu assimilé ce qui lui arrivait Il prit une décision \og Il faut absolument que je comprenne où je suis et pour ça il faut que j'explore ces drôles d'îles\fg Et c'est ainsi que Ille commença son aventure.}
+\textbf{Quand Ille a assimilé ce qui lui arrive, il prend une décision \og Il faut absolument que je comprenne où je suis et pour ça il faut que j'explore ces drôles d'îles\fg{} Et c'est ainsi que Ille commence son aventure.}
 \\
 \textit{\underline{Personnage débloqué}}
 \\
 sous but : 
 \\
-\textbf{Pour commencer son exploration la première chose que Ille fit fut de traverser un pont séparant deux îles.}
+\textbf{Pour commencer son exploration ,la première chose que Ille fait est de traverser un pont séparant deux îles.}
 \begin{itemize}
 \item emprunter un pont
 \end{itemize}
-\textbf{Il ne manqua pas de se demander ce qu'un pont pouvait bien faire dans cet archipel ayant pourtant l'air abandonné et espéra que celui-ci n'allait pas s'écrouler sous son poids\dots heureusement cela n'arriva pas. en traversant ce pont ,Ille vit à l'horizon une sorte de reflet et intrigué décida de chercher sa source.}
+\textbf{Il ne manque pas de se demander ce qu'un pont peut bien faire dans cet archipel ayant pourtant l'air abandonné et espère que celui-ci ne va pas s'écrouler sous son poids\dots heureusement cela n'arrive pas. en traversant ce pont ,Ille voit à l'horizon une sorte de reflet et intrigué décide de chercher sa source.}
 \begin{itemize}
 \item trouver un cristal
 \end{itemize}
-\textbf{Le reflet venait d'un gigantesque cristal taillé comme un prisme mais le plus impressionnant était que celui-ci lévitait\dots malgré sa stupeur Ille se ressaisit assez vite \og hum pas si étonnant que ça vu que je me trouve actuellement sur une île volant dans le ciel\fg. Après être redevenue calme et posé Il vit que le cristal réagissait à sa présence et plus précisément au métal de sa boucle de ceinture qui semblait attiré vers le cristal. Ille décida donc d'aller chercher du métal pour tester ces étranges réactions et s'éloigna rapidement ne voulant pas perdre sa précieuse ceinture.
-En s'éloignant Il se dit que pour récupérer du métal cela allait être plus dur que de ramasser du bois ou de tuer des lapins. Il devait donc fabriquer quelque chose pour récupérer et raffiner le métal.}
+\textbf{Le reflet vient d'un gigantesque cristal taillé comme un prisme mais le plus impressionnant est que celui-ci lévite \dots Malgré sa stupeur, Ille se ressaisit assez vite \og hum pas si étonnant que ça vu que je me trouve actuellement sur une île volant dans le ciel\fg{}. Après s'être calmé et posé, il voit que le cristal réagit à sa présence et plus précisément au métal de sa boucle de ceinture qui semble attirée vers le cristal. Ille décide donc d'aller chercher du métal pour tester ces étranges réactions et s'éloigne rapidement ne voulant pas perdre sa précieuse ceinture.
+En s'éloignant Il se dit que pour récupérer du métal cela va être plus dur que de ramasser du bois ou de tuer des lapins. Il doit donc fabriquer quelque chose pour récupérer et raffiner le métal.}
 \begin{itemize}
 \item fabriquer une pioche
 \item créer une forge
 \end{itemize}
-\textbf{Maintenant qu'il possédait une minuscule forge Il pouvait enfin produire du métal pour le cristal.}
+\textbf{Maintenant qu'il possède une minuscule forge Il peut enfin produire du métal pour le cristal.}
 \begin{itemize}
 \item récolter les ressources pour activer le cristal
 \item activer le cristal
 \end{itemize}
 \textit{\underline{Cinématique !!}}
-\\
+
+\bigskip
 première/mauvaise fin :
 \\
-\textbf{Ille avait finalement réussi. Après tout ces efforts il avait recréer un portail lui permettant de revenir chez lui. C'est avec hâte qu'il effaça ses derniers doutes et plongea dans le portail. Il ne savait toujours pas qui il était mais cela n'avait plus d'importance  Il pourrait facilement répondre à ces questions un fois chez lui. Cependant Il avait oublier un dernier détail. S'il se trouvait ici ce n'était sûrement pas par coïncidence. Quelque chose ou  quelqu'un avait du l?envoyer et peut-être que rien n?empêcherait cette chose de le renvoyer ici\dots ou pire.}
+\textbf{Ille a finalement réussi. Après tout ses efforts il a recréé un portail lui permettant de revenir chez lui. C'est en hâte qu'il efface ses derniers doutes et plonge dans le portail. Il ne sait toujours pas qui il est mais cela n'a
+ plus d'importance.  Il pourra facilement répondre à ces questions un fois chez lui. Cependant, il a oublié un dernier détail. S'il se trouve ici ce n'est sûrement pas par hasard. Quelque chose ou  quelqu'un a dû l'y envoyer et peut-être que rien n'empêchera cette chose de le renvoyer ici\dots ou pire.}
 \\
 \textit{\underline{Cri d'agonie au loin}}
 \\
