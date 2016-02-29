@@ -197,13 +197,13 @@ Par la suite nous avons ajouté des bruit de pas afin d'entendre notre personnage
 
 Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un chunk, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relies par des ponts.
 \\
-Nous avons créé 2 formats de chunk différents possédants chacun une ile. Sur ces iles sont posé des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome foret nous trouverons des arbres et des fleurs.
+Nous avons créé 2 formats de chunk différents possédants chacun une ile. Sur ces iles sont posé des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
 \\
-Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaitre les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
+Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'à faire apparaitre les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
 
 \subsubsection{Drop d'Item (Florain et Julien)}
 
-Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objet a cote de celui-ci. Il peut aussi grâce a une touche, lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont instancier l'objet dans le monde et puis le lancer a quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet, du moment qu'il se trouve assez proche de celui-ci. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objet et donc d'améliorer les performances du jeu. D'autre part les objets dans cet état depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances. 
+Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objet à coté de celui-ci. Il peut aussi grâce a une touche, lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont instancier l'objet dans le monde et puis le lancer à quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet, du moment qu'il se trouve assez proche de celui-ci. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objet et donc d'améliorer les performances du jeu. D'autre part les objets dans cet état depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances. 
 
 \subsubsection{Bibliothèque (Florian, Romain et Théo)}
 
@@ -223,17 +223,17 @@ En plus du fait que le backround de notre monde soit fournie, le jeu lui même va
 
 \subsubsection{Chat (Florian)}
 
-Comme déjà préciser la coopération est un élément important du jeu, pour cela la communication est primordiale. Nous avons donc ajouté un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes (communément appelé \textit{cheatcode}), en voici l'énumération :
+Comme déjà précisé la coopération est un élément important du jeu, pour cela la communication est primordiale. Nous avons donc ajouté un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. Le chat ne permet pas seulement de communiquer, il permet aussi de rentrer certaines commandes (communément appelé \textit{cheatcode}), en voici l'énumération :
 
 \begin{description}
-\item[/help :] Enumere les commandes avec leurs arguments ;
-\item[/time <value> :] Met l'heure de la journee a une certaine valeur ;
-\item[/give <id> <quantity> :] Donne une certaine quantite de l'objet correspondant a cet identifiant ; 
+\item[/help :] Enumére les commandes avec leurs arguments ;
+\item[/time <value> :] Met l'heure de la journée à une certaine valeur ;
+\item[/give <id> <quantity> :] Donne une certaine quantité de l'objet correspondant à cet identifiant ; 
 \item[/nick <name> :] Permet de changer son nom ; 
-\item[/msg <player> <message> :] Permet d'envoyer un message prive au player indique ; 
+\item[/msg <player> <message> :] Permet d'envoyer un message privé au player indiqué ; 
 \end{description}
 
-Certaines de ces commandes sont surchargées, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
+Certaines de ces commandes sont surchargées, c'est à dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepté et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
 
 \subsubsection{Musique (Théo)}
 
@@ -245,13 +245,13 @@ Trois autres musique on part la suite étaient ajouté, avec trois thèmes différen
 
 \subsubsection{Alpha (Florian)}
 
-La dernière étape avant la soutenance est de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapporte étaient :
+La dernière étape avant la soutenance est de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapporté étaient :
 \begin{itemize}
 \item Le respawn du joueur qui parfois ne fonctionnait pas ;
-\item Un bug graphique au niveau de l'élément proche lorsque la camera était a l'intérieur ;
+\item Un bug graphique au niveau de l'élément proche lorsque la camera était à l'intérieur ;
 \item La musique qui en multi-joueurs pouvait se superposer avec la musique des autres joueurs alentour. 
 \end{itemize}
-Par la suite nous avons corrige la totalité des bugs rapportes pour former la version \textit{v1.1-alpha}, la version présenté lors de la première soutenance.
+Par la suite nous avons corrigé la totalité des bugs rapportés pour former la version \textit{v1.1-alpha}, la version présenté lors de la première soutenance.
 
 \pagebreak
 
