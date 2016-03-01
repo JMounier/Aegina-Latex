@@ -101,12 +101,15 @@ Dans un premier temps, nous avons dû déterminer la durée d'une journée que l'on 
 La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la skybox du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante : 
 $$255 * ((3.25t - 4)x^2 + (-4t + 4)x +(0,08 (t-1)))$$
 Nous utilisons cette même fonction en fixant $t = 0$ pour définir l'intensité lumineuse.
-\begin{center}
-\includegraphics[width = 12cm]{DNgraph.png}
 
-\textit{évolution du spectre lumineux en fonction du temps}
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{DNgraph.png}
+\caption{évolution du spectre lumineux en fonction du temps} 
+\label{Graph1}
 \end{center}
-La courbe bleu ($t=0$) représente le spectre quand le soleil est au zénith et la courbe rouge ($t = 1$) le spectre au moment du coucher du soleil. Les courbes vertes ($t=0,3$ et $t = 0,6$) montrent quand à elle l'évolution de la courbe. A chaque instant, nous échantillonnons la courbe actuelle tous les 10 nm (de 380 à 780 nm), ce qui nous donne un tableau des couleurs (en RGB) que notre astre est censé émettre. Ce tableau contient environ 40 valeurs or une \textit{directional light} ne possède qu'une seule couleur. Il a donc fallu trouver un moyen pour réunir c'est 40 couleur en une seule. Pour ce faire, nous parcourons toutes les valeurs du tableau et  nous formons une nouvelle couleur en choisissant les plus grandes valeurs de rouge, de vert et de bleu rencontrées.
+\end{figure}
+
+La courbe bleu ($t=0$) représente le spectre quand le soleil est au zénith et la courbe rouge ($t = 1$) le spectre au moment du coucher du soleil. Les courbes vertes ($t=0,3$ et $t = 0,6$) montrent quand à elle l'évolution de la courbe (voir figure~\ref{Graph1}). A chaque instant, nous échantillonnons la courbe actuelle tous les 10 nm (de 380 à 780 nm), ce qui nous donne un tableau des couleurs (en RGB) que notre astre est censé émettre. Ce tableau contient environ 40 valeurs or une \textit{directional light} ne possède qu'une seule couleur. Il a donc fallu trouver un moyen pour réunir c'est 40 couleur en une seule. Pour ce faire, nous parcourons toutes les valeurs du tableau et  nous formons une nouvelle couleur en choisissant les plus grandes valeurs de rouge, de vert et de bleu rencontrées.
 
 Nous avons ensuite implémenté la rotation et le déplacement de la \textit{directional light}. Ce fut assez simple car nous étudions les mouvements circulaire en cours de physique. Il nous a donc suffis de copier les équations paramétrique horaire en base cartésienne. C'est a dire :
 $$ x(t) = R cos(wt)$$
@@ -118,12 +121,17 @@ Ainsi, la \textit{directional light} suit une orbite circulaire autour du point 
 
 Un procédé similaire est utilisé pour la première scène du jeu. En effet, dans cette scène, la caméra orbite autour d'une île et nous nous servons de la fonction \textit{lookat} pour orienter la camera vers l'île. Mais, contrairement au cas de la \textit{directional light}, le déplacement utilise les propriétés de la base polaire. En effet, comme l'objet est toujours orienté vers le centre de sont orbite, il suffit de lui appliquer une vitesse constante pour qu'il décrive une trajectoire circulaire.
 \subsubsection{Inventaire (Romain et Florian)}
-\textcolor{red}{il faut différencier la programmation (inventaire = tableau de X cases permettant de regrouper dans chaque case un nombre d'objets identiques et la représentation graphique}
-Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui et donc se déplacer assez facilement nous avons créé un inventaire. Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui et donc se déplacer assez facilement nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{Inventaire}
+\caption{Format de l'inventaire} 
+\label{Inventaire}
+\end{center}
+\end{figure}
 
 Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était entrain de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
 
-\textcolor{red}{Mettre une copie d'écran}
 
 \subsubsection{Animation 3D (Théo)}
 
@@ -153,9 +161,7 @@ La vue à la première personne permet au joueur de voir exactement ce que son per
 Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons cherché l'inspiration en parcourant l'asset store. Nous y avons trouvé le modèle de notre personnage principal et nous nous sommes accordés pour un univers cartoon.
 
 Nous avons donc commencé la réalisation de notre première île mais ce fut un échec (figure~\ref{premierIle}). Nous n'avions pas assez bien défini la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération procédurale du monde. 
-
-
-\begin{figure}[ht]
+\begin{figure}[h!]
 \begin{center}\includegraphics[width=11cm]{Photo_1_premiere_ile.png}
 \caption{Première île} 
 \label{premierIle}
@@ -164,13 +170,12 @@ Nous avons donc commencé la réalisation de notre première île mais ce fut un éch
 
 Nous avons alors décidé de réaliser tous nos futures modèles grâce au logiciel Blender et d'importer le moins possible depuis l'asset store. Nous nous sommes donc recentrés sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher (figure~\ref{premiersElements}).
 
-\begin{figure}[ht]
-\begin{center}\includegraphics[width=12cm]{environment.png}
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{environment.png}
 \caption{Premiers éléments} 
 \label{premiersElements}
 \end{center}
 \end{figure}
-
 
 
 
@@ -183,21 +188,38 @@ La réalisation des modèles suivants s'est faite et continuera à se faire petit à
 
 Lorsque nous sommes en train de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des ressources pour survivre et interagir avec l'environnement, nous voulons que ces dernières soient facilement accessibles sans devoir s'arrêter (pour pouvoir boire une potion de santé alors qu'un slime nous poursuit par exemple).
 
-Nous avons donc ajouté une barre de sélection synchronisée avec la 4$^{eme}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparaît même quand le joueur n'a pas affiché son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
+Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisée avec la 4$^{e}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparaît même quand le joueur n'a pas affiché son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
 
-\textcolor{red}{insérer copie d'écran, comment faire la correspondance entre les touches alphanumériques et les case de la barre ?}
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{Toolbar}
+\caption{barre d'outil} 
+\label{Toolbar}
+\end{center}
+\end{figure}
 
 \subsubsection{Menus (Romain et Florian)}
 
-Un élément essentiel à tout jeu est indéniablement de pouvoir le quitter et le commencer. Cela paraît évident mais il a tout de même fallu créer des interfaces permettant ces actions au début du jeu (pour commencer une partie) et au milieu du jeu (pour arrêter de jouer).
+Un élément essentiel à tout jeu est indéniablement de pouvoir le quitter et le commencer. Cela paraît évident mais il a tout de même fallu créer des interfaces permettant ces actions au début du jeu (pour commencer une partie)(figure~\ref{Menu1}) et au milieu du jeu (pour arrêter de jouer)(figure~\ref{Menu2}).
 
 Pour cela nous avons créé des menus permettant non seulement de démarrer une partie ou de quitter le jeu mais aussi de modifier de nombreuses options. 
 
-Actuellement le menu permet de modifier la langue et le volume sonore du jeu. Ces menus s'ouvrent avec la touche \textit{escape} quand aucune autre interface n'est ouverte et se ferment avec la même touche  ou avec le bouton \textit{continuer}. Lorsque le menu est ouvert, le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire est ouvert. Lors du lancement du jeu on arrive directement à un menu mais celui ne se ferme pas avec la touche \textit{escape} par contre il est possible d'utiliser le raccourci pour accéder aux options. 
-
-\textcolor{red}{insérer copie d'écran}
+Actuellement le menu permet de modifier la langue et le volume sonore du jeu. Ces menus s'ouvrent avec la touche \textit{escape} quand aucune autre interface n'est ouverte et se ferment avec la même touche  ou avec le bouton \textit{continuer}. Lorsque le menu est ouvert, le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire est ouvert. Lors du lancement du jeu on arrive directement à un menu mais celui-ci ne se ferme pas avec la touche \textit{escape} par contre il est possible d'utiliser le raccourci pour accéder aux options. 
 
 L'apparence graphique des menus à longtemps était discutée. Un rectangle simple coloré comme l'inventaire ne plaisait pas donc nous avons essayé de mettre comme fond un parchemin. Cependant le placement des écritures sur ce parchemin ne paraissait pas centré et celui-ci pouvait prendre des formes bizarres lorsque la dimension de la fenêtre était changée. Nous avons alors décidé de ne pas mettre de fond au menu, ce qui est finalement très acceptable esthétiquement. 
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=13cm]{Menu1}
+\caption{Menu d'accueil} 
+\label{Menu1}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=13cm]{Menu2}
+\caption{Menu dans le jeu} 
+\label{Menu2}
+\end{center}
+\end{figure}
 
 \subsubsection{Class \textit{Item} (Romain)}
 \textcolor{red}{ça arrive un peu tard, je ne comprend pas comment vous avez pu associer un aspect graphique à des objets qui n'existaient pas encore ??}
@@ -230,9 +252,9 @@ Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnag
 \textcolor{red}{faites-vous une différence entre aléatoire et procédure, si non, il y en a une !}
 
 Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relié par des ponts.
-\\
+
 Nous avons créé 2 formats de chunk différents possédant chacun une île. Sur ces îles sont posées des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
-\\
+
 Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaître les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
 
 \textcolor{red}{différence entre chunk et île ? Il est question de 2 formats, lesquels sont-ils ?}
@@ -254,11 +276,22 @@ En plus du fait que le contexte de notre monde soit fourni, le jeu lui même va t
 
 \subsubsection{Cristal (Romain et Julien)}
 
-Une particularité du monde d'Aegina et la présence sur certaines de ses îles d'un cristal. Ce cristal n'est pas juste comme les autres éléments du décors tel que les arbres ou les pierres, alors que ceci ont pour but d'être récolter par les joueurs les cristaux eux sont indestructible. Dans la nature les cristaux ont une couleur grise indiquant qu'il n'ont pas été activer par un joueur, ils sont alors inactifs et n'ont aucun effet sur l'environnement qui l'entoure. Lorsqu'un joueur tente d'intéragir avec un cristal inactif une fenêtre apparait proposant au joueur d'activer le cristal en échange d'un petit cout en ressource. 
+Une particularité du monde d'Aegina et la présence sur certaines de ses îles d'un cristal. Ce cristal n'est pas juste comme les autres éléments du décors tel que les arbres ou les pierres, alors que ceci ont pour but d'être récolter par les joueurs les cristaux eux sont indestructible. Dans la nature les cristaux ont une couleur grise indiquant qu'il n'ont pas été activer par un joueur, ils sont alors inactifs et n'ont aucun effet sur l'environnement qui l'entoure. Lorsqu'un joueur tente d'intéragir avec un cristal inactif une fenêtre (figure~\ref{CristalHUD}) apparait proposant au joueur d'activer le cristal en échange d'un cout en ressource. 
 
-Une fois activer le cristal change de couleur pour prendre la couleur correspondant à la couleur de l'équipe du joueur (une couleur bleu lorsque tout les joueurs sont dans la même équipe) et se spécialise parmi trois catégories de cristaux différents de manière aléatoire. La première catégorie étant aussi la plus commune avec 60\% d'apparition est la catégorie des cristaux d'attaque (ou de défense ce qui revient au même), la deuxième catégorie avec 30\% d'apparition est celle des cristaux de production et enfin la dernière catégorie correspond aux cristaux de portail.
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{CristalHUD.png}
+\caption{Interface du cristal} 
+\label{CristalHUD}
+\end{center}
+\end{figure}
 
-Actuellement il est impossible de savoir qu'elle est la catégorie d'un cristal dans le jeux et cela n'a que peux d'importance car pour l'instant les cristaux activer ne sont différents des cristaux inactif que par leur couleur.
+Une fois activer le cristal change de couleur pour prendre celle de l'équipe du joueur (bleu lorsque tout les joueurs sont dans la même équipe). A l'activation, un cristal se spécialise dans l'une des trois catégories suivantes manière aléatoire : 
+\begin{itemize}
+\item \textbf{Attaque (60\%):} catégorie des cristaux d'attaque (ou de défense ce qui revient au même).
+\item \textbf{Récolte (30\%):} catégorie des cristaux de production 
+\item \textbf{Portail (10\%):} catégorie des cristaux de portail.
+\end{itemize}
+Actuellement, il est impossible de connaître la spécialisation d'un cristal dans le jeux, mais cela n'a que peux d'importance car pour l'instant les cristaux activer ne sont différents des cristaux inactif que par leur couleur.
 
 \subsubsection{Chat (Florian)}
 
