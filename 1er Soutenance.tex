@@ -18,6 +18,9 @@
 
 \begin{document}
 \chead{Aegina : rapport de soutenance \no 1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{titlepage}
 \begin{center} 
 \huge
@@ -34,14 +37,27 @@ Aegina\\
 \end{center} 
 \end{titlepage}
 \onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \pagebreak
 
 \section*{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \pagebreak
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
 
 \section{Univers du jeu}
+
+Aegina est un jeu de survie dans lequel le joueur incarne Ille un "description manquante". Le joueur serra amené à découvrir les mystères de l'univers dans lequel il évolue. C'est dans cette partie que nous vous révèlerons ces dits secrets. 
+% à améliorer.
+
 \textcolor{red}{je mettrais quand même un petit paragraphe expliquant le jeu en général}
 
 \subsection{Aegina}
@@ -88,10 +104,13 @@ Le sunkium est un minerai d'une couleur mauve très sombre. C'est un minerai lége
 
 Certaines théories stipulent que les pouvoirs du cristal viendraient de minuscules particules de sunkium qui déformeraient l'espace temps. Mais cette théorie s'appuyant sur d'autres théories qui n'ont pas été prouvées, sa véracité est plus que discutable. Sans la présence des cristaux, le sunkium serait  le minerai le plus mystérieux d'Aegina.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
 
 \section{Réalisation}
+
+Maintenant que vous connaissez mieux l'univers d'Aegina nous pouvons vous parler de l'état actuelle du project.
 
 \subsection{Pré-janvier}
 
@@ -299,15 +318,13 @@ Comme déjà précisé la coopération est un élément important du jeu, pour cela la 
 
 \begin{description}
 \item[/help :] énumère les commandes avec leurs arguments ;
-\item[/time <value> :] détermine l'heure de la journée ;
-\item[/give <id> <quantity> :] ajoute à l'inventaire du joueur la quantité passée en paramètre de l'objet dont l'identifiant est passé en paramètre ; 
-\item[/nick <name> :] change le nom du personnage; 
-\item[/msg <player> <message> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
+\item[/time <value (int)> :] détermine l'heure de la journée ;
+\item[/give <id (int)> <quantity (int)> :] ajoute à l'inventaire du joueur la quantité indiquée de l'objet dont l'identifiant correspond au paramètre ; 
+\item[/nick <name (string)> :] change le nom du personnage; 
+\item[/msg <player (string)> <message (string)> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
 \end{description}
 
 Certaines de ces commandes sont surchargées, c'est a dire que nous pouvons mettre plusieurs types d'informations en argument, par exemple la commande \textit{/time day} est accepte et va mettre le soleil au zénith. D'autres commandes ont des alias par exemple la commande \textit{/msg} peut aussi être écrit \textit{/m}.
-
-\textcolor{red}{il faut préciser les types des paramètres, sinon on ne voit pas en quoi day ne correspond pas au type de <value>}
 
 \subsubsection{Musique (Théo)}
 
@@ -319,7 +336,19 @@ En multi-joueurs chaque personne peut se retrouver avec des musiques différentes
 
 \subsubsection{Survie (Théo)}
 
-La survie étant le thème de notre jeu il nous fallait, construire de bonnes bases pour le développement de ce dernier. Aujourd'hui les éléments clés de notre survie son présent, parmi ces éléments il y aura trois barres très importantes pour l'aventure. Deux barres, une symbolisant la soif de votre personne et l'autre la faim seront en haut à droite de votre écran tandis que la troisième barre symbolisant la santé se trouvera au dessus de la barre de selection. lorsque le barre de faim ou de soif sera vide vos point de vies commenceront à descendre. Cependant ces deux barres ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidé de sauter dans le vide vous perdrez aussi des points de vie car malgré sa force et ses capacités Ille ne sait pas voler. Quand vous vous retrouvez sans points de vie vous sentirez vos force disparaître car oui c'est ce que l'on appelle la mort, cependant dans notre grande bonté nous avons décidé que la mort ne serait pas tout de suite définitif et donc chaque mort sera accompagné d'un nouveau début. La seul façon de réellement mourir dans le jeu est donc de quitter celui-ci.
+
+La survie étant le thème de notre jeu il nous fallait, construire de bonnes bases pour le développement de ce dernier. Aujourd'hui les éléments clés de notre survie son présent. Parmi ces éléments, trois sont visible du joueur directement en jeu grace à des barres (figure~\ref{LHT}). Deux de ces barres, une symbolisant la soif et l'autre la faim de votre personne, se situent en haut à droite de l'écran tandis que la troisième barre symbolisant la santé se trouve au dessus de la barre de selection.
+
+%pose à régler
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{BarreLHT}
+\caption{Disposition des différentes barres} 
+\label{LHT}
+\end{center}
+\end{figure}
+
+ Lorsque le barre de faim ou de soif sera vide vos point de vies commenceront à descendre. Cependant ces deux barres ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidé de sauter dans le vide vous perdrez des points de vie car malgré sa force et ses capacités Ille ne sait pas voler. Quand vous vous retrouvez sans points de vie vous sentirez vos force disparaître car oui c'est ce que l'on appelle la mort, cependant dans notre grande bonté nous avons décidé que la mort ne serait pas tout de suite définitif et donc chaque mort sera accompagné d'un nouveau début. La seul façon de réellement mourir dans le jeu est donc de le quitter.
+
 
 \subsubsection{Alpha (Florian)}
 
@@ -331,11 +360,16 @@ La dernière étape avant la soutenance était de partager notre première version, 
 \end{itemize}
 Par la suite nous avons corrigé la totalité des bugs rapportés pour former la version \textit{v1.1-alpha} qui est la version présentée lors de la première soutenance.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \pagebreak
 
 \section{Prévision}
 
-\subsection{Les quatre grand axe}
+Dans cette partie, nous allons vous présenter  les différents concepts que nous implémenterons pour la soutenance \no 2 prévue entre le 2 et le 6 mai 2016.
+
+\subsection{Les quatre grands axes}
 
 \subsubsection{Création d'objet}
 
@@ -343,12 +377,14 @@ Par la suite nous avons corrigé la totalité des bugs rapportés pour former la ve
 
 \subsubsection{Ajout des succès}
 
-\subsubsection{PVP et Conquête}
+Les succès permettrons aux joueurs de suivre l'avancement de l'histoire ainsi que de se remémorer tous les faits héroïques qu'ils ont réalisé. Un joueur pourra consulter ses succès en appuyant sur une touche (à définir) ce qui ouvrira une fenêtre. Dans cette fenêtre, les succès serrons hiérarchisés sous la forme d'un arbre. C'est à dire qu'il faudra absolument que le joueur ai réussi un dit succès pour espérer rempoter les succès suivants. Cette structure nous permettra de définir certains événement de l'histoire comme étant des succès et ainsi la bloquer tant que le joueur n'aura pas effectuer une opération clé de l'histoire. Le déclenchement des dialogues de l'histoire seront donc déclenché par la réussite des succès.
 
+\subsubsection{PVP et Conquête}
 
 \subsection{Les améliorations}
 
 \subsubsection{Survie}
+% la récolte entre autre.
 
 \subsubsection{Génération aléatoire et sauvegarde}
 
@@ -362,6 +398,8 @@ Par la suite nous avons corrigé la totalité des bugs rapportés pour former la ve
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
 
