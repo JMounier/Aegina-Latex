@@ -115,8 +115,11 @@ Maintenant que vous connaissez mieux l'univers d'Aegina nous pouvons vous parler
 \subsection{Pré-janvier}
 
 \subsubsection{Cycle jour/nuit (Julien)}
-\textcolor{red}{Expliquer skybox: je suppose que c'est l'élément qui permet de définir le ciel, que vous avez voulu le faire évoluer pour représenter les différents moments de la journée/nuit}
-Dans un premier temps, nous avons dû déterminer la durée d'une journée que l'on a divisée en 30 phases. Chacune d'elle correspondant à une image de skybox. Seulement cette méthode à présenté quelques inconvénients. Entre autre, le changement de skybox était trop brusque et les différentes skybox n'étaient pas homogènes. C'est pourquoi nous avons dû trouver une autre méthode : la \textit{directional light}.
+
+Cette partie traitera principalement des \textit{skybox} et de l'utilisation que nous en faisons. La \textit{skybox} est la boite dans lequel se déroule le jeu. Les cotés de cette boite représente les limites visibles du monde et il est impossible de sortir de cette boite. La \textit{skybox} permet donc de représenter le ciel ou n'importe quel autre élément de dernier plan.
+
+Pour réaliser le cycle jour nuit, nous avons dû déterminer la durée d'une journée que l'on a divisée en 30 phases. Chacune d'elle correspondant à une image de skybox. Seulement cette méthode à présenté quelques inconvénients. Entre autre, le changement de skybox était trop brusque et les différentes skybox n'étaient pas homogènes. C'est pourquoi nous avons dû trouver une autre méthode : la \textit{directional light}.
+
 La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la skybox du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui converti la longueur d'onde des rayons lumineux en couleur RGB et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante : 
 $$255 * ((3.25t - 4)x^2 + (-4t + 4)x +(0,08 (t-1)))$$
 Nous utilisons cette même fonction en fixant $t = 0$ pour définir l'intensité lumineuse.
