@@ -255,11 +255,9 @@ La classe \textit{Item} permet de créer un patron d'objet ne contenant que des c
 Le mode multi-joueurs est une part importante du projet car celle-ci permettra la coopération des joueurs pour progresser dans le jeu.
 Nous avons dans un premier temps utilisé les fonctionnalités de  \textit{Unet} pour pouvoir créer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grâce a son adresse IP.
 
-Nous avons dans un second temps synchronisé la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilisé le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons codé nous-même un script permettant la synchronisation des personnages. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation.  
+Nous avons dans un second temps synchronisé la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilisé le composant d'unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Du coup nous avons codé nous-même un script permettant la synchronisation des personnages. Son principe est d'envoyer au serveur la position et la rotation du personnage dès que le joueur les modifis, puis celui-ci envoie ces même informations à tous les autres clients. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation. Cela consiste à partir de l'ancienne et de la nouvelle position d'un joueur d'en déduire des positions intermédiaires.
 
 Pour finir nous avons synchronisé les éléments, les sons et les caractéristiques du monde, que ce soient les îles, les biomes, les bruits de pas des joueurs, l'état de la journée (jour/nuit) ou bien les arbres.
-
-\textcolor{red}{Il faut détailler, comment gérez vous la synchronisation, quel est le principe d'interpolation, en quoi rend-il les déplacements plus fluides ?}
 
 \subsubsection{Son (Théo et Romain)}
 
@@ -270,16 +268,14 @@ Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnag
 
 \subsection{Février}
 
-\subsubsection{Génération aléatoire (Florian et Julien)}
-\textcolor{red}{faites-vous une différence entre aléatoire et procédure, si non, il y en a une !}
+\subsubsection{Génération procédurale du monde (Florian et Julien)}
 
-Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relié par des ponts.
+Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière procédurale. Pour cette première soutenance, nous avons implémenté la génération procédurale d'un \textit{chunk}, et la liaison des chunks entre eux. Nous avons donc au lancement d'une partie un monde composé de quatre chunks chacun relié par des ponts.
 
-Nous avons créé 2 formats de chunk différents possédant chacun une île. Sur ces îles sont posées des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
+Nous avons créé deux chunks différents possédant chacun une île différente, cependant rien nous empechera à l'avenir de créer des chunks ayant plusieur iles. Sur ces îles sont posées des ancres qui correspondent a des emplacements d'objets. Cela permet lors de la génération du monde de choisir un biome aléatoirement parmi forêt, désert ou neige, puis de créer sur les ancres un objet cohérent avec le biome. Par exemple dans un biome désert nous trouverons des cactus et des rochers alors que dans un biome forêt nous trouverons des arbres et des fleurs.
 
-Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaître les chunks de manière procédurale avec un agencement correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
+Nous avons donc tous les éléments pour créer des chunks, il ne restera plus qu'a faire apparaître le monde de manière procédurale avec un agencement des chunks correct. Puis il sera aussi nécessaire de sauvegarder le monde avec les modifications que les joueurs y ont apportées. 
 
-\textcolor{red}{différence entre chunk et île ? Il est question de 2 formats, lesquels sont-ils ?}
 \subsubsection{Drop d'Item (Florain et Julien)}
 
 Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cela le joueur a la possibilité depuis son inventaire de  glisser un tas d'objets hors de l'inventaire. Il peut aussi grâce a une touche (la touche \og Q\fg par défault), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde et le lancer a quelques mètres du personnage. Dans cet état n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
@@ -378,6 +374,8 @@ Dans cette partie, nous allons vous présenter  les différents concepts que nous 
 
 \subsubsection{Ajout des créatures}
 
+L'ajout des créatures sera une part importante de la prochaine version. Elles devront pouvoir se déplacer de manière intelligente et attaquer les joueurs. Certaines des créatures seront passives et par conséquent n'attaqueront pas les joueurs. Les joueurs pourront alors se battre contre ces créatures et récupérer des objets pour progresser dans leur aventure.
+
 \subsubsection{Ajout des succès}
 
 Les succès permettrons aux joueurs de suivre l'avancement de l'histoire ainsi que de se remémorer tous les faits héroïques qu'ils ont réalisé. Un joueur pourra consulter ses succès en appuyant sur une touche (à définir) ce qui ouvrira une fenêtre. Dans cette fenêtre, les succès serrons hiérarchisés sous la forme d'un arbre. C'est à dire qu'il faudra absolument que le joueur ai réussi un dit succès pour espérer rempoter les succès suivants. Cette structure nous permettra de définir certains événement de l'histoire comme étant des succès et ainsi la bloquer tant que le joueur n'aura pas effectuer une opération clé de l'histoire. Le déclenchement des dialogues de l'histoire seront donc déclenché par la réussite des succès.
@@ -389,7 +387,9 @@ Les succès permettrons aux joueurs de suivre l'avancement de l'histoire ainsi qu
 \subsubsection{Survie}
 % la récolte entre autre.
 
-\subsubsection{Génération aléatoire et sauvegarde}
+\subsubsection{Génération procédurale et sauvegarde}
+
+Les améliorations de la génération procédurale consisteront à un ajout de chunks et d'éléments, mais aussi la création d'un système de \textit{seed} qui permetra entre autre une sauvegarde du monde simple et performante. Un \textit{seed} est un simple nombre qui est lié au monde, cela implique que deux mondes ayant le même \textit{seed} seront identiques.   
 
 \subsubsection{Histoire}
 
