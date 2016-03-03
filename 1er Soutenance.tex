@@ -339,17 +339,20 @@ En multi-joueurs chaque personne peut se retrouver avec des musiques différentes
 \subsubsection{Survie (Théo)}
 
 
-La survie étant le thème de notre jeu il nous fallait, construire de bonnes bases pour le développement de ce dernier. Aujourd'hui les éléments clés de notre survie son présent. Parmi ces éléments, trois sont visible du joueur directement en jeu grace à des barres (figure~\ref{LHT}). Deux de ces barres, une symbolisant la soif et l'autre la faim de votre personne, se situent en haut à droite de l'écran tandis que la troisième barre symbolisant la santé se trouve au dessus de la barre de selection.
+La survie étant le thème de notre jeu, il nous fallait construire de bonnes bases pour le développement de cette dernière. Aujourd'hui les éléments clés de notre survie sont présent. Parmi ces éléments, trois sont visible directement en jeu grace à des barres (figure~\ref{LHT}). Deux de ces barres, l'une symbolisant la soif et l'autre la faim de votre personne, se situent en haut à droite de l'écran tandis que la troisième barre, symbolisant la santé, se trouve au dessus de la barre de selection.
 
-%pose à régler
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=11cm]{BarreLHT}
+\begin{center}\includegraphics[width=10cm]{BarreLHT}
 \caption{Disposition des différentes barres} 
 \label{LHT}
 \end{center}
 \end{figure}
 
- Lorsque le barre de faim ou de soif sera vide vos point de vies commenceront à descendre. Cependant ces deux barres ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidé de sauter dans le vide vous perdrez des points de vie car malgré sa force et ses capacités Ille ne sait pas voler. Quand vous vous retrouvez sans points de vie vous sentirez vos force disparaître car oui c'est ce que l'on appelle la mort, cependant dans notre grande bonté nous avons décidé que la mort ne serait pas tout de suite définitif et donc chaque mort sera accompagné d'un nouveau début. La seul façon de réellement mourir dans le jeu est donc de le quitter.
+ Lorsque le barre de faim ou de soif est vide, les point de vies de votre personnage commencent à descendre. Cependant ces deux attribut (soif et faim) ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidé de sauter dans le vide, votre santé en souffrira également car malgré sa force et sa volonté
+ %et ses capacités 
+ Ille ne sait pas voler.
+ 
+ Quand vous vous retrouvez sans points de vie (barre de santé vide) vous sentirez vos force disparaître, c'est ce que nous appelons communément la mort. Cependant, dans notre grande bonté, nous avons décidé que la mort ne serait pas tout de suite définitive et donc chaque mort sera accompagné d'un nouveau début. Pour le moment, le joueur \textit{respawn}, il est téléporté sur la première île qu'il a traversé et ses attributs (santé, soif et faim) sont remis au maximum. La seul façon de mourir réellement dans le jeu est donc de le quitter.
 
 
 \subsubsection{Alpha (Florian)}
