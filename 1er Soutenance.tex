@@ -82,7 +82,7 @@ Le mithril, dans le monde d'Aegina, est un minerai vert clair un peu plus solide
 
 A l'état naturel il catalyse les instabilités et les relâche sous forme de vagues d'énergie rendant le minerai chaud au toucher. Une fois épuré, le mithril continue de catalyser les instabilités mais peut alors relâcher son énergie sous de nombreuses autres formes que la chaleur comme le ferait un cristal mais à bien plus faible échelle. 
 
-D'ailleurs l'énergie catalysée et stockée par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie entre eux. Ainsi quelques chercheurs hérétiques qui se sont trouvés sur Aegina ont supposé que les cristaux était formés d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard tués par des sangliers après avoir déchargé leur cristal à l'aide de mithril \textcolor{red}{ Je ne comprends pas ce que veut dire  \og décharger le cristal \og }. 
+D'ailleurs l'énergie catalysée et stockée par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie entre eux. Ainsi quelques chercheurs hérétiques qui se sont trouvés sur Aegina ont supposé que les cristaux était formés d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard tués par des sangliers après avoir déchargé leur cristal à l'aide de mithril \textcolor{red}{ Je ne comprends pas ce que veut dire  \og décharger le cristal \fg }. 
 
 \subsubsection{Floatium}
 
@@ -294,6 +294,15 @@ En plus du fait que le contexte de notre monde soit fourni, le jeu lui même va t
 \subsection{Mars}
 
 \subsubsection{Intéraction avec l'environnement (Florian et Julien)}
+
+Il a été décider que le joueur ne pourrait interagir avec son environnement que d'une manière très particulière. En effet, la plupart du temps, le joueur utilise un curseur pour sélectionner l'objet avec lequel il veut interagir. Mais ce mécanisme implique un majeur inconvénient : La souris doit être réservée au déplacement du curseur et ce n'est pas envisageable dans notre cas car la souris est utilisée pour le déplacement de la caméra. 
+
+Il a donc fallu trouver une autre méthode pour sélectionner les objets et bien faire comprendre au joueur quel est l'objet actuellement sélectionné. Après concertation, nous avons remarqué que l'objet avec lequel le joueur veut interagir est souvent l'objet le plus proche de lui (\textit{nearElement}). Nous avons donc décidé qu'un joueur ne pourrait interagir qu'avec le \textit{nearElement} et ce en utilisant le click droit. L'avantage de n'interagir qu'avec le \textit{nearElement}  est que celui-ci est unique. Il ne peut y avoir qu'un seul objets le plus proche et si plusieurs object sont a égale distance, alors le premier rencontré serra considéré comme \textit{nearElement}.
+
+Maintenant que la méthode théorique est en place, il faut l'appliquer. Pour ce faire, il suffit de comparer les distances séparant le personnage des objets environnents. La selection du \textit{nearElement} se résume donc a une recherche de minimum. Mais il faut définir l'ensemble de recherche et pour cela, être capable de différencier les objects de l'île par exemple. La solution que nous utilisons est la suivante : Nous imposons un \textit{tag} particulier à tous les objects avec lesquels le joueur peut interagir. \textcolor{red}{ Partie sur le sphère : déso flo mais je me sent pas de l'expliquer. Insister sur la limitation de la recherche grâce à une porter max etc. }.
+
+Le \textit{nearElement} est maintenant sélectionné mais il est impossible pour le joueur de faire la différence entre le \textit{nearElement} et les autres éléments. Pour mettre en valeur le \textit{nearElement}, nous utilisons un \textit{shader} particulier. Les \textit{shaders} indiquent au système de rendue comment un object doit être afficher a l'écran. Le \textit{shader} que nous utilisons ajoute un contour rouge à la silhouette de l'object et assombrie les couleurs de l'object. Il devient donc très facile de distinguer le \textit{nearElement} des autres objects.
+
 
 \subsubsection{Cristal (Romain et Julien)}
 
