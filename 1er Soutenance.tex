@@ -24,7 +24,7 @@
 \begin{titlepage}
 \begin{center} 
 \huge
-\vspace*{5cm}
+\vspace*{1cm}
 Aegina : rapport de soutenance \no 1\\
 \vspace*{2em}
 \large
@@ -35,6 +35,11 @@ Aegina\\
 \vspace{2cm}
 \includegraphics[width=10cm]{AeIcon.png}
 \end{center} 
+\begin{figure}[b]
+\includegraphics[height=2cm]{logo.jpg}
+\hspace{10cm}
+\includegraphics[height=2cm]{logo-epita-hd.png}
+\end{figure}
 \end{titlepage}
 \onehalfspacing
 
@@ -48,9 +53,9 @@ Aegina\\
 
 \section*{Introduction}
 
+Ce rapport rassemble l'ensemble des éléments qui ont été ajouté aux jeu d'Aegina depuis sa création et jusqu'au jour du 16 mars 2016. Il présente les différents éléments du Contexte du jeu d'Aegina et présente chronologiquement les différents ajout fait au jeu en précisant les personnes responsables de ces ajouts. Enfin Il présente les différents éléments qui seront ajouté aux jeu pour la seconde soutenance.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pagebreak
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
 
 \section{Univers du jeu}
@@ -394,15 +399,19 @@ Par la suite nous avons corrigé la totalité des bugs rapportés pour former la ve
 
 \section{Prévision}
 
-Dans cette partie, nous allons vous présenter  les différents concepts que nous implémenterons pour la soutenance \no 2 prévue entre le 2 et le 6 mai 2016.
+Dans cette partie, nous allons vous présenter  les différents concepts que nous implémenterons pour la soutenance \no 2 prévue entre le 2 et le 6 mai 2016. Ces ajouts seront concentré sur le \textit{gameplay} car jusqu'a présent il y a eu de nombreux éléments ajouté au jeux mais aucun de permettant réellement de jouer et de s'amuser.
 
 \subsection{Les quatre grands axes}
 
+Les quatre grands axes sont les sont quatre ajouts qui permettrons d'ajouter de nombreux éléments de \textit{gameplay} à Aegina.
+
 \subsubsection{Création d'objet}
+
+L'ajout de la création d'objet permettra aux joueur d'accéder à une interface de création dans son inventaire lui offrant la possibilité de transformer des objets qu'il possède actuellement en d'autres objets. La liste des objets qu'il pourra créer dépendra de l'avancement du jeu mais aussi de la présence de certains atelier dans les environs (comme une forge par exemple). Cette liste dépendra aussi d'une \textit{connaissance des recettes} ou le joueur devra au préalable créer un objet près d'un atelier spécifique avant de pouvoir créer celui-ci n'importe où dans le monde (ce système est inspirer de \textit{Terraria} et \textit{Don't starve}).
 
 \subsubsection{Ajout des créatures}
 
-L'ajout des créatures sera une part importante de la prochaine version. Elles devront pouvoir se déplacer de manière intelligente et attaquer les joueurs. Certaines des créatures seront passives et par conséquent n'attaqueront pas les joueurs. Les joueurs pourront alors se battre contre ces créatures et récupérer des objets pour progresser dans leur aventure.
+L'ajout des créatures sera une part importante de la prochaine version. Elles devront pouvoir se déplacer de manière intelligente et attaquer les joueurs. Certaines des créatures seront passives et par conséquent n'attaqueront pas les joueurs. Les joueurs pourront alors se battre contre ces créatures et récupérer des objets pour progresser dans leur aventure. L'ensemble de ces créatures possèderont une IA passive correspondant à leur déplacement lorsque le joueurs ne se trouve pas dans les environs. Cette IA devra permettre de petit déplacements sur l'île sans rentrer dans les éléments du décor ou tomber dans le vide. Cette IA sera commune à l'ensemble des créatures qu'elles soient passives ou agressives. ces créatures possèderont également une IA correspondant au comportement des créatures lorsque le joueur ce trouve dans les environs mais cette IA la ne sera pas commune à toute les créatures (les créatures agressives attaquerons le joueur tandis que les passives fuirons par exemple).
 
 \subsubsection{Ajout des succès}
 
