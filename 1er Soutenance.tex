@@ -305,6 +305,8 @@ Le drop d'un item correspond a son passage de l'inventaire au monde 3D. Pour cel
 
 \subsubsection{Bibliothèque (Florian, Romain et Théo)}
 
+Lors de la création du jeu Il nous est arrivé plusieurs fois de vouloir créer une grande liste d'éléments contenant l'ensemble des \textit{Item} existants, l'ensembles des textes avec leur traduction en anglais ou l'ensemble des éléments pouvant être généré dans le monde. Nous avons donc créé des énumérations contenant tout ces éléments permettant d'accéder à chaque élément facilement. Les texte contenu dans l'énumération des textes ont la particularité de renvoyé le texte correspondant à langue actuelle lorsqu'on l'utilise ainsi tout les textes présents dans le jeu change lors du changement de langue à l'exception des messages informatif du chat.
+
 \subsubsection{Histoire (Romain et Théo)}
 
 En plus du fait que le contexte de notre monde soit fourni, le jeu lui même va tourner autour d'une histoire. Cependant actuellement l'histoire n'est pas encore définie et elle n'a donc pas encore pu être implémentée dans le jeu. Il existe néanmoins un script (au sens théâtrale du terme) racontant le début du jeu et sa fin. Ce script contient entre autre un didacticiel devant permettre au joueur de comprendre les bases du jeu. 
@@ -421,7 +423,13 @@ Les succès permettrons aux joueurs de suivre l'avancement de l'histoire ainsi qu
 
 \subsubsection{PVP et Conquête}
 
+Cette ajout comporte l'amélioration des cristaux pour que ceux-ci possède un véritable effet sur l'environnement ainsi que l'ajout d'un second mode multi-joueurs où ceux-ci ne jouerons pas en coopération mais les uns contre les autres dans le but de prendre le contrôle des cristaux adverses. ce second mode ce passera dans un monde au dimension limité avec une plus grande présence de cristaux et dans lequel il n'y aura pas d'histoire aussi développé.
+
+L'amélioration des cristaux dans le mode de jeu en coopération permettra de centré les cristaux au centre du \textit{gameplay} car ceux-ci deviendrons essentiel à la survie du joueur. En effet les fonctionnalité de \textit{respawn} dépendrons des cristaux.
+
 \subsection{Les améliorations}
+
+Cette partie contiendra des améliorations des éléments déjà existant ne créant pas forcement du \textit{gameplay}.
 
 \subsubsection{Survie}
 
@@ -434,6 +442,8 @@ Enfin, de nouveaux paramètres tel que la résistance et les dégâts serrons à pren
 Les améliorations de la génération procédurale consisteront à un ajout de chunks et d'éléments, mais aussi la création d'un système de \textit{seed} qui permetra entre autre une sauvegarde du monde simple et performante. Un \textit{seed} est un simple nombre qui est lié au monde, cela implique que deux mondes ayant le même \textit{seed} seront identiques.   
 
 \subsubsection{Histoire}
+
+L'amélioration de l'historie se fera en deux partie : l'écritures des partie de l'histoire qui n'ont pas encore été écrite et l'implémentation d'une partie de l'histoire dans le jeu. Cette ajout contiendra notamment une partie d'histoire essentiel pour tous nouveau joueur lui permettant de découvrir le monde et les différentes interfaces mis à sa disposition : un didacticiel.
 
 \subsubsection{Environnement sonore}
 
