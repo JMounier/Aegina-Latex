@@ -134,7 +134,6 @@ Maintenant que vous connaissez mieux l'univers d'Aegina nous pouvons vous parler
 \subsection{Pré-janvier}
 
 \subsubsection{Cycle jour/nuit (Julien)}
-\textcolor{red}{Bien relire pour vérifier que je n'ai pas introduit d'erreur}
 
 Cette partie traitera principalement des \textit{skybox} et de l'utilisation que nous en faisons. La \textit{skybox} est la boîte dans laquelle se déroule le jeu. Ses cotés représentent les limites visibles du monde et il est impossible d'en sortir. La \textit{skybox} permet donc de représenter le ciel ou n'importe quel autre élément de dernier plan.
 
@@ -238,7 +237,7 @@ Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sor
 
 Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
 
-\subsubsection{Barre de selection (Florian)}
+\subsubsection{Barre de sélection (Florian)}
 
 Lorsque nous sommes en train de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des ressources pour survivre et interagir avec l'environnement, nous voulons que ces dernières soient facilement accessibles sans devoir s'arrêter (pour pouvoir boire une potion de santé alors qu'un slime nous poursuit par exemple).
 
@@ -306,15 +305,14 @@ Nous avons donc tous les éléments pour créer des \textit{chunks}, il ne restera 
 
 Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur à la possibilité depuis son inventaire de  glisser un tas d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défaut), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde et le lancer à quelques mètres du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. La récupération de l'objet ce fait par des échanges d'information entre serveur et client pour garantir que seul un joueur ramasse l'objet, et qu'il ait suffisamment de place dans son inventaire pour le stocker. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
 
-\subsubsection{Bibliothèque (Florian, Romain et Théo)}
-\textcolor{red}{Attention, bibliothèque est un terme qui a une signification très particulière en programmation, ça ne correspond par à ce que vous faites, il faut changer le titre de la section}
+\subsubsection{Enumération (Florian, Romain et Théo)}
 
 Lors de la création du jeu, il nous est arrivé plusieurs fois de vouloir créer une grande liste d'éléments contenant l'ensemble des \textit{Item} existants, l'ensemble des textes avec leur traduction en anglais ou l'ensemble des éléments pouvant être générés dans le monde. Nous avons donc créé des énumérations contenant tous ces éléments et permettant d'accéder à chacun d'eux facilement. Le choix des textes affichés dans le jeu peut alors être dynamique et se faire en fonction de la langue. Ainsi tous les textes présents dans le jeu changent lors du changement de langue à l'exception des messages informatifs du chat. 
 
 
 \subsubsection{Histoire (Romain et Théo)}
 
-En plus du fait que le contexte de notre monde soit fourni, le jeu lui-même va tourner autour d'une histoire. Cependant, l'histoire n'est pas encore définie et elle n'a donc pas encore pu être implémentée dans le jeu. Il existe néanmoins un script (au sens théâtrale du terme) racontant le début du jeu et sa fin. Ce script contient entre autre un didacticiel devant permettre au joueur de comprendre les bases du jeu. 
+En plus du fait que le contexte de notre monde soit fourni, le jeu lui-même va tourner autour d'une histoire. Cependant, l'histoire n'est pas encore définie et elle n'a donc pas encore pu être implémentée dans le jeu. Il existe néanmoins un script\footnote{script fourni en anexe} (au sens théâtrale du terme) racontant le début du jeu et sa fin. Ce script contient entre autre un didacticiel devant permettre au joueur de comprendre les bases du jeu. 
  
  Il est important de noter que les éléments se trouvant dans la partie Univers du jeu de ce rapport ne seront pas tous directement accessibles aux joueurs lors de l'aventure. Certaines parties devront être découvertes durant l'aventure, notamment tout ce qui concerne le fonctionnement du monde d'Aegina et l'influence négative des cristaux. 
 
@@ -417,7 +415,7 @@ L'ajout de la création d'objet permettra au joueur d'accéder à une interface de 
 
 \subsubsection{Ajout des créatures}
 
-L'ajout des créatures sera une part importante de la prochaine version. Elles devront pouvoir se déplacer de manière intelligente. Certaines seront passives mais d'autres seront agressives et devront attaquer les joueurs.  Ces derniers pourront alors se battre contre ces créatures et récupérer des objets pour progresser dans leur aventure. Les créatures ne s'attaquent pas entre elles. L'ensemble des créatures possèderont une IA gérant leurs déplacements et leur comportement. Lorsqu'aucun joueur ne se trouve dans les environs, cette IA devra permettre de petits déplacements sur l'île sans rentrer dans les éléments du décor ou tomber dans le vide. Cette IA sera commune à l'ensemble des créatures qu'elles soient passives ou agressives. La gestion du comportement des créatures sera différente lorsqu'un joueur se trouve dans les environs, elle dépendra de l'agressivité ou nou de la créature (les créatures agressives attaquerons le joueur alors que les passives fuirons par exemple).
+L'ajout des créatures sera une part importante de la prochaine version. Elles devront pouvoir se déplacer de manière intelligente. Certaines seront passives mais d'autres seront agressives et devront attaquer les joueurs.  Ces derniers pourront alors se battre contre ces créatures et récupérer des objets pour progresser dans leur aventure. Les créatures ne s'attaquent pas entre elles. L'ensemble des créatures possèderont une IA gérant leurs déplacements et leur comportement. Lorsqu'aucun joueur ne se trouve dans les environs, cette IA devra permettre de petits déplacements sur l'île sans rentrer dans les éléments du décor ou tomber dans le vide. Cette IA sera commune à l'ensemble des créatures qu'elles soient passives ou agressives. La gestion du comportement des créatures sera différente lorsqu'un joueur se trouve dans les environs, elle dépendra de l'agressivité ou non de la créature (les créatures agressives attaquerons le joueur alors que les passives fuirons par exemple).
 
 \subsubsection{Ajout des succès}
 
@@ -451,14 +449,15 @@ L'amélioration de l'historie se fera en deux partie : l'écriture des partie non 
 
 \subsubsection{Environnement sonore}
 
-L'ajout de sons/musiques nous permettra de dynamiser notre jeu. L'ajout des créatures amènera à l'ajout des  sont qui leur sont associés. Ces bruits rendront les créature plus impressionnantes ou au contraire attirantes, attention à ne pas se fier aux apparences qui peuvent être trompeuses...
+L'ajout de sons/musiques nous permettra de dynamiser notre jeu. L'ajout des créatures amènera à l'ajout des  sons qui leur sont associés. Ces bruits rendront les créature plus impressionnantes ou au contraire attirantes, attention à ne pas se fier aux apparences qui peuvent être trompeuses...
 
 L'ajout d'une musique qui sera consacrée à la nuit permettra de marquer une différence, autre que visuelle, entre le jour et la nuit dans le monde de Aegina.
 
-\pagebreak
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
+
+Pour la première soutenance d'Aegina nous avons réussi à atteindre tous les objectifs donné dans le cahier des charges et nous avons même pris de l'avance dans certains domaines comme le personnage qui devait être finit à 30 \% mais qui est finalement achevé à 70\%. De plus, nous avons pu rajouter des éléments qui n'étaient pas précisés dans le cahier des charges comme le chat et nous avons même créé une alpha pour que le jeu soit tester par plus d'une vingtaine de personne. En somme nous somme fières de l'avancement de notre jeux et nous allons continuer à le développé pour pouvoir en être aussi fière lors de la deuxième soutenance.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
