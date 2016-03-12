@@ -295,7 +295,6 @@ Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnag
 \subsection{Février}
 
 \subsubsection{Génération aléatoire du monde (Florian et Julien)}
-\textcolor{red}{Dans le cahier des charges vous parlez d'aléatoire, le monde généré deux fois de suite ne sera donc pas le même. S'il est généré de façon procédurale cela veut dire qu'il n'est pas prédéfini mais calculé à chaque fois (ce qui est un peu sous entendu avec le mot génération), mais en pouvant produire le même résultat. Donc en général si la génération est aléatoire elle est quasi obligatoirement procédurale. Le point à mettre en avant dans votre rapport est l'aspect aléatoire. D'après le texte suivant il semble que "seul" le biome soit choisi aléatoirement, est-ce aussi le cas des objets créés sur les ancres ?, une ancre peut-elle n'avoir aucun objet associé? Donc il faut voir clairement ce qui est "prédéfini", qui sera toujours identique d'une génération à l'autres (par exemple les chunks possibles sont prédéfinis mais leur agencement est aléatoire ?) et ce qui est généré aléatoirement (qui sera différent d'une génération à l'autre)}
 
 Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière aléatoire. Pour cette première soutenance, nous avons implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des \textit{chunks} entre eux, pour pouvoir générer un monde différent à chaque début de partie.
 
@@ -305,7 +304,7 @@ Nous avons donc tous les éléments pour créer des \textit{chunks}, il ne restera 
 
 \subsubsection{Drop d'Item (Florain et Julien)}
 
-Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur a la possibilité depuis son inventaire de  glisser un tas d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défault), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde et le lancer a quelques mètres du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
+Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur à la possibilité depuis son inventaire de  glisser un tas d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défaut), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde et le lancer à quelques mètres du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. La récupération de l'objet ce fait par des échanges d'information entre serveur et client pour garantir que seul un joueur ramasse l'objet, et qu'il ait suffisamment de place dans son inventaire pour le stocker. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
 
 \subsubsection{Bibliothèque (Florian, Romain et Théo)}
 \textcolor{red}{Attention, bibliothèque est un terme qui a une signification très particulière en programmation, ça ne correspond par à ce que vous faites, il faut changer le titre de la section}
@@ -330,9 +329,6 @@ Il a donc fallu trouver une autre méthode pour sélectionner les objets et bien f
 Maintenant que la méthode théorique est en place, il faut l'appliquer. Pour ce faire, il suffit de comparer les distances séparant le personnage des objets environnants. La sélection du \textit{nearElement} se résume donc à une recherche de minimum. Mais il faut définir l'ensemble de recherche et, pour cela, être capable de différencier les objets de l'île par exemple. La solution que nous utilisons est la suivante : nous ajoutons un \textit{tag} particulier à tous les objects avec lesquels le joueur peut interagir. Pour ne pas avoir à considérer l'ensemble des objets de monde, nous définissons une sphère d'interaction, le joueur ne peut interagir qu'avec les objets se trouvant à l'intérieur de cette sphère, les autres sont trop éloignés. L'objet le plus proche du joueur se trouve donc obligatoirement à l'intérieur de cette sphère.
 
 Le \textit{nearElement} est maintenant identifié mais il est impossible pour le joueur de faire la différence entre le \textit{nearElement} et les autres éléments. Pour mettre en valeur le \textit{nearElement}, nous utilisons un \textit{shader} particulier. Les \textit{shaders} indiquent au système de rendu comment un objet doit être affiché à l'écran. Le \textit{shader} que nous utilisons ajoute un contour rouge à la silhouette de l'objet et assombrit les couleurs de l'objet. Il devient donc très facile de distinguer le \textit{nearElement} des autres objets.
-
-\textcolor{red}{Il faut parler (ici ou dans une section particulière) du problème de la récupération d'un élément en mode multi-joueurs. IL faut garantir qu'un élément donné n'est récupéré que par un seul joueur. Soit votre jeu le garanti déjà, et il faut expliquer comment soit il ne le fait pas encore et il faut dire qu'il devra le garantir.}
-
 
 \subsubsection{Cristal (Romain et Julien)}
 
@@ -400,7 +396,7 @@ La dernière étape avant la soutenance était de partager notre première version, 
 \item Un bug graphique au niveau de l'élément proche lorsque la camera était à l'intérieur ;
 \item La musique qui en multi-joueurs pouvait se superposer avec la musique des autres joueurs alentour. 
 \end{itemize}
-Nous avons corrigé la totalité des bugs rapportés pour produire la version \textit{v1.1-alpha} qui est la version présentée lors de la première soutenance.
+Nous avons corrigé la totalité des bugs rapportés pour produire la version \textit{v1.1-alpha} puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques. Ces modifications ont abouti sur une version \textit{v.1.2-alpha} qui est la version présentée lors de la première soutenance.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
