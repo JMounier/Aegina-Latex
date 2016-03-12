@@ -142,14 +142,6 @@ Pour réaliser le cycle jour nuit, nous avons dû déterminer la durée d'une journé
 La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la  \textit{skybox}  du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui convertit la longueur d'onde des rayons lumineux en couleur RGB{\footnote{http://stackoverflow.com/questions/1472514/convert-light-frequency-to-rgb}} et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante où $\lambda$ est la longueur et $t$ le temps : 
 $$spectre(\lambda,t)=255 * ((3.25t - 4)\lambda^2 + (-4t + 4)\lambda +(0,08 (t-1)))$$
 
-
-\begin{figure}[h!]
-\begin{center}\includegraphics[width=11cm]{DNgraph.png}
-\caption{évolution du spectre lumineux en fonction du temps} 
-\label{Graph1}
-\end{center}
-\end{figure}
-
 La figure~\ref{Graph1} montre les évolutions du spectre lumineux. L'arc des abscisses représente la longueur d'onde et celui des ordonnées l'intensité. Pour chaque valeur de $t$ (moment de la journée), nous pouvons donc calculer un spectre lumineux. La courbe bleue ($t=0$) représente le spectre quand le soleil est au zénith et la courbe rouge ($t = 1$) correspond au spectre au moment du coucher du soleil. Les courbes vertes ($t=0,3$ et $t = 0,6$) montrent quant à elles l'évolution de la courbe. A chaque instant, nous échantillonnons la courbe actuelle en prenant 40 valeurs équiréparties, ce qui nous donne un tableau des couleurs (en RGB) que notre astre est censé émettre. Ce tableau contient environ 40 valeurs or une \textit{directional light} ne possède qu'une seule couleur. Il a donc fallu trouver un moyen pour réunir ces 40 couleurs en une seule. Pour ce faire, nous parcourons toutes les valeurs du tableau et  nous formons une nouvelle couleur en choisissant les plus grandes valeurs de rouge, de vert et de bleu rencontrées.
 
 Nous utilisons cette même fonction en fixant $\lambda= 0$ pour définir l'intensité lumineuse.
@@ -163,6 +155,13 @@ $$ z(t)= R sin(wt)$$
 Ainsi, la \textit{directional light} suit une orbite circulaire autour du point de coordonnées (0,0,0). L'orientation de la \textit{directional light} est définie grâce à la fonction \textit{lookat} qui oriente un \textit{gameobject} vers un autre \textit{gameobject}, le point (0,0,0) dans notre cas. 
 
 Un procédé similaire est utilisé pour la première scène du jeu. En effet, dans cette scène, la caméra orbite autour d'une île et nous nous servons de la fonction \textit{lookat} pour orienter la camera vers l'île. Mais, contrairement au cas de la \textit{directional light}, le déplacement utilise les propriétés de la base polaire. En effet, comme l'objet est toujours orienté vers le centre de son orbite, il suffit de lui appliquer une vitesse constante pour qu'il décrive une trajectoire circulaire.
+
+\begin{figure}[h]
+\begin{center}\includegraphics[width=11cm]{DNgraph.png}
+\caption{évolution du spectre lumineux en fonction du temps} 
+\label{Graph1}
+\end{center}
+\end{figure}
 
 \subsubsection{Class \textit{Item} (Romain)}
 
@@ -200,6 +199,11 @@ Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons c
 
 Nous avons donc commencé la réalisation de notre première île mais ce fut un échec (figure~\ref{premierIle}). Nous n'avions pas assez bien défini la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération aléatoire du monde. 
 
+
+Nous avons alors décidé de réaliser tous nos futurs modèles grâce au logiciel Blender et d'importer le moins possible depuis l'asset store. Nous nous sommes donc recentrés sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher (figure~\ref{premiersElements}).
+
+La réalisation des modèles suivants s'est faite et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=8cm]{Photo_1_premiere_ile.png}
@@ -208,8 +212,6 @@ Nous avons donc commencé la réalisation de notre première île mais ce fut un éch
 \end{center}
 \end{figure}
 
-Nous avons alors décidé de réaliser tous nos futurs modèles grâce au logiciel Blender et d'importer le moins possible depuis l'asset store. Nous nous sommes donc recentrés sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher (figure~\ref{premiersElements}).
-
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=8cm]{environment.png}
@@ -217,16 +219,12 @@ Nous avons alors décidé de réaliser tous nos futurs modèles grâce au logiciel Bl
 \label{premiersElements}
 \end{center}
 \end{figure}
-
-
-
-La réalisation des modèles suivants s'est faite et continuera à se faire petit à petit en fonction des demandes engendrées par l'avancement du projet.
-
-
 \subsection{Janvier}
 
 \subsubsection{Inventaire (Romain et Florian)}
 Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui et donc se déplacer assez facilement nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appui sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+
+Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=11cm]{Inventaire}
@@ -235,8 +233,6 @@ Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sor
 \end{center}
 \end{figure}
 
-Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
-
 \subsubsection{Barre de sélection (Florian)}
 
 Lorsque nous sommes en train de bouger il est impossible de voir ce que contient notre inventaire et il faut nécessairement l'ouvrir, et donc s'arrêter, pour interagir avec lui. Actuellement ce n'est pas un problème mais quand il sera nécessaire d'utiliser des ressources pour survivre et interagir avec l'environnement, nous voulons que ces dernières soient facilement accessibles sans devoir s'arrêter (pour pouvoir boire une potion de santé alors qu'un slime nous poursuit par exemple).
@@ -244,7 +240,7 @@ Lorsque nous sommes en train de bouger il est impossible de voir ce que contient
 Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisée avec la 4$^{e}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparaît même quand le joueur n'a pas affiché son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=11cm]{Toolbar}
+\begin{center}\includegraphics[height=1.6cm]{Toolbar}
 \caption{barre d'outil} 
 \label{Toolbar}
 \end{center}
@@ -332,13 +328,6 @@ Le \textit{nearElement} est maintenant identifié mais il est impossible pour le 
 
 Une particularité du monde d'Aegina est la présence, sur certaines de ses îles, d'un cristal. Ce cristal n'est pas juste comme les autres éléments du décors tels que les arbres ou les pierres. Ces derniers sont là pour être  récoltés et transformés par les joueurs, les cristaux eux sont indestructibles. Dans la nature les cristaux ont une couleur grise indiquant qu'il n'ont pas été activés par un joueur, ils n'ont alors par d'influence visible sur l'environnement. Lorsqu'un joueur tente d'interagir avec un cristal inactif, une fenêtre (figure~\ref{CristalHUD}) apparait proposant au joueur d'activer le cristal en échange d'un coût en ressources. Les informations contenues dans cette fenêtre ne sont pas encore toutes définies, mais elle a été dimensionnée pour pouvoir contenir les prochains ajouts prévu.
 
-\begin{figure}[h!]
-\begin{center}\includegraphics[width=11cm]{CristalHUD.png}
-\caption{Interface du cristal} 
-\label{CristalHUD}
-\end{center}
-\end{figure}
-
 Une fois activé, le cristal change de couleur pour prendre celle de l'équipe du joueur (bleu lorsque tout les joueurs sont dans la même équipe). A l'activation, un cristal se spécialise dans l'une des trois catégories suivantes de manière aléatoire : 
 \begin{itemize}
 \item \textbf{Attaque (60\%):} catégorie des cristaux d'attaque (ou de défense ce qui revient au même).
@@ -346,6 +335,13 @@ Une fois activé, le cristal change de couleur pour prendre celle de l'équipe du 
 \item \textbf{Portail (10\%):} catégorie des cristaux de portail.
 \end{itemize}
 Actuellement, il est impossible de connaître la spécialisation d'un cristal dans le jeu, mais cela n'a que peu d'importance car pour l'instant les cristaux activés ne sont différents des cristaux inactif que par leur couleur et n'ont aucune influence sur le jeu.
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=11cm]{CristalHUD.png}
+\caption{Interface du cristal} 
+\label{CristalHUD}
+\end{center}
+\end{figure}
 
 \subsubsection{Chat (Florian)}
 
@@ -374,18 +370,18 @@ En multi-joueurs chaque personne peut se retrouver avec des musiques différentes
 
 La survie étant le thème de notre jeu, il nous fallait construire de bonnes bases pour le développement de cette dernière. Aujourd'hui les éléments clés de notre survie sont présents. Parmi ces éléments, trois sont visibles directement en jeu grâce à des barres (figure~\ref{LHT}). Deux de ces barres, l'une symbolisant la soif et l'autre la faim du personnage, se situent en haut à droite de l'écran tandis que la troisième barre, symbolisant la santé (les points de vie), se trouve au dessus de la barre de sélection.
 
-\begin{figure}[h!]
+ Lorsque le barre de faim ou de soif est vide, les point de vie de votre personnage commencent à descendre. Cependant ces deux attributs (soif et faim) ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidez de sauter dans le vide, votre santé en souffrira également car malgré sa force et sa volonté, Ille ne sait pas voler.
+ 
+ Quand vous vous retrouvez sans point de vie (barre de santé vide) vous sentirez vos forces disparaître, c'est ce que nous appelons communément la mort. Cependant, dans notre grande bonté, nous avons décidé que la mort ne serait pas tout de suite définitive et donc chaque mort sera accompagnée d'un nouveau début. Pour le moment, le joueur \textit{respawn}, il est téléporté sur la première île qu'il a traversée et ses attributs (santé, soif et faim) sont remis au maximum.
+ 
+ \begin{figure}[h!]
 \begin{center}\includegraphics[width=10cm]{BarreLHT}
 \caption{Disposition des différentes barres} 
 \label{LHT}
 \end{center}
 \end{figure}
 
- Lorsque le barre de faim ou de soif est vide, les point de vie de votre personnage commencent à descendre. Cependant ces deux attributs (soif et faim) ne sont pas les seuls à pouvoir s'attaquer à vos points de vie, si vous décidez de sauter dans le vide, votre santé en souffrira également car malgré sa force et sa volonté, Ille ne sait pas voler.
- 
- Quand vous vous retrouvez sans point de vie (barre de santé vide) vous sentirez vos forces disparaître, c'est ce que nous appelons communément la mort. Cependant, dans notre grande bonté, nous avons décidé que la mort ne serait pas tout de suite définitive et donc chaque mort sera accompagnée d'un nouveau début. Pour le moment, le joueur \textit{respawn}, il est téléporté sur la première île qu'il a traversée et ses attributs (santé, soif et faim) sont remis au maximum.
-
-
+\pagebreak
 \subsubsection{Alpha (Florian)}
 
 La dernière étape avant la soutenance était de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapportés étaient :
