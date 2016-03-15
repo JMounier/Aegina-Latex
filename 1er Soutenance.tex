@@ -53,7 +53,7 @@ Aegina\\
 
 \section*{Introduction}
 
-Ce rapport contient l'état du développement du jeu Aegina au 16 mars 2016. Nous détaillons d'abord les différents éléments composant le  jeu. Nous expliquons ensuite, chronologiquement, les développements réalisés par les différent membres de l'équipe. Les développements prévus d'ici la seconde soutenance sont ensuite présentés.
+Ce rapport contient l'état du développement du jeu Aegina au 16 mars 2016. Nous détaillons d'abord les différents éléments composant le  jeu. Nous expliquons ensuite, chronologiquement, les développements réalisés par les différents membres de l'équipe. Les développements prévus d'ici la seconde soutenance sont ensuite présentés.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
@@ -79,7 +79,7 @@ Ille est le personnage que le joueur incarne dans Aegina. De père et de mère inc
       
 Son seul défaut, si l'on peut  considérer ceci comme un défaut, est d'être simplet. C'est d'une certaine façon une chance car c'est ce  qui à permis à l'aventure d'Aegina de commencer. 
 
-Lors d'un hiver très rude, Ille n'eut pas d'autre choix que de voler de la nourriture dans un village avoisinant. Malheureusement, la discrétion n'étant pas son fort, il fut surpris en plein méfait et un garde tenta de l'arrêter. Ille essaya de passer le garde, mais il ne contrôla pas sa force et, en le bousculant, il le tua. Illie n'avait pas réalisé que le garde  était  extrêmement affaibli par le froid et la faim. Ille fut alors poursuivi pour meurtre et rapidement arrêté car, malgré sa force Ille, restait humain. Il fut condamné à  mort et envoyé dans le néant qui n'était autre qu'Aegina. C'est à son réveil que le jeu commence.
+Lors d'un hiver très rude, Ille n'eut pas d'autre choix que de voler de la nourriture dans un village avoisinant. Malheureusement, la discrétion n'étant pas son fort, il fut surpris en plein méfait et un garde tenta de l'arrêter. Ille essaya de passer le garde, mais il ne contrôla pas sa force et, en le bousculant, il le tua. Ille n'avait pas réalisé que le garde  était  extrêmement affaibli par le froid et la faim. Il fut alors poursuivi pour meurtre et rapidement arrêté car, malgré sa force, Ille restait humain. Il fut condamné à  mort et envoyé dans le néant qui n'était autre qu'Aegina. C'est à son réveil que le jeu commence.
 
 Cependant, Ille n'est pas forcément seul en Aegina. Il pourra rencontrer d'autres personnes car la mort par envoi dans le néant est une pratique assez courante. Retrouver des amis dans ce monde dangereux peut être une bonne chose car dans Aegina le nombre de vos amis fait en partie votre force.
 
@@ -90,14 +90,14 @@ Comme déjà dit précédemment, les cristaux dans Aegina sont un élément très impor
 Le cristal semble réagir avec tous les minerais spécifiques du monde d'Aegina ainsi qu'avec de nombreuses créatures qui, en présence d'un cristal actif, perdent toute raison et tentent de le désactiver.
 
 Peu d'informations supplémentaires sont disponibles sur les cristaux. Leur composition est totalement inconnue 
-et personne ne sait d'où ils viennent. Ils ne semblent pas exister depuis la création du monde car leur forme géométrique et leurs pouvoirs en font la création d'êtres conscients possédant une technologie très avancée. Mais il ne s'agit que de suppositions qui n'ont que peu d'importance pour notre histoire.
+et personne ne sait d'où ils viennent. Ils ne semblent pas exister depuis la création du monde car leur forme géométrique et leurs pouvoirs donne l'impression qu'ils ont été créé par des êtres conscients possédant une technologie très avancée. Mais il ne s'agit que de suppositions qui n'ont que peu d'importance pour notre histoire.
 \subsection{Les minerais}
 
-De le monde d'Aegina on peut trouver de nombreux minerais qui permettront d'aider le joueur dans son aventure. Certains de ces minerais existent dans notre monde, mais Aegina possède aussi des minerais uniques. Dans cette partie nous allons vous présenter les minerais exclusifs au monde d'Aegina.
+Dans le monde d'Aegina on peut trouver de nombreux minerais qui permettront d'aider le joueur dans son aventure. Certains de ces minerais existent dans notre monde, mais Aegina possède aussi des minerais uniques. Dans cette partie nous allons vous présenter les minerais exclusifs au monde d'Aegina.
 
 \subsubsection{Mithril}
 
-Le mithril, dans le monde d'Aegina, est un minerai vert clair un peu plus solide que le fer. Assez rare à la surface des îles, on en trouve toujours en petite quantité en sous-sol puisqu'il est l'un des deux minerais nécessaires à la \og survie \fg{} d'une île. Le mithril a l'étrange particularité de modifier les phénomènes étranges d'Aegina parfois en les amplifiant, d'autres fois en les stabilisant. Il est impossible de savoir comment celui-ci va réagir avant de l'utiliser.
+Le mithril, dans le monde d'Aegina, est un minerai vert clair un peu plus solide que le fer. Assez rare à la surface des îles, on en trouve toujours en petite quantité en sous-sol puisqu'il est l'un des deux minerais nécessaires à la \og survie \fg{} d'une île. Le mithril a la particularité de modifier les phénomènes étranges d'Aegina parfois en les amplifiant, d'autres fois en les stabilisant. Il est impossible de savoir comment celui-ci va réagir avant de l'utiliser.
 
 A l'état naturel, il catalyse les instabilités et les relâche sous forme de vagues d'énergie rendant le minerai chaud au toucher. Une fois épuré, le mithril continue de catalyser les instabilités, mais peut alors relâcher son énergie sous de nombreuses autres formes que la chaleur, comme le ferait un cristal, mais à bien plus faible échelle. 
 
@@ -167,7 +167,7 @@ Un procédé similaire est utilisé pour la première scène du jeu. En effet, dans c
 
 Pour pouvoir gérer les ressources que possède un joueur, nous avons dû créer une classe que nous avons tout simplement choisi d'appeler \textit{Item}. 
 
-La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuables qui sont le nom (dans chacune des langues disponibles, pour le moment il s'agit du français et de l'anglais), la description (elle aussi dans chacune des langues proposées), un identifiant unique, une quantité maximale par personnage, une texture 2D et un élément correspondant à l'objet 3D. Cependant, le joueur peut  posséder plusieurs exemplaires d'un même objet. Les objets qu'il possède sont donc une nouvelle classe appelée \textit{ItemStack} contenant une quantité (inférieure à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi, les informations communes à plusieurs exemplaires d'un même objet  ne sont pas dupliquées, seules la quantité de l'objet peut changer. Il y a alors un gain de mémoire. 
+La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuables qui sont le nom (dans chacune des langues disponibles, pour le moment il s'agit du français et de l'anglais), la description (elle aussi dans chacune des langues proposées), un identifiant unique, une quantité maximale par tas d'objets, une texture 2D et un élément correspondant à l'objet 3D. Cependant, le joueur peut  posséder plusieurs exemplaires d'un même objet. Les objets qu'il possède sont donc une nouvelle classe appelée \textit{ItemStack} contenant une quantité (inférieure ou égale à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi, les informations communes à plusieurs exemplaires d'un même objet  ne sont pas dupliquées, seules la quantité de l'objet peut changer. Il y a alors un gain de mémoire. 
 
 
 \subsubsection{Animation 3D (Théo)}
@@ -222,7 +222,7 @@ La réalisation des modèles suivants s'est faite et continuera à se faire petit à
 \subsection{Janvier}
 
 \subsubsection{Inventaire (Romain et Florian)}
-Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui, et donc se déplacer assez facilement, nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop} ou plusieurs objets identiques, ils forment alors un \textit{tas}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appuie sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui, et donc se déplacer assez facilement, nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}, ou plusieurs objets identiques, ils forment alors un \textit{tas}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appuie sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
 
 Lorsque l'inventaire est ouvert le joueur et la caméra ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
 
@@ -240,11 +240,13 @@ Lorsque nous sommes en train de bouger il est impossible de voir ce que contient
 Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisée avec la 4$^{e}$ ligne de notre inventaire. Le joueur peut sélectionner une case de cette barre en utilisant les touches alphanumériques correspondantes et utiliser l'objet s'y trouvant. Cette barre apparaît même quand le joueur n'a pas affiché son inventaire puisque son but est justement d'utiliser des objets hors de l'inventaire.
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[height=1.6cm]{Toolbar}
+\begin{center}\includegraphics[height=2cm]{Toolbar}
 \caption{barre d'outil} 
 \label{Toolbar}
 \end{center}
 \end{figure}
+
+\pagebreak
 
 \subsubsection{Menus (Romain et Florian)}
 
@@ -270,6 +272,7 @@ L'apparence graphique des menus à longtemps était discutée. Un rectangle simple 
 \end{center}
 \end{figure}
 
+\pagebreak
 
 \subsubsection{Multi-joueurs (Florian)}
 
@@ -284,7 +287,7 @@ Pour finir nous avons synchronisé les éléments, les sons et les caractéristiques
 
 Afin de ne pas avoir un jeu fade, nous avons introduit quelques sons. Ces sons nous permettent d'avoir une base que l'on pourra enrichir au fur et à mesure de l'avancée du développement de notre jeu.
 Nous avons tout d'abord ajouté un son pour l'ouverture et la fermeture de l'inventaire et du menu.
-Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnage marcher ou courir. Par souci de réalisme nous avons synchronisé ces sons afin qu'ils soient entendus par tous les joueurs.
+Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnage marcher ou courir. Nous avons également ajouté un léger bruit lorsque le joueur récupère un objet.
 
 
 \subsection{Février}
@@ -381,7 +384,6 @@ La survie étant le thème de notre jeu, il nous fallait construire de bonnes base
 \end{center}
 \end{figure}
 
-\pagebreak
 \subsubsection{Alpha (Florian)}
 
 La dernière étape avant la soutenance était de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapportés étaient :
