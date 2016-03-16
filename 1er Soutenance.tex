@@ -42,11 +42,25 @@ AIM$^{2}$\\
 
 \subsection{Aegina}
 
+Le monde d'Aegina est constitue d'une casi-infinite d'ile volante. Ce monde ne possede pas de sol, tombe d'une ile engendre une chute sans fin ou du moins c'est ce que l'on suppose. Apres tout personne n'est revenue des trefonds de se monde. Justement ce monde n'est pas tres peuple, seul quelque especes de plante et d'animaux vivent sur ces iles.Cependant on peut y trouver certaine traces de presence humaine notamment en la personne de Ille.
+
 \subsection{Ille}
+
+Ille est le personnqge principale de notre jeux. Il a l'apparence d'un bucheron roux et barbus. En verite Ille n'est pas son vrai nom mais en arrivant dans le monde d'Aegina Ille a perdu la memoire et ne s'en souviens donc plus.
 
 \subsection{Les minerais}
 
+\subsubsection{Mithril}
 
+Le mithril dans le monde d'Aegina et un mineral rose un peu plus solide que le fer. Son interet est sa sensibilite particulieres aux forces etranges qui existe dans Aegina.
+
+\subsubsection{Floatium}
+
+Le floatium et un mineral casi-transparent ayant la capacite d'etre plus leger que l'air. C'est un melange de floatium et de mithril qui est responsable de la levitation des iles de Aeagina.
+
+\subsubsection{sunkium}
+
+Le sunkium et un mineral d'un noir profond qui semble absorber la lumiere. C'est le mineral le plus lourd et le plus dur du monde d'Aegina.
 \pagebreak
 
 \section{Réalisation}
@@ -61,7 +75,9 @@ $$255((3.25t - 4)x^2 + (-4t + 4)x)$$
 % Mettre un graph de ouf super qui dechire tout !
 % TO DO
 \subsubsection{Inventaire (Romain et Florian)}
-Nous avons creer un inventaire, celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un element, qui peut etre deplacer grace a un drag and drop. De plus le joueur peut avoir une description de chacun des elements en passant sa souris sur celui ci.
+Nous avons creer un inventaire, celui ci est constitue de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un element, qui peut etre deplacer grace a un drag and drop. De plus le joueur peut avoir une description de chacun des elements en passant sa souris sur celui ci. Cette inventaire s'ouvre lorsaue l'on appui sur la touche \textit{inventaire} qui est de base la touche i et peut ensuite etre ferme avec la touche \textit{inventaire} ou la touche escape. Lorsque l'inventaire est ouvert le joueur et la camera ne peuvent plus bouger 
+
+Lorsque l'inventaire 
 \subsubsection{Animation 3D (Théo)}
 Ille est un personnage que nous avons telecharger depuis l'asset store qui possedais de base deux animations, "marcher" et "rester immobile" cependant ces deux seules animation ne nous suffisais pas.
 A partir de ce moment nous avons decide de faire les animations des nos personnage nous meme. 
@@ -75,10 +91,16 @@ Il nous a donc fallut trouver une encienne version de blender compatible avec no
 \subsection{Janvier}
 
 \subsubsection{Barre de selection (Florian)}
-Nous avons ajoute une barre de selection synchronise avec la 4$^{eme}$ ligne de notre inventaire. De plus le joueur peut selectionner une case de cette barre et utiliser l'objet s'y trouvant. 
+
+Nous avons ajoute une barre de selection synchronise avec la 4$^{eme}$ ligne de notre inventaire. De plus le joueur peut selectionner une case de cette barre et utiliser l'objet s'y trouvant. Cette barre apparait meme quand le joueur n'est pas dans son inventaire
+
 \subsubsection{Menus (Romain et Florian)}
 
+Nous avons cree des menus  permetant de modifier la langue et le volume du son du jeu. Ces menus s'ouvre avec la touche escape quand aucune autre interface n'est ouvert et ce ferme avec la touche escape ou avec le bouton \textit{continuer}. Dans le menu le joueur et la camera du joueur ne peuvent pas bouger comme lorsque l'inventaire et ouvert.
+
 \subsubsection{Class \textit{Item} (Romain)}
+
+Dans l'inventaire nous voulons parfois des objets en grandes quantite nous avons alors cree des classes \textit{Item} et \textit{Itemstack} 
 
 \subsubsection{Multi-joueurs (Florian)}
 
