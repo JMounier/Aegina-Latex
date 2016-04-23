@@ -45,7 +45,7 @@ Voici les liens de téléchargement en fonction de votre systèm :
 
 Pour jouer en multijoueur deux options s'offrent à vous :
 
-* Jouer en réseau local (Seul les joueurs sur partageant la même connexion internet/réseau pourront jouer). Il suffit de lancer une partie pour automatiquement héberger un serveur, puis donner votre addresse ip locale a vos amis ! (Vous ne connaissez pas votre addresse ip locale ? [Ton ip locale !](http://www.mon-ip.com/adresse-ip-locale.php))
+* Jouer en réseau local (Seul les joueurs partageant la même connexion internet/réseau pourront jouer). Il suffit de lancer une partie pour automatiquement héberger un serveur, puis donner votre addresse ip locale a vos amis ! (Vous ne connaissez pas votre addresse ip locale ? [Ton ip locale !](http://www.mon-ip.com/adresse-ip-locale.php))
 * Jouer en hors lan (avec n'importe qui dans le monde). Pour cela vous devez débrider votre port numéro *7777* ([Tutoriel complet !](https://craym.eu/tutoriels/utilitaires/ouvrir_les_ports_de_sa_box.html)). Ensuite il suffit de lancer une partie pour automatiquement héberger. Pour rejoindre votre partie donner votre addresse ip. (Vous ne connaissez pas votre addresse ip > [Ton ip !](http://whatismyipaddress.com/fr/mon-ip))
 
 #### Formulaire
