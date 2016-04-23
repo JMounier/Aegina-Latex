@@ -26,7 +26,7 @@ Les ajouts principaux depuis la derniere version sont:
 
 #### Notre site web
 
-Rendez-vous sur <aegina.lol42>. Pas besoin d'inscription !
+Rendez-vous sur notre [site](http://jmounier.github.io/Aegina-Website/index.html). Pas besoin d'inscription !
 
 Vous y trouverez :
  
