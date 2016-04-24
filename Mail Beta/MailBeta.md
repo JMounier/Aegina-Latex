@@ -38,10 +38,10 @@ Vous y trouverez :
 
 Voici les liens de téléchargement en fonction de votre systèm :
 
-  * [Windows 32 bits](https://www.dropbox.com/s/fz07brnm1aeoqzd/Aegina%20v1.0-alpha%20Windows%20x86.zip?dl=0)
-  * [Windows 64 bits](https://www.dropbox.com/s/8bth22bn15a17yv/Aegina%20v1.0-alpha%20Windows%20x64.zip?dl=0)
-  * [Mac OS](https://www.dropbox.com/s/xvzub90dbx9mnqq/Aegina%20v1.0-alpha%20Mac.zip?dl=0)
-  * [Linux](https://www.dropbox.com/s/gopfk6e004f73mw/Aegina%20v1.0-alpha%20Linux.zip?dl=0)
+  * [Windows 32 bits](https://www.dropbox.com/s/99y7cvymr8pozny/Aegina%20v1.0-beta%20Windows%20x86.zip?dl=0)
+  * [Windows 64 bits](https://www.dropbox.com/s/34pcqf12co886mt/Aegina%20v1.0-beta%20Windows%20x64.zip?dl=0)
+  * [Mac OS](https://www.dropbox.com/s/7ow6qv38f4orx58/Aegina%20v1.0-beta%20Mac.zip?dl=0)
+  * [Linux](https://www.dropbox.com/s/quyduxdm9e8v7c8/Aegina%20v1.0-beta%20Linux.zip?dl=0)
 
 Pour jouer en multijoueur deux options s'offrent à vous :
 
