@@ -51,7 +51,7 @@ Pour jouer en multijoueur deux options s'offrent à vous :
 #### Formulaire
 
 Durant vos tests du jeu exprimez votre vilainie ! Soyez fourbe !
-Nous vous donnons accés à un formulaire de retour d'information. Celui-ci sera ouvert jusqu'au Mardi 26 avril 2016.
+Nous vous donnons accés à un formulaire de retour d'information. Celui-ci sera ouvert jusqu'au **Mardi 26 avril 2016 23h 42**.
 Pour pouvoir améliorer le jeu, merci de bien vouloir répondre à ce formulaire. Cela ne vous prendra que 5 minutes !
 
 Le formulaire : [Merci de votre particitation !](http://goo.gl/forms/kJeQS7nFZz)
