@@ -1,0 +1,261 @@
+\documentclass[12pt,a4paper]{article}
+\RequirePackage[french]{babel}
+\usepackage{fancyhdr}
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage[french]{babel}
+\usepackage{listings}
+\usepackage{pst-eucl}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{color}
+\geometry{vmargin=3.5cm,hmargin=2.25cm}
+\pagestyle{plain}
+
+\selectlanguage{french}
+
+\begin{document}
+\chead{Aegina : rapport de soutenance \no 2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\begin{center} 
+\huge
+\vspace*{1cm}
+Aegina : rapport de soutenance \no 2\\
+\vspace*{2em}
+\large
+Florian \bsc{Amsallem} (amsall\_f) , Théo \bsc{Issarni} (issarn\_t), \\Julien \bsc{Mounier} (mounie\_a), Romain \bsc{Mounier} (mounie\_r)\\
+\vspace{1em}
+AIM$^{2}$\\
+Aegina\\
+\vspace{2cm}
+\includegraphics[width=10cm]{AeIcon.png}
+\end{center} 
+\begin{figure}[b]
+\includegraphics[height=2cm]{logo.jpg}
+\hspace{10cm}
+\includegraphics[height=2cm]{logo-epita-hd.png}
+\end{figure}
+\end{titlepage}
+\onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\section*{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addcontentsline{toc}{section}{\protect\numberline{}Introduction}
+
+\section{Univers du jeu}
+\label{univers}
+
+
+\subsection{Biomes}
+
+\subsubsection{Primtemps : Forêt}
+
+\subsubsection{Automne }
+
+\subsubsection{Hiver : neige}
+
+\subsubsection{été : desert}
+
+\subsection{Créatures}
+
+\subsubsection{Sanglier}
+
+\subsubsection{Pampi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\section{Réalisation}
+
+\subsection{Les améliorations du Gameplay}
+
+
+\subsubsection{La création d'objets(Romain)}
+
+% une partie système de craft (avec livre de recette)
+
+% database
+
+% une partie HUD avec screen
+
+\subsubsection{Les mobs (Florian)}
+
+% une partie graph
+
+% une partie Pathfinding
+
+% une partie comportement de l'IA
+
+\subsubsection{Le combat et le mode conquête(Théo et Romain)}
+
+% explication vie attaque armure  
+
+% système de Team
+
+% mode PVP
+
+\subsubsection{Le système de Succès(Julien)}
+
+% Succes et Requirement 
+
+% Succès propre au serveur
+
+% database
+
+% HUD avec screen
+
+\subsubsection{Les objets équipables et l'interaction avec l'environnement(Théo et Julien)}
+
+% affichage des objets dans la main
+
+% gestion des consommables et leurs différents effets
+
+% gestion des Worktope, leur prévisu et la pose dans le monde
+
+% gestion des outils et l'intéraction avec l'environement
+
+\subsubsection{Amélioration du Cristal (Florian et Romain)}
+
+% HUD
+
+% système de vie et changement d'équipe
+
+% amélioration du cristal et différentes influences sur l'environement ( influence sur l'attaque, le respawn et bullshit sur production)
+
+\subsection{Les grandes améliorations du système de jeux}
+
+\subsubsection{La refonte du Menu (Romain)}
+
+% systeme de serveur et de différents monde
+
+% ajout de plusieurs options
+
+% écran de chargement
+
+\subsubsection{La sauvegarde (Florian)}
+
+% système de seed , comment ça marche ?
+
+% explication de l'importance du nom
+
+% énumération de ce qui est sauvegarder
+
+\subsubsection{La refonte de la première scène (Julien)}
+
+% système de "train" bullshit Julien
+
+% un ptit screen
+
+\subsubsection{Le tutoriel (Théo et Romain)}
+
+% bullshit interêt du Tutoriel (introduction de l'histoire + prise en main du jeu)
+
+% tutoriel propre au joueur
+
+% les 3 HUD avec screen
+
+\subsection{Les ajouts mineurs}
+
+\subsubsection{ Amélioration des commandes et système d'opérateur (Florian)}
+
+% mode opérateur
+
+% nouvelles commandes
+
+\subsubsection{Refonte Graphique : interface et skybox (Théo, Julien et Romain)}
+
+% modification de la skybox + bullshit pourquoi c'est bien (l'abysse et plus DARK)
+
+% modification des graphiques  screen avant/après
+
+\subsubsection{Amélioration de la mort (Romain et Florian)}
+
+% HUD mort
+
+% système de respawn mieux expliqué
+
+% pop des objets
+
+\subsubsection{Ajout de son et d'animations (Théo)}
+
+% liste des nouveaux son et animation + bullshit
+
+
+\subsubsection{Ajout d'île et d'un nouveau biomes (Julien et Théo)}
+
+% ajout du biomes automne + bullshit
+
+\subsection{Ajout de nombreux éléments (Julien et Théo) }
+
+% ajout des haches,citrouille,squelettes.. + bullshit
+
+
+\subsection{Les Stats (Florian et Julien)}
+
+% ajouts des Stats, leur intérêt pour les succes
+
+% stats propre au serveur
+
+\subsubsection{Bêta (Florian)}
+
+% comme pour l'alpha sauf que tu remplace alpha par bêta ^^
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\section{Prévisions}
+
+
+\subsection{Les quatre grand axes}
+
+\subsubsection{Histoire et fin}
+
+\subsubsection{Créatures : variation des IA + boss ?}
+
+\subsubsection{Un monde infini}
+
+\subsubsection{PVP refonte du système de combat}
+
+\subsection{Les améliorations}
+
+\subsubsection{Survie : équilibrage}
+
+\subsubsection{Cristaux : influence divine}
+
+\subsubsection{PVP : une vrai fin possible}
+
+\subsubsection{Amélioration en masse : graphisme,animation,son et musique}
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+% Les deux lignes suivantes permettent une numérotation des pages  "i"
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\section*{Annexe}
+\addcontentsline{toc}{section}{\protect\numberline{}Annexe}
+
+\end{document}
