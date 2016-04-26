@@ -114,11 +114,14 @@ Les cristaux se trouvant dans le printemps d'Aegina ont très souvent la capacité
 
 \subsubsection{Les mobs (Florian)}
 
-% une partie graph
+L'arrivée des mobs dans le monde d'Aegina a imposé la création d'intelligence artificielle. 
 
-% une partie Pathfinding
-
-% une partie comportement de l'IA
+Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possèdes un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher.
+% Inserer une image de chunk en debug pour voir le graphe...
+\\
+Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe.
+\\
+Nous avons donc la possibilité de déplacer nos mobs inteligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. 
 
 \subsubsection{Le combat et le mode conquête(Théo et Romain)}
 
