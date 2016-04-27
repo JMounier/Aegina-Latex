@@ -276,7 +276,6 @@ Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
 \item Les effets (régénération, poison \ldots) et leur temps restant; 
 \item Son équipe en mode \textit{PvP} ; 
 \end{itemize}
-\\
 Enfin la sauvegarde s'effectue quand le serveur est éteint. Mais cela ne suffit pas en cas de crash ou d'un joueur qui ne fermerait pas correctement l'application la sauvegarde ne pourrait pas s'effectuer. Il y a donc une sauvegarde automatique toutes les minutes. Celle-ci ne provoque aucun ralentissement du jeu car elle est très légère.
 
 \subsubsection{La refonte du Menu (Romain)}
@@ -367,7 +366,7 @@ Disponible uniquement pour les opérateurs :
 \item[/effect <player (string)> <id (int)> :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
 \item[/op <player (string)> :] donne les droits d'opérateur au joueur passé en paramètre ;
 \item[/deop <player (string)> :] supprime les droits d'opérateur au joueur passé en paramètre ;
-\item[/choseteam <id (int) ou nom (string)> [player (string)] :] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
+\item[/choseteam <id (int) ou nom (string)> <player (string)] >:] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
 \end{description}
 
 % nouvelles commandes
