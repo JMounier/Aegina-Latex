@@ -162,7 +162,7 @@ sur la partie gauche de l'écran cinq boutons permettent de choisir qu'elle catég
 \subsubsection{Les Créatures (Florian)}
 
 L'arrivée des créatures dans le monde d'Aegina a imposé la création d'intelligence artificielle. 
-
+\\
 Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possède un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher (voir figure~\ref{Graphe}).
 
 \begin{figure}[h!]
@@ -182,14 +182,14 @@ Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous
 
 Avec l'ajout des créatures il nous aussi le moyen de nous défendre. C'est pour cela que nous donner à Ille le moyen d'attaquer. en étant immobile ou en se déplaçant le joueur peut, en utilisant un clic gauche, déclenchant l'attaque de Ille. Celui-ci va alors faire un rapide cout en avant avec l'objet dans ses mains ou à main nue si il ne possède pas d'objet. Cependant il faut faire attention si Ille saute, déclenche un menu ou utilise un objet pendant les deux premiers dixième de seconde après le début de sont attaque celle-ci sera annulé. De plus Ille n'est pas un barbare et cela ne sert à rien de de cliqué le plus vite avec ça souris car Ille ne peut déclencher une attaque que tout les huit dixièmes de secondes même si la précédente attaque a été annulée. 
 \\
-Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mise en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui peut être influencé par l'arme qu'il possède grâce à la formule : $$Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$$. L'arme du joueur à donc un grand impact sur les dégâts de celui-ci. Cependant les dommage de l'attaque ne sont pas directement la vie perdue par le joueur car celui ci peut utiliser son armure pour se défendre. La vie perdu suit alors la formule : $$Vie Perdu =  Dommage De L'attaque \times \frac{1}{1+Armure *Coefficient D'armure}$$.
+Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mise en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui peut être influencé par l'arme qu'il possède grâce à la formule : $$Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$$ L'arme du joueur à donc un grand impact sur les dégâts de celui-ci. Cependant les dommage de l'attaque ne sont pas directement la vie perdue par le joueur car celui ci peut utiliser son armure pour se défendre. La vie perdu suit alors la formule : $$Vie Perdu =  Dommage De L'attaque \times \frac{1}{1+Armure *Coefficient D'armure}$$
 \\
 En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du lancement d'une partie il est possible de choisir de joueur en joueur contre joueur. Les joueurs qui se connecte sur le serveur vont alors être séparé en plusieurs \og team \fg{}. Ces joueurs auront alors des points de réparation différents et pourront attaquer les joueurs qui n'appartiennent pas à leur \og team \fg{}. De plus ils pourront attaquer les cristaux des autres joueurs pour le leur voler. Ainsi ils profiterons des avantages de ces cristaux et les joueurs adverses seront affaiblis. Lorsque qu'une \og team \fg{} perd tout ces cristaux ces joueurs ne peuvent plus réapparaître et quand tout les joueurs d'une \og team \fg{} sont mort celle-ci perd la partie.Les membres de la dernière \og team \fg{} en vie sont les gagnants.
 
 \subsubsection{Le système de Succès(Julien)} 
  
 Les succès représentent les exploits réalisés par les joueurs. De plus, notre jeu laissant beaucoup de liberté au joueur, il est possible que celui-ci ne sache plus quoi faire. C'est la que les succès interviennent car ils proposent différents défies auxquels le joueur peut se confronter. Ces exploits peuvent porter sur différents aspects de la survie comme le nombre de créatures tuer ou encore la quantité de potions consommées.
-
+\\
 D'un point de vue technique, tous les différents succès sont stockés comme attribut static d'une classe particulière. Mais ces succès étant accomplis par les joueur a n'importe quel moment, il fallait trouver un moyen de mettre à jours ces attributs à chaque instant tout en y passant le moins de temps possible. Les mise à jours doivent donc répondre à quelques contraintes : 
 \begin{itemize}
 \item ne pas tester les succès déjà accomplis
@@ -198,7 +198,7 @@ D'un point de vue technique, tous les différents succès sont stockés comme attri
 \end{itemize}
 
 Pour régler ces premier problème, nous avons opter pour l'utilisation de 2 structures. Tous d'abord, un nouvelle objet appelé \textit{Succes} qui contient : un booléen indiquant si le \textit{Succes} est réussi, la liste de toutes les conditions nécessaires à l'accomplissement de celui-ci, son nombre de parents et une liste de \textit{fils}. Ces deux dernier éléments permettent de créer une hiérarchie entre les différents succès et de faciliter l'affichage.
- 
+ \\
 La deuxième structure est une liste de succès a mettre à jours, présente uniquement sur le serveur. A Chaque frame, le serveur teste si les succès présents dans la liste sont accomplis. Si un succès est accompli, alors il est retiré de la liste à tester et tous ces fils y sont ajoutés si ils n'étaient pas déjà présents. De plus, l'affichage d'un pop-up en haut à gauche de l'écran est demandé sur chaque client attestant de l'accomplissement du succès (voir figure~\ref{Pop-up}). La demande d'affichage est mise dans une file pour qu'aucuns pop-up ne se superpose.
 
 \begin{figure}[h!]
@@ -209,9 +209,9 @@ La deuxième structure est une liste de succès a mettre à jours, présente uniquem
 \end{figure}
 
 Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté per une image et leur hiérarchie est visible grâce à des lignes. A terme, une si petite fenêtre ne sera pas suffisante pour afficher tous les succès, c'est pourquoi des bar de défilement serons présente a droite et en dessous de la zone d'affichage (celle de droite est déjà visible).
-
+\\
 La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvants pas l'être ce fais par l'utilisation de trois \textit{Shader}. Comme expliqué dans le premier rapport de soutenance, un \textit{Shader} indique a la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
-
+\\
 Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(succès accompli)}, le deuxième ne tient compte que de la transparence de l'image et affiche un gris la où l'image n'est pas transparente \textit{(succès pouvant être accompli)} et le dernier n'affiche pas du tout l'image \textit{(succès impossible)}.
 
 \begin{figure}[h!]
@@ -236,14 +236,7 @@ Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(s
 Par rapport à la première soutenance Les capacité du cristal ont été énormément amélioré. Celui à maintenant une place importante dans le jeu.
 \\
 La première amélioration que l'on remarque sur le cristal est son interface qui est devenue bien plus garnie.
-
-\begin{figure}[h!]
-\begin{center}\includegraphics[width=14cm]{CristalHUD}
-\caption{Interface de l'intéraction avec le cristal} 
-\label{Cristal}
-\end{center}
-\end{figure}
-
+\\
 Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le type du cristal et ces pouvoirs. Les pouvoirs du cristal se distinguent en trois partie :
 \begin{itemize}
 \item Le pouvoir de guerre qui renforce la puissance du joueurs. Si un joueur se trouve sur l'île il bénéficie d'un bonus en attaque et en armure significatif. En effet si le pouvoir de la guerre d'un cristal est maximisé les joueurs sur l'île verront leur attaque multiplié par deux par rapport à un joueur sans cristal. De plus ils réduiront également de moitié tous les dégâts qu'il recevront.
@@ -253,25 +246,23 @@ Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le
  Il est possible d'augmenter n'importe qu'elle pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{Cristal}. Cependant un cristal après sont activation ne peut être améliorer que trois fois et chaque amélioration est plus chère que la précédente.
  \\
  En joueur contre joueur les pouvoirs du cristal ne s'applique qu'au joueur de la même \og team\fg{} que celui-ci. Les autres joueurs peuvent attaquer le cristal pour faire descendre la vie de celui-ci. Cette vie est représentée par la jauge bleue dans le cadre vert de la figure \ref{Cristal}. Lorsque la vie d'un cristal tombe à 0 il prend les couleur de la \og team\fg{} qui la détruit et perd un niveau aléatoirement dans l'un de ces trois pouvoirs. Il est possible pour les joueur allié au cristal de soigner celui-ci en consommant une dizaine de ressources et en appuyant sur le bouton \og Heal\fg{} en dessous de la vie du cristal. Plus le cristal est d'un niveau élevé plus la ressource nécessaire pour activer celui-ci est rare.
+ \begin{figure}[h!]
+\begin{center}\includegraphics[width=14cm]{CristalHUD}
+\caption{Interface de l'intéraction avec le cristal} 
+\label{Cristal}
+\end{center}
+\end{figure}
  
 \subsection{Les grandes améliorations du système de jeux}
 
-
-
-\subsubsection{La refonte du Menu (Romain)}
-
-% systeme de serveur et de différents monde
-
-% ajout de plusieurs options
-
-% écran de chargement
+En plus d'améliorer le gameplay Nous avons également fait de grandes améliorations du système de jeux en général comme une refonte du menu principale et l'ajout d'un système de sauvegarde.
 
 \subsubsection{La sauvegarde (Florian)}
 
 La sauvegarde est une des grandes implementations pour cette deuxième soutenance, celle-ci permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent.
-
+\\
 La première chose que nous avons du modifier est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{seed}. Le principe est le suivant, lorsque le joueur créer un monde alors un nombre va être choisi aléatoirement. Ce nombre est appelé la \textit{seed} du monde. À partir de celui-ci nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les iles et leur position mais aussi leur biome et leur environnement. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
-
+\\
 Chaque chunk va calculer son propre \textit{seed} à partir du \textit{seed} du monde et de sa position, à partir de ce nouveau seed nous allons pouvoir connaitre ses îles et son biome. Puis pour chacune des ancres nous savons l'élément qui doit être à cet emplacement.
 \\
 \\
@@ -287,6 +278,52 @@ Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
 \item Son équipe en mode \textit{PvP} ; 
 \end{itemize}
 
+\subsubsection{La refonte du Menu (Romain)}
+
+Si nous avons la possibilité de sauvegarder un monde il faut aussi avoir la possibilité de choisir avec quel monde nous voulons jouer. Pour cela nous avons du refaire le menu principal.
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=16cm]{MenuPrincipal}
+\caption{Menu Principal} 
+\label{MenuPrincipal}
+\end{center}
+\end{figure}
+
+Dans ce menu principal nous avons rajouter une petite interface donnant accès à la liste des monde que l'on peut jouer. De même on peut enregistrer des adresses de serveur qui nous permettrons de ne pas devoir ré-entrer les adresses IP des serveur auquel ont veut avoir accès en prenant le risque de se tromper. 
+\\
+sur la figure \ref{MenuPrincipal} la partie encadrée en rouge n'apparait que lorsque l'on appuie sur le bouton \og Join \fg{} et montre la liste des serveur que l'on a enregistré. De même une interface similaire apparaît lorsque appuie sur le bouton \og Play \fg{} mais cette fois avec une liste de monde. Cette liste de monde est généré automatiquement en parcourant les fichier de la sauvegarde.
+\\
+Dans cette interface il est possible de sélectionné un serveur ou un monde en cliquant dessus. On ne le voit pas vraiment mais une fine ligne blanche forme alors le contours du monde sélectionner. Il est alors possible de supprimer le monde ou le serveur de la liste en appuyant sur le bouton \og Delete \fg{} ou de lancer le jeu en appuyant sur le bouton \og Start \fg{}. Lorsque la liste possède plus de 3 éléments l'écran n'en affiche que trois mais il est possible de parcourir toute la liste en appuyant sur les flèches se trouvant dans la partie droite du rectangle rouge.
+\\
+Enfin il est possible d'accéder à une interface de création de monde ou de serveur en appuyant sur le bouton \og Create \fg{}
+\\
+Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{seed} de la map en base 36 (\textit{seed} composé de maximum chiffre et de lettres en minuscules). Cette seed est propre à un monde particulier et permet donc de régénérer le même monde (s'en prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 monde différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie dedans. Pour des raison de comptabilité des sauvegarde il est impossible de créer plusieurs sauvegardes du même nom.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{CreationMonde}
+\caption{Création de monde} 
+\label{CreationMonde}
+\end{center}
+\end{figure}
+\\
+Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur}) il nous est seulement demander de choisir une adresse ip et un nom sous laquelle l'enregistrer puis d'appuyer sur le bouton \og Create\fg{} pour enregistrer un nouveau serveur. contrairement à la création de monde on peut créer plusieurs serveur de même nom ou de même adresses IP s'en créer de conflit.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{CreationServeur}
+\caption{Enregistrement d'un serveur} 
+\label{CreationServeur}
+\end{center}
+\end{figure}
+Notre génération de monde commençant à être longue avec la génération des îles et de leurs graphes  Nous avons rajouter un écran de chargement sous la forme d'une vidéo format MP4 tournant en boucle. Ceci permet à Unity d'utiliser toute sa capacité de calcule sans se soucier de la génération de l'écran de chargement qui est gérer par un logiciel tiers.
+\\
+Enfin en jeux nous avons rajouter des options permettant d'influencer la caméra. La première permet de modifier la sensibilité de la souris sur les mouvement de la caméra et la deuxième permet de modifier la distance maximum de vision de la caméra. Cette dernière option à été rajouter car avec l'agrandissement de notre monde les plus vieux ordinateurs n'était pas capable de faire tourner le jeu sans laguer.
+
+
+% systeme de serveur et de différents monde
+
+% ajout de plusieurs options
+
+% écran de chargement
 \subsubsection{La refonte de la première scène (Julien)}
 
 % système de "train" bullshit Julien
