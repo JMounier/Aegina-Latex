@@ -261,15 +261,14 @@ En plus d'améliorer le gameplay Nous avons également fait de grandes amélioratio
 
 La sauvegarde est une des grandes implementations pour cette deuxième soutenance, celle-ci permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent.
 \\
-La première chose que nous avons du modifier est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{seed}. Le principe est le suivant, lorsque le joueur créer un monde alors un nombre va être choisi aléatoirement. Ce nombre est appelé la \textit{seed} du monde. À partir de celui-ci nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les iles et leur position mais aussi leur biome et leur environnement. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
+La première chose que nous avons du modifier est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{seed}. Le principe est le suivant, lorsque le joueur créer un monde alors un nombre va être choisi aléatoirement. Ce nombre est appelé la \textit{seed} du monde. À partir de celui-ci nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les iles et leur position mais aussi leur biome et leur environnement. Ce système rend la sauvegarde légère en mémoire et donc rapide. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
 \\
 Chaque chunk va calculer son propre \textit{seed} à partir du \textit{seed} du monde et de sa position, à partir de ce nouveau seed nous allons pouvoir connaitre ses îles et son biome. Puis pour chacune des ancres nous savons l'élément qui doit être à cet emplacement.
 \\
 \\
 Nous avons uniquement besoin de sauvegarder la \textit{seed} pour sauvegarder notre monde. Cependant les modifications du joueur ne peuvent pas être déterminées grâce au seed. Nous avons donc besoin de sauvegarder des informations supplémentaires telles que l'heure de la journée, les éléments détruits et posés, mais aussi les caractéristiques des cristaux. Enfin l'arrivée des succès et des statistiques de jeu doit être elles aussi sauvegardé.
 Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
-
-
+\\
 \begin{itemize}
 \item La position ;
 \item Le contenu de son inventaire ;
@@ -277,6 +276,8 @@ Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
 \item Les effets (régénération, poison \ldots) et leur temps restant; 
 \item Son équipe en mode \textit{PvP} ; 
 \end{itemize}
+\\
+Enfin la sauvegarde s'effectue quand le serveur est éteint. Mais cela ne suffit pas en cas de crash ou d'un joueur qui ne fermerait pas correctement l'application la sauvegarde ne pourrait pas s'effectuer. Il y a donc une sauvegarde automatique toutes les minutes. Celle-ci ne provoque aucun ralentissement du jeu car elle est très légère.
 
 \subsubsection{La refonte du Menu (Romain)}
 
@@ -342,7 +343,32 @@ Enfin en jeux nous avons rajouter des options permettant d'influencer la caméra.
 
 \subsubsection{ Amélioration des commandes et système d'opérateur (Florian)}
 
-% mode opérateur
+Une amélioration notable est celle du chat et des commandes. 
+Désormais l'host de la partie est un opérateur cela lui permet de faire des commandes de triche tel que \textsc{/give}. Cependant l'ensemble des joueurs possèdent des commandes utilitaires et de communication.
+De plus une série de commandes ont été ajouté avec les nouveautés du jeu. Voici un récapitulatif des anciennes et nouvelles commandes.
+\\
+Disponible pour tous les joueurs :
+\begin{description}
+\item[/help [page (int)]:] énumère les commandes avec leurs arguments si la page n'est pas spécifiée alors affiche la première page ;
+\item[/msg <player (string)> <message (string)> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
+\item[/seed :] affiche dans le chat le seed du monde actuel ;
+\item[/music <clip (int)> :] lance la musique correspondant au clip ;
+\item[/team <message (string)> :] envoie un message uniquement lisible par les membres de la même équipe du joueur.
+\end{description}
+
+Disponible uniquement pour les opérateurs :
+\begin{description}
+\item[/time <value (int)> :] détermine l'heure de la journée ;
+\item[/give [player (string)] <id (int) ou nom (string)> [quantity (int)] :] ajoute à l'inventaire d'un joueur (ou nous-même s'il n'est pas spécifié) la quantité indiquée (ou un seul s'il n'est pas spécifié) de l'objet dont l'identifiant correspond au paramètre ; 
+\item[/tp <player (string)> :] nous téléporte vers le personnage souhaité ;
+\item[/kick <player (string)> :] fait sortir du serveur le joueur dont le personnage est passé en paramètre ;
+\item[/save :] force la sauvegarde du monde ;
+\item[/kill <player (string)> :] tue le personnage passé en paramètre ;
+\item[/effect <player (string)> <id (int)> :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
+\item[/op <player (string)> :] donne les droits d'opérateur au joueur passé en paramètre ;
+\item[/deop <player (string)> :] supprime les droits d'opérateur au joueur passé en paramètre ;
+\item[/choseteam <id (int) ou nom (string)> [player (string)] :] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
+\end{description}
 
 % nouvelles commandes
 
