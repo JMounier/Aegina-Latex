@@ -151,7 +151,7 @@ Enfin certaines recettes sont caché et il est impossible de savoir qu'elles exis
 En jeu il est possible d'accéder au système de Craft en même temps que l'inventaire.
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=16cm]{CraftHUD}
+\begin{center}\includegraphics[width=14cm]{CraftHUD}
 \caption{Interface de la création d'objet} 
 \label{Craft}
 \end{center}
@@ -178,15 +178,40 @@ Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mise en jeu : 
 \\
 En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du lancement d'une partie il est possible de choisir de joueur en joueur contre joueur. Les joueurs qui se connecte sur le serveur vont alors être séparé en plusieurs \og team \fg{}. Ces joueurs auront alors des points de réparation différents et pourront attaquer les joueurs qui n'appartiennent pas à leur \og team \fg{}. De plus ils pourront attaquer les cristaux des autres joueurs pour le leur voler. Ainsi ils profiterons des avantages de ces cristaux et les joueurs adverses seront affaiblis. Lorsque qu'une \og team \fg{} perd tout ces cristaux ces joueurs ne peuvent plus réapparaître et quand tout les joueurs d'une \og team \fg{} sont mort celle-ci perd la partie.Les membres de la dernière \og team \fg{} en vie sont les gagnants.
 
-\subsubsection{Le système de Succès(Julien)}
+\subsubsection{Le système de Succès(Julien)} 
+ 
+Les succès représentent les exploits réalisés par les joueurs. De plus, notre jeu laissant beaucoup de liberté au joueur, il est possible que celui-ci ne sache plus quoi faire. C'est la que les succès interviennent car ils proposent différents défies auxquels le joueur peut se confronter. Ces exploits peuvent porter sur différents aspects de la survie comme le nombre de créatures tuer ou encore la quantité de potions consommées.
 
-% Succes et Requirement 
+D'un point de vue technique, tous les différents succès sont stockés comme attribut static d'une classe particulière. Mais ces succès étant accomplis par les joueur a n'importe quel moment, il fallait trouver un moyen de mettre à jours ces attributs à chaque instant tout en y passant le moins de temps possible. Les mise à jours doivent donc répondre à quelques contraintes : 
+\begin{itemize}
+\item ne pas tester les succès déjà accomplis
+\item ne pas tester les succès dépendant de succès non accomplis (l'objectif \textit{ Tuer 10 monstre} ne peut pas être réussi avant l'objectif \textit{Tuer 1 monstre})
+\item indiquer au joueur le moment ou il réussi un succès
+\end{itemize}
 
-% Succès propre au serveur
+Pour régler ces premier problème, nous avons opter pour l'utilisation de 2 structures. Tous d'abord, un nouvelle objet appelé \textit{Succes} qui contient : un booléen indiquant si le \textit{Succes} est réussi, la liste de toutes les conditions nécessaires à l'accomplissement de celui-ci, son nombre de parents et une liste de \textit{fils}. Ces deux dernier éléments permettent de créer une hiérarchie entre les différents succès et de faciliter l'affichage.
+ 
+La deuxième structure est une liste de succès a mettre à jours, présente uniquement sur le serveur. A Chaque frame, le serveur teste si les succès présents dans la liste sont accomplis. Si un succès est accompli, alors il est retiré de la liste à tester et tous ces fils y sont ajoutés si ils n'étaient pas déjà présents. De plus, l'affichage d'un pop-up en haut à gauche de l'écran est demandé sur chaque client attestant de l'accomplissement du succès (voir figure~\ref{Pop-up}). La demande d'affichage est mise dans une file pour qu'aucuns pop-up ne se superpose.
 
-% database
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=10cm]{Pop-up}
+\caption{Affichage du Pop-up} 
+\label{Pop-up}
+\end{center}
+\end{figure}
 
-% HUD avec screen
+Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté per une image et leur hiérarchie est visible grâce à des lignes. A terme, une si petite fenêtre ne sera pas suffisante pour afficher tous les succès, c'est pourquoi des bar de défilement serons présente a droite et en dessous de la zone d'affichage (celle de droite est déjà visible).
+
+La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvants pas l'être ce fais par l'utilisation de trois \textit{Shader}. Comme expliqué dans le premier rapport de soutenance, un \textit{Shader} indique a la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
+
+Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(succès accompli)}, le deuxième ne tient compte que de la transparence de l'image et affiche un gris la où l'image n'est pas transparente \textit{(succès pouvant être accompli)} et le dernier n'affiche pas du tout l'image \textit{(succès impossible)}.
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=14cm]{Succes}
+\caption{Interface des succès} 
+\label{Succes}
+\end{center}
+\end{figure}
 
 \subsubsection{Les objets équipables et l'interaction avec l'environnement(Théo et Julien)}
 
@@ -205,7 +230,7 @@ Par rapport à la première soutenance Les capacité du cristal ont été énormément 
 La première amélioration que l'on remarque sur le cristal est son interface qui est devenue bien plus garnie.
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=16cm]{CristalHUD}
+\begin{center}\includegraphics[width=14cm]{CristalHUD}
 \caption{Interface de l'intéraction avec le cristal} 
 \label{Cristal}
 \end{center}
@@ -222,6 +247,8 @@ Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le
  En joueur contre joueur les pouvoirs du cristal ne s'applique qu'au joueur de la même \og team\fg{} que celui-ci. Les autres joueurs peuvent attaquer le cristal pour faire descendre la vie de celui-ci. Cette vie est représentée par la jauge bleue dans le cadre vert de la figure \ref{Cristal}. Lorsque la vie d'un cristal tombe à 0 il prend les couleur de la \og team\fg{} qui la détruit et perd un niveau aléatoirement dans l'un de ces trois pouvoirs. Il est possible pour les joueur allié au cristal de soigner celui-ci en consommant une dizaine de ressources et en appuyant sur le bouton \og Heal\fg{} en dessous de la vie du cristal. Plus le cristal est d'un niveau élevé plus la ressource nécessaire pour activer celui-ci est rare.
  
 \subsection{Les grandes améliorations du système de jeux}
+
+
 
 \subsubsection{La refonte du Menu (Romain)}
 
@@ -277,7 +304,16 @@ Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le
 
 \subsubsection{Ajout de son et d'animations (Théo)}
 
-% liste des nouveaux son et animation + bullshit
+Lors de notre première soutenance nous avions présentés un environnent sonore (musique et bruitage) assez restreint qui se limité a 4 musiques et quelque bruitages. 
+\\
+Nous avons trouvé ce contenu insuffisant, enrichir ce dernier est alors devenu essentiel afin de rendre l'expérience de jeu plus agréable.
+\\
+La création d'un nouveau biome, le biome automne, nous a permis d'introduire dans le jeu une nouvelle musique.
+\\
+Nous avions alors 4 musique de jeu, une pour chaque biomes,  cependant, ces musiques se jouaient de manière aléatoire sans aucune cohérence avec le biome dans lequel nous nous trouvions. Nous trouvions cette incohérence fort dommage, nous avons alors fait en sorte que les musiques se lancent en fonction du biome sur lequel le joueur se trouve. 
+\\
+L'ajout de divers nouveaux bruitages et animations, se sont fait en même temps que l'ajout de gameplay au jeu. Il a fallut rendre cohérent les actions du personnage car se dernier ne pouvais pas obtenir du bois sans couper un arbre, il nous à alors fallut créer des animations et bruitage pour les divers actions indispensable a notre jeu comme couper du bois, ramasser des objets, ...
+Ces multiples ajout de bruitages et musique ont nettement amélioré l?environnement sonore du jeux. Au final cet enrichissement sonore et ces nouvelles animations permettent une assez bonne cohérence entre ce que l'on souhaite réaliser et ce que l'on peut observer dans le jeu.
 
 
 \subsubsection{Ajout d'île et d'un nouveau biomes (Julien et Théo)}
@@ -301,15 +337,46 @@ Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le
 
 \subsection{Le site web (Théo)}
 
-%explication des différents fonctionnalités + screen
+Le site web que nous avons créer (accessible depuis cette adresse : http://jmounier.github.io/Aegina-Website/) avait pour notre équipe plusieurs objectifs à remplir :
+\begin{itemize}
+\item nous devions respecter l'obligation qui était de construire un site web;
+\item créer un lieu où nos testeur et nous espérons futur joueurs puissent trouver toutes les informations nécessaire afin de rendre leur expérience en jeu agréable;
+\item permettre à ces personnes de télécharger notre jeu mais aussi de nous transmettre leurs expériences.;
+\end{itemize}
+Tout ceci est réalisable depuis les différentes pages présente sur le site, que nous allons maintenant vous présenter.
 
 \subsubsection{la page d'accueil}
 
+Sur cette page vous pourrez apercevoir, au premier plan plusieurs éléments : 
+\begin{itemize}
+\item un bref descriptif du jeu;
+\item des accès pour télécharger la version béta de Aegina en fonction de votre système d'exploitation, Windows, Mac et GNU/Linux;
+-\item la dernière actualité ajoutée sur le site;
+\end{itemize}
+Vous pouvez aussi voir sur le coté un menu, il permet de naviguer entre les différentes pages du site web, il est positionné au même endroit sur toutes les pages.
+
+
 \subsubsection{Les actualités}
+
+Sur la pages des actualités, que nous tiendrons à jour un maximum vous pourrez trouver les différents ajouts qu'il y aura dans le jeu.
+\\
+Les actualités que vous pourrez trouver sur cette page pourront très bien concerner l'ajout d'un nouveau biome, de monstres ou encore le lancement d'une nouvelle version disponible au grand public.
+\\
+Nous espérons que les différentes annonces qui seront faite sur cette page rempliront les attentes que vous avez envers Aegina.
 
 \subsubsection{Le wiki}
 
+La page wiki est pour notre équipe une page très importante, nous connaissons Aegina et donc nous connaissons la difficulté de rester en vie dans ce monde hostile même pour des personnes aguéris, c'est pourquoi nous avons décidé de mettre en place cette page.
+\\
+Dans ce wiki vous pourrez trouver toute sorte d'informations, toute plus utiles les unes que les autre pour survivre. 
+\\
+Vous pourrez y trouver les différent objets que vous pouvez posséder dans le jeu ainsi que leurs possibles effets, les élément et monstres qui existent dans Aegina.
+\\
+Il faut cependant savoir que ce wiki est rempli au fur et à mesure de notre avancé, il peut donc manquer certaine informations.
+
 \subsubsection{L'équipe}
+
+Sur la dernière page de notre site web vous pourrez trouver divers informations sur les membres de l'équipe AIM$^{2}$, ces informations seront prochainement disponible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
