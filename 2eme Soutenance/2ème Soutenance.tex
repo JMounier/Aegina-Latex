@@ -131,20 +131,19 @@ Les aventurier d'Aegina qui chassent le pampi ont deux règle d'or : ne pas accul
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
-
 \section{Réalisation}
 
 \subsection{Les améliorations du Gameplay}
 
-Les améliorations faites pour la première soutenance se sont en grande partie concentré sur le Gameplay. En effet lors de la première soutenance nous avions de nombreuses base dans notre jeux qui nous permettait de se déplacer et d'admirer le paysage mais rien d'autre. Il était impossible de réellement jouer de de s'amuser. Les nouvelles améliorations vont permettre à notre jeux d'être vraiment un jeux. On pourra enfin s'amuser en y jouant.
+Les améliorations faites depuis la première soutenance se sont en grande partie concentré sur le Gameplay. En effet lors de la première soutenance nous avions de nombreuses base dans notre jeux qui nous permettait de se déplacer et d'admirer le paysage mais rien d'autre. Il était impossible de réellement jouer de de s'amuser. Les nouvelles améliorations vont permettre à notre jeux d'être vraiment un jeux. On pourra enfin s'amuser en y jouant.
 
 \subsubsection{La création d'objets(Romain)}
 
-Une nécessité dans la survie et dans tous les jeux de survie est l'obtention d'outil primitif pour fabriquer un abri ou chasser. Pour cela il faut pouvoir créer ces outils.  Nous avons donc rajouter un système de création d'objet. une énumérations de toutes les recettes possibles divise celle-ci en cinq catégories : les établies permettant de fabriquer plus d'outils, les ressources de constructions qui sont principalement utilisé pour fabriquer des objets plus évolués, les consommables et les armes qui seront présenté plus en détail dans le suite de ce rapport et enfin les armures qui ne sont pas encore implémentés.
+Une nécessité en survie et dans tous les jeux de survie est l'obtention d'outil primitif pour fabriquer un abri ou chasser. Pour cela il faut pouvoir créer ces outils.  Nous avons donc rajouter un système de création d'objet. une énumérations de toutes les recettes possibles divise celle-ci en cinq catégories : les établies permettant de fabriquer plus d'outils, les ressources de constructions qui sont principalement utilisé pour fabriquer des objets plus évolués, les consommables et les armes qui seront présenté plus en détail dans le suite de ce rapport et enfin les armures qui ne sont pas encore implémentés.
 \\
-Chacune de ces recettes nécessitera plusieurs conditions. D'abord il faudra possédé une place vide dans l'inventaire pour fabriquer un objet. Même si Ille possède déjà quelques éléments de l'objet qu'il veut fabriquer le passage d'un bâton à une pioche ne se fait pas de manière directe. Ille doit d'abord crée un manche, forger un fer de pioche et assembler les deux. Il a donc besoin de cet espace vide dans sont inventaire pour toutes ces actions. Ensuite Ille doit posséder les éléments nécessaire à la fabrication de l'objet souhaiter. Cela paraît naturel Il est impossible de faire une pioche à partir de rien tout comme on ne peut pas faire de ragout sans viande. Enfin Ille doit se trouver à proximité des établis nécessaire à la fabrication des objets souhaiter. Aucune indication n'est donner pour savoir qu'elle établis est nécessaire pour faire un objet d'en le jeux mais cela reste évident. Il faut par exemple être à proximité d'une forge pour fabriquer des lingot ou un autre objet en fer.
+La réalisation de Chacune de ces recettes nécessitera plusieurs conditions. D'abord il faudra possédé une place vide dans l'inventaire pour fabriquer un objet. Même si Ille possède déjà quelques composant de l'objet qu'il veut fabriquer le passage d'un bâton à une pioche ne se fait pas de manière directe. Ille doit d'abord crée un manche, forger un fer de pioche et assembler les deux. Il a donc besoin de cet espace vide dans son inventaire pour toutes ces actions. Ensuite Ille doit posséder les composant nécessaire à la fabrication de l'objet souhaiter. Cela paraît naturel Il est impossible de faire une pioche à partir de rien tout comme on ne peut pas faire de ragout sans viande. Enfin Ille doit se trouver à proximité des établis nécessaire à la fabrication des objets souhaiter. Aucune indication n'est donnée pour savoir qu'elle établie est nécessaire pour faire un objet mais cela reste évident : il faut par exemple être à proximité d'une forge pour fabriquer des lingot ou un autre objet en fer.
 \\
-Mais malgré tout cela Il manque une chose à Ille pour qu'il puisse fabriquer facilement des objets : la maîtrise. Ille ne sait pas forcement comment fabriquer du verre ou forger une épée et toute tentative de fabriquer un telle objet se verra couteuse en ressource. Pour être exact tant que la fabrication d'un objet n'est pas maîtriser le cout en ressource de cette fabrication sera doublé. Pour maitriser une recette il n'existe actuellement qu'une seul possibilité : La chance.
+Mais malgré tout cela Il manque une chose à Ille pour qu'il puisse fabriquer facilement des objets : l'expèrience. Ille ne sait pas forcement comment fabriquer du verre ou forger une épée et toute tentative de fabriquer un telle objet se verra couteuse en ressource. Pour être exact tant que la fabrication d'un objet n'est pas maîtriser le cout en ressource de cette fabrication sera doublé. Pour maitriser une recette il n'existe actuellement qu'une seul possibilité : La chance.
 \\
 Enfin certaines recettes sont caché et il est impossible de savoir qu'elles existent sans remplir certaines conditions ou rechercher sur le wiki.
 \\
@@ -153,31 +152,31 @@ En jeu il est possible d'accéder au système de Craft en même temps que l'inventa
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=16cm]{CraftHUD}
-\caption{Format de la création d'objet} 
+\caption{Interface de la création d'objet} 
 \label{Inventaire}
 \end{center}
 \end{figure}
 
-sur la partie gauche de l'écran cinq boutons permettent de choisir qu'elle catégorie d'objet l'on veut créer (en 1 sur l'image). Après avoir appuyer sur ce bouton une liste d'élément pouvant être créés apparait (en 2 sur l'image). Les flèche en haut et en bas permettent de faire défiler les éléments en en appuyant sur l'un de ces éléments sa recette s'affiche sous la forme d'une liste d'éléments (en 3 sur l'image). dans cette liste d'éléments la dernière case est cochée en vert ,si l'objet peut être créé, ou occupée par une croix rouge dans le cas contraire. Si on appuie sur la case cochée en vert on va enfin pouvoir créer les objets que l'on voulait.
+sur la partie gauche de l'écran cinq boutons permettent de choisir qu'elle catégorie d'objet l'on veut créer (entourée en bleue sur l'image). Après avoir appuyer sur ce bouton une liste d'élément pouvant être créés apparait (entourée en rouge sur sur l'image). Les flèche en haut et en bas permettent de faire défiler les éléments en en appuyant sur l'un de ces éléments sa recette s'affiche sous la forme d'une liste d'éléments (entourée en vert sur l'image). dans cette liste d'éléments la dernière case est cochée en vert ,si l'objet peut être créé, ou occupée par une croix rouge dans le cas contraire. Si on appuie sur la case cochée en vert on va enfin pouvoir créer les objets que l'on voulait.
 
-\subsubsection{Les mobs (Florian)}
+\subsubsection{Les Créatures (Florian)}
 
-L'arrivée des mobs dans le monde d'Aegina a imposé la création d'intelligence artificielle. 
+L'arrivée des créatures dans le monde d'Aegina a imposé la création d'intelligence artificielle. 
 
-Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possèdes un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher.
+Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possède un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher.
 % Inserer une image de chunk en debug pour voir le graphe...
 \\
 Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe.
 \\
-Nous avons donc la possibilité de déplacer nos mobs inteligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. 
+Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. 
 
-\subsubsection{Le combat et le mode conquête(Théo et Romain)}
+\subsubsection{Le combat et le mode joueur contre joueur(Théo et Romain)}
 
-% explication vie attaque armure  
-
-% système de Team
-
-% mode PVP
+Avec l'ajout des créatures il nous aussi le moyen de nous défendre. C'est pour cela que nous donner à Ille le moyen d'attaquer. en étant immobile ou en se déplaçant le joueur peut, en utilisant un clic gauche, déclenchant l'attaque de Ille. Celui-ci va alors faire un rapide cout en avant avec l'objet dans ses mains ou à main nue si il ne possède pas d'objet. Cependant il faut faire attention si Ille saute, déclenche un menu ou utilise un objet pendant les deux premiers dixième de seconde après le début de sont attaque celle-ci sera annulé. De plus Ille n'est pas un barbare et cela ne sert à rien de de cliqué le plus vite avec ça souris car Ille ne peut déclencher une attaque que tout les huit dixièmes de secondes même si la précédente attaque a été annulée. 
+\\
+Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mise en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui peut être influencé par l'arme qu'il possède grâce à la formule : $Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$. L'arme du joueur à donc un grand impact sur les dégâts de celui-ci. Cependant les dommage de l'attaque ne sont pas directement la vie perdue par le joueur car celui ci peut utiliser son armure pour se défendre. La vie perdu suit alors la formule : $Vie Perdu =  Dommage De L'attaque \times \frac{1}{1+Armure *Coefficient D'armure}$.
+\\
+En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du lancement d'une partie il est possible de choisir de joueur en joueur contre joueur. Les joueurs qui se connecte sur le serveur vont alors être séparé en plusieurs \og team \fg{}. Ces joueurs auront alors des points de réparation différents et pourront attaquer les joueurs qui n'appartiennent pas à leur \og team \fg{}. De plus ils pourront attaquer les cristaux des autres joueurs pour le leur voler. Ainsi ils profiterons des avantages de ces cristaux et les joueurs adverses seront affaiblis. Lorsque qu'une \og team \fg{} perd tout ces cristaux ces joueurs ne peuvent plus réapparaître et quand tout les joueurs d'une \og team \fg{} sont mort celle-ci perd la partie.Les membres de la dernière \og team \fg{} en vie sont les gagnants.
 
 \subsubsection{Le système de Succès(Julien)}
 
@@ -268,9 +267,9 @@ Nous avons donc la possibilité de déplacer nos mobs inteligemment. Il nous a fal
 
 \subsubsection{Ajout d'île et d'un nouveau biomes (Julien et Théo)}
 
-% ajout du biomes automne + bullshit
+% ajout de deux chunks + bullshit
 
-\subsubsection{Ajout de nombreux éléments (Julien et Théo) }
+% ajout du biomes automne + bullshit
 
 % ajout des haches,citrouille,squelettes.. + bullshit
 
@@ -285,7 +284,7 @@ Nous avons donc la possibilité de déplacer nos mobs inteligemment. Il nous a fal
 
 % comme pour l'alpha sauf que tu remplace alpha par bêta ^^
 
-\subsection{Le site web}
+\subsection{Le site web (Théo)}
 
 %explication des différents fonctionnalités + screen
 
