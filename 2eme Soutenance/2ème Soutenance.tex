@@ -163,12 +163,20 @@ sur la partie gauche de l'écran cinq boutons permettent de choisir qu'elle catég
 
 L'arrivée des créatures dans le monde d'Aegina a imposé la création d'intelligence artificielle. 
 
-Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possède un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher.
-% Inserer une image de chunk en debug pour voir le graphe...
+Nous avons commencé par la génération de graphes lors du chargement de chunks. Ce dernier est propre à chaque chunk. Il possède un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments par exemple un arbre ou un rocher (voir figure~\ref{Graphe}).
+
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=16cm]{graphe}
+\caption{Graphe} 
+\label{Graphe}
+\end{center}
+\end{figure}
+
+
+Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe. De plus les îles séparées par du vide ou un pont ont des graphes disjoints, cela permet entre autres que les mobs restent sur leur île. 
 \\
-Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe.
 \\
-Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. 
+Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. Tant qu'un mob est loin de tous personnage celui ci va donc ce balader en choisissant un point aleatoirement sur le graphe. Des qu'un joueur est assez proche alors le mob va se diriger en évitant tous les obstacles vers le joueur. Une fois à porter celui-ci va l'attaquer avec une vitesse d'ataque et des dégats qui lui sont propre.
 
 \subsubsection{Le combat et le mode joueur contre joueur(Théo et Romain)}
 
@@ -218,11 +226,24 @@ En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du l
 
 \subsubsection{La sauvegarde (Florian)}
 
-% système de seed , comment ça marche ?
+La sauvegarde est une des grandes implementations pour cette deuxième soutenance, celle-ci permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent.
 
-% explication de l'importance du nom
+La première chose que nous avons du modifier est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{seed}. Le principe est le suivant, lorsque le joueur créer un monde alors un nombre va être choisi aléatoirement. Ce nombre est appelé la \textit{seed} du monde. À partir de celui-ci nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les iles et leur position mais aussi leur biome et leur environnement. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
 
-% énumération de ce qui est sauvegarder
+Chaque chunk va calculer son propre \textit{seed} à partir du \textit{seed} du monde et de sa position, à partir de ce nouveau seed nous allons pouvoir connaitre ses îles et son biome. Puis pour chacune des ancres nous savons l'élément qui doit être à cet emplacement.
+\\
+\\
+Nous avons uniquement besoin de sauvegarder la \textit{seed} pour sauvegarder notre monde. Cependant les modifications du joueur ne peuvent pas être déterminées grâce au seed. Nous avons donc besoin de sauvegarder des informations supplémentaires telles que l'heure de la journée, les éléments détruits et posés, mais aussi les caractéristiques des cristaux. Enfin l'arrivée des succès et des statistiques de jeu doit être elles aussi sauvegardé.
+Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
+
+
+\begin{itemize}
+\item La position ;
+\item Le contenu de son inventaire ;
+\item Sa vie, sa faim et sa soif ; 
+\item Les effets (régénération, poison \ldots) et leur temps restant; 
+\item Son équipe en mode \textit{PvP} ; 
+\end{itemize}
 
 \subsubsection{La refonte de la première scène (Julien)}
 
