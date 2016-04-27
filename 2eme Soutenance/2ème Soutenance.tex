@@ -180,11 +180,11 @@ Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous
 
 \subsubsection{Le combat et le mode joueur contre joueur(Théo et Romain)}
 
-Avec l'ajout des créatures il nous aussi le moyen de nous défendre. C'est pour cela que nous donner à Ille le moyen d'attaquer. en étant immobile ou en se déplaçant le joueur peut, en utilisant un clic gauche, déclenchant l'attaque de Ille. Celui-ci va alors faire un rapide cout en avant avec l'objet dans ses mains ou à main nue si il ne possède pas d'objet. Cependant il faut faire attention si Ille saute, déclenche un menu ou utilise un objet pendant les deux premiers dixième de seconde après le début de sont attaque celle-ci sera annulé. De plus Ille n'est pas un barbare et cela ne sert à rien de de cliqué le plus vite avec ça souris car Ille ne peut déclencher une attaque que tout les huit dixièmes de secondes même si la précédente attaque a été annulée. 
+Avec l'ajout des créatures il nous faut aussi le moyen de nous défendre. C'est pour cela que nous avons donner à Ille le moyen d'attaquer. en étant immobile ou en se déplaçant le joueur peut, en utilisant un clic gauche, déclencher l'attaque de Ille. Celui-ci va alors faire un rapide cout en avant avec l'objet dans ses mains ou à main nue si il ne possède pas d'objet. Cependant il faut faire attention si Ille saute, déclenche un menu ou utilise un objet pendant les deux premiers dixième de seconde après le début de sont attaque celle-ci sera annulé. De plus Ille n'est pas un barbare et cela ne sert à rien de de cliqué le plus vite avec ça souris car Ille ne peut déclencher une attaque que tout les huit dixièmes de secondes même si la précédente attaque a été annulée. 
 \\
 Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mise en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui peut être influencé par l'arme qu'il possède grâce à la formule : $$Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$$ L'arme du joueur à donc un grand impact sur les dégâts de celui-ci. Cependant les dommage de l'attaque ne sont pas directement la vie perdue par le joueur car celui ci peut utiliser son armure pour se défendre. La vie perdu suit alors la formule : $$Vie Perdu =  Dommage De L'attaque \times \frac{1}{1+Armure *Coefficient D'armure}$$
 \\
-En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du lancement d'une partie il est possible de choisir de joueur en joueur contre joueur. Les joueurs qui se connecte sur le serveur vont alors être séparé en plusieurs \og team \fg{}. Ces joueurs auront alors des points de réparation différents et pourront attaquer les joueurs qui n'appartiennent pas à leur \og team \fg{}. De plus ils pourront attaquer les cristaux des autres joueurs pour le leur voler. Ainsi ils profiterons des avantages de ces cristaux et les joueurs adverses seront affaiblis. Lorsque qu'une \og team \fg{} perd tout ces cristaux ces joueurs ne peuvent plus réapparaître et quand tout les joueurs d'une \og team \fg{} sont mort celle-ci perd la partie.Les membres de la dernière \og team \fg{} en vie sont les gagnants.
+En même temps que le combat un mode joueur contre joueur a été ajouté. Lors du lancement d'une partie il est possible de choisir de joueur en joueur contre joueur. Les joueurs qui se connecte sur le serveur vont alors être séparé en plusieurs équipe. Ces joueurs auront alors des points de réparation différents et pourront attaquer les joueurs qui n'appartiennent pas à leur équipe. De plus ils pourront attaquer les cristaux des autres joueurs pour le leur voler. Ainsi ils profiterons des avantages de ces cristaux et les joueurs adverses seront affaiblis.
 
 \subsubsection{Le système de Succès(Julien)} 
  
@@ -245,7 +245,7 @@ Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le
 \end{itemize}
  Il est possible d'augmenter n'importe qu'elle pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{Cristal}. Cependant un cristal après sont activation ne peut être améliorer que trois fois et chaque amélioration est plus chère que la précédente.
  \\
- En joueur contre joueur les pouvoirs du cristal ne s'applique qu'au joueur de la même \og team\fg{} que celui-ci. Les autres joueurs peuvent attaquer le cristal pour faire descendre la vie de celui-ci. Cette vie est représentée par la jauge bleue dans le cadre vert de la figure \ref{Cristal}. Lorsque la vie d'un cristal tombe à 0 il prend les couleur de la \og team\fg{} qui la détruit et perd un niveau aléatoirement dans l'un de ces trois pouvoirs. Il est possible pour les joueur allié au cristal de soigner celui-ci en consommant une dizaine de ressources et en appuyant sur le bouton \og Heal\fg{} en dessous de la vie du cristal. Plus le cristal est d'un niveau élevé plus la ressource nécessaire pour activer celui-ci est rare.
+ En joueur contre joueur les pouvoirs du cristal ne s'applique qu'au joueur de la même équipe que celui-ci. Les autres joueurs peuvent attaquer le cristal pour faire descendre la vie de celui-ci. Cette vie est représentée par la jauge bleue dans le cadre vert de la figure \ref{Cristal}. Lorsque la vie d'un cristal tombe à 0 il prend les couleur de l'équipe qui la détruit et perd un niveau aléatoirement dans l'un de ces trois pouvoirs. Il est possible pour les joueur allié au cristal de soigner celui-ci en consommant une dizaine de ressources et en appuyant sur le bouton \og Heal\fg{} en dessous de la vie du cristal. Plus le cristal est d'un niveau élevé plus la ressource nécessaire pour activer celui-ci est rare.
  \begin{figure}[h!]
 \begin{center}\includegraphics[width=14cm]{CristalHUD}
 \caption{Interface de l'intéraction avec le cristal} 
@@ -297,7 +297,7 @@ Dans cette interface il est possible de sélectionné un serveur ou un monde en cl
 \\
 Enfin il est possible d'accéder à une interface de création de monde ou de serveur en appuyant sur le bouton \og Create \fg{}
 \\
-Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{seed} de la map en base 36 (\textit{seed} composé de maximum chiffre et de lettres en minuscules). Cette seed est propre à un monde particulier et permet donc de régénérer le même monde (s'en prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 monde différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie dedans. Pour des raison de comptabilité des sauvegarde il est impossible de créer plusieurs sauvegardes du même nom.
+Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{seed} de la map en base 36 (\textit{seed} composé de maximum six chiffres et lettres en minuscules). Cette seed est propre à un monde particulier et permet donc de régénérer le même monde (sans prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 monde différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie dedans. Pour des raison de comptabilité des sauvegarde il est impossible de créer plusieurs sauvegardes du même nom.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{CreationMonde}
@@ -306,7 +306,7 @@ Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut 
 \end{center}
 \end{figure}
 \\
-Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur}) il nous est seulement demander de choisir une adresse ip et un nom sous laquelle l'enregistrer puis d'appuyer sur le bouton \og Create\fg{} pour enregistrer un nouveau serveur. contrairement à la création de monde on peut créer plusieurs serveur de même nom ou de même adresses IP s'en créer de conflit.
+Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur}) il nous est seulement demander de choisir une adresse ip et un nom sous laquelle l'enregistrer puis d'appuyer sur le bouton \og Create\fg{} pour enregistrer un nouveau serveur. contrairement à la création de monde on peut créer plusieurs serveur de même nom ou de même adresses IP sans créer de conflit.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{CreationServeur}
@@ -314,7 +314,7 @@ Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur})
 \label{CreationServeur}
 \end{center}
 \end{figure}
-Notre génération de monde commençant à être longue avec la génération des îles et de leurs graphes  Nous avons rajouter un écran de chargement sous la forme d'une vidéo format MP4 tournant en boucle. Ceci permet à Unity d'utiliser toute sa capacité de calcule sans se soucier de la génération de l'écran de chargement qui est gérer par un logiciel tiers.
+Notre génération de monde commençant à être longue avec la génération des îles et de leurs graphes  Nous avons rajouter un écran de chargement sous la forme d'une vidéo format MP4 tournant en boucle.
 \\
 Enfin en jeux nous avons rajouter des options permettant d'influencer la caméra. La première permet de modifier la sensibilité de la souris sur les mouvement de la caméra et la deuxième permet de modifier la distance maximum de vision de la caméra. Cette dernière option à été rajouter car avec l'agrandissement de notre monde les plus vieux ordinateurs n'était pas capable de faire tourner le jeu sans laguer.
 
