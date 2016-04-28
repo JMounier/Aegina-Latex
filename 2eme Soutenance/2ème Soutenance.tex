@@ -218,13 +218,29 @@ Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(s
 
 \subsubsection{Les objets équipables et l'interaction avec l'environnement(Théo et Julien)}
 
-% affichage des objets dans la main
+Dans cette partie nous vous expliquerons toutes les méthodes que nous avons mises en place pour permettre au joueur de visualiser les conséquence de ses actions sur son environnement.
 
-% gestion des consommables et leurs différents effets
+Pour commencer nous avons fait la distinction entre 2 catégories d'objets, les premiers qui ne sont que des ressources et les second qui peuvent être utilisé et ont un effet particulier soit sur l'environnement soit sur le joueur lui même. Ces objets ci peuvent être équipé, c'est à dire mis dans la main du joueur. Pour ce faire, il suffit que l'objet soit placé dans la barre d'outil et que le sélecteur soit sur la case du dit objet. Ainsi, l'objet apparaitra dans la main du personnage et tous les joueur pourrons le voir.
 
+Une fois un objet équipé, il suffit de faire un clique droit pour utiliser celui-ci. Là encore il existe plusieurs type d'interaction:
+\begin{itemize}
+\item \textbf{Les consommables : } qui lors d'un clique droit sont consommés est applique un effet au joueur;
+\item \textbf{Les outils : } qui permettent d'interagir avec certains éléments de l'environnement;
+\item \textbf{Les objets pouvant être posé : } qui une fois équipé, apparaissent dans le monde et peuvent être posés avec le clique droit.
+\end{itemize}
+
+Commençons par les consommables. Leurs effets sont très variés, ils peuvent influer sur les caractéristiques d'un personnage, allant de sa vitesse jusqu'à sa santé en passant par sa hauteur de saut. Ce sont les consommables qui permettent entre autre de se nourrir et de boire.
+
+Passons ensuite aux outil. Jusqu'à présent il n'était possible d'interagir qu'avec les cristaux et à condition d'être suffisamment proche de ceux-ci. Maintenant, il est possible d'interagir avec n'importe quel élément de l'environnement a condition d'être équiper d'un outil approprier. Il est en effet impossible de couper un arbre à la main, il faut une hache pour cela. De plus, si l'élément est trop éloigné, le personnage va alors de déplacer vers cet élément jusqu'à atteindre une distance suffisante pour commencer à interagir. Si un joueur garde son clique droit enfoncé, son personnage va s'approcher des ressources l'entourant et les récolter jusqu'à ce qu'il n'y plus de ressources dans les environs ou que son outil équipé ne soit pas approprié à la récolte.
+
+Enfin, pour ce qui est de la pose des objets, lorsqu'un objet pouvant être posé est équipé, celui-ci apparait en transparent dans le monde. Cet objet transparent apparait à une unité de distance devant le personnage et est tourné vers celui-ci. Mais ce n'est pas l'objet réel, c'est une prévisualisation de l'objet qui permet au joueur de choisir où il veut réellement le poser. Un indicateur de couleur permet d'indiquer au joueur si la position actuelle de l'objet est valide ou non (voir figure \ref{Pose}). Il n'est pas possible de poser une table à travers un arbre ou sur un rochet. Le joueur peut confirmer la pose de l'objet par un simple clique droit.
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=16cm]{Pose}
+\caption{La prévisualisation d'un objet} 
+\label{Pose}
+\end{center}
+\end{figure}
 % gestion des Worktope, leur prévisu et la pose dans le monde
-
-% gestion des outils et l'intéraction avec l'environement
 
 \subsubsection{Amélioration du Cristal (Florian et Romain)}
 
