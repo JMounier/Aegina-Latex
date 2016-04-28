@@ -347,7 +347,7 @@ De plus une série de commandes ont été ajouté avec les nouveautés du jeu. Voici 
 \\
 Disponible pour tous les joueurs :
 \begin{description}
-\item[/help [page (int)]:] énumère les commandes avec leurs arguments si la page n'est pas spécifiée alors affiche la première page ;
+\item[/help \{page (int)\} :] énumère les commandes avec leurs arguments si la page n'est pas spécifiée alors affiche la première page ;
 \item[/msg <player (string)> <message (string)> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
 \item[/seed :] affiche dans le chat le seed du monde actuel ;
 \item[/music <clip (int)> :] lance la musique correspondant au clip ;
@@ -357,15 +357,15 @@ Disponible pour tous les joueurs :
 Disponible uniquement pour les opérateurs :
 \begin{description}
 \item[/time <value (int)> :] détermine l'heure de la journée ;
-\item[/give [player (string)] <id (int) ou nom (string)> [quantity (int)] :] ajoute à l'inventaire d'un joueur (ou nous-même s'il n'est pas spécifié) la quantité indiquée (ou un seul s'il n'est pas spécifié) de l'objet dont l'identifiant correspond au paramètre ; 
+\item[/give \{player (string)\} <id (int) ou nom (string)> \{quantity (int)\} :] ajoute à l'inventaire d'un joueur (ou nous-même s'il n'est pas spécifié) la quantité indiquée (ou un seul s'il n'est pas spécifié) de l'objet dont l'identifiant correspond au paramètre ; 
 \item[/tp <player (string)> :] nous téléporte vers le personnage souhaité ;
 \item[/kick <player (string)> :] fait sortir du serveur le joueur dont le personnage est passé en paramètre ;
 \item[/save :] force la sauvegarde du monde ;
 \item[/kill <player (string)> :] tue le personnage passé en paramètre ;
-\item[/effect <player (string)> <id (int)> :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
+\item[/effect <player (string)> <id (int)> \{power (int)\} :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
 \item[/op <player (string)> :] donne les droits d'opérateur au joueur passé en paramètre ;
 \item[/deop <player (string)> :] supprime les droits d'opérateur au joueur passé en paramètre ;
-\item[/choseteam <id (int) ou nom (string)> <player (string)] >:] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
+\item[/choseteam <id (int) ou nom (string)> \{player (string)\} :] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
 \end{description}
 
 % nouvelles commandes
