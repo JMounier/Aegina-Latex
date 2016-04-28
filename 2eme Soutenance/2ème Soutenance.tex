@@ -187,9 +187,9 @@ Les succès représentent les exploits réalisés par les joueurs. De plus, notre je
 
 D'un point de vue technique, tous les différents succès sont stockés comme attribut static d'une classe particulière. Mais ces succès étant accomplis par les joueur a n'importe quel moment, il fallait trouver un moyen de mettre à jours ces attributs à chaque instant tout en y passant le moins de temps possible. Les mise à jours doivent donc répondre à quelques contraintes : 
 \begin{itemize}
-\item ne pas tester les succès déjà accomplis
-\item ne pas tester les succès dépendant de succès non accomplis (l'objectif \textit{ Tuer 10 monstre} ne peut pas être réussi avant l'objectif \textit{Tuer 1 monstre})
-\item indiquer au joueur le moment ou il réussi un succès
+\item ne pas tester les succès déjà accomplis;
+\item ne pas tester les succès dépendant de succès non accomplis (l'objectif \textit{ Tuer 10 monstre} ne peut pas être réussi avant l'objectif \textit{Tuer 1 monstre});
+\item indiquer au joueur le moment ou il réussi un succès.
 \end{itemize}
 
 Pour régler ces premier problème, nous avons opter pour l'utilisation de 2 structures. Tous d'abord, un nouvelle objet appelé \textit{Succes} qui contient : un booléen indiquant si le \textit{Succes} est réussi, la liste de toutes les conditions nécessaires à l'accomplissement de celui-ci, son nombre de parents et une liste de \textit{fils}. Ces deux dernier éléments permettent de créer une hiérarchie entre les différents succès et de faciliter l'affichage.
@@ -234,9 +234,9 @@ La première amélioration que l'on remarque sur le cristal est son interface qui 
 
 Dans le cadre bleue de la figure \ref{Cristal} se trouve les informations sur le type du cristal et ces pouvoirs. Les pouvoirs du cristal se distinguent en trois partie :
 \begin{itemize}
-\item Le pouvoir de guerre qui renforce la puissance du joueurs. Si un joueur se trouve sur l'île il bénéficie d'un bonus en attaque et en armure significatif. En effet si le pouvoir de la guerre d'un cristal est maximisé les joueurs sur l'île verront leur attaque multiplié par deux par rapport à un joueur sans cristal. De plus ils réduiront également de moitié tous les dégâts qu'il recevront.
-\item Le pouvoir de la récolte qui renforce la production du joueur. Si un joueur sur l'île tente de fabriquer un objet il aura plus de chance de maîtriser une recette. De plus les ressources autours de ce genre de cristal auront plus de chance de réapparaître.
-\item Le pouvoir divin qui a une influence plus tactique sur les joueur. Actuellement ce pouvoir permet juste de désigner un cristal comme un point de réapparition sur lequel le joueur peut apparaître. Plus tard il permettra également de se téléporter vers les autres cristaux possédant du pouvoir divin.
+\item le pouvoir de guerre qui renforce la puissance du joueurs. Si un joueur se trouve sur l'île il bénéficie d'un bonus en attaque et en armure significatif. En effet si le pouvoir de la guerre d'un cristal est maximisé les joueurs sur l'île verront leur attaque multiplié par deux par rapport à un joueur sans cristal. De plus ils réduiront également de moitié tous les dégâts qu'il recevront;
+\item le pouvoir de la récolte qui renforce la production du joueur. Si un joueur sur l'île tente de fabriquer un objet il aura plus de chance de maîtriser une recette. De plus les ressources autours de ce genre de cristal auront plus de chance de réapparaître;
+\item le pouvoir divin qui a une influence plus tactique sur les joueur. Actuellement ce pouvoir permet juste de désigner un cristal comme un point de réapparition sur lequel le joueur peut apparaître. Plus tard il permettra également de se téléporter vers les autres cristaux possédant du pouvoir divin.
 \end{itemize}
 
  Il est possible d'augmenter n'importe qu'elle pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{Cristal}. Cependant un cristal après sont activation ne peut être améliorer que trois fois et chaque amélioration est plus chère que la précédente.
@@ -264,11 +264,11 @@ Chaque chunk va calculer son propre \textit{seed} à partir du \textit{seed} du m
 Nous avons uniquement besoin de sauvegarder la \textit{seed} pour sauvegarder notre monde. Cependant les modifications du joueur ne peuvent pas être déterminées grâce au seed. Nous avons donc besoin de sauvegarder des informations supplémentaires telles que l'heure de la journée, les éléments détruits et posés, mais aussi les caractéristiques des cristaux. Enfin l'arrivée des succès et des statistiques de jeu doit être elles aussi sauvegardé.
 Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
 \begin{itemize}
-\item La position ;
-\item Le contenu de son inventaire ;
-\item Sa vie, sa faim et sa soif ; 
-\item Les effets (régénération, poison \ldots) et leur temps restant; 
-\item Son équipe en mode \textit{PvP} ; 
+\item la position ;
+\item le contenu de son inventaire ;
+\item sa vie, sa faim et sa soif ; 
+\item les effets (régénération, poison \ldots) et leur temps restant; 
+\item son équipe en mode \textit{PvP} . 
 \end{itemize}
 
 Enfin la sauvegarde s'effectue quand le serveur est éteint. Mais cela ne suffit pas en cas de crash ou d'un joueur qui ne fermerait pas correctement l'application la sauvegarde ne pourrait pas s'effectuer. Il y a donc une sauvegarde automatique toutes les minutes. Celle-ci ne provoque aucun ralentissement du jeu car elle est très légère.
@@ -319,7 +319,7 @@ La scène du menu aussi appelée première scène, a une valeur très particulière à 
 
 Lors du dernier rapport nous vous avions présenter une île unique avec une caméra orbitant autour. Aujourd'hui, en plus d'évoluer dans un vrai archipel, la caméra suit un mouvement ne pouvant plus être réduit à une simple fonction mathématique. Nous avons décidé que la caméra suivrais un parcours bien plus complexe (voir pointillés verts sur la figure \ref{FirstScene}) et bien plus intéressant. Plutôt que de se limiter à une orbite circulaire, la caméra va serpenter entre les îles, s'en rapprocher, s'en éloigner, voire passer en dessous.
 
-Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La première balise connait la deuxième balise qui connait la troisième balise et ainsi de suite jusqu'à la dernière balise qui elle connait la première balise. Nous obtenons ainsi un circuits fermé et il ne reste plus qu'à faire avancer la caméra le long de ce circuit. Cette technique permet de résumer  des mouvements très complexes en un enchainement de petits déplacements linéaires ce qui est bien plus simple a réaliser. Plus il y aura de balises le long du circuit, plus le déplacement paraitra fluid et naturel.
+Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La première balise connait la deuxième balise qui connait la troisième balise et ainsi de suite jusqu'à la dernière balise qui elle connait la première balise. Nous obtenons ainsi un circuits fermé et il ne reste plus qu'à faire avancer la caméra le long de ce circuit. Cette technique permet de résumer  des mouvements très complexes en un enchainement de petits déplacements linéaires ce qui est bien plus simple a réaliser. Plus il y aura de balises le long du circuit, plus le déplacement paraîtra fluide et naturel.
 
 \begin{figure}[h!]
 \begin{center}
@@ -331,10 +331,23 @@ Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La premiè
 
 \subsubsection{Le tutoriel (Théo et Romain)}
 
-% bullshit interêt du Tutoriel (introduction de l'histoire + prise en main du jeu)
+Un majeur défaut que nous avons eu lors de l'alpha de notre jeux était que celui-ci contenait de nombreuses actions différents que l'on pouvait faire (comme ouvrir un inventaire, se déplacer, jeter des objets) mais aucune information ne disait comment faire ces actions. Nous avons donc décider de créer un tutoriel expliquant au joueur comment effectuer les différentes actions dans le jeux. Nous profitons également de se tutoriel pour introduire l'histoire du jeux puisque celle-ci s'enchainera directement à la suite du tutoriel. Seulement contrairement au tutoriel, qui est propre au joueur puisque chaque joueur doit pouvoir apprendre à joueur, l'histoire sera propre au monde et ne se répétera pas pour chaque joueur.
 
-% tutoriel propre au joueur
+Au lancement d'une partie tout nouveau joueur voit une fenêtre apparaître lui demandant si oui ou non celui-ci veut faire le tutoriel. Ne pas faire le Tutoriel n'aura aucune influence sur le reste du jeu car celui-ci sera alors compter comme si il avait déjà été réussi.
 
+Dans le jeu le tutoriel est visuellement présent grâce à deux zone de texte. La première zone de texte dans le rectangle rouge de la figure \ref{Tutoriel} raconte le développement de l'histoire du tutoriel. C'est dans cette partie que les raisons des actions de Ille sont expliqué ce qui donne une logique à l'existence du tutoriel. Ce texte est temporaire et ne reste que peux de temps à l'écran car celui-ci prend beaucoup de place et risquerais d'encombrer la vision du joueur. Plus tard dans le développement du jeu cette partie sera également lu oralement par un narrateur.
+
+La seconde zone de texte dans le rectangle vert de la figure \ref{Tutoriel} est directement adressée au joueur. Ce texte explique concrètement quel sont les objectifs du joueur et comment les accomplir. Il donne par exemple des indications sur qu'elle touche appuyer pour ouvrir l'inventaire ou sauter. Tant que les objectifs ne sont pas tous accomplis cette zone de texte ne disparait pas. En appuyant sur la croix se trouvant en bas à droite de cette zone une fenêtre apparaît nous demandant si on veut terminer automatiquement le tutoriel. Cette option a été rajouter pour les joueurs qui aurait malencontreusement lancé le tutoriel ou pour les joueurs voulant sauter la dernière étape du tutoriel car celle-ci demande d'utiliser tout ce qui a été appris dans le  tutoriel et est donc une partie assez longue.
+
+Si un joueur quitte le jeu au milieu du tutoriel sa progression sera sauvegarder et il pourra continuer le tutoriel en relançant sa partie sans tout recommencer depuis le début.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{Tutoriel}
+\caption{présence du tutoriel en jeu} 
+\label{Tutoriel}
+\end{center}
+\end{figure}
 % les 3 HUD avec screen
 
 \subsection{Les ajouts mineurs}
@@ -365,7 +378,7 @@ Disponible uniquement pour les opérateurs :
 \item[/effect <player (string)> <id (int)> \{power (int)\} :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
 \item[/op <player (string)> :] donne les droits d'opérateur au joueur passé en paramètre ;
 \item[/deop <player (string)> :] supprime les droits d'opérateur au joueur passé en paramètre ;
-\item[/choseteam <id (int) ou nom (string)> \{player (string)\} :] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) ;
+\item[/choseteam <id (int) ou nom (string)> \{player (string)\} :] attribu à une équipe choisi le joueur passé en paramètre (nous s'il n'est pas spécifié) .
 \end{description}
 
 % nouvelles commandes
@@ -378,23 +391,24 @@ Disponible uniquement pour les opérateurs :
 
 \subsubsection{Amélioration de la mort (Romain et Florian)}
 
-% HUD mort
+En tant que développeur d'un jeu de survie nous prenons tout aussi soin soin de la survie de nos joueurs que de leur mort. Il faut que la mort soit assez terrifiante pour que le joueur évite de mourir intentionnellement dans le seul but de revenir plus rapidement à son point de réapparition. Lors de la première soutenance lorsque le joueur mourrait il revenait à son point de réapparition sans aucune contrepartie et récupérais sa fin sa soif et sa vie.
 
-% système de respawn mieux expliqué
+Maintenant lorsque le joueur meurt son personnage disparaît et une fenêtre apparaît devant l'écran du joueur lui demandant si il veut réapparaître ou si il veut quitter. Si il décide de continuer la partie il sera transporter sur un lieu de réapparition mais tout les objets de son inventaire seront jeté au sol sur le lieu de sa mort. Si il décide de quitter la procaine fois qu'il lancera le jeux il se retrouvera sur un point de réapparition mais tout les objets de son inventaire auront été jeter sur son lieu de mort avant de quiter la partie. Comme il n'existe pas d'autres moyen de transporter des objets que dans son inventaire la mort revient presque à recommencer une partie à zéro. Heureusement si vous avez un allié avec vous celui-ci pourra récupérer tous vos objets mais si un ennemi se trouve dans les parages celui-ci pourra décider de vous tuer pour récupérer vos équipements. 
 
-% pop des objets
+Les points de réapparitions sont les îles possédant un cristal de la même équipe que le joueur et la première île.
 
 \subsubsection{Ajout de son et d'animations (Théo)}
 
 Lors de notre première soutenance nous avions présentés un environnent sonore (musique et bruitage) assez restreint qui se limité a 4 musiques et quelque bruitages. 
-\\
+
 Nous avons trouvé ce contenu insuffisant, enrichir ce dernier est alors devenu essentiel afin de rendre l'expérience de jeu plus agréable.
-\\
+
 La création d'un nouveau biome, le biome automne, nous a permis d'introduire dans le jeu une nouvelle musique.
-\\
+
 Nous avions alors 4 musique de jeu, une pour chaque biomes,  cependant, ces musiques se jouaient de manière aléatoire sans aucune cohérence avec le biome dans lequel nous nous trouvions. Nous trouvions cette incohérence fort dommage, nous avons alors fait en sorte que les musiques se lancent en fonction du biome sur lequel le joueur se trouve. 
-\\
-L'ajout de divers nouveaux bruitages et animations, se sont fait en même temps que l'ajout de gameplay au jeu. Il a fallut rendre cohérent les actions du personnage car se dernier ne pouvais pas obtenir du bois sans couper un arbre, il nous à alors fallut créer des animations et bruitage pour les divers actions indispensable a notre jeu comme couper du bois, ramasser des objets, ...
+
+L'ajout de divers nouveaux bruitages et animations, se sont fait en même temps que l'ajout de gameplay au jeu. Il a fallut rendre cohérent les actions du personnage car se dernier ne pouvais pas obtenir du bois sans couper un arbre, il nous à alors fallut créer des animations et bruitage pour les divers actions indispensable a notre jeu comme couper du bois, ramasser des objets...
+
 Ces multiples ajout de bruitages et musique ont nettement amélioré l'environnement sonore du jeux. Au final cet enrichissement sonore et ces nouvelles animations permettent une assez bonne cohérence entre ce que l'on souhaite réaliser et ce que l'on peut observer dans le jeu.
 
 
@@ -423,7 +437,7 @@ Le site web que nous avons créer (accessible depuis cette adresse : http://jmoun
 \begin{itemize}
 \item nous devions respecter l'obligation qui était de construire un site web;
 \item créer un lieu où nos testeur et nos ,nous espérons, futur joueurs puissent trouver toutes les informations nécessaire afin de rendre leur expérience en jeu agréable;
-\item permettre à ces personnes de télécharger notre jeu mais aussi de nous transmettre leurs expériences.;
+\item permettre à ces personnes de télécharger notre jeu mais aussi de nous transmettre leurs expériences.
 \end{itemize}
 Tout ceci est réalisable depuis les différentes pages présente sur le site, que nous allons maintenant vous présenter.
 
@@ -433,7 +447,7 @@ Sur cette page (voir figure \ref{Accueil}) vous pourrez apercevoir, au premier p
 \begin{itemize}
 \item un bref descriptif du jeu;
 \item des accès pour télécharger la version béta de Aegina en fonction de votre système d'exploitation, Windows, Mac et GNU/Linux;
--\item la dernière actualité ajoutée sur le site;
+-\item la dernière actualité ajoutée sur le site.
 \end{itemize}
 Vous pouvez aussi voir sur le coté un menu, il permet de naviguer entre les différentes pages du site web, il est positionné au même endroit sur toutes les pages.
 
