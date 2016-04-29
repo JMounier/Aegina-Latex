@@ -170,9 +170,23 @@ Nous avons commencé par la génération de graphes lors du chargement de chunks. C
 \end{figure}
 
 
-Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe. De plus les îles séparées par du vide ou un pont ont des graphes disjoints, cela permet entre autres que les mobs restent sur leur île. 
+Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe. De plus les îles séparées par du vide ou un pont ont des graphes disjoints, cela permet entre autres que les créatures restent sur leur île. 
+\\
+Une fois le déplacement implémenté, nous nous sommes occupé des créatures elle-même. Chacune d'entre elles ont un ensemble de propriétés, en voici la liste :
+\begin{itemize}
+\item Une probabilité d'apparition ;
+\item Des dégâts ;
+\item Une vision d'agro ;
+\item Une vision de fuite ;
+\item Une vitesse de déplacement en marche ;
+\item Une vitesse de déplacement en course ;
+\item Une vitesse d'attaque ;
+\item Une liste de biome sur lequel la créature peut apparaitre ;
+\item Un ensemble d'objets que la créature peut lâcher à sa mort ;
+\end{itemize}
 
-Nous avons donc la possibilité de déplacer nos créatures intelligemment. Il nous a fallu gérer le focus et l'attaque. Cela se gère uniquement en fonction de la distance entre le mob et le joueur le plus proche. Tant qu'un mob est loin de tous personnage celui ci va donc ce balader en choisissant un point aleatoirement sur le graphe. Des qu'un joueur est assez proche alors le mob va se diriger en évitant tous les obstacles vers le joueur. Une fois à porter celui-ci va l'attaquer avec une vitesse d'ataque et des dégats qui lui sont propre.
+Nous avons donc la possibilité de déplacer nos créatures intelligemment et elles ont des caractéristiques. Avec cela nous avons pu gérer l'agro, la fuite et l'attaque. Cela se gère uniquement en fonction de la distance entre la créature et le joueur le plus proche. Tant qu'une créature est loin de tout personnage celle-ci va donc se balader en choisissant un point aléatoirement sur le graphe. Dès qu'un joueur est trop proche alors la créature va fuir. Cependant si le joueur est très proche ou s'il l'attaque alors la créature va se diriger en évitant tous les obstacles vers le joueur. Une fois à porter celui-ci va l'attaquer.
+On peut noter que cette implémentation va permettre de donner plein de comportements différents selon les créatures en utilisant un seul script d'IA. Par exemple les sangliers vont attaquer sans fuir dès qu'un joueur approche. Cependant le pampi lui va fuir avant toute chose et n'attaquera le joueur seulement quand celui-ci est agressé. Nous pouvons aussi imaginer des créatures futures qui ne feront que fuir sans jamais attaquer le joueur.
 
 \subsubsection{Le combat et le mode joueur contre joueur(Théo et Romain)}
 
@@ -188,8 +202,8 @@ Les succès représentent les exploits réalisés par les joueurs. De plus, notre je
 
 D'un point de vue technique, tous les différents succès sont stockés comme attribut static d'une classe particulière. Mais ces succès étant accomplis par les joueur a n'importe quel moment, il fallait trouver un moyen de mettre à jours ces attributs à chaque instant tout en y passant le moins de temps possible. Les mise à jours doivent donc répondre à quelques contraintes : 
 \begin{itemize}
-\item ne pas tester les succès déjà accomplis;
-\item ne pas tester les succès dépendant de succès non accomplis (l'objectif \textit{ Tuer 10 monstre} ne peut pas être réussi avant l'objectif \textit{Tuer 1 monstre});
+\item ne pas tester les succès déjà accomplis ;
+\item ne pas tester les succès dépendant de succès non accomplis (l'objectif \textit{ Tuer 10 monstre} ne peut pas être réussi avant l'objectif \textit{Tuer 1 monstre}) ;
 \item indiquer au joueur le moment ou il réussi un succès.
 \end{itemize}
 
