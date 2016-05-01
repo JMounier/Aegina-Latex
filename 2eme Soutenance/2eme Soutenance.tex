@@ -216,14 +216,9 @@ D'un point de vue technique, tous les différents succès sont stockés comme attri
 \end{itemize}
 
 Pour régler ces premiers problèmes, nous avons opté pour l'utilisation de deux structures. Tout d'abord, un nouvel objet appelé \textit{Succes} qui contient : un booléen indiquant si le \textit{Succes} est réussi, la liste de toutes les conditions nécessaires à l'accomplissement de celui-ci, son nombre de parents et une liste de \textit{fils}. Ces deux derniers éléments permettent de créer une hiérarchie entre les différents succès et de faciliter l'affichage.
- 
+
 La deuxième structure est une liste de succès à mettre à jour, présente uniquement sur le serveur. A intervalles de temps réguliers, le serveur teste si les succès présents dans la liste sont accomplis. Si c'est le cas, alors il est retiré de la liste à tester et tous ses fils y sont ajoutés s'ils n'étaient pas déjà présents. De plus, l'affichage d'un pop-up en haut à gauche de l'écran est demandé sur chaque client attestant de l'accomplissement du succès (voir figure~\ref{Pop-up}). La demande d'affichage est mise dans une file pour que les pop-up ne se superposent pas.
 
-Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. A terme, une si petite fenêtre ne sera pas suffisante pour afficher tous les succès, c'est pourquoi des barres de défilement seront présentes à droite et en dessous de la zone d'affichage (celle de droite est déjà visible).
-
-La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvant pas l'être se fait par l'utilisation de trois \textit{Shader}. Comme expliqué dans le premier rapport de soutenance, un \textit{Shader} indique à la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
-
-Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(succès accompli)}, le deuxième ne tient compte que de la transparence de l'image et affiche un gris là où l'image n'est pas transparente \textit{(succès pouvant être accompli)} et le dernier n'affiche pas du tout l'image \textit{(succès impossible à accomplir pour le moment)}.
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=10cm]{Pop-up}
@@ -238,6 +233,12 @@ Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(s
 \label{Succes}
 \end{center}
 \end{figure}
+
+Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. A terme, une si petite fenêtre ne sera pas suffisante pour afficher tous les succès, c'est pourquoi des barres de défilement seront présentes à droite et en dessous de la zone d'affichage (celle de droite est déjà visible).
+
+La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvant pas l'être se fait par l'utilisation de trois \textit{Shader}. Comme expliqué dans le premier rapport de soutenance, un \textit{Shader} indique à la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
+
+Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(succès accompli)}, le deuxième ne tient compte que de la transparence de l'image et affiche un gris là où l'image n'est pas transparente \textit{(succès pouvant être accompli)} et le dernier n'affiche pas du tout l'image \textit{(succès impossible à accomplir pour le moment)}.
 
 \subsubsection{Les objets équipables et l'interaction avec l'environnement (Théo et Julien)}
 
@@ -344,6 +345,10 @@ Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut 
 
 Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur}) il nous est seulement demandé de choisir une adresse IP et un nom sous laquelle l'enregistrer puis d'appuyer sur le bouton \og Create\fg{} pour enregistrer un nouveau serveur. Contrairement à la création de monde on peut créer plusieurs serveurs de même nom ou de même adresse IP sans créer de conflit.
 
+Notre génération de monde commençant à être longue avec la génération des îles et de leurs graphes  Nous avons rajouté un écran de chargement sous la forme d'une vidéo format MP4 tournant en boucle.
+
+Enfin en jeu, nous avons rajouté des options permettant d'influencer la caméra. La première permet de modifier la sensibilité de la souris sur les mouvements de la caméra et la deuxième permet de modifier la distance maximum de vision de la caméra. Cette dernière option à été rajoutée car avec l'agrandissement de notre monde les plus vieux ordinateurs n'étaient pas capable de faire tourner le jeu sans laguer.
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10cm]{CreationServeur}
@@ -352,13 +357,13 @@ Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur})
 \end{center}
 \end{figure}
 
-Notre génération de monde commençant à être longue avec la génération des îles et de leurs graphes  Nous avons rajouté un écran de chargement sous la forme d'une vidéo format MP4 tournant en boucle.
-
-Enfin en jeu, nous avons rajouté des options permettant d'influencer la caméra. La première permet de modifier la sensibilité de la souris sur les mouvements de la caméra et la deuxième permet de modifier la distance maximum de vision de la caméra. Cette dernière option à été rajoutée car avec l'agrandissement de notre monde les plus vieux ordinateurs n'étaient pas capable de faire tourner le jeu sans laguer.
-
 \subsubsection{La refonte de la première scène (Julien)}
 
 La scène du menu, aussi appelée première scène, a une valeur très particulière à nos yeux. Même si cette scène ne sert que de paysage à la création de partie, elle nous permet de mettre en avant tout l'univers graphique de notre jeu et de montrer au joueur les différents éléments présents dans le jeu.
+
+Lors du dernier rapport nous vous avions présenté une île unique avec une caméra orbitant autour. Aujourd'hui, en plus d'évoluer dans un vrai archipel, la caméra suit un mouvement ne pouvant plus être réduit à une simple fonction mathématique. Nous avons décidé que la caméra suivrait un parcours bien plus complexe (voir pointillés verts sur la figure \ref{FirstScene}) et bien plus intéressant. Plutôt que de se limiter à une orbite circulaire, la caméra va serpenter entre les îles, s'en rapprocher, s'en éloigner, voire passer en dessous.
+
+Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La première balise connaît la deuxième balise qui connaît la troisième balise et ainsi de suite jusqu'à la dernière balise qui elle connaît la première balise. Nous obtenons ainsi un circuit fermé et il ne reste plus qu'à faire avancer la caméra le long de ce circuit. Cette technique permet de résumer  des mouvements très complexes en un enchaînement de petits déplacements linéaires ce qui est bien plus simple à réaliser. Plus il y aura de balises le long du circuit, plus le déplacement paraîtra fluide et naturel.
 
 \begin{figure}[h!]
 \begin{center}
@@ -367,11 +372,6 @@ La scène du menu, aussi appelée première scène, a une valeur très particulière à
 \label{FirstScene}
 \end{center}
 \end{figure}
-
-Lors du dernier rapport nous vous avions présenté une île unique avec une caméra orbitant autour. Aujourd'hui, en plus d'évoluer dans un vrai archipel, la caméra suit un mouvement ne pouvant plus être réduit à une simple fonction mathématique. Nous avons décidé que la caméra suivrait un parcours bien plus complexe (voir pointillés verts sur la figure \ref{FirstScene}) et bien plus intéressant. Plutôt que de se limiter à une orbite circulaire, la caméra va serpenter entre les îles, s'en rapprocher, s'en éloigner, voire passer en dessous.
-
-Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La première balise connaît la deuxième balise qui connaît la troisième balise et ainsi de suite jusqu'à la dernière balise qui elle connaît la première balise. Nous obtenons ainsi un circuit fermé et il ne reste plus qu'à faire avancer la caméra le long de ce circuit. Cette technique permet de résumer  des mouvements très complexes en un enchaînement de petits déplacements linéaires ce qui est bien plus simple à réaliser. Plus il y aura de balises le long du circuit, plus le déplacement paraîtra fluide et naturel.
-
 
 \subsubsection{Le tutoriel (Théo et Romain)}
 
