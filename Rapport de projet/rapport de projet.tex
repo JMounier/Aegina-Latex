@@ -17,6 +17,8 @@
 
 \selectlanguage{french}
 
+\addto\captionsfrench{\renewcommand{\listfigurename}{Table des illustrations} }
+
 \begin{document}
 \chead{Aegina}
 
@@ -47,8 +49,7 @@ AIM$^{2}$\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Remerciements}
 
-Nous tenons à faire des remerciements à Pierre-Alexis Mandégué pour son aide dans la création des musiques d'Aegina et à pour son aide dans la création de modèles 3D des créatures d'Aegina.
-%rajouter le nom de l'ami de Flo
+Nous tenons à remercier Pierre-Alexis Mandégué pour son aide dans la création des musiques d'Aegina et Bastien Lhuaire pour son aide dans la création de modèles 3D des créatures d'Aegina.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,14 +57,14 @@ Nous tenons à faire des remerciements à Pierre-Alexis Mandégué pour son aide dan
 
 Ce document est le rapport de projet d'Aegina,  projet du second semestre de la première année de la prepa intégrée d'EPITA. Ce projet est réalisé par le groupe d'étudiants AIM$^{2}$ constitué de Florian Amsallem, Théo Issarni, Julien Mounier et Romain Mounier.
 
-Le but de se projet était de travailler en groupe et de créer un jeu de survie dans un environnement hostile dans lequel le joueur incarnerait une personne se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver. Cette personne aurait alors pour but de survivre et de tenter de rentrer chez lui.
+Le but de ce projet était de travailler en groupe et de créer un jeu de survie dans un environnement hostile dans lequel le joueur incarne une personne se retrouvant sur une île volante et ne sachant rien de ce qui a bien pu lui arriver. Cette personne a alors pour but de survivre et de tenter de rentrer chez elle.
 
 Ce jeu a été développé sur unity3D en C\# en utilisant visual studio. Nous avons également utilisé Blender pour faire les modèles 3D ainsi que GIMP pour faire les textures 2D.
 
-Dans ce rapport nous allons commencer par présenté l'univers d'Aegina car nous avons beaucoup développé l'histoire de ce mondes et des différents éléments le composant.
-Puis nous allons de notre environnement visuel et sonore car presque tout les éléments composant cet environnement ont été fait spécialement pour le jeu Aegina par les membres de notre groupe.
-Ensuite nous allons parler de tout les systèmes développés dans notre jeu ce qui englobe la plus grande partie de notre travail. 
-Enfin nous allons parler des différents moyen de communication que nous avons mis en place afin de partager notre création et de trouver des joueurs intéressé pour tester notre jeu.
+Nous présentons d'abord l'univers d'Aegina dont l'histoire et les différents éléments le composant ont une influence sur le déroulement du jeu.
+Nous nous intéressons ensuite à l'environnement visuel et sonore dont presque tous les éléments ont été créés spécialement pour ce jeu par les membres du groupe.
+Puis nous détaillons  les systèmes de jeu que nous avons développés et qui correspondent à la partie nous ayant demandé le plus de travail. 
+Enfin nous exposons les différents moyens de communication mis en place afin de partager notre création et de trouver des joueurs intéressés pour tester notre jeu.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
@@ -73,21 +74,21 @@ Enfin nous allons parler des différents moyen de communication que nous avons mi
 \section{Univers du jeu}
 \label{Univers}
 
-L'univers d'Aegina a été réfléchi pour que tous les éléments le composant soit logiques. Nous avons fait en sorte que l'ajout de nouveaux concepts dans l'univers d'Aegina ne se fasse pas juste car le concept est sympa mais pour que celui-ci ai une cohérence avec l'univers. Par exemple même si il aurait été intéressant de faire un système de véhicule la technologie du monde d'Aegina s'arrête au moyen âge et il est donc incohérent de créer des véhicules. Cette partie va donc présenter ce qui compose l'univers d'Aegina.
+L'univers d'Aegina a été réfléchi pour que tous les éléments le composant et les actions possibles soient cohérentes et justifiées. Tout ajout de nouveau concept (élément, action) doit avoir un intérêt pour le jeu et rester cohérent avec l'univers d'Aegina. Même si il aurait été intéressant de faire un système de véhicule motorisé, la technologie du monde d'Aegina s'arrête au moyen âge et il est donc incohérent de créer de tels véhicules. Cette partie va donc présenter ce qui compose l'univers d'Aegina.
 
 \subsection{Le monde d'Aegina}
 
-Le monde d'Aegina est constitué d'une quasi infinité d'îles volantes se trouvant au-dessus d'un vide béant appelé les \textit{abysses}. Ce monde, contrairement au nôtre, est instable. Il ne partage pas nos lois de l'équilibre et de nombreux phénomènes étranges s'y produisent sans que l'on puisse les expliquer. La présence des \textit{abysses} n'étant qu'un de ces phénomènes. 
+Le monde d'Aegina est constitué d'une quasi infinité d'îles volantes se trouvant au-dessus d'un vide béant appelé les \textit{abysses}. Ce monde, contrairement au nôtre, est instable. Il ne partage pas nos lois de l'équilibre et de nombreux phénomènes étranges s'y produisent sans que l'on puisse les expliquer. La présence des \textit{abysses} n'est qu'un de ces phénomènes. Des cristaux, présents sur certaines îles, accentuent cette instabilité.
 
- Bien que ne vivant pas dans ce monde et n'ayant aucune information sur celui-ci, les êtres humains on trouvé un moyen de \og téléporter \fg{} leurs déchets dans un néant qui n'est autre qu'Aegina. Lorsque les déchets arrivent directement dans les  \textit{abysses}, ils n'ont aucune influence sur la stabilité d'Aegina.  S'ils tombent sur une île, ils peuvent représenter un apport en ressource pour Aegina. L'aspect néfaste pour Aegina provient d'une sorte très particulière, presque barbare, de déchets.
+ Bien que ne vivant pas dans ce monde et n'ayant aucune information sur celui-ci, les êtres humains ont trouvé un moyen de \og téléporter \fg{} leurs déchets dans un néant qui n'est autre qu'Aegina. Lorsque les déchets arrivent directement dans les  \textit{abysses}, ils n'ont aucune influence sur la stabilité d'Aegina.  S'ils tombent sur une île, ils peuvent représenter un apport en ressource pour Aegina. L'aspect néfaste pour Aegina provient d'une sorte très particulière, presque barbare, de déchets.
  
- Certaines autorités humaines utilisent la \og téléportation \fg{} pour se débarrasser d'autres humains. Malheureusement une fois dans le monde d'Aegina ceux-ci tentent désespérément de survivre. Ils finissent en général par arriver à activer les cristaux dont les pouvoirs quasi divins leur permettent d'échapper à la faim et à la mort. Certains ont alors voyagé d'île en île, créant quelques infrastructures telles que des ponts, laissant leur trace dans ce monde, mais l'amenant petit à petit à sa fin sans le savoir.
+ Certaines autorités humaines utilisent la \og téléportation \fg{} pour se débarrasser d'autres humains. Une fois dans le monde d'Aegina ceux-ci tentent désespérément de survivre. Ils finissent en général par arriver à activer des cristaux dont les pouvoirs quasi divins leur permettent d'échapper à la faim et à la mort. Certains ont alors voyagé d'île en île, créant quelques infrastructures telles que des ponts, laissant leur trace dans ce monde, mais l'amenant petit à petit à sa fin sans le savoir.
 
-Une des grande marque de l'instabilité d'Aegina est son climat. Le climat dans l'univers d'Aegina est très étrange. Il peut changer brusquement d'une zone à une autre mais est stable dans chacune des zones. Cette stabilité a permis à de nombreuses espèces de s'installer et de survivre dans ce monde sans craindre un brusque changement de climat. Les différents climats d'Aegina, au nombre de quatre, sont souvent appelés les quatre saisons d'Aegina pour leur ressemblance aux saisons du climat tempéré de notre monde.
+Une des grandes marques de l'instabilité d'Aegina est son climat. Le climat dans l'univers d'Aegina est très étrange. Il peut changer brusquement d'une zone à une autre mais est stable dans chacune des zones. Cette stabilité a permis à de nombreuses espèces de s'installer et de survivre sans craindre un brusque changement de climat. Les différents climats d'Aegina, au nombre de quatre, sont souvent appelés les quatre saisons d'Aegina pour leur ressemblance aux saisons du climat tempéré de notre monde.
 
 \subsubsection{Primtemps : forêt}
 
-Le printemps d'Aegina est un climat dans lequel les températures sont stables entre 6\degre{}C et 20\degre{}C. De plus les pluies ne se font pas rares ce qui permet aux îles du printemps d'Aegina d'accueillir une faune et une flore abondantes et variées. 
+Le printemps d'Aegina est un climat dans lequel les températures sont stables entre 6\degre{}C et 20\degre{}C. De plus, les pluies ne se font pas rares ce qui permet aux îles du printemps d'Aegina d'accueillir une faune et une flore abondantes et variées. 
 
 Ces îles aux apparences tranquilles semblent les zones les plus agréables pour les voyageurs d'Aegina qui cherchent un endroit pour se reposer. Cependant détrompez-vous, les créatures d'Aegina sont très agressives et le printemps d'Aegina est la saison de la \og mort \fg{} pour les aventuriers qui s'y aventurent.
 
@@ -95,25 +96,25 @@ Les cristaux se trouvant dans le printemps d'Aegina ont très souvent la capacité
 
 \subsubsection{Automne : forêt automnale}
 
-L'automne d'Aegina est un climat où les températures varient entre 2\degre{}C et 25\degre{}C. Un fort ensoleillement et d'autres raisons obscures ont permis à une végétation assez particulière de se développer dans ce climat. Cette végétation possède une couleur rouge-orangé donnant l'impression d'un automne constant sur l'île. De plus certaines espèces végétales comme les champignons et les citrouilles sont endémiques de l'automne d'Aegina.
+L'automne d'Aegina est un climat où les températures varient entre 2\degre{}C et 25\degre{}C. Un fort ensoleillement et d'autres raisons obscures ont permis à une végétation assez particulière de se développer dans ce climat. Cette végétation possède une couleur rouge-orangé donnant l'impression d'un automne constant sur l'île. De plus, certaines espèces végétales comme les champignons et les citrouilles sont endémiques de l'automne d'Aegina.
 
 Malgré la présence de créatures plus faibles dans l'automne d'Aegina que dans le printemps d'Aegina, ces zones n'en restent pas moins dangereuses car l'automne d'Aegina échange la densité de créatures contre une plus grande diversité de celles-ci, rendant ainsi la chasse plus difficile même pour des chasseurs aguerris. Ces zones n'en restent pas moins les zones favorites des aventuriers du monde d'Aegina car elles présentent le meilleur rapport \og confort de vie\fg/\og danger des créatures\fg.
 
-Les cristaux se trouvant dans l'automne d'Aegina peuvent avoir n'importe quelle capacité rendant ces zones encore plus variées et uniques qu'elles ne le sont déjà. De plus tous les ans, les aventuriers d'Aegina vont sur ces îles pour y récolter et sculpter des citrouilles en pleurant et en se souvenant de leur monde. Cette pratique vaut à l'automne d'Aegina le nom de \og la saison de la mélancolie \fg.
+Les cristaux se trouvant dans l'automne d'Aegina peuvent avoir n'importe quelle capacité rendant ces zones encore plus variées et uniques qu'elles ne le sont déjà. De plus, tous les ans, les aventuriers d'Aegina vont sur ces îles pour y récolter et sculpter des citrouilles en pleurant et en se souvenant de leur monde. Cette pratique vaut à l'automne d'Aegina le nom de \og la saison de la mélancolie \fg.
 
 \subsubsection{Hiver : neige}
 
-L'hiver d'Aegina est un climat extrêmement froid qui atteint des températures avoisinant les -20\degre{}C et qui ne dépassent jamais les 0\degre{}C. Ce Climat rend la faune et la flore sur ces îles peu fréquentes. Etrangement, les îles influencées par l'hiver possèdent une abondance de minerais. Cela serait dû au fait que, en raison de la faible présence d'êtres vivants pouvant absorber les énergies étranges d'Aegina, ces énergies sont absorbées par les roches et transformées en minerais.
+L'hiver d'Aegina est un climat extrêmement froid qui atteint des températures avoisinant les -20\degre{}C et qui ne dépassent jamais les 0\degre{}C. Ce climat rend la faune et la flore sur ces îles peu fréquentes. Etrangement, les îles influencées par l'hiver possèdent une abondance de minerais. Cela serait dû au fait que, en raison de la faible présence d'êtres vivants pouvant absorber les énergies étranges d'Aegina, ces énergies sont absorbées par les roches et transformées en minerais.
 
-Malheureusement la faible présence de créatures dans l'hiver d'Aegina n'en fait pas un lieu de rêve pour les aventuriers car le climat y est tout de même redoutable et la nourriture rare. Seules les rares aventuriers capables de forger y viennent pour récupérer des minerais.
+Malheureusement, la faible présence de créatures dans l'hiver d'Aegina n'en fait pas un lieu de rêve pour les aventuriers car le climat y est tout de même redoutable et la nourriture rare. Seuls les quelques aventuriers capables de forger y viennent pour récupérer des minerais.
 
-Les cristaux se trouvant dans l'hiver d'Aegina ont de plus fortes chances de posséder des pouvoirs divins capables de briser l'espace et le temps. Ceux-ci peuvent permettent de se déplacer vers d'autres cristaux se trouvant aussi dans l'hiver d'Aegina. Ce qui est très utile pour les aventurier possédant une base près de ces zones et veulant explorer le monde d'Aegina.
+Les cristaux se trouvant dans l'hiver d'Aegina ont de plus fortes chances de posséder des pouvoirs divins capables de briser l'espace et le temps. Ceux-ci peuvent permettre de se déplacer vers d'autres cristaux se trouvant aussi dans l'hiver d'Aegina. Ce qui est très utile pour les aventurier possédant une base près de ces zones et voulant explorer le monde d'Aegina.
 
 \subsubsection{Eté : désert}
 
 L'été d'Aegina est un climat extrêmement chaud et aride. La température y est toujours au dessus de 30\degre{}C et atteint régulièrement les 50\degre{}C. La faune et la flore de l'île sont alors très particulières, elles sont toutes les deux globalement constituées de cactus. Etrangement, c'est aussi l'un des seuls endroits où l'on peut trouver de l'eau car les cactus d'Aegina retiennent une énorme quantité d'eau en leur intérieur.
 
-Le climat de l'été d'Aegina n'est pas vraiment le meilleur pour les aventurier mais la présence de cactus, et surtout de l'eau dont ils regorgent, peut transformer cette zone en un lieu très agréable pour se reposer. Malheureusement quelques créatures rodent dans l'été d'Aegina et celle-ci peuvent profiter d'un moment d'égarement pour se repaître d'aventuriers encore chauds.
+Le climat de l'été d'Aegina n'est pas vraiment le meilleur pour les aventurier mais la présence de cactus, et surtout de l'eau dont ils regorgent, peut transformer cette zone en un lieu très agréable pour se reposer. Malheureusement quelques créatures rodent dans l'été d'Aegina et celles-ci peuvent profiter d'un moment d'égarement pour se repaître d'aventuriers encore chauds.
 
 Les cristaux se trouvant dans l'été d'Aegina ont la particularité d'être le plus souvent des cristaux de guerre. Ceux-ci renforcent les aventuriers d'Aegina en les rendant capables d'abattre un sanglier d'un seul coup d'épée bien affutée. Ces aventuriers se retrouvent alors également avec un corps résistant comme l'acier, ce qui  leur permet de combattre une armée de monstres sans périr. Malheureusement, l'effet ressenti est bien souvent supérieur à l'effet réel amenant alors les aventurier, surestimant leur force et leur résistance, à une mort prématurée face à une horde de monstres.
 
@@ -121,7 +122,7 @@ Les cristaux se trouvant dans l'été d'Aegina ont la particularité d'être le plus
 
 \subsection{Les minerais}
 
-Dans le monde d'Aegina on peut trouver de nombreux minerais qui permettront d'aider le joueur dans son aventure. Certains de ces minerais existent dans notre monde, mais Aegina possède aussi des minerais uniques. Dans cette partie nous allons vous présenter les minerais exclusifs au monde d'Aegina notamment du cristal.
+Dans le monde d'Aegina se trouvent de nombreux minerais qui permettront d'aider le joueur dans son aventure. Certains de ces minerais existent dans notre monde, mais Aegina possède aussi des minerais uniques. Dans cette partie nous allons vous présenter les minerais exclusifs au monde d'Aegina.
 
 \subsubsection{Le cristal}
 
@@ -131,7 +132,7 @@ Les cristaux dans Aegina sont un élément très important car ils possèdent d'énor
 
 Le cristal semble réagir avec tous les minerais spécifiques du monde d'Aegina ainsi qu'avec de nombreuses créatures qui, en présence d'un cristal actif, perdent toute raison et tentent de le désactiver.
 
-Peu d'informations supplémentaires sont disponibles sur les cristaux. Leur composition est totalement inconnue et personne ne sait d'où ils viennent. Ils ne semblent pas exister depuis la création du monde car leur forme géométrique et leurs pouvoirs donne l'impression qu'ils ont été créé par des êtres conscients possédant une technologie très avancée. Mais il ne s'agit que de suppositions qui n'ont que peu d'importance pour notre histoire.
+Peu d'informations supplémentaires sont disponibles sur les cristaux. Leur composition est totalement inconnue et personne ne sait d'où ils viennent. Ils ne semblent pas exister depuis la création du monde car leur forme géométrique et leurs pouvoirs donnent l'impression qu'ils ont été créés par des êtres conscients possédant une technologie très avancée. Mais il ne s'agit que de suppositions qui n'ont que peu d'importance pour notre histoire.
 
 \subsubsection{Mithril}
 
@@ -139,11 +140,11 @@ Le mithril, dans le monde d'Aegina, est un minerai vert clair un peu plus solide
 
 A l'état naturel, il catalyse les instabilités et les relâche sous forme de vagues d'énergie rendant le minerai chaud au toucher. Une fois épuré, le mithril continue de catalyser les instabilités, mais peut alors relâcher son énergie sous de nombreuses autres formes que la chaleur, comme le ferait un cristal, mais à bien plus faible échelle. 
 
-D'ailleurs l'énergie catalysée et stockée par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie. Ainsi quelques chercheurs hérétiques qui se sont trouvés sur Aegina ont supposé que les cristaux étaient formés d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard, tués par des sangliers après avoir transféré toute l'énergie de leur cristal dans du mithril. 
+L'énergie catalysée et stockée par le mithril semble être la même que celle se trouvant dans les cristaux car les deux matériaux peuvent échanger cette énergie. Ainsi, quelques chercheurs hérétiques qui se sont trouvés sur Aegina ont supposé que les cristaux étaient formés d'un alliage composé en majorité de mithril. Ces chercheurs ont trouvé la mort quelques jours plus tard, tués par des sangliers après avoir transféré toute l'énergie de leur cristal dans du mithril. 
 
 \subsubsection{Floatium}
 
-Le floatium est un minerai quasi transparent que l'on peut trouver dans Aegina. Les humains qui arrivent dans Aegina le confondent souvent avec du quartz lorsqu'ils en voient dans la roche. Mais celui-ci est bien plus transparent et s'apparenterait plus à du verre ou de la glace. La vrai particularité du floatium se remarque une fois le minerai nettoyé de toute impureté. La première constatation est que celui-ci est bien plus solide que ce à quoi on peut penser, sa résistance égale celle de l'acier, mais surtout il est impossible de le faire tomber par terre. En effet, une fois celui-ci lâché, il flotte. 
+Le floatium est un minerai quasi transparent que l'on peut trouver dans Aegina. Les humains qui arrivent dans Aegina le confondent souvent avec du quartz lorsqu'ils en voient dans la roche. Mais celui-ci est bien plus transparent et s'apparenterait plus à du verre ou de la glace. La vrai particularité du floatium se remarque une fois le minerai nettoyé de toute impureté. La première constatation est que celui-ci est bien plus solide que ce à quoi on peut penser, sa résistance égale celle de l'acier, mais surtout il est impossible de le faire tomber. En effet, une fois celui-ci lâché, il flotte. 
 
 Ce minerai est encore un mystère d'Aegina car personne ne sait pourquoi il flotte. Il n'est pas plus léger que l'air puisqu'il reste à une distance fixe du sol, mais il ne semble pas s'agir non plus de force magnétique. De toute façon peu d'expériences ont eu lieu sur le floatium car, en Aegina, en plus d'être un minerai très rare, les personnes capables de faire des expérimentations scientifiques le sont encore plus.
 
@@ -153,11 +154,11 @@ Ce minerai est encore un mystère d'Aegina car personne ne sait pourquoi il flott
 
 \subsubsection{Sunkium}
 
-Le sunkium est un minerai d'une couleur mauve très sombre. C'est un minerai légendaire qui possède de nombreuses qualités car il est le minerai le plus rare, le plus lourd, le plus sombre, le plus solide, le plus cool, le plus classe, le plus \textit{dark} et le plus unique d'Aegina. Pourtant, malgré sa solidité, il n'est pas si difficile à extraire des roches car il semble repousser les autres minerais lors de sa formation, ce qui permet de le trouver dans des alvéoles formées par la roche. Cependant une fois extrait son poids reste tout de même un problème pour le transporter.
+Le sunkium est un minerai d'une couleur mauve très sombre. C'est un minerai légendaire qui possède de nombreuses qualités car il est le minerai le plus rare, le plus lourd, le plus sombre, le plus solide, le plus cool, le plus classe, le plus \textit{dark} et le plus unique d'Aegina. Pourtant, malgré sa solidité, il n'est pas si difficile à extraire des roches car il semble repousser les autres minerais lors de sa formation, ce qui permet de le trouver dans des alvéoles formées par la roche. Cependant, une fois extrait son poids reste tout de même un problème pour le transporter.
 
- Mais ce qui en fait le minerai le plus cool, c'est qu'il peut être utilisé très simplement pour la création d'épées ou d'armures. En effet, il a la même température de fusion que le fer et une fois mélangé à du mithril il chauffe et refroidit à une vitesse exceptionnelle. De plus la couleur sombre des armures formées avec le sunkium apporte un côté cool et \textit{dark} à toute personne les portant. Mais malheureusement cette impression ne dure que quelques secondes car rares sont ceux capables de se mouvoir dans une telle armure. La plupart se retrouvent coincés dans celle-ci, incapables de bouger ou de l'enlever, amenant à la mort la plus stupide d'Aegina.
+ Mais, ce qui en fait le minerai le plus cool, c'est qu'il peut être utilisé très simplement pour la création d'épées ou d'armures. En effet, il a la même température de fusion que le fer et une fois mélangé à du mithril il chauffe et refroidit à une vitesse exceptionnelle. De plus, la couleur sombre des armures formées avec le sunkium apporte un côté cool et \textit{dark} à toute personne les portant. Malheureusement, cette impression ne dure que quelques secondes car rares sont ceux capables de se mouvoir dans une telle armure. La plupart se retrouve coincée dans celle-ci, incapable de bouger ou de l'enlever, amenant à la mort la plus stupide d'Aegina.
  
- Le sunkium, comme le mithril et le floatium, réagit avec les cristaux mais sa réaction est peut être la plus impressionnante des trois, après tout c'est le minerai le plus cool. Le sunkium change de volume et de masse sous l'influence du cristal mais pas comme tout le monde s'y attendrait car plus son volume diminue, plus il devient lourd. Il se met alors à absorber de la lumière, assombrissant les alentours. Le cristal quant à lui peut absorber le sunkium mais personne ne sait réellement ce que ça lui apporte. 
+ Le sunkium, comme le mithril et le floatium, réagit avec les cristaux mais sa réaction est peut-être la plus impressionnante des trois, après tout c'est le minerai le plus cool. Le sunkium change de volume et de masse sous l'influence du cristal mais pas comme tout le monde s'y attendrait car plus son volume diminue, plus il devient lourd. Il se met alors à absorber de la lumière, assombrissant les alentours. Le cristal quant à lui peut absorber le sunkium mais personne ne sait réellement ce que ça lui apporte. 
 
 Certaines théories stipulent que les pouvoirs du cristal viendraient de minuscules particules de sunkium qui déformeraient l'espace temps. Mais cette théorie s'appuyant sur d'autres théories qui n'ont pas été prouvées, sa véracité est plus que discutable. Sans la présence des cristaux, le sunkium serait  le minerai le plus mystérieux d'Aegina.
 
@@ -165,8 +166,8 @@ Certaines théories stipulent que les pouvoirs du cristal viendraient de minuscul
 
 \subsection{La Faune}
 
-Malgré toutes ces instabilités un écosystème s'est tout de même développé. Des animaux tels que des lapins, pingouin et sanglier peuplent les îles d'Aegina. Mais d'autres espèces plus agressives et plus exotiques sont apparues suite à l'instabilité du monde. Parmi elles nous trouvons les \textit{slimes}.
-Les créatures de l'univers d'Aegina sont toutes des êtres vivants ayant muté à cause de l'influence des cristaux. Cela donne à Aegina un faune unique que ses aventuriers n'apprécient pas forcement. Nous allons présenté la faune d'Aegina en commençant par notre personnage principal.
+Malgré toutes ces instabilités un écosystème s'est tout de même développé. Des animaux tels que des lapins, pingouins et sangliers peuplent les îles d'Aegina. Mais d'autres espèces plus agressives et plus exotiques sont apparues suite à l'instabilité du monde. Parmi elles nous trouvons les \textit{slimes}.
+Excepté les êtres humains, les créatures de l'univers d'Aegina sont toutes des êtres vivants ayant muté à cause de l'influence des cristaux. Cela donne à Aegina un faune unique que ses aventuriers n'apprécient pas forcement. Nous allons présenté la faune d'Aegina en commençant par notre personnage principal.
 
 \subsubsection{Ille}
 
@@ -180,13 +181,13 @@ Cependant, Ille n'est pas forcément seul en Aegina. Il pourra rencontrer d'autre
 
 \subsubsection{Les créatures agressives}
 
-Certaines créatures d'Aegina sont hostile au humain et peuvent décider de les attaqué. C'est créatures sont appelé les créatures agressives. Ces créatures peuvent s'organiser en meute et avoir alors un chef de meute possédant des capacités supérieurs aux autres membres de son espèce.
+Certaines créatures d'Aegina sont hostiles aux humains et peuvent décider de les attaquer. Ces créatures sont appelées les créatures agressives. Ces créatures peuvent s'organiser en meute et avoir alors un chef de meute possédant des capacités supérieures aux autres membres de son espèce.
 
 \paragraph{Sanglier}
 
-Le sanglier d'Aegina est une créature présente dans la plupart des biomes. Le seul climat qu'il évite est le froid de l'hiver d'Aegina. Il se porte très bien dans des climats chauds comme l'été d'Aegina où il n'hésite pas à détruire des cactus pour boire.
+Le sanglier d'Aegina est une créature présente dans la plupart des biomes. Le seul climat qu'il évite est la chaleur de l'été d'Aegina. 
 
- Contrairement à un sanglier normal, il a plus l'apparence d'un phacochère et se montre très agressif envers les aventuriers d'Aegina. Son régime alimentaire est constitué de tout ce qu'il peut trouver allant du cactus à la chair humaine et en passant même par les minerais de mithril qu'il affectionne pour des raisons que l'on ignore.
+ Contrairement à un sanglier normal, il a plus l'apparence d'un phacochère et se montre très agressif envers les aventuriers d'Aegina. Son régime alimentaire est constitué de tout ce qu'il peut trouver allant du champignon à la chair humaine et en passant même par les minerais de mithril qu'il affectionne pour des raisons que l'on ignore.
  
  Une particularité que les aventuriers d'Aegina ont trouvée à ces sangliers est qu'ils ont une  peur des abysses telle qu'ils n'osent pas s'approcher du bord des îles et n'empruntent les ponts que lorsque leurs ennemis ne se trouvent pas en leur présence de peur que ceux-ci les poussent dans le vide.
  
@@ -208,55 +209,55 @@ Les aventuriers d'Aegina qui chassent le pampi ont deux règles d'or : ne pas acc
 
 Le slime est une créature existant dans notre folklore qui a pu apparaître dans le monde d'Aegina grâce à l'instabilité de celui-ci. Le slime est une créature inorganique pouvant dissoudre la plupart des minerais ainsi que la matière organique.
 
-Le slime n'est pas un animal muté contrairement aux autres créatures d'Aegina. Tandis que les minerais se transforme en d'autres minérais et que les animaux mute en d'autres créature à cause de l'instabilité d'Aegina, le slime est le résultat de la transformation de l'eau sous l'influence de l'instabilité d'Aegina.  C'est aussi pour cette raison que le seul moyen de trouver de l'eau dans Aegina et de la récupérer dans les cactus qui protège leur intérieur de l'instabilité d'Aegina.
+Le slime n'est pas un animal muté contrairement aux autres créatures d'Aegina. Tandis que les minerais se transforment en d'autres minerais et que les animaux mutent en d'autres créature à cause de l'instabilité d'Aegina, le slime est le résultat de la transformation de l'eau sous l'influence de l'instabilité d'Aegina.  C'est aussi pour cette raison que le seul moyen de trouver de l'eau dans Aegina est de la récupérer dans les cactus qui protègent leur intérieur de l'instabilité d'Aegina.
 
-Pour les aventurier même si le slime est une créature problématique de par sa résistance elle peut être une aubaine pour les aventurier assoiffé car une fois dépourvue de \og vie \fg{} leur chair devient comestible et contient une grande quantité d'eau.
+Même si le slime est une créature problématique en raison de sa résistance, elle peut être une aubaine pour les aventuriers assoiffés car une fois dépourvue de \og vie \fg{} leur chair devient comestible et contient une grande quantité d'eau.
 
 \subsubsection{Les créatures pacifiques}
 
-D'autres créatures d'Aegina préfèrent adoptés un comportement moins agressif vis à vis des humains et vont donc fuirent leur présence . C'est créatures sont appelé les créatures pacifiques.
+D'autres créatures d'Aegina préfèrent adopter un comportement moins agressif vis-à-vis des humains et vont donc fuirent leur présence. Ces créatures sont appelées les créatures pacifiques.
 
 \paragraph{Lapin}
 
-Le Lapin est un animal que vous devez déjà connaitre. Celui d'Aegina n'est pas bien différent de celui existant dans notre monde. Il existe dans Aegina deux races de lapin une blanche l'autre marron. Les lapins marron se trouvent dans le printemps d'Aegina tandis que les lapins blancs se trouvent dans l'hiver d'Aegina.
+Le Lapin est un animal que vous devez déjà connaître. Celui d'Aegina n'est pas bien différent de celui existant dans notre monde. Deux races de lapin cohabitent dans Aegina, l'une blanche et l'autre marron. Les lapins marron se trouvent dans le printemps et l'automne d'Aegina tandis que les lapins blancs se trouvent dans l'hiver d'Aegina.
 
-Les lapins sont des créatures très rapide et fuyarde ce qui peut embêter les aventuriers d'Aegina tentant de les chasser mais ils se font attraper assez facilement par des pièges. Leur chair aurait un goût de poulet.
+Les lapins sont des créatures très rapides et fuyardes ce qui peut embêter les aventuriers d'Aegina tentant de les chasser mais ils se font attraper assez facilement par des pièges. Leur chair aurait un goût de poulet.
 
 \paragraph{Pingouin}
 
-Il existe dans le monde d'Aegina, plus précisement dans l'hiver d'Aegina, des pingouins semblable à ceux que l'on connait. Cependant cette ressemblance s'arrête au physique.
+Il existe dans le monde d'Aegina, plus précisément dans l'hiver d'Aegina, des pingouins semblables à ceux que l'on connaît. Cependant cette ressemblance n'est que physique.
 
-Les pingouins d'Aegina sont doté d'une très grande intelligence, d'un égo surdimensionnés et d'une vision assez pessimiste du monde. Celà se remarque d'en leur comportement. Les pingouins ignore royalement les humains ainsi que toutes les autres créatures peuplant Aegina les jugeant indignes de recevoir une quelconque réaction de leur part. Mais une fois attaqué ils se résignent extrêmement rapidement se disant qu'il vont de toute façon finir par mourir un jour et se laisse ainsi dévorer. De plus leur intelligence leur permet de facilement deviner les intention des humains et de ne jamais être pris dans l'un de leur piège.
+Les pingouins d'Aegina sont dotés d'une très grande intelligence, d'un ego surdimensionné et d'une vision assez pessimiste du monde. Cela se remarque dans leur comportement. Les pingouins ignorent royalement les humains ainsi que toutes les autres créatures peuplant Aegina, les jugeant indignes de recevoir une quelconque réaction de leur part. Mais une fois attaqués, ils se résignent extrêmement rapidement, se disant qu'il vont de toute façon finir par mourir un jour et se laissent ainsi dévorer. Leur intelligence leur permet de facilement deviner les intentions des humains et d'éviter leurs pièges.
 
-Cependant avec ces sortes de réaction on pourrait se demander comment ils ont réussir à survivre mais la raison est assez simple. Personne n'attaque les pingouins.
+Cependant, avec de telles réactions, on peut se demander comment ils ont réussi à survivre mais la raison est simplement que personne n'attaque les pingouins.
 
 \pagebreak
 
 \subsection{l'histoire dans le jeu}
 
-Un des éléments que nous avions promis lors de la création de notre jeux était qu'il possède une histoire. Pas seulement une intrigue donnant une raison d'être à notre jeux mais une histoire que le joueur découvrirait dans celui-ci et pourrait apprécier. Cette histoire apparait dans le jeux à travers le tutoriel et des succès pouvant être réalisé par le joueur. des trames d'histoire sont également raconté au joueur pour lui donner une raison de faire les objectifs. Enfin l'histoire se finit par un combat contre un boss final. Tous ces éléments sont présentés dans cette partie.
+Un des éléments que nous avions promis lors de la création de notre jeu était qu'il possède une histoire. Pas seulement une intrigue donnant une raison d'être à notre jeu mais une histoire que le joueur découvrirait au fur et à mesure de sa progression. Cette histoire apparaît dans le jeu à travers le tutoriel et les succès pouvant être réalisés par le joueur. Des trames d'histoire sont également racontées au joueur pour lui donner une raison d'atteindre des objectifs. Enfin, l'histoire se termine par un combat contre un boss final. Tous ces éléments sont présentés dans cette partie.
 
 \subsubsection{Le tutoriel (Théo et Romain)}
 
-Un  défaut majeur de la première version de notre jeu était que celui-ci permettait de nombreuses actions (comme ouvrir un inventaire, se déplacer, jeter des objets) mais aucune information ne disait comment les réaliser. Nous avons donc décidé de créer un tutoriel expliquant au joueur comment effectuer les différentes actions dans le jeux. Nous profitons également de ce tutoriel pour introduire l'histoire du jeu puisque celle-ci s'enchaînera directement à la suite du tutoriel. Seulement contrairement au tutoriel, qui est propre au joueur puisque chaque joueur doit pouvoir apprendre à joueur, l'histoire sera propre au monde et ne se répétera pas pour chaque joueur.
+Un  défaut majeur de la première version de notre jeu était que celui-ci permettait de nombreuses actions (comme ouvrir un inventaire, se déplacer, jeter des objets) mais aucune information ne disait comment les réaliser. Nous avons donc décidé de créer un tutoriel expliquant au joueur comment effectuer l'ensemble de ces actions. Nous profitons également de ce tutoriel pour introduire l'histoire du jeu puisque qui se poursuivra à la suite du tutoriel. Seulement, contrairement au tutoriel qui est propre au joueur puisque chaque joueur doit pouvoir apprendre à joueur, l'histoire sera propre au monde et ne se répètera pas pour chaque joueur.
 
-Au lancement d'une partie tout nouveau joueur voit une fenêtre apparaître lui demandant si oui ou non il veut faire le tutoriel. Ne pas faire le tutoriel n'aura aucune influence sur le reste du jeu car celui-ci sera alors considéré comme réussi.
+Au lancement d'une partie, tout nouveau joueur voit une fenêtre apparaître lui demandant si oui ou non il veut faire le tutoriel. Ne pas faire le tutoriel n'aura aucune influence sur le reste du jeu car celui-ci sera alors considéré comme réussi.
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{res/Tutoriel}
-\caption{présence du tutoriel en jeu} 
+\caption{Tutoriel} 
 \label{Tutoriel}
 \end{center}
 \end{figure}
 
-Dans le jeu, le tutoriel est visuellement présent grâce à deux zones de texte. La première zone de texte dans le rectangle rouge de la figure \ref{Tutoriel} raconte le développement de l'histoire du tutoriel. C'est dans cette partie que les raisons des actions de Ille sont expliquées, ce qui donne une logique à l'existence du tutoriel. Ce texte est temporaire et ne reste que peu de temps à l'écran car celui-ci prend beaucoup de place et risquerait d'encombrer la vision du joueur. Plus tard dans le développement du jeu cette partie sera également lue oralement par un narrateur.
+Dans le jeu, le tutoriel est visuellement présent grâce à deux zones de texte. La première zone de texte dans le rectangle rouge de la figure \ref{Tutoriel} raconte le développement de l'histoire du tutoriel. C'est dans cette partie que les raisons des actions de Ille sont expliquées, ce qui donne une logique à l'existence du tutoriel. Ce texte est temporaire et ne reste que peu de temps à l'écran car celui-ci prend beaucoup de place et risquerait d'encombrer la vision du joueur. 
 
-La seconde zone de texte dans le rectangle vert de la figure \ref{Tutoriel} est directement adressée au joueur. Ce texte explique concrètement quels sont les objectifs du joueur et comment les accomplir. Il donne par exemple des indications sur quelle touche appuyer pour ouvrir l'inventaire ou sauter. Tant que les objectifs ne sont pas tous accomplis cette zone de texte ne disparaît pas. En appuyant sur la croix se trouvant en bas à droite de cette zone une fenêtre apparaît nous demandant si on souhaite terminer automatiquement le tutoriel. Cette option a été rajoutée pour les joueurs qui auraient malencontreusement lancé le tutoriel ou pour les joueurs voulant sauter la dernière étape du tutoriel car celle-ci demande d'utiliser tout ce qui a été appris dans le  tutoriel et est donc une partie assez longue.
+La seconde zone de texte dans le rectangle vert de la figure \ref{Tutoriel} est directement adressée au joueur. Ce texte explique concrètement quels sont les objectifs du joueur et comment les accomplir. Il donne par exemple des indications sur les touches sur lesquelles appuyer pour ouvrir l'inventaire ou sauter. Tant que les objectifs ne sont pas tous accomplis cette zone de texte ne disparaît pas. En appuyant sur la croix se trouvant en bas à droite de cette zone une fenêtre apparaît nous demandant si nous souhaitons terminer automatiquement le tutoriel. Cette option a été rajoutée pour les joueurs qui auraient malencontreusement lancé le tutoriel ou pour les joueurs voulant sauter la dernière étape du tutoriel car celle-ci demande d'utiliser tout ce qui a été appris dans le  tutoriel et est donc assez longue.
 
 Si un joueur quitte le jeu au milieu du tutoriel sa progression sera sauvegardée et il pourra continuer le tutoriel en relançant sa partie sans tout recommencer depuis le début.
 
-Récemment nous avons ajouté des fiches d'aide dans le jeu accessible depuis le menu ou lors de certaines étapes du tutoriel \ref{AideCombat}. Celle-ci permettent une explication plus détaillé de certain systèmes du jeu comme le système de combat par exemple.
+Récemment, nous avons ajouté des fiches d'aide accessibles depuis le menu ou lors de certaines étapes du tutoriel (figure \ref{AideCombat}). Celles-ci donnent une explication plus détaillée de certains systèmes du jeu comme le système de combat par exemple.
 
 \begin{figure}[h!]
 \begin{center}
@@ -266,7 +267,7 @@ Récemment nous avons ajouté des fiches d'aide dans le jeu accessible depuis le m
 \end{center}
 \end{figure}
 
-\subsubsection{Le système de Succès (Julien)} 
+\subsubsection{Le système de succès (Julien)} 
  
 Les succès représentent les exploits réalisés par les joueurs, ils sont propres à une partie et sont donc partagés entre les joueurs qui peuvent coopérer pour réaliser un succès. Notre jeu laissant beaucoup de liberté au joueur, il est possible que celui-ci ne sache plus quoi faire. C'est là que les succès interviennent, car ils proposent différents défis auxquels le joueur peut se confronter. Ces exploits peuvent porter sur différents aspects de la survie comme le nombre de créatures tuées ou encore la quantité de potions consommées.
 
@@ -279,7 +280,7 @@ D'un point de vue technique, tous les différents succès sont stockés comme attri
 
 Pour régler ces premiers problèmes, nous avons opté pour l'utilisation de deux structures. Tout d'abord, un nouvel objet appelé \textit{Succes} qui contient : un booléen indiquant si le \textit{Succes} est réussi, la liste de toutes les conditions nécessaires à l'accomplissement de celui-ci, son nombre de parents et une liste de \textit{fils}. Ces deux derniers éléments permettent de créer une hiérarchie entre les différents succès et de faciliter l'affichage.
 
-La deuxième structure est une liste de succès à mettre à jour, présente uniquement sur le serveur. A intervalles de temps réguliers, le serveur teste si les succès présents dans la liste sont accomplis. Si c'est le cas, alors il est retiré de la liste à tester et tous ses fils y sont ajoutés s'ils n'étaient pas déjà présents. De plus, l'affichage d'un pop-up en haut à gauche de l'écran est demandé sur chaque client attestant de l'accomplissement du succès (voir figure~\ref{Pop-up}). La demande d'affichage est mise dans une file pour que les pop-up ne se superposent pas.
+La deuxième structure est une liste de succès à mettre à jour, présente uniquement sur le serveur. A intervalles de temps réguliers, le serveur teste si les succès présents dans la liste sont accomplis. Si c'est le cas, alors le succès accompli est retiré de la liste à tester et tous ses fils y sont ajoutés s'ils n'étaient pas déjà présents. De plus, l'affichage d'un pop-up en haut à gauche de l'écran est demandé sur chaque client attestant de l'accomplissement du succès (voir figure~\ref{Pop-up}). La demande d'affichage est mise dans une file pour que les pop-up ne se superposent pas.
 
 
 \begin{figure}[h!]
@@ -296,7 +297,7 @@ La deuxième structure est une liste de succès à mettre à jour, présente uniqueme
 \end{center}
 \end{figure}
 
-Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. A terme, une si petite fenêtre ne sera pas suffisante pour afficher tous les succès, c'est pourquoi des barres de défilement sont présentes à droite et en dessous de la zone d'affichage.
+Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. Pour se déplacer dans l'interface, il suffit de maintenir un clic gauche en déplaçant la souris.
 
 La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvant pas l'être se fait par l'utilisation de trois \textit{Shader}. Un \textit{Shader} indique à la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
 
@@ -308,29 +309,29 @@ Comme vous pouvez vous en douter, ce sont sur ces statistiques que les succès s'
 
 \subsubsection{Le scénario}
 
-Le scénario du jeu est découpé en en sept paliers appelé \og Age \fg{} allant de l'âge de pierre à l'âge de sunkium. Le déblocage de chacun de ces âges déclenche une partie du scénario qui s'affiche à l'écran à la même place que le texte du narrateur lors du tutoriel. Pour éviter que le texte soit couper lors du déblocage de plusieurs âge consécutif ou que le texte rentre en conflit avec le didacticiel les textes du scénario sont mis dans une file et ne se lisent qu'en dehors du tutoriel.
+Le scénario du jeu est découpé en en sept paliers appelés \og \^{A}ge \fg{} allant de l'âge de pierre à l'âge de sunkium. Le déblocage de chacun de ces âges déclenche une partie du scénario qui s'affiche à l'écran à la même place que le texte du narrateur lors du tutoriel. Pour éviter que le texte soit coupé lors du déblocage de plusieurs âges consécutifs ou que le texte rentre en conflit avec le didacticiel, les textes du scénario sont mis dans une file et ne se lisent qu'en dehors du tutoriel.
 
-à chaque palier de nouveau succès apparaissent et doivent être réussie pour accéder au palier suivant. de plus le joueur apprend à maîtriser certaines recette lui permettant de diviser par deux le coût en ressource de ces recettes. 
+\`{A} chaque palier, de nouveaux succès apparaissent et doivent être réussis pour accéder au palier suivant. De plus, le joueur apprend à maîtriser certaines recettes lui permettant de diviser par deux leur coût. 
 
-Avec le déblocage du dernier palier de l'histoire les joueur une sauvegarde va être effectuer puis les joueurs vont être téléporter de force dans la zone du boss final. Il vont alors pouvoir affronter celui-ci et s'il arrivent à la battre pouvoir choisir une des deux fins disponibles.
+Avec le déblocage du dernier palier de l'histoire, une sauvegarde est effectuée puis les joueurs vont être téléportés de force dans la zone du boss final. Il vont alors pouvoir affronter celui-ci et s'il arrivent à le battre, pouvoir choisir une des deux fins disponibles.
 
-Si les joueurs ont tué moins de 100 créatures lors de la partie, fait difficile à accomplir car les succès demande la destruction de pas moins de 94 créatures, ils vont pouvoir choisir la fin secrète qui correspond ici à la \og Happy End\fg{}. En effet les deux autres fins peuvent être déplaisante pour les joueurs leur donnant l'impression qu'il n'ont pas vraiment réussi le jeu.
+Si les joueurs ont tué moins de 100 créatures lors de la partie, fait difficile à accomplir car les succès demandent la destruction de pas moins de 94 créatures, ils vont pouvoir choisir la fin secrète qui correspond ici à la \og Happy End\fg{}. En effet, les deux autres fins peuvent être déplaisantes pour les joueurs leur donnant l'impression de ne pas avoir vraiment réussi le jeu.
 
 \subsubsection{Le boss Final}
 
 % rajouter image du boss final.
 
-La zone du boss final est divisé en deux parties. La zone de repos où les joueurs apparaissent et réapparaissent à leur mort ainsi que la zone de combat ou il est possible d'affronter le boss. Lorsque le combat commence il n'est plus possible d'aller de la zone de repos à la zone de combat et les joueurs qui meurent doivent attendre la fin du combat pour retenter leur chance.
+La zone du boss final est divisée en deux parties. La zone de repos où les joueurs apparaissent et réapparaissent à leur mort ainsi que la zone de combat où il est possible d'affronter le boss. Lorsque le combat commence il n'est plus possible d'aller de la zone de repos à la zone de combat et les joueurs qui meurent doivent attendre la fin du combat pour retenter leur chance.
 
-Le boss final commence chacun de ces combat par un dialogue avec le joueur. expliquant la raison de ces actions. Ce dialogue ne peut pas être passer et le joueur devra le ré-écouter  à chaque tentative de vaincre le boss. Cela marche un peu comme une conséquence s'avoir échouer à le vaincre la première fois.
+Le boss final commence chacun de ses combats par un dialogue avec les joueurs expliquant la raison de ses actions. Ce dialogue ne peut pas être passé et les joueurs devront le ré-écouter  à chaque tentative de vaincre le boss. 
 
-Le boss possède 3 attaque. Une attaque horizontale balayant une grande zone devant lui et repoussant fortement les joueurs, une attaque verticale faisant d'énorme dégâts et infligeant des dégâts à tous les joueurs se trouvant sur le sol. Enfin la troisième attaque créer des cristaux s'écrasant sur le joueur. Ces cristaux forment un symbole indiquant comment les récupérer. Lors de leur chute ils infligent des dégâts aux joueurs les rencontrant puis une fois dans le sol inflige périodiquement des dégâts à tous les joueurs dans ses alentours.
+Le boss possède 3 attaques. Une attaque horizontale balayant une grande zone devant lui et repoussant fortement les joueurs, une attaque verticale faisant d'énormes dégâts puis infligeant des dégâts à tous les joueurs se trouvant en contact avec le sol. Enfin la troisième attaque crée des cristaux s'écrasant sur les joueurs. Ces cristaux forment un symbole indiquant comment les récupérer. Lors de leur chute ils infligent des dégâts aux joueurs les rencontrant puis une fois dans le sol infligent périodiquement des dégâts à tous les joueurs dans ses alentours.
 
-La seule façon de battre le boss est de récupérer ces cristaux afin de créer un consommable infligent quelques dégâts au boss si le joueur se trouve près de celui-ci
+La seule façon de battre le boss est de récupérer ces cristaux afin de créer un consommable infligeant quelques dégâts au boss si le joueur se trouve près de celui-ci.
 
-Plus les point de vie du boss son faible plus sa fréquence d'attaque et ses dégâts augmentent. De plus la quantité de dégâts infligé au boss dépend du nombre de joueur présent sur la carte.
+Plus les point de vie du boss son faibles plus sa fréquence d'attaque et ses dégâts augmentent. De plus, la quantité de dégâts infligés au boss dépend du nombre de joueurs présents sur la carte.
 
-Si le serveur est arrêté pendant le combat contre le boss les joueurs se retrouveront dans le monde d'Aegina à l'endroit où ils étaient juste avant le déblocage du dernier palier permettant à ceux-ci de mieux se préparer ou de continuer de joueur une fois l'histoire terminé.
+Si le serveur est arrêté pendant le combat contre le boss, les joueurs se retrouveront dans le monde d'Aegina à l'endroit où ils étaient juste avant le déblocage du dernier palier permettant à ceux-ci de mieux se préparer ou de continuer de jouer.
 
 \pagebreak
 
@@ -372,11 +373,11 @@ Ille est un personnage que nous avons téléchargé depuis l'asset store de unity q
 
 Nous avons alors décidé de faire toutes les animations de nos personnages nous-même. 
 
-Nous avons d'abord créer les animations de déplacement de notre personnage correspondant aux animations de marche, de courses, de saut et de chute de notre personnage.
+Nous avons d'abord créé les animations de déplacement de notre personnage correspondant aux animations de marche, de course, de saut et de chute de notre personnage.
 
-Nous avons ensuite créer les animations d'interaction de notre personnage comme miner, couper du bois, manger et récupérer un objet. Comme les actions de miner et couper du bois pouvaient avoir des temps variable nous avons découper les animations correspondantes en trois partie: le début de l'action (soulever la hache ou la pioche), l'action répétitif (donner un coup de pioche ou de hache ) passer en boucle tant que l'action est nécessaire et la fin de l'action ou notre personnage reviens à sa position initiale.
+Nous avons ensuite créé les animations d'interaction de notre personnage comme miner, couper du bois, manger et récupérer un objet. Comme les actions de miner et couper du bois pouvaient avoir des temps variables nous avons découpé les animations correspondantes en trois parties: le début de l'action (soulever la hache ou la pioche), l'action répétitive (donner un coup de pioche ou de hache) passée en boucle tant que l'action est nécessaire et la fin de l'action où notre personnage revient à sa position initiale.
 
-Enfin nous avons créer des action pour les différentes attaques de notre personnage pour que celui-ci puisse faire des prouesse au combat et que le combat paraisse plus dynamique
+Enfin nous avons créé des actions pour les différentes attaques de notre personnage pour que celui-ci puisse faire des prouesses au combat et que le combat paraisse plus dynamique.
 
 \pagebreak
 
@@ -387,23 +388,22 @@ Enfin nous avons créer des action pour les différentes attaques de notre personn
 Afin de compléter l'univers que nous essayons de créer à travers notre jeu, nous avons ajouté des musiques de fond. 
 
 Nous avons d'abord ajouté une musique qui est associée au menu principal uniquement.
-quatre autres musiques ont par la suite fait leur apparition, chacune d'elles est associée à un thème différent, la forêt, le désert, la neige ou l'automne, qui correspond chacun à un des biomes possibles pour les îles.
+Quatre autres musiques ont par la suite fait leur apparition, chacune d'elles est associée à un thème différent, la forêt, le désert, la neige ou l'automne, qui correspond chacun à un des biomes possibles pour les îles.
 
 Nous avons alors fait en sorte que les musiques se lancent en fonction du biome sur lequel le joueur se trouve. 
 
 En multi-joueurs chaque personne peut se retrouver avec des musiques différentes au même moment.
 
-Nous avons également choisi une musique pour le boss final qui n'a pas été faîte pour notre jeux mais viens du jeu \og Undertale\fg{}. Nous avons plus précisément choisi la musique \og Megalovania\fg{}.
+%Nous avons également choisi une musique pour le boss final qui n'a pas été faite pour notre jeu mais vient du jeu \og Undertale\fg{}. Nous avons plus précisément choisi la musique \og Megalovania\fg{}.  
 
 \paragraph{Son}
 
-Afin de ne pas avoir un jeu fade, nous avons introduit quelques sons. Ces sons nous permettent d'avoir une base que l'on pourra enrichir au fur et à mesure de l'avancée du développement de notre jeu.
-Nous avons tout d'abord ajouté un son pour l'ouverture et la fermeture de l'inventaire et du menu.
+Afin de ne pas avoir un jeu fade, nous avons introduit quelques sons. Nous avons tout d'abord ajouté un son pour l'ouverture et la fermeture de l'inventaire et du menu.
 Par la suite nous avons ajouté des bruits de pas afin d'entendre notre personnage marcher ou courir. Nous avons également ajouté un léger bruit lorsque le joueur récupère un objet.
 
-L'ajout de divers nouveaux bruitages  se sont faits en même temps que l'ajout de gameplay au jeu. Il a fallu rendre cohérent les actions du personnage car ce dernier ne pouvais pas obtenir du bois sans couper un arbre, il nous à alors fallu créer des  bruitages pour les diverses actions indispensables à notre jeu comme couper du bois, ramasser des objets...
+L'ajout de divers nouveaux bruitages  se sont faits en même temps que l'ajout de gameplay au jeu. Il a fallu rendre cohérentes les actions du personnage car ce dernier ne pouvait pas obtenir du bois sans couper un arbre, il nous à alors fallu créer des  bruitages pour les diverses actions indispensables à notre jeu comme couper du bois, ramasser des objets...
 
-Ces multiples ajouts de bruitages et musiques ont nettement amélioré l'environnement sonore du jeux. Au final cet enrichissement sonore et ces nouvelles animations permettent une assez bonne cohérence entre ce que l'on souhaite réaliser et ce que l'on peut observer dans le jeu.
+Ces multiples ajouts de bruitages et musiques ont nettement amélioré l'environnement sonore du jeu. Cet enrichissement sonore permet une assez bonne cohérence entre ce que le personnage réalise et les sons que l'on entend.
 
 \pagebreak
 
@@ -413,7 +413,7 @@ Ces multiples ajouts de bruitages et musiques ont nettement amélioré l'environne
 
 \subsection{Systèmes fondamentaux}
 
-Les systèmes fondamentaux sont des systèmes qui sont nécessaire non pas pour que nôtre jeu soit amusant mais tout simplement pour que l'on puisse jouer à notre jeux. Ces systèmes  comportent les système de déplacement du joueur et de la caméra, la génération du monde, la sauvegarde et les menus. 
+Les systèmes fondamentaux sont des systèmes qui sont nécessaires non pas pour que notre jeu soit amusant mais tout simplement pour que l'on puisse y jouer. Ces systèmes  comportent les systèmes de déplacement du joueur et de la caméra, la génération du monde, la sauvegarde et les menus. 
 
 \subsubsection{Déplacement du personnage et de sa caméra (Théo et Julien)}
 
@@ -433,29 +433,29 @@ La vue à la première personne permet au joueur de voir exactement ce que son per
 
 \subsubsection{Génération aléatoire du monde (Florian et Julien)}
 
-Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière aléatoire. Pour cette première soutenance, nous avons implémentés la génération aléatoire d'un \textit{chunk}, et la liaison des \textit{chunks} entre eux, pour pouvoir générer un monde différent à chaque début de partie.
+Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière aléatoire. Pour la première soutenance, nous avions implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des \textit{chunks} entre eux, pour pouvoir générer un monde différent à chaque début de partie.
 
-Le monde contient des \textit{chunks} reliés par des ponts, chacun de ces \textit{chunks} est choisi aléatoirement parmi des \textit{chunks} préfabriqués composés d'îles et d'ancres. Par la suite un biome sélectionné aléatoirement est appliqué sur le \textit{chunk}, ce qui détermine le type des éléments qui pourront être mis à la place des ancres.  Ensuite viens la création des ponts. Le \textit{chunk} détermine aléatoirement si il possède des ponts au nord et à l'ouest puis pose des ponts au sud et à l'est si les \textit{chunks} correspondant possèdent eux même des ponts à ces endroits. Pour finir chaque ancre est donc remplacée par un élément cohérent avec le biome. Si le biome est \textit{désert} par exemple alors une ancre peut être remplacée par un cactus, un rocher, du sable\dots{} ou rien (c'est à dire un élément vide). Cette méthode de génération implique des milliers de possibilités pour chaque \textit{chunk}.
+Maintenant, le monde contient des \textit{chunks} reliés par des ponts, chacun de ces \textit{chunks} est choisi aléatoirement parmi des \textit{chunks} préfabriqués composés d'îles et d'ancres. Par la suite un biome sélectionné aléatoirement est appliqué sur le \textit{chunk}, ce qui détermine le type des éléments qui pourront être mis à la place des ancres.  Ensuite vient la création des ponts. Le \textit{chunk} détermine aléatoirement si il possède des ponts au nord et à l'ouest puis pose des ponts au sud et à l'est si les \textit{chunks} correspondant possèdent eux même des ponts à ces endroits. Pour finir chaque ancre est donc remplacée par un élément cohérent avec le biome. Si le biome est \textit{désert} par exemple alors une ancre peut être remplacée par un cactus, un rocher, du sable\dots{} ou rien (c'est à dire un élément vide). Cette méthode de génération implique des milliers de possibilités pour chaque \textit{chunk}.
 
-Cependant toute ces génération ne se fait pas instantanément et prend du temps. Pour éviter de ralentir spontanément à chaque création d'un nouveau \textit{chunk} la génération se fait petit à petit sur un temps plus long. De plus pour éviter la présence d'un trop grand nombre d'île de manière simultané les \textit{chunk} disparaissent quand ils sont trop loin d'un joueur.
+Cependant toutes ces générations ne se font pas instantanément et prennent du temps. Pour éviter de ralentir à chaque création d'un nouveau \textit{chunk}, la génération se fait petit à petit sur un temps plus long. De plus, pour éviter la présence d'un trop grand nombre d'îles de manière simultanée les \textit{chunk} disparaissent quand ils sont trop éloignés d'un joueur et de nouveaux apparaissent. Cela permet la création d'un monde infini.
 
 
 \subsubsection{La sauvegarde (Florian)}
 
-La sauvegarde est une des grandes implémentations pour cette deuxième soutenance, celle-ci permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent. Le joueur qui crée une partie en est en quelque sorte le \og propriétaire \fg. La partie est hébergée sur son ordinateur qui devient le serveur pour cette partie. C'est sur ce même ordinateur que les sauvegardes seront effectuées.
+La sauvegarde permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent. Le joueur qui crée une partie en est en quelque sorte le \og propriétaire \fg. La partie est hébergée sur son ordinateur qui devient le serveur pour cette partie. C'est sur ce même ordinateur que les sauvegardes seront effectuées.
 
-La première chose que nous avons dû modifier est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{seed}. Le principe est le suivant, lorsque le joueur crée un monde alors un nombre va être choisi aléatoirement. Ce nombre est appelé la \textit{seed} du monde. À partir de celui-ci nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les îles et leur position mais aussi leur biome et leur environnement. Ce système rend la sauvegarde légère en mémoire et donc rapide. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
+La première chose que nous avons dû implanter est la sauvegarde du monde. Pour cela nous avons utilisé un système de \textit{graine}. Le principe est le suivant, pour pouvoir créer un monde, un nombre doit être choisi aléatoirement. Ce nombre est appelé la \textit{graine} du monde. À partir de celle-ci, nous pouvons en déduire toutes les informations sur le monde, c'est-à-dire, les îles et leur position mais aussi leur biome et leur environnement. Ce système rend la sauvegarde légère en mémoire et donc rapide. Nous avons dû compléter le système de génération du monde et plus précisément d'un chunk. 
 
-Chaque chunk va calculer son propre \textit{seed} à partir du \textit{seed} du monde et de sa position, à partir de ce nouveau \textit{seed}  nous allons pouvoir connaître ses îles et son biome. Puis pour chacune des ancres nous savons l'élément qui doit être à cet emplacement.
+Chaque chunk va calculer sa propre \textit{graine} à partir de la \textit{graine} du monde et de sa position, à partir de cette nouvelle \textit{graine}  nous allons pouvoir connaître ses îles et son biome. Puis pour chacune des ancres nous savons quel élément doit être à cet emplacement.
 
-Nous avons uniquement besoin de sauvegarder la \textit{seed} pour sauvegarder notre monde. Cependant les modifications du joueur ne peuvent pas être déterminées grâce à la \textit{seed}. Nous avons donc besoin de sauvegarder des informations supplémentaires telles que l'heure de la journée, les éléments détruits et posés, l'inventaire des coffres, mais aussi les niveaux des cristaux. Enfin l'arrivée des succès et des statistiques de jeu doit être elles aussi sauvegardées.
-Pour finir chaque joueur a des informations à sauvegarder en voici la liste :
+Nous avons uniquement besoin de sauvegarder la \textit{graine} pour sauvegarder notre monde. Cependant les modifications du joueur ne peuvent pas être déterminées grâce à la \textit{graine}. Nous avons donc besoin de sauvegarder des informations supplémentaires telles que l'heure de la journée, les éléments détruits et posés, l'inventaire des coffres, mais aussi les niveaux des cristaux. Enfin les succès et les statistiques de jeu doivent être eux aussi sauvegardés.
+Pour finir, pour chaque joueur les informations suivantes sont à sauvegarder  :
 \begin{itemize}
-\item la position ;
+\item sa position ;
 \item le contenu de son inventaire ;
 \item sa vie, sa faim et sa soif ; 
 \item les effets (régénération, poison \ldots) et leur temps restant; 
-\item son équipe en mode \textit{PvP} . 
+\item son équipe en mode \textit{Joueur contre Joueur} . 
 \end{itemize}
 
 Enfin la sauvegarde s'effectue automatiquement lors de l'arrêt du serveur, mais cela ne suffit pas.  En cas de crash ou si le  \og propriétaire \fg{} ne ferme pas correctement l'application, la sauvegarde ne peut pas s'effectuer. Il y a donc une sauvegarde automatique toutes les minutes. Celle-ci ne provoque aucun ralentissement du jeu car elle est très légère.
@@ -466,11 +466,11 @@ Un élément essentiel à tout jeu est indéniablement de pouvoir le quitter et le c
 
 Pour cela nous avons créé des menus permettant non seulement de démarrer une partie ou de quitter le jeu mais aussi de modifier les options disponibles. 
 
-Actuellement le menu permet de modifier la langue, le volume sonore du jeu , la sensibilité de la caméra et la distance de rendu. En cours de jeu, ces menus s'ouvrent avec la touche \textit{escape} quand aucune autre interface n'est ouverte et se ferment avec la même touche  ou avec le bouton \textit{continuer}. Lorsque le menu est ouvert, le joueur et la caméra du joueur ne peuvent pas bouger. Lors du lancement du jeu on arrive directement à un menu mais celui-ci ne se ferme pas avec la touche \textit{escape}. Ce menu principale est plus complexe que le menu en jeu car il possède sa propre scène et de nombreux éléments de personnalisation.
+Actuellement, le menu permet de modifier la langue, le volume sonore du jeu , la sensibilité de la caméra et la distance de rendu. En cours de jeu, ces menus s'ouvrent avec la touche \textit{escape} quand aucune autre interface n'est ouverte et se ferment avec la même touche  ou avec le bouton \textit{continuer}. Lorsque le menu est ouvert, le joueur et la caméra du joueur ne peuvent pas bouger. Lors du lancement du jeu on arrive directement à un menu mais celui-ci ne se ferme pas avec la touche \textit{escape}. Ce menu principal est plus complexe que le menu en jeu car il possède sa propre scène et de nombreux éléments de personnalisation.
 
-\paragraph{Menu Principale}
+\paragraph{Menu Principal}
 
-Dans ce menu principal nous avons rajouté une petite interface donnant accès à la liste des mondes disponibles. De même, on peut enregistrer des adresses de serveurs qui nous permettront de ne pas devoir ré-entrer les adresses IP des serveur auxquels on veut avoir accès en prenant le risque de se tromper. 
+Dans le menu principal nous avons rajouté une petite interface donnant accès à la liste des mondes disponibles. De même, il est possible d'enregistrer des adresses de serveurs qui permettent de sauvegarder les adresses IP des serveur auxquels on se connecte regulièrement. 
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=12cm]{res/MenuPrincipal}
@@ -479,13 +479,13 @@ Dans ce menu principal nous avons rajouté une petite interface donnant accès à l
 \end{center}
 \end{figure}
 
-Sur la figure \ref{MenuPrincipal}, la partie encadrée en rouge n'apparaît que lorsque l'on appuie sur le bouton \og Join \fg{} et montre la liste des serveurs que l'on a enregistrés. De même, une interface similaire apparaît lorsque appuie sur le bouton \og Play \fg{} mais cette fois avec une liste de mondes. Cette liste de mondes est générée automatiquement en parcourant les fichiers de la sauvegarde.
+Sur la figure \ref{MenuPrincipal}, la partie encadrée en rouge n'apparaît que lorsque l'on appuie sur le bouton \og Join \fg{} et montre la liste des serveurs que l'on a enregistrés. De même, une interface similaire apparaît lorsque appuie sur le bouton \og Play \fg{} mais cette fois avec une liste de mondes. Cette liste de mondes est générée automatiquement en parcourant les fichiers de la sauvegarde se trouvant sur l'ordinateur depuis lequel on joue. Lorsqu'on se connecte à un serveur on accède directement au monde de la partie en cours sur le serveur.
 
 Dans cette interface, il est possible de sélectionner un serveur ou un monde en cliquant dessus. On ne le voit pas vraiment mais une fine ligne blanche forme alors le contour du monde sélectionné. Il est alors possible de supprimer le monde ou le serveur de la liste en appuyant sur le bouton \og Delete \fg{} ou de lancer le jeu en appuyant sur le bouton \og Start \fg. Lorsque la liste possède plus de 3 éléments l'écran n'en affiche que trois mais il est possible de parcourir toute la liste en appuyant sur les flèches se trouvant dans la partie droite du rectangle rouge.
 
 Enfin il est possible d'accéder à une interface de création de monde ou de serveur en appuyant sur le bouton \og Create \fg.
 
-Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{seed} de la map en base 36 (\textit{seed} composée d'au maximum six chiffres et lettres en minuscules). Cette \textit{seed} est propre à un monde particulier et permet donc de régénérer le même monde (sans prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 mondes différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie. Pour des raisons de comptabilité des sauvegarde il est impossible de créer plusieurs sauvegardes du même nom.
+Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{graine} de la map en base 36 (\textit{graine} composée d'au maximum six chiffres et lettres en minuscule). Cette \textit{graine} est propre à un monde particulier et permet donc de régénérer le même monde (sans prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 mondes différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie. Pour des raisons de comptabilité des sauvegardes il est impossible de créer plusieurs sauvegardes du même nom.
 
 \begin{figure}[h!]
 \begin{center}
@@ -508,33 +508,33 @@ Notre génération de monde commençant à être longue avec la génération des îles e
 \end{figure}
 
 
-\paragraph{première scène}
+\paragraph{Première scène}
 
 La scène du menu, aussi appelée première scène, a une valeur très particulière à nos yeux. Même si cette scène ne sert que de paysage à la création de partie, elle nous permet de mettre en avant tout l'univers graphique de notre jeu et de montrer au joueur les différents éléments présents dans le jeu.
 
-Lors du dernier rapport nous vous avions présenté une île unique avec une caméra orbitant autour. Lors de la seconde soutenance, en plus d'évoluer dans un vrai archipel, la caméra suit un mouvement ne pouvant plus être réduit à une simple fonction mathématique. Nous avons décidé que la caméra suivrait un parcours bien plus complexe (voir pointillés verts sur la figure \ref{FirstScene}) et bien plus intéressant. Plutôt que de se limiter à une orbite circulaire, la caméra va serpenter entre les îles, s'en rapprocher, s'en éloigner, voire passer en dessous.
+En plus d'évoluer dans un vrai archipel, la caméra suit un mouvement ne pouvant pas être réduit à une simple fonction mathématique. Nous avons décidé que la caméra suivrait un parcours bien plus complexe (voir pointillés verts sur la figure \ref{FirstScene}) et bien plus intéressant. Plutôt que de se limiter à une orbite circulaire, la caméra va serpenter entre les îles, s'en rapprocher, s'en éloigner, voire passer en dessous.
 
 Chaque point sur la figure \ref{FirstScene} est en réalité une balise. La première balise connaît la deuxième balise qui connaît la troisième balise et ainsi de suite jusqu'à la dernière balise qui elle connaît la première balise. Nous obtenons ainsi un circuit fermé et il ne reste plus qu'à faire avancer la caméra le long de ce circuit. Cette technique permet de résumer  des mouvements très complexes en un enchaînement de petits déplacements linéaires ce qui est bien plus simple à réaliser. Plus il y aura de balises le long du circuit, plus le déplacement paraîtra fluide et naturel.
 
-De plus nous avons également rajouté un camp sur l'île centrale de l'archipel avec notre personnage principale dessus.
+De plus nous avons également rajouté un camp sur l'île centrale de l'archipel avec notre personnage principal dessus.
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{res/FirstScene}
-\caption{La Première Scène} 
+\caption{Première scène} 
 \label{FirstScene}
 \end{center}
 \end{figure}
 
 
-\paragraph{personnalisation du personnage}
+\paragraph{Personnalisation du personnage}
 
-Nous avons donné aux joueur la possibilité de personnaliser sont personnage pour que celui se distingue lorsque l'on joue à plusieurs autrement que de part son nom. En allant dans les options du menu principale on peut choisir l'option personnage qui amène notre caméra en face du personnage se trouvant dans le camp. On peut ensuite appuyer choisir les différents éléments sur notre personnage que l'on veut changer (voir figure ).
+Nous avons donné aux joueurs la possibilité de personnaliser leur personnage pour que celui se distingue visuellement des autres lorsque l'on joue à plusieurs. En allant dans les options du menu principal, il est possible de choisir l'option personnage qui amène la caméra en face du personnage se trouvant dans le camp. On peut ensuite choisir les différents éléments de notre personnage que l'on veut changer (voir figure ).
 %rajouter image personnalisation du personnage
 
-Il est possible de changer les yeux, la peaux, les cheveux, la pilosité du visage, les gants, le chapeau, le pantalon et le haut de notre personnage. Dans chacune de ces catégorie on a le choix entre le type de modification que l'on veut faire (par exemple e type de chapeaux) et la couleur de celui-ci.
+Il est possible de changer les yeux, la peau, les cheveux, la pilosité du visage, les gants, le chapeau, le pantalon et le buste du personnage. Dans chacune de ces catégories on a le choix entre plusieurs éléments et couleurs.
 
-Il est également possible de faire tourner son personnage grâce au flèche se trouvant en bas à gauche et à droite de celui-ci. Cela permet d'admirer son personnage sur tout les angles.
+Il est également possible de faire tourner son personnage grâce aux flèches se trouvant en bas à gauche et à droite de celui-ci. Cela permet d'admirer son personnage sous tous les angles.
 
 \pagebreak
 
@@ -544,15 +544,15 @@ Il est également possible de faire tourner son personnage grâce au flèche se tro
 
 Pour pouvoir gérer les ressources que possède un joueur, nous avons dû créer une classe que nous avons tout simplement choisi d'appeler \textit{Item}. 
 
-La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuables qui sont le nom (dans chacune des langues disponibles, pour le moment il s'agit du français et de l'anglais), la description (elle aussi dans chacune des langues proposées), un identifiant unique, une quantité maximale par tas d'objets, une texture 2D et un élément correspondant à l'objet 3D. Cependant, le joueur peut  posséder plusieurs exemplaires d'un même objet. Les objets qu'il possède sont donc une nouvelle classe appelée \textit{ItemStack} contenant une quantité (inférieure ou égale à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi, les informations communes à plusieurs exemplaires d'un même objet  ne sont pas dupliquées, seules la quantité de l'objet peut changer. Il y a alors un gain de mémoire. 
+La classe \textit{Item} permet de créer un patron d'objet ne contenant que des constantes immuables qui sont le nom (dans chacune des langues disponibles, pour le moment il s'agit du français et de l'anglais), la description (elle aussi dans chacune des langues proposées), un identifiant unique, une quantité maximale par tas d'objets, une texture 2D et un élément correspondant à l'objet 3D. Cependant, le joueur peut  posséder plusieurs exemplaires d'un même objet. Les objets qu'il possède sont donc une nouvelle classe appelée \textit{ItemStack} contenant une quantité (inférieure ou égale à la quantité max de l'objet) et un pointeur vers l'objet qu'il représente. Ainsi, les informations communes à plusieurs exemplaires d'un même objet  ne sont pas dupliquées, seule la quantité de l'objet peut changer. Il y a donc un gain de mémoire. 
 
 Nous avons ensuite fait la distinction entre deux catégories d'objets, les premiers qui ne sont que des ressources et les seconds qui peuvent être utilisés et ont un effet particulier soit sur l'environnement soit sur le joueur lui même. Ces derniers objets peuvent être équipés, c'est-à-dire mis dans la main du joueur. Pour se faire, il suffit que l'objet soit placé dans la barre d'outils et que le sélecteur soit sur la case du dit objet. Ainsi, l'objet apparaîtra dans la main du personnage et tous les joueurs pourront le voir.
 
-Une fois un objet équipé, il suffit de faire un clic droit pour l'utiliser. Il existe plusieurs types d'interaction:
+Une fois un objet équipé, il suffit de faire un clic droit pour l'utiliser. Il existe plusieurs types d'objets :
 \begin{itemize}
 \item \textbf{Les consommables : } qui lors d'un clic droit sont consommés et produisent un effet sur le joueur;
 \item \textbf{Les outils : } qui permettent d'interagir avec certains éléments de l'environnement;
-\item \textbf{Les armures : } qui s'équipent au personnage à la place de celle déjà équipé si elle existe;
+\item \textbf{Les armures : } qui s'équipent au personnage à la place de celle déjà équipée si elle existe;
 \item \textbf{Les objets pouvant être posés : } qui une fois équipés, apparaissent dans le monde et peuvent être posés avec le clic droit.
 \end{itemize}
 
@@ -560,23 +560,23 @@ Commençons par les consommables. Leurs effets sont très variés, ils peuvent infl
 
 Passons ensuite aux outils. Lors de la première soutenance, il n'était possible d'interagir qu'avec les cristaux et à condition d'être suffisamment proche d'eux. Maintenant, il est possible d'interagir avec n'importe quel élément de l'environnement à condition d'être équipé d'un outil approprié. Il est en effet impossible de couper un arbre à la main, il faut une hache pour cela. Si l'élément est trop éloigné, le joueur peut garder son clic droit enfoncé, son personnage va alors s'approcher des ressources l'entourant et les récolter jusqu'à ce qu'il n'y ait plus de ressources dans les environs ou que son outil équipé ne soit pas approprié à la récolte.
 
-Les armures une fois équiper change l'apparence du personnage mais leur véritable intérêts et de réduire les dégâts reçus par le personnage lorsque qu'il se fait attaquer par des créatures.
+Les armures une fois équipées changent l'apparence du personnage mais leur véritable intérêt est de réduire les dégâts reçus par le personnage lorsque qu'il se fait attaquer par des créatures.
 
 Enfin, pour ce qui est de la pose des objets, lorsqu'un objet pouvant être posé est équipé, celui-ci apparaît en transparence dans le monde. Cet objet transparent est situé à une unité de distance devant le personnage et est tourné vers lui. Mais ce n'est pas l'objet réel, c'est une prévisualisation de l'objet qui permet au joueur de choisir où il veut réellement le poser. Un indicateur de couleur permet d'informer le joueur sur la validité de la position actuelle de l'objet (voir figure \ref{Pose}). Il n'est pas possible de poser une table à travers un arbre ou sur un rocher. Le joueur peut confirmer la pose de l'objet par un simple clic droit.
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=16cm]{res/Pose} % mettre à jour l'image.
-\caption{La prévisualisation d'un objet} 
+\caption{Prévisualisation d'un objet} 
 \label{Pose}
 \end{center}
 \end{figure}
 
 
 \subsubsection{Inventaire et stockage d'objets}
-Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui, et donc se déplacer assez facilement, nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{drag and drop}, ou plusieurs objets identiques, ils forment alors un \textit{tas}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris sur celui-ci. Cet inventaire s'ouvre lorsque l'on appuie sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
+Pour que notre personnage puisse posséder un grand nombre d'objets de toutes sortes sans avoir à les porter sur lui, et donc se déplacer assez facilement, nous avons créé un inventaire  (figure~\ref{Inventaire}). Celui-ci est constitué de 24 cases sous forme de 4 lignes et 6 colonnes. Chaque case peut contenir un élément, qui peut être déplacé grâce à un \textit{glisser déposer}, ou plusieurs objets identiques, ils forment alors un \textit{tas}. De plus le joueur peut avoir une description de chacun des éléments en passant sa souris dessus. Cet inventaire s'ouvre lorsque l'on appuie sur la touche \textit{inventaire} (touche \textit{i} par défaut) et peut ensuite être fermé avec la même touche \textit{inventaire} ou la touche \textit{escape}. 
 
-Il est possible de rajouter 9 cases à cette inventaire si on se trouve en présence d'un coffre. Les objets placé dans ces 9 cases seront alors  placé dans le coffre et ne seront pas transporté avec le joueur. Chaque coffre possède son propre inventaire ce qui permet au joueur de transporter un grand nombre d'objet.
+Il est possible de rajouter 9 cases à cet inventaire si on se trouve en présence d'un coffre. Les objets placés dans ces 9 cases seront alors  placés dans le coffre et ne seront pas transportés avec le joueur. Chaque coffre possède son propre inventaire ce qui permet au joueur de stocker un grand nombre d'objet. Les coffres doivent être créés par les joueurs et ne sont pas nominatifs, tout objet se trouvant dans un coffre pourra être récupéré par n'importe quel joueur.
 
-Lorsque l'inventaire est ouvert le joueur et la caméra ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter). L'inventaire se sauvegarde automatiquement en local lorsque le jeu est quitté normalement ou lorsque qu'une modification de son contenu s'effectue (quand un objet est jeté ou récupéré). Ce même inventaire est alors récupéré d'une partie sur l'autre.
+Lorsque l'inventaire est ouvert le joueur et la caméra ne peuvent plus bouger via les touches de déplacement ou la souris (mais le joueur continuera de tomber si celui-ci était en train de chuter).
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=11cm]{res/Inventaire} % mettre à jour avec le coffre
@@ -591,7 +591,7 @@ Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisé
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[height=2cm]{res/Toolbar}
-\caption{barre d'outil} 
+\caption{Barre d'outil} 
 \label{Toolbar}
 \end{center}
 \end{figure}
@@ -600,15 +600,15 @@ Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisé
 
 \subsubsection{La création d'objets (Romain)}
 
-Une nécessité en survie, et donc dans tous les jeux de survie, est l'obtention d'outils primitifs pour fabriquer un abri ou chasser. Pour cela, il faut pouvoir créer ces outils.  Nous avons donc rajouté un système de création d'objets. Chaque objet peut être créé à partir d'une recette définissant le type et le nombre d'ingrédients nécessaires à sa réalisation. Les objets qu'il est possible de créer se classent en cinq catégories : les établis qui permettant de fabriquer plus d'outils, les ressources de construction qui sont principalement utilisées pour fabriquer des objets plus évolués, les consommables, les outils et les armures 
+Une nécessité en survie, et donc dans tous les jeux de survie, est l'obtention d'outils primitifs pour fabriquer un abri ou chasser. Pour cela, il faut pouvoir créer ces outils.  Nous avons donc rajouté un système de création d'objets. Chaque objet peut être créé à partir d'une recette définissant le type et le nombre d'ingrédients nécessaires à sa réalisation. Les objets qu'il est possible de créer se classent en cinq catégories : les établis qui permettent de fabriquer plus d'outils, les ressources de construction qui sont principalement utilisées pour fabriquer des objets plus évolués, les consommables, les outils et les armures 
 
-La réalisation de chacune de ces recettes nécessite plusieurs conditions. D'abord, il faut posséder les composants nécessaires à la fabrication de l'objet souhaité. Cela paraît naturel, il est impossible de faire une pioche à partir de rien tout comme on ne peut pas faire de ragout sans viande. Il faut aussi posséder une place vide dans l'inventaire. Même si le joueur possède déjà les composants de base de l'objet qu'il veut fabriquer, la transformation d'un bâton en une pioche ne se fait pas de manière directe. Il faut d'abord créer un manche et forger un fer de pioche puis assembler les deux. Cet espace vide dans  l'inventaire est nécessaire pour toutes ces actions. Enfin, il faut se trouver à proximité des établis nécessaires à la fabrication des objets souhaités. Aucune indication n'est donnée pour savoir quel établi est nécessaire pour faire un objet mais cela reste évident : il faut par exemple être à proximité d'une forge pour fabriquer des lingots ou un autre objet en fer.
+La réalisation de chacune des recettes nécessite plusieurs conditions. D'abord, il faut posséder les composants nécessaires à la fabrication de l'objet souhaité. Cela paraît naturel, il est impossible de faire une pioche à partir de rien tout comme on ne peut pas faire de ragout sans viande. Il faut aussi posséder une place vide dans l'inventaire. Même si le joueur possède déjà les composants de base de l'objet qu'il veut fabriquer, la transformation d'un bâton en une pioche ne se fait pas de manière directe. Il faut d'abord créer un manche et forger un fer de pioche puis assembler les deux. Cet espace vide dans  l'inventaire est nécessaire pour toutes ces actions. Enfin, il faut se trouver à proximité des établis nécessaires à la fabrication des objets souhaités. Aucune indication n'est donnée pour savoir quel établi est nécessaire pour faire un objet mais cela reste évident : il faut par exemple être à proximité d'une forge pour fabriquer des lingots ou un autre objet en métal.
 
-Mais malgré tout cela, il manque une chose pour pouvoir fabriquer facilement des objets : l'expérience. Réaliser une recette avec succès ne se fait pas dès la première tentative, fabriquer du verre ou forger une épée sans expérience demande plus de ressources que nécessaire. Tant que la recette n'est pas maîtrisée, le coût en ressources sera doublé. Pour maîtriser une recette il faut avancer dans l'historie comme préciser dans la partie scénario.
+Mais malgré tout cela, il manque une chose pour pouvoir fabriquer facilement des objets : l'expérience. Réaliser une recette avec succès ne se fait pas dès la première tentative, fabriquer du verre ou forger une épée sans expérience demande plus de ressources que nécessaire. Tant que la recette n'est pas maîtrisée, le coût en ressources sera doublé. Pour maîtriser une recette il faut avancer dans l'historie comme précisé dans la partie scénario.
 
-Enfin certaines recettes sont cachées et il est impossible de savoir qu'elles existent sans remplir certaines conditions ou rechercher sur le wiki.
+Enfin, certaines recettes sont initialement cachées et il est impossible de savoir qu'elles existent sans remplir certaines conditions ou rechercher sur le wiki.
 
-En jeu, il est possible d'accéder au système de création d'objet en même temps que l'inventaire. Sur la partie gauche de l'écran cinq boutons permettent de choisir quelle catégorie d'objets on veut créer (entourée en bleue sur la figure \ref{Craft}). Après avoir cliqué sur ce bouton, une liste d'éléments pouvant être créés apparaît (entourée en rouge sur la figure \ref{Craft}). Les flèches en haut et en bas permettent de faire défiler les éléments. En sélectionnant sur l'un de ces éléments sa recette s'affiche sous la forme d'une liste de composants (entourée en vert sur la figure \ref{Craft}). Dans cette liste, la dernière case est cochée en vert si l'objet peut être créé, ou occupée par une croix rouge dans le cas contraire. La création d'un objet se fait en cliquant sur la case cochée en vert.
+En jeu, il est possible d'accéder au système de création d'objet en même temps que l'inventaire. Sur la partie gauche de l'écran cinq boutons permettent de choisir quelle catégorie d'objets on veut créer (entourée en bleue sur la figure \ref{Craft}). Après avoir cliqué sur ce bouton, une liste d'éléments pouvant être créés apparaît (entourée en rouge sur la figure \ref{Craft}). Les flèches en haut et en bas permettent de faire défiler les éléments. En sélectionnant l'un de ces éléments, sa recette s'affiche sous la forme d'une liste de composants (entourée en vert sur la figure \ref{Craft}). Dans cette liste, la dernière case est cochée en vert si l'objet peut être créé, ou occupée par une croix rouge dans le cas contraire. La création d'un objet se fait en cliquant sur la case cochée en vert.
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=14cm]{res/CraftHUD}
@@ -621,17 +621,17 @@ Pour permettre au joueur d'améliorer les capacités de son personnage, nous lui d
 
 \subsubsection{Drop d'Item (Florian et Julien)}
 
-Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur à la possibilité, depuis son inventaire, de  glisser un \textit{tas} d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défaut), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde en le lançant à quelques mètres du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. La récupération de l'objet se fait par des échanges d'information entre serveur et clients pour garantir que seul un joueur ramasse l'objet, et qu'il a suffisamment de place dans son inventaire pour le stocker. De plus si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
+Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur a la possibilité, depuis son inventaire, de  glisser un \textit{tas} d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défaut), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde proche du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. La récupération de l'objet se fait par des échanges d'information entre serveur et clients pour garantir que seul un joueur ramasse l'objet, et qu'il a suffisamment de place dans son inventaire pour le stocker. De plus, si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part, les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
 
 \break
 
 \subsection{Système de survie}
 
-Notre jeux est avant tout un jeu de survie dans lequel notre joueur doit interagir avec l'environnement pour pour rester en vie et avancer dans l'historie. Cette partie va se concentré sur les éléments de la survie.
+Notre jeu est avant tout un jeu de survie dans lequel notre joueur doit interagir avec l'environnement  pour rester en vie et progresser dans l'historie. Cette partie va se concentrer sur les éléments de la survie.
 
 \subsubsection{Cristal (Romain et Julien)}
 
-Une particularité du monde d'Aegina est la présence, sur certaines de ses îles, d'un cristal. Ce cristal n'est pas juste comme les autres éléments du décors tels que les arbres ou les pierres qui sont là pour être  récoltés et transformés par les joueurs. Les cristaux eux sont indestructibles. Dans la nature, les cristaux ont une couleur grise indiquant qu'il n'ont pas été activés par un joueur, ils n'ont alors par d'influence visible sur l'environnement. Lorsqu'un joueur tente d'interagir avec un cristal inactif, une fenêtre (figure \ref{CristalHUD}) apparaît proposant au joueur d'activer le cristal en échange des ressources se trouvants dans le cadre rouge de la figure \ref{CristalHUD}.
+Une particularité du monde d'Aegina est la présence, sur certaines de ses îles, d'un cristal. Ce cristal n'est pas semblable autres éléments du décors tels que les arbres ou les pierres qui sont là pour être  récoltés et transformés par les joueurs. Les cristaux eux sont indestructibles. Dans la nature, les cristaux ont une couleur grise indiquant qu'il n'ont pas été activés par un joueur, ils n'ont alors par d'influence visible sur l'environnement. Lorsqu'un joueur tente d'interagir avec un cristal inactif, une fenêtre (figure \ref{CristalHUD}) apparaît proposant au joueur d'activer le cristal en échange des ressources se trouvant dans le cadre rouge de la figure \ref{CristalHUD}.
 
 Une fois activé, le cristal change de couleur pour prendre celle de l'équipe du joueur (bleu lorsque tout les joueurs sont dans la même équipe). A l'activation, un cristal se spécialise dans l'une des trois catégories suivantes de manière aléatoire : 
 \begin{itemize}
@@ -639,30 +639,31 @@ Une fois activé, le cristal change de couleur pour prendre celle de l'équipe du 
 \item \textbf{Récolte (30\%):} catégorie des cristaux de production 
 \item \textbf{Divin (10\%):} catégorie des cristaux de portail.
 \end{itemize}
-Le premier cristal activer par le joueur sera toujours un cristal divin pour le bien du scénario.
 
-Dans le cadre bleu de la figure \ref{Cristal} se trouvent les informations sur le type du cristal et ses pouvoirs. Les pouvoirs du cristal se distinguent en trois partie :
+Le premier cristal activé par un joueur sera toujours un cristal divin pour le bien du scénario.
+
+Dans le cadre bleu de la figure \ref{CristalHUD} se trouvent les informations sur le type du cristal et ses pouvoirs. Les pouvoirs du cristal se distinguent en trois partie :
 \begin{itemize}
-\item le pouvoir de guerre qui renforce la puissance du joueur. Si un joueur se trouve sur l'île, il bénéficie d'un bonus en attaque et en armure significatif. En effet si le pouvoir de guerre d'un cristal est maximisé, les joueurs sur l'île verront leur attaque multipliée par deux par rapport à un joueur sans cristal. De plus, ils réduiront également de moitié tous les dégâts qu'il recevront;
-\item le pouvoir de la récolte qui renforce la production du joueur. les ressources autour de ce genre de cristal auront plus de chance de réapparaître;
-\item le pouvoir divin qui a une influence plus tactique sur les joueur. ce pouvoir permet juste de désigner un cristal comme un point de réapparition possible pour le joueur. Mais il à une grande importance dans l'histoire du jeu.
+\item le pouvoir de guerre qui renforce la puissance du joueur. Si un joueur se trouve sur l'île, il bénéficie d'un bonus en attaque et en armure significatif. En effet si le pouvoir de guerre d'un cristal est maximisé, les joueurs sur l'île verront leur attaque multipliée par deux par rapport à un joueur sans cristal. De plus, ils réduiront également de moitié tous les dégâts qu'ils recevront;
+\item le pouvoir de la récolte qui renforce la production de l'île. Les ressources autour de ce genre de cristal auront plus de chance de réapparaître;
+\item le pouvoir divin qui a une influence plus tactique sur les joueurs. Ce pouvoir permet de désigner un cristal comme un point de réapparition possible pour le joueur. Ceci peut sembler anecdotique mais a une grande importance dans l'histoire du jeu.
 \end{itemize}
 
  \begin{figure}[h!]
 \begin{center}\includegraphics[width=14cm]{res/CristalHUD} % mettre à jour l'image
-\caption{Interface de l'intéraction avec le cristal} 
-\label{Cristal}
+\caption{Interface de l'interaction avec le cristal} 
+\label{CristalHUD}
 \end{center}
 \end{figure}
 
- Il est possible d'augmenter n'importe quel pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{Cristal}. Cependant un cristal après son activation ne peut être amélioré que trois fois et chaque amélioration est plus chère que la précédente.
+ Il est possible d'augmenter n'importe quel pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{CristalHUD}. Cependant un cristal après son activation ne peut être amélioré que trois fois et chaque amélioration est plus chère que la précédente.
  
- En mode \og joueur contre joueur \fg{}, un cristal est associé à l'équipe du joueur qui l'a activé. Ses pouvoirs ne s'appliquent qu'aux joueurs de cette équipe.
+ En mode \og joueur contre joueur \fg{}, un cristal est associé à l'équipe du joueur qui l'a activé. Ses pouvoirs de guerre et divin ne s'appliquent qu'aux joueurs de cette équipe.
  
  
  \subsubsection{La survie du joueur dans l'environnement}
 
-\paragraph{vie et mort}
+\paragraph{Vie et mort}
 
 La survie étant le thème de notre jeu, il nous fallait construire de bonnes bases pour le développement de cette dernière. Aujourd'hui les éléments clés de notre survie sont présents. Parmi ces éléments, trois sont visibles directement en jeu grâce à des barres (figure~\ref{LHT}). Deux de ces barres, l'une symbolisant la soif et l'autre la faim du personnage, se situent en haut à droite de l'écran tandis que la troisième barre, symbolisant la santé (les points de vie), se trouve au dessus de la barre de sélection.
 
@@ -679,27 +680,27 @@ La survie étant le thème de notre jeu, il nous fallait construire de bonnes base
  
  En tant que développeur d'un jeu de survie nous prenons tout aussi soin de la survie de nos joueurs que de leur mort. Il faut que la mort soit assez terrifiante pour que le joueur évite de mourir intentionnellement dans le seul but de revenir plus rapidement à son point de réapparition. Lors de la première soutenance, lorsque le joueur mourait il revenait à son point de réapparition sans aucune contrepartie et récupérait sa fin, sa soif et sa vie.
 
-Maintenant, lorsque le joueur meurt son personnage disparaît et une fenêtre apparaît devant l'écran du joueur lui demandant si il veut réapparaître ou si il veut quitter. Si il décide de continuer la partie il sera transporté sur un lieu de réapparition mais tous les objets de son inventaire seront jetés au sol sur le lieu de sa mort. Si il décide de quitter, la prochaine fois qu'il lancera le jeu, il se retrouvera sur un point de réapparition mais tous les objets de son inventaire auront été jetés sur son lieu de mort avant de quitter la partie. Comme il n'existe pas d'autre moyen de transporter des objets que dans son inventaire, la mort revient presque à recommencer une partie à zéro. Heureusement, si vous avez un allié avec vous, celui-ci pourra récupérer tous vos objets mais si un ennemi se trouve dans les parages celui-ci pourra décider de vous tuer pour récupérer vos équipements. 
+Maintenant, lorsque le joueur meurt son personnage disparaît et une fenêtre apparaît devant l'écran du joueur lui demandant si il veut réapparaître ou si il veut quitter. Si il décide de continuer la partie il sera transporté sur un lieu de réapparition mais tous les objets de son inventaire seront jetés au sol sur le lieu de sa mort. Si il décide de quitter, la prochaine fois qu'il lancera le jeu, il se retrouvera sur un point de réapparition mais tous les objets de son inventaire auront été jetés sur son lieu de mort avant de quitter la partie. Les seuls objets que le joueur pourra retourver sont ceux qu'il aura stocké dans des coffres. Heureusement, si vous avez un allié avec vous, celui-ci pourra récupérer tous vos objets mais si un ennemi se trouve dans les parages celui-ci pourra décider de vous tuer pour récupérer vos équipements. 
 
 Les points de réapparition sont les îles possédant un cristal de la même équipe que le joueur et la première île si le joueur ne possède pas de cristal.
 
-\paragraph{interaction avec l'environnement}
+\paragraph{Interaction avec l'environnement}
 
 Il a été décidé que le joueur ne pourrait interagir avec son environnement que d'une manière très particulière. En effet, la plupart du temps, le joueur utilise un curseur pour sélectionner l'objet avec lequel il veut interagir. Mais ce mécanisme a un  inconvénient majeur : la souris doit être réservée au déplacement du curseur et ce n'est pas envisageable dans notre cas car la souris est utilisée pour le déplacement de la caméra. 
 
 Il a donc fallu trouver une autre méthode pour sélectionner les objets et bien faire comprendre au joueur quel est l'objet actuellement sélectionné. Après concertation, nous avons remarqué que l'objet avec lequel le joueur veut interagir est souvent l'objet le plus proche de lui (\textit{nearElement}). Nous avons donc décidé qu'un joueur ne pourrait interagir qu'avec le \textit{nearElement} et ce en utilisant le clic droit. L'avantage de n'interagir qu'avec le \textit{nearElement}  est que celui-ci est unique. Il ne peut y avoir qu'un seul objet le plus proche et si plusieurs objets sont à égale distance, alors le premier rencontré sera considéré comme \textit{nearElement}.
 
-Maintenant que la méthode théorique est en place, il faut l'appliquer. Pour ce faire, il suffit de comparer les distances séparant le personnage des objets environnants. La sélection du \textit{nearElement} se résume donc à une recherche de minimum. Mais il faut définir l'ensemble de recherche et, pour cela, être capable de différencier les objets de l'île par exemple. La solution que nous utilisons est la suivante : nous ajoutons un \textit{tag} particulier à tous les objets avec lesquels le joueur peut interagir. Pour ne pas avoir à considérer l'ensemble des objets de monde, nous définissons une sphère d'interaction. Le joueur ne peut interagir qu'avec les objets se trouvant à l'intérieur de cette sphère, les autres sont trop éloignés. L'objet le plus proche du joueur se trouve donc obligatoirement à l'intérieur de cette sphère.
+Maintenant que la méthode théorique est en place, il faut l'appliquer. Pour ce faire, il suffit de comparer les distances séparant le personnage des objets environnants. La sélection du \textit{nearElement} se résume donc à une recherche de minimum. Mais il faut définir l'ensemble de recherche et, pour cela, être capable de différencier les objets de l'île par exemple. La solution que nous utilisons est la suivante : nous ajoutons un \textit{tag} particulier à tous les objets avec lesquels le joueur peut interagir. Pour ne pas avoir à considérer l'ensemble des objets du monde, nous définissons une sphère d'interaction. Le joueur ne peut interagir qu'avec les objets se trouvant à l'intérieur de cette sphère, les autres étant trop éloignés. L'objet le plus proche du joueur se trouve donc obligatoirement à l'intérieur de cette sphère.
 
-Le \textit{nearElement} est maintenant identifié mais il est impossible pour le joueur de faire la différence entre le \textit{nearElement} et les autres éléments. Pour mettre en évidence le \textit{nearElement}, nous utilisons un \textit{shader} particulier. Les \textit{shaders} indiquent au système de rendu comment un objet doit être affiché à l'écran. Le \textit{shader} que nous utilisons éclaircie la couleur de l'objet et le rend visible dans le noir.
+Le \textit{nearElement} est maintenant identifié mais il est impossible pour le joueur de faire la différence entre le \textit{nearElement} et les autres éléments. Pour mettre en évidence le \textit{nearElement}, nous utilisons un \textit{shader} particulier. Les \textit{shaders} indiquent au système de rendu comment un objet doit être affiché à l'écran. Le \textit{shader} que nous utilisons éclaircit la couleur de l'objet et le rend visible dans le noir.
 
-\paragraph{évolution de l'environnement}
+\paragraph{\'{E}volution de l'environnement}
 
-notre environnement évolue de deux façon avec un cycle jour/nuit montrant le temps qui passe et les différentes ressources qui réaparaissent.
+L'environnement du jeu évolue de deux façon avec un cycle jour/nuit montrant le temps qui passe et les différentes ressources qui réaparaissent. Ces dernières, une fois récoltées par une joueur peuvent réapparaître avec une probabilité dépendant de l'activation du cristal lorsqu'un joueur s'approchera à nouveau de la zone.
 
-Pour réaliser un cycle jour nuit, nous avons dû déterminer la durée d'une journée que l'on a divisée en 30 phases. Chacune d'elle correspondant à une image de  \textit{skybox}. Seulement cette méthode à présenté quelques inconvénients. Entre autre, le changement de  \textit{skybox}  était trop brusque et les différentes  \textit{skybox}  n'étaient pas homogènes. C'est pourquoi nous avons dû trouver une autre méthode : la \textit{directional light}.
+Pour réaliser un cycle jour nuit, nous avons dû déterminer la durée d'une journée que l'on a divisée en 30 phases. Chacune d'elle correspondant à une image de  \textit{skybox} qui correspond à  l'arrière plan du monde. Seulement cette méthode à présenté quelques inconvénients. Entre autre, le changement de  \textit{skybox}  était trop brusque et les différentes  \textit{skybox}  n'étaient pas homogènes. C'est pourquoi nous avons dû trouver une autre méthode : la \textit{directional light}.
 
-La \textit{directional light} est un gameobject propose par unity. Son intérêt majeur est que l'orientation de cette lumière influence la  \textit{skybox}  du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui convertit la longueur d'onde des rayons lumineux en couleur RGB{\footnote{http://stackoverflow.com/questions/1472514/convert-light-frequency-to-rgb}} et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante où $\lambda$ est la longueur et $t$ le temps : 
+La \textit{directional light} est un gameobject proposé par unity. Son intérêt majeur est que l'orientation de cette lumière influence la  \textit{skybox}  du monde. De plus nous pouvons choisir la couleur et l'intensité de cette lumière. Pour ce faire nous utilisons une fonction qui convertit la longueur d'onde des rayons lumineux en couleur RGB{\footnote{http://stackoverflow.com/questions/1472514/convert-light-frequency-to-rgb}} et nous représentons le spectre solaire à l'aide de la fonction mathématique suivante où $\lambda$ est la longueur et $t$ le temps : 
 $$spectre(\lambda,t)=255 * ((3.25t - 4)\lambda^2 + (-4t + 4)\lambda +(0,08 (t-1)))$$
 
 La figure~\ref{Graph1} montre les évolutions du spectre lumineux. L'arc des abscisses représente la longueur d'onde et celui des ordonnées l'intensité. Pour chaque valeur de $t$ (moment de la journée), nous pouvons donc calculer un spectre lumineux. La courbe bleue ($t=0$) représente le spectre quand le soleil est au zénith et la courbe rouge ($t = 1$) correspond au spectre au moment du coucher du soleil. Les courbes vertes ($t=0,3$ et $t = 0,6$) montrent quant à elles l'évolution de la courbe. A chaque instant, nous échantillonnons la courbe actuelle en prenant 40 valeurs équiréparties, ce qui nous donne un tableau des couleurs (en RGB) que notre astre est censé émettre. Ce tableau contient environ 40 valeurs or une \textit{directional light} ne possède qu'une seule couleur. Il a donc fallu trouver un moyen pour réunir ces 40 couleurs en une seule. Pour ce faire, nous parcourons toutes les valeurs du tableau et  nous formons une nouvelle couleur en choisissant les plus grandes valeurs de rouge, de vert et de bleu rencontrées.
@@ -714,16 +715,14 @@ $$ z(t)= R sin(wt)$$
 \end{center}
 Ainsi, la \textit{directional light} suit une orbite circulaire autour du point de coordonnées (0,0,0). L'orientation de la \textit{directional light} est définie grâce à la fonction \textit{lookat} qui oriente un \textit{gameobject} vers un autre \textit{gameobject}, le point (0,0,0) dans notre cas. 
 
-Un procédé similaire est utilisé pour la première scène du jeu. En effet, dans cette scène, la caméra orbite autour d'une île et nous nous servons de la fonction \textit{lookat} pour orienter la caméra vers l'île. Mais, contrairement au cas de la \textit{directional light}, le déplacement utilise les propriétés de la base polaire. En effet, comme l'objet est toujours orienté vers le centre de son orbite, il suffit de lui appliquer une vitesse constante pour qu'il décrive une trajectoire circulaire.
-
 \begin{figure}[h]
 \begin{center}\includegraphics[width=11cm]{res/DNgraph.png}
-\caption{évolution du spectre lumineux en fonction du temps} 
+\caption{\'{E}volution du spectre lumineux en fonction du temps} 
 \label{Graph1}
 \end{center}
 \end{figure}
 
-De ce qui est de la réapparition des ressources chaque ressource à une faible probabilité de réapparaître tout les X temps % à mettre à jour
+
 
 \subsubsection{Les Créatures (Florian)}
 
@@ -731,14 +730,14 @@ Chaque type de créature est défini par un ensemble de caractéristiques permettan
 \begin{itemize}
 \item Une probabilité d'apparition ;
 \item Des dégâts ;
-\item un valeur d'intelligence ;
+\item Une valeur d'intelligence ;
 \item Une vision d'agro ;
 \item Une vision de fuite ;
 \item Une vitesse de déplacement en marche ;
 \item Une vitesse de déplacement en course ;
 \item Une vitesse d'attaque ;
 \item Une liste de biomes sur lesquels la créature peut apparaître ;
-\item Un ensemble d'objets que la créature peut produire à sa mort ;
+\item Un ensemble d'objets que la créature peut produire à sa mort.
 \end{itemize}
 
 
@@ -756,49 +755,48 @@ Pour gérer les déplacements des créatures, nous avions besoin de connaître les c
 
 Une fois le graphe généré pour chaque chunk, nous avons pu coder un algorithme de \textit{path finding}, le \textit{A*}. Ceci nous permet de trouver le meilleur chemin pour aller d'un point A à un point B du graphe. De plus les îles séparées par du vide ou un pont ont des graphes disjoints, cela permet entre autre que les créatures restent sur leur île. 
 \\
-Une fois le déplacement implémenté, nous nous sommes occupés de l'appliquer aux créatures. Nous avons la possibilité de déplacer nos créatures intelligemment en tenant compte de leurs caractéristiques. Pour déterminer le comportement d'un créature, poursuite du joueur, fuite ou attaque, nous tenons uniquement compte de la distance entre la créature et le joueur le plus proche pour le moment. Tant qu'une créature est loin de tout personnage,  elle va  se promener en choisissant aléatoirement un point  de destination sur le graphe (si le point de destination choisi n'est pas accessible, un nouveau choix aléatoire est réalisé). Dès qu'un joueur est trop proche alors la créature va fuir (le point de destination sera éloigné du joueur). Cependant si le joueur est très proche ou s'il l'attaque, la créature va elle aussi chercher à l'attaquer (ou se défendre). Elle poursuit alors le joueur en évitant tous les obstacles. Une fois à portée de celui-ci, elle va l'attaquer.
+Une fois le déplacement implémenté, nous nous sommes occupés de l'appliquer aux créatures. Nous avons la possibilité de déplacer nos créatures intelligemment en tenant compte de leurs caractéristiques. Pour déterminer le comportement d'une créature, poursuite du joueur, fuite ou attaque, nous tenons uniquement compte de la distance entre la créature et le joueur le plus proche. Tant qu'une créature est loin de tout personnage,  elle va  se promener en choisissant aléatoirement un point  de destination sur le graphe (si le point de destination choisi n'est pas accessible, un nouveau choix aléatoire est réalisé). Dès qu'un joueur est trop proche alors la créature va fuir (le point de destination sera éloigné du joueur). Cependant si le joueur est très proche ou s'il l'attaque, la créature va elle aussi chercher à l'attaquer (ou se défendre). Elle poursuit alors le joueur en évitant tous les obstacles. Une fois à portée de celui-ci, elle va l'attaquer.
 On peut noter que cette implémentation va permettre de varier les comportements en fonction des créatures en utilisant un seul script d'IA. Par exemple, les sangliers vont pouvoir attaquer sans fuir dès qu'un joueur approche alors que le pampi fuira et n'attaquera le joueur que s'il est agressé. Nous pouvons aussi imaginer des créatures qui ne font que fuir sans jamais attaquer le joueur comme les lapins par exemple.
 
 \subsubsection{La chasse}
 
 Avec l'ajout des créatures, il nous faut aussi le moyen de nous défendre. C'est pour cela que nous avons donné à Ille le moyen d'attaquer. En étant immobile ou en se déplaçant le joueur peut, en utilisant un clic gauche, déclencher l'attaque de Ille. Celui-ci va alors porter un rapide coup en avant avec l'objet dans ses mains ou à main nue si il ne possède pas d'objet. Cependant il faut faire attention, si Ille saute ou utilise un objet pendant les deux premiers dixièmes de seconde après le début de son attaque, celle-ci sera annulée. De plus, Ille n'est pas un barbare et cela ne sert à rien de cliquer le plus vite possible avec la souris car Ille ne peut déclencher une attaque que tous les huit dixièmes de seconde même si la précédente attaque a été annulée.
 
-Ille possède également d'autre type d'attaque que le simple coup verticale déclenché par le clic gauche. avec une arme dans la main et un clic droit Ille peut utilisé un coup horizontale, en faisant un clic gauche pendant qu'il court Ille va déclenché une charge enfin en faisant un clic gauche dans les airs Ille va déclenché une attaque aérienne. ces attaque possèdent des temps de recharge différents de l'attaque de base et attaque sur des zones différentes.
+Ille possède également d'autres types d'attaques que le simple coup vertical déclenché par le clic gauche. Avec une arme dans la main et un clic droit, Ille peut frapper horizontalement. En faisant un clic gauche pendant qu'il court Ille va déclencher une charge.  Enfin en faisant un clic gauche dans les airs, Ille va déclencher une attaque aérienne. Ces attaques possèdent des temps de recharge différents de l'attaque de base et portent sur des zones différentes.
 
-Lors de l'attaque d'une autre personne ou d'une créatures celle-ci subit un recul du à l'attaque. 
+Lors de l'attaque, la  \og victime\fg{}, en plus de subir des dommages, va reculer. 
 
-Certains types d'armes peuvent modifier légèrement les attaque présentes ici. Une lance possède un portée plus grande que les autres armes mais des dégâts plus faible tandis qu'une hache possède des dommage plus important mais allonge le temps d'attente entre chaque attaque.
+Les effets d'une attaque diffèrent en fonction de l'arme utilisée. Une lance possède un portée plus grande que les autres armes mais des dégâts plus faibles alors qu'une hache possède des dommages plus importants mais allonge le temps d'attente entre deux attaques. L'arme du joueur à donc un grand impact sur les dégâts qu'il inflige. 
 
-Avec l'ajout de la capacité d'attaque deux nouvelles valeurs sont mises en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui est influencée par l'arme qu'il possède grâce à la formule : $$Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$$
-L'arme du joueur à donc un grand impact sur les dégâts qu'il inflige. 
+Avec l'ajout de la capacité d'attaque, deux nouvelles valeurs sont mises en jeu : l'attaque et l'armure. Ille possède une attaque prédéfinie qui est influencée par l'arme qu'il possède grâce à la formule : $$Dommage De L'attaque = Attaque Du Joueur \times Coefficient D'attaque De L'arme$$
 
 Cependant les dommages d'une attaque ne sont pas directement de la vie perdue par la créature ou le joueur attaqué car celui-ci peut utiliser son armure pour se défendre. La vie perdue suit alors la formule : $$Vie Perdue =  Dommage De L'attaque \times \frac{1}{1+Armure *Coefficient D'armure}$$
 
-Lorsqu'il s'agit d'une créature, son $Coefficient D'attaque De l'arme$ est égal à 1 et son $Armure$ est égale à 0. Pour rendre des créatures plus résistantes que d'autres, nous augmentons leurs points de vie. Cependant lors de la nuit l'$Armure$ des créature est augmenté et ils ne subissent plus de recul.
+Lorsqu'il s'agit d'une créature, son $Coefficient D'attaque De l'arme$ est égal à 1 et son $Armure$ est égale à 0. Pour rendre des créatures plus résistantes que d'autres, nous augmentons leurs points de vie. Cependant, la nuit l'$Armure$ des créatures est augmentée et elles ne subissent plus de recul.
 
-Nous avons également ajouter des pièges dans le jeu permettant d'infliger des dégâts aux créatures marchant dessus. De plus ces pièges attirent les créatures en fonction de leur intelligence. Les créatures les moins intelligente fonceront sur les pièges tandis que celles plus intelligente ne se laisserons pas tenter par ceux-ci.
+Nous avons également ajouté des pièges dans le jeu permettant d'infliger des dégâts aux créatures marchant dessus. Ces pièges attirent les créatures en fonction de leur intelligence. Les créatures les moins intelligentes fonceront sur les pièges tandis que celles plus intelligentes ne se laisseront pas tenter par ceux-ci.
 
 
 \pagebreak
 
-\subsection{système multi-joueurs}
+\subsection{Système multi-joueurs}
 
-Une des particularité de notre jeux est qu'il est gérer de la même façon en solo et en multi-joueurs. On peut donc dire que tous nos types de jeu sont multi-joueurs même si on peut y joueur tout seul. Dans cette partie nous allons justement présenter tout ce qui concerne le multi-joueur.
+Une des particularité de notre jeu est qu'il est géré de la même façon en solo et en multi-joueurs. On peut donc dire que tous nos types de jeu sont multi-joueurs même si on peut y jouer tout seul. Dans cette partie nous allons justement présenter tout ce qui concerne le mode multi-joueurs.
 
-\subsubsection{plateforme multi-joueurs}
+\subsubsection{Plateforme multi-joueurs}
 
 Le mode multi-joueurs est une part importante du projet car celle-ci permettra la coopération des joueurs pour progresser dans le jeu.
 Nous avons dans un premier temps utilisé les fonctionnalités de  \textit{Unet} pour pouvoir créer un serveur (ou un host dans notre cas), mais aussi pouvoir rejoindre un serveur grâce à son adresse IP.
 
-Nous avons dans un second temps synchronisé la position, la rotation et les actions des joueurs. Pour cela on a d'abord utilisé le composant de unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Nous avons donc codé nous-même un script permettant cette synchronisation. Son principe est d'envoyer au serveur la position et la rotation du personnage dès que le joueur les modifie, puis celui-ci envoie ces mêmes informations à tous les autres clients. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation. Cela consiste à déduire les positions intermédiaires d'un joueur à partir de son ancienne et de sa nouvelle position.
+Nous avons dans un second temps synchronisé la position, la rotation et les actions des joueurs. Pour cela nous avons d'abord utilisé le composant de unity \textit{NetworkTransform}, mais celui-ci ne permettait pas la synchronisation fluide des personnages. Nous avons donc codé nous-même un script permettant cette synchronisation. Son principe est d'envoyer au serveur la position et la rotation du personnage dès que le joueur les modifie, puis celui-ci envoie ces mêmes informations à tous les autres clients. De plus pour rendre les déplacements le plus fluide possible nous utilisons le principe d'interpolation. Cela consiste à déduire les positions intermédiaires d'un joueur à partir de son ancienne et de sa nouvelle position.
 
 Pour finir nous avons synchronisé les éléments, les sons et les caractéristiques du monde, que ce soient les îles, les biomes, les bruits de pas des joueurs, l'état de la journée (jour/nuit) ou bien les arbres.
 
-\subsubsection{interface de communication}
+\subsubsection{Interface de communication}
 
-Comme déjà précisé, la coopération est un élément important du jeu. Pour cela la communication est primordiale. Nous avons donc ajouté un chat qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. 
+Comme déjà précisé, la coopération est un élément important du jeu. Pour cela, la communication est primordiale. Nous avons donc ajouté un \textit{chat} qui permet aux joueurs de s'envoyer des messages sans passer par un logiciel tiers. 
 
-Nous pouvons noter qu'il est  utile de connaître la liste des joueurs connectés. Nous avons donc donné la possibilité aux joueurs d'afficher la liste des joueurs connectés en appuyant sur la touche  \textit{tabulation} de leur clavier, elle apparaît en haut de l'écran (voir la figure \ref{ListPlayer}).
+Nous pouvons noter qu'il est  utile de connaître la liste des joueurs connectés. Nous avons donc donné la possibilité aux joueurs d'afficher la liste des joueurs connectés en appuyant sur la touche  \textit{tabulation} de leur clavier, la liste apparaît alors en haut de l'écran (voir la figure \ref{ListPlayer}).
 
 \begin{figure}[h!]
 \begin{center}
@@ -811,18 +809,19 @@ Nous pouvons noter qu'il est  utile de connaître la liste des joueurs connectés.
 
 \subsubsection{Commandes et système d'opérateur}
 
- le \og propriétaire \fg{} de la partie est un opérateur, cela lui permet de faire des commandes de triche telles que \textsc{/give}. Cependant l'ensemble des joueurs possèdent des commandes utilitaires et de communication.
+ Le \og propriétaire \fg{} de la partie est un opérateur, cela lui permet d'exécuter des commandes de \textit{triche} telles que \textit{/give} pour obtenir des ressources. Cependant l'ensemble des joueurs peut exécuter des commandes utilitaires et de communication.
 \\
-Disponible pour tous les joueurs :
+\textbf{Commandes disponibles pour tous les joueurs} :
 \begin{description}
 \item[/help \{page (int)\} :] énumère les commandes avec leurs arguments si la page n'est pas spécifiée alors affiche la première page ;
 \item[/msg <player (string)> <message (string)> :] envoie un message privé au joueur dont le nom du personnage est passé en  paramètre ; 
-\item[/seed :] affiche dans le chat le seed du monde actuel ;
+\item[/graine :] affiche dans le chat le graine du monde actuel ;
 \item[/music <clip (int)> :] lance la musique correspondant au clip ;
 \item[/team <message (string)> :] envoie un message uniquement lisible par les coéquipiers  du joueur.
 \end{description}
 
-Disponible uniquement pour les opérateurs :
+\noindent
+\textbf{Commandes disponibles uniquement pour les opérateurs} :
 \begin{description}
 \item[/time <value (int)> :] détermine l'heure de la journée ;
 \item[/give \{player (string)\} <id (int) ou nom (string)> \{quantity (int)\} :] ajoute à l'inventaire d'un joueur (ou nous-même s'il n'est pas spécifié) la quantité indiquée (ou un seul s'il n'est pas spécifié) de l'objet dont l'identifiant correspond au paramètre ; 
@@ -830,15 +829,15 @@ Disponible uniquement pour les opérateurs :
 \item[/kick <player (string)> :] fait sortir du serveur le joueur dont le personnage est passé en paramètre ;
 \item[/save :] force la sauvegarde du monde ;
 \item[/kill <player (string)> :] tue le personnage passé en paramètre ;
-\item[/effect <player (string)> <id (int)> \{power (int)\} :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est d'un si elle n'est pas spécifiée) ;
+\item[/effect <player (string)> <id (int)> \{power (int)\} :] affecte le joueur passé en paramètre de l'effet correspondant à l'identifiant avec une puissance choisie (la puissance est égale à 1 si elle n'est pas spécifiée) ;
 \item[/op <player (string)> :] donne les droits d'opérateur au joueur passé en paramètre ;
 \item[/deop <player (string)> :] supprime les droits d'opérateur au joueur passé en paramètre ;
 \item[/choseteam <id (int) ou nom (string)> \{player (string)\} :] attribue à une équipe choisie le joueur passé en paramètre (nous s'il n'est pas spécifié) .
 \end{description}
 
-\subsubsection{Les modes de jeu multijoueur}
+\subsubsection{Les modes de jeu multi-joueurs}
 
-Il existe actuellement deux mode de jeu le mode coopération (abrégé en COOP) et le mode joueur contre joueur (abrégé en JcJ). dans le mode coopération tous les joueurs se retrouve dans un même monde avec les même objectifs à accomplir. Ceux-ci doivent coopérer pour réussir avancer dans l'histoire et vaincre le boss final. Cependant les joueurs ne peuvent pas se battre les uns avec les autres c'est pour cela qu'il existe un mode JcJ. Dans le mode JcJ les joueurs sont séparé en plusieurs équipe et peuvent se battre avec les membres des autres équipes. Dans ce mode de jeu il n'y a pas vraiment de règle permettant de battre une autre équipe. Nous préférons laisser aux joueurs le choix des règle et de comment jouer.
+Il existe actuellement deux modes de jeu mutli-joueurs, le mode coopération (abrégé en COOP) et le mode joueur contre joueur (abrégé en JcJ). Dans le mode coopération tous les joueurs se retrouvent dans un même monde avec les mêmes objectifs à accomplir. Ils doivent coopérer pour pouvoir avancer dans l'histoire et vaincre le boss final. Cependant les joueurs ne peuvent pas se battre les uns contre les autres, c'est pour cela qu'il existe un mode JcJ. Dans le mode JcJ, les joueurs sont séparés en plusieurs équipes et peuvent se battre avec les membres des autres équipes. Dans ce mode de jeu, il n'y a pas vraiment de règle permettant de battre une autre équipe. Nous préférons laisser aux joueurs le choix des règles qu'ils devront respecter mais qui ne seront pas contrôlées par le jeu.
 
 \pagebreak
 
@@ -847,11 +846,11 @@ Il existe actuellement deux mode de jeu le mode coopération (abrégé en COOP) et 
 
 \section{La communication}
 
-Même si notre projet est avant tous un projet d'étude devant seulement être évaluer par le jury de l'école nous ne l'avons pas garder secret de notre entourage et nous l'avons même utilisé lors des JPO de nos écoles. Cette partie regroupe toute la communication effectué pour faire connaître notre jeu ou partagé des informations dessus. 
+Même si notre projet est avant tout un projet d'étude devant seulement être évalué par le jury de l'école, nous ne l'avons pas caché à notre entourage et nous l'avons même utilisé lors des JPO de nos lycées dans lesquelles nous avons présenté l'EPITA. Cette partie regroupe toute la communication effectuée pour faire connaître notre jeu ou partager des informations le concernant. 
 
 \subsection{Phases de test alpha et bêta}
 
-pendant le développement nous avons demandé à nos différents contact de tester celui-ci pour nous donner des avis sur des points à modifier. Nous avons fait deux session de test , une avant chaque soutenance intermédiaire, que nous avons appelé l'alpha et la bêta de notre jeu.
+Pendant le développement, nous avons demandé à nos différents contacts de tester le jeu pour nous donner leur avis sur des points à modifier. Nous avons fait deux sessions de tests, une avant chaque soutenance intermédiaire, que nous avons appelées l'alpha et la bêta de notre jeu.
 
 \subsubsection{Alpha (Florian)}
 
@@ -861,7 +860,7 @@ La dernière étape avant la première soutenance était de partager notre première 
 \item Un bug graphique au niveau de l'élément proche lorsque la caméra était à l'intérieur ;
 \item La musique qui en multi-joueurs pouvait se superposer avec la musique des autres joueurs alentour. 
 \end{itemize}
-Nous avons corrigé la totalité des bugs rapportés pour produire la version \textit{v1.1-alpha} puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques. Ces modifications ont abouti à la version \textit{v.1.2-alpha} qui est la version présentée lors de la première soutenance.
+Nous avons corrigé la totalité des bugs rapportés pour produire la version \textit{v1.1-alpha} puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques. Ces modifications ont abouti à la version \textit{v.1.2-alpha} qui était la version présentée lors de la première soutenance.
 
 \subsubsection{Bêta (Florian)}
 
@@ -869,9 +868,9 @@ La dernière étape avant la seconde soutenance était de partager notre version ac
 \begin{itemize}
 \item L'animation d'attaque par le joueur ;
 \item L'interaction avec des petits éléments ;
-\item Un fort déséquilibrage du jeu, celui-ci était beaucoup trop dur. 
+\item Un fort déséquilibrage du jeu, celui-ci était beaucoup trop difficile. 
 \end{itemize}
-Nous avons corrigé la totalité des bugs rapportés, puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques et de gameplay. Ces modifications ont abouti à la version \textit{v.1.1-beta} qui est la version présentée lors de la seconde soutenance.
+Nous avons corrigé la totalité des bugs rapportés, puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques et de gameplay. Ces modifications ont abouti à la version \textit{v.1.1-beta} qui était la version présentée lors de la seconde soutenance.
 
 \pagebreak
 
@@ -881,17 +880,17 @@ Le site web que nous avons créé (accessible à  l'adresse http://jmounier.github.
 \begin{itemize}
 \item nous devions respecter l'obligation qui était de construire un site web;
 \item créer un lieu où nos testeurs et nos, nous espérons, futurs joueurs puissent trouver toutes les informations nécessaires afin de rendre leur expérience en jeu agréable;
-\item permettre à ces personnes de télécharger notre jeu mais aussi de nous transmettre leurs expériences.
+\item permettre à ces personnes de télécharger notre jeu.
 \end{itemize}
 Tout ceci est réalisable depuis les différentes pages présentes sur le site, que nous allons maintenant vous présenter.
 
-\subsubsection{la page d'accueil}
+\subsubsection{La page d'accueil}
 
 Sur cette page (voir figure \ref{Accueil}) vous pourrez apercevoir, au premier plan plusieurs éléments : 
 \begin{itemize}
 \item un bref descriptif du jeu;
-\item des accès pour télécharger la version béta de Aegina en fonction de votre système d'exploitation, Windows, Mac et GNU/Linux;
--\item la dernière actualité ajoutée sur le site.
+\item des accès pour télécharger la version actuelle de Aegina en fonction de votre système d'exploitation, Windows, Mac et GNU/Linux;
+\item la dernière actualité ajoutée sur le site.
 \end{itemize}
 Vous pouvez aussi voir sur le coté un menu, il permet de naviguer entre les différentes pages du site web, il est positionné au même endroit sur toutes les pages.
 
@@ -904,7 +903,7 @@ Vous pouvez aussi voir sur le coté un menu, il permet de naviguer entre les diff
 
 \subsubsection{Les actualités}
 
-Sur la pages des actualités (voir figure \ref{News}), que nous tiendrons à jour vous pourrez trouver les différents ajouts qu'il y aura dans le jeu.
+Sur la page des actualités (voir figure \ref{News}), que nous tiendrons à jour, vous pourrez trouver les différents ajouts qu'il y aura dans le jeu.
 
 Les actualités pourront concerner l'ajout d'un nouveau biome, de monstres ou encore le lancement d'une nouvelle version disponible au grand public.
 
@@ -919,15 +918,13 @@ Nous espérons que les différentes annonces qui seront faites sur cette page remp
 
 \subsubsection{Le wiki}
 
-La page wiki (voir figure \ref{Wiki}) est pour notre équipe une page très importante, nous connaissons Aegina et donc nous connaissons la difficulté de rester en vie dans ce monde hostile même pour des personnes aguerries, c'est pourquoi nous avons décidé de mettre en place cette page.
+La section wiki (voir figure \ref{Wiki}) est pour notre équipe  très importante, nous connaissons Aegina et donc nous connaissons la difficulté de rester en vie dans ce monde hostile même pour des personnes aguerries, c'est pourquoi nous avons décidé de mettre en place cette section.
 
 Dans ce wiki vous pourrez trouver toutes sortes d'informations, toutes plus utiles les unes que les autre pour survivre. 
 
 Vous y trouverez les différents objets que vous pouvez posséder dans le jeu ainsi que leurs possibles effets, les éléments et monstres qui existent dans Aegina.
 
 Le wiki est actuellement en quatre partie : la liste des objets, la liste des éléments que l'on trouve sur les îles, la liste des créatures et la liste des effets. On peut passer d'une partie à l'autre en cliquant sur le nom de la partie en haut de la page
-
-Il faut cependant savoir que ce wiki est rempli au fur et à mesure de notre développement, il peut donc manquer certaine informations.
 
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=12cm]{res/Wiki}
@@ -938,26 +935,58 @@ Il faut cependant savoir que ce wiki est rempli au fur et à mesure de notre déve
 
 \subsubsection{L'équipe}
 
-Sur la dernière page de notre site web vous pourrez trouver diverses informations sur les membres de l'équipe AIM$^{2}$, ces informations présenterons les membres de l'équipe et leur rôle dans la création du jeux Aegina.
+Sur la dernière page de notre site web vous pouvez trouver diverses informations sur les membres de l'équipe AIM$^{2}$, ces informations présentent les membres de l'équipe et leur particularité dans l'équpe.
 
-% toutes les parties site web sont à compléter
 
+
+\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Conclusion}
 
-% conclusion à écrire
+Le projet d'Aegina est finalement terminer. Nous pensons avoir fait un jeu intéressant autant du point de vue d'un joueur que d'un programmeur. Nous avons réaliser tous ce qui était prévu dans le cahier des charges et avons développé de nombreux aspect du jeu bien plus que nous l'imaginions. Finalement ce projet a également été pour nous un moyen d'acquérir de nombreuses compétences qu'elles soient professionnelles ou humaines.
 
-% un bilan personnel par personne
+\paragraph{Florian Amsallem}
+Le projet Aegina m'a apporté de nouvelles compétences et m'a permis d'en améliorer certaines. Tout d'abord d'un point de vue technique, je ne connaissais pas du tout Unity et désormais j'en maîtrise  l'utilisation. De plus, j'ai consolidé mes connaissances en C\#. Le dernier point technique dans lequel j'ai pu m'améliorer est l'algorithmique. Ma contribution sur certaines taches techniques telles que l'intelligence artificiel des créatures ou la génération du monde m'ont permis d'implémenter des algorithmes assez avancés tels que du pathfinding.
 
-% Table des illustration à faire
+Un autre point dans lequel j'ai progressé, les relations humaines. Premièrement, c'était le premier projet que je réalisais en groupe, j'ai dû m'adapter au rythme du travail du groupe. Notamment, au début du projet où j'avançais trop rapidement, j'ai donc ralenti et pris plus de temps à aider les membres du groupe sur les problèmes qu'ils rencontraient. Par la suite, le groupe dans son intégralité progressait à un rythme convenable permettant d'atteindre les objectifs que nous étions fixés.
+D'autre part, d'un point de vue méthodologique, j'ai exigé que les membres du groupe suivent une norme syntaxique classique et documentent l'ensemble de leur code. Cela nous a permis au final d'avoir un projet \og propre\fg{} et donc de pouvoir plus facilement déboguer. En outre, l'utilisation de git nous a permis de relire le code d'autres membres du groupe et de valider son intégration au projet, une fois encore pour limiter les bugs.
+
+Finalement je suis satisfait du travail fourni par l'ensemble du groupe et de l'ambiance de travail qui se déroula sans le moindre conflit.
+
+\paragraph{Théo Issarni}
+Le projet Aegina, ainsi que les membres qui le composent m'ont apporté énormément de choses tout le long de ce semestre, ce sont ces dernières que nous allons maintenant voir. 
+
+La première chose que ce projet m'a apportée est une des plus importantes, il s'agit de ma « première » expérience sociale, car Aegina est mon premier vrai projet avec un groupe de travail. Cette première expérience s'est très bien déroulée, il n'y a jamais eu de problème de cohésion au sein de notre groupe. Je pense que cela est dû au fait que nous avons su résoudre rapidement et efficacement les différents problèmes qui sont apparus durant le projet car nous avons toujours cherché à les résoudre en équipe et non à incriminer un \og fautif\fg{}.
+
+Dans le cadre de ce projet, j'ai dû apprendre à utiliser différents logiciels comme \og Gimp\fg{}, \og Blender\fg{} ou encore \og Unity\fg{},  je pense que ces derniers me seront une nouvelle fois utiles dans un futur plus ou moins proche. 
+
+En plus de me faire utiliser de nouveaux logiciels, ce projet m'a permis d'améliorer mes compétence en C\#. L'exigence qui existait dans notre groupe à tous les niveaux était parfois déconcertante cependant, me concernant, cette exigence m'a permis d'acquérir une bonne méthode travail, une propreté et un rigueur dans ce que j'entreprenais. Cette exigence a permis, pour les différents membres du groupe, une relecture plus aisée du code que l'on écrivait ce qui nous permettait de minimiser notre temps de « décryptage » lors de nos recherches de bugs.
+
+Je suis satisfait du travail que nous avons accompli avec ce projet, car nous avons réussi à remplir tout les objectifs que nous nous étions fixés lorsque nous nous sommes lancés dans cette aventure.
+
+\paragraph{Julien Mounier}
+Ce projet m'a beaucoup appris d'un point de vue méthodologique et relationnel en plus de m'apporter un maîtrise correcte du logiciel \textit{UNITY}. Car, jusqu'à présent, je n'avais jamais eu à travailler pour quelqu'un d'autre. J'étais le seul à fixer les objectifs à atteindre et j'étais le seul à choisir la méthode pour y arriver. Mais durant ce projet, plusieurs éléments rendaient cette méthode impossible.
+
+Tout d'abord, il fallait que mon travail puisse être lu par tous les membres du groupe. Ce point à été facilement résolu car Florian nous a très vite imposé des normes par rapport à la rédaction de notre code. Et en effet, normaliser tout le code dés le début du projet nous a facilité la communication et la correction des différents scripts.
+
+Le deuxième point important a été la répartition des tâches car plusieurs personnes étaient chargées de la même tâche mais seulement une en était le responsable. C'est-à-dire que les autres personnes affectées à cette tâche devaient se conformer aux idées du responsable. La communication était quand même possible et nous pouvions le faire changer d'avis mais c'est le responsable qui avait toujours le dernier mots.
+
+\paragraph{Romain Mounier}
+Ce projet m'a appris de nombreuses choses d'un point de vue méthodologique. La méthodologie était mon principal défaut lors du début de ce projet car j'écrivais et je programmais seulement pour que je me comprenne et non pour que l'on me comprenne. Le travaille en groupe, le suivie d'une norme syntaxique lors de la programmation et l'écriture des différents rapport en \LaTeX{} m'ont permis de m'amélioré sur ces points là. 
+
+J'ai également appris à utiliser de nombreux outils informatique comme \og Gimp\fg{}, \og Unity\fg{} ou \og Git\fg{}. J'ai également beaucoup travailler avec le c\# et le \LaTeX{} qui m'on permit de m'amélioré dans ces langages.
+
+professionnellement en tant que chef de groupe j'avais la charge d'organiser les différents membres du groupe et de les pousser à travailler pour que le projet avance comme prévu mais cela fut facile car ils étaient tous très motivé et, à part pour l'écriture du \LaTeX{}, je n'ai pas vraiment eu besoin d'agir.
+
+Enfin nous avons fait face à quelques conflits mineurs lors du projet qui concernait certains aspect du jeu qui avait était mal défini au sein du groupe et dont plusieurs membres avait une vision différentes. Mais ce genre de conflits se sont très facilement résolus autours d'une discussion et aucune tension n'est vraiment apparu entre les membres du groupe. Je pense que ces humainement que le projet m'a le moins apporté justement car aucune situation grave n'a eu besoin d'être gérer. Il m'a été facile de m'entendre et de travailler avec les autres membres du groupe d'autant plus que l'un d'eux était mon frère.
 
 \pagebreak
 
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
 
 \tableofcontents
-
+ \listoffigures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
