@@ -227,7 +227,7 @@ Les lapins sont des créatures très rapides et fuyardes ce qui peut embêter les a
 
 Il existe dans le monde d'Aegina, plus précisément dans l'hiver d'Aegina, des pingouins semblables à ceux que l'on connaît. Cependant cette ressemblance n'est que physique.
 
-Les pingouins d'Aegina sont dotés d'une très grande intelligence, d'un ego surdimensionné et d'une vision assez pessimiste du monde. Cela se remarque dans leur comportement. Les pingouins ignorent royalement les humains ainsi que toutes les autres créatures peuplant Aegina, les jugeant indignes de recevoir une quelconque réaction de leur part. Mais une fois attaqués, ils se résignent extrêmement rapidement, se disant qu'il vont de toute façon finir par mourir un jour et se laissent ainsi dévorer. Leur intelligence leur permet de facilement deviner les intentions des humains et d'éviter leurs pièges.
+Les pingouins d'Aegina sont dotés d'une très grande intelligence, d'une forte curiosité et d'une vision assez pessimiste du monde. Cela se remarque dans leur comportement. Les pingouins s'intéressent beaucoup aux humains les trouvant étrange et vont a sa rencontre pour tenter de comprendre ce qu'il est.Une fois attaqués le pingouin se résigne extrêmement rapidement, se disant qu'il va de toute façon finir par mourir un jour et se laisse ainsi dévorer. Leur intelligence leur permet de facilement deviner les mauvaises intentions des humains et d'éviter leurs pièges.
 
 Cependant, avec de telles réactions, on peut se demander comment ils ont réussi à survivre mais la raison est simplement que personne n'attaque les pingouins.
 
@@ -241,8 +241,6 @@ Un des éléments que nous avions promis lors de la création de notre jeu était qu
 
 Un  défaut majeur de la première version de notre jeu était que celui-ci permettait de nombreuses actions (comme ouvrir un inventaire, se déplacer, jeter des objets) mais aucune information ne disait comment les réaliser. Nous avons donc décidé de créer un tutoriel expliquant au joueur comment effectuer l'ensemble de ces actions. Nous profitons également de ce tutoriel pour introduire l'histoire du jeu puisque qui se poursuivra à la suite du tutoriel. Seulement, contrairement au tutoriel qui est propre au joueur puisque chaque joueur doit pouvoir apprendre à joueur, l'histoire sera propre au monde et ne se répètera pas pour chaque joueur.
 
-Au lancement d'une partie, tout nouveau joueur voit une fenêtre apparaître lui demandant si oui ou non il veut faire le tutoriel. Ne pas faire le tutoriel n'aura aucune influence sur le reste du jeu car celui-ci sera alors considéré comme réussi.
-
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{res/Tutoriel}
@@ -251,21 +249,18 @@ Au lancement d'une partie, tout nouveau joueur voit une fenêtre apparaître lui d
 \end{center}
 \end{figure}
 
+Au lancement d'une partie, tout nouveau joueur voit une fenêtre apparaître lui demandant si oui ou non il veut faire le tutoriel. Ne pas faire le tutoriel n'aura aucune influence sur le reste du jeu car celui-ci sera alors considéré comme réussi.
+
+
+
 Dans le jeu, le tutoriel est visuellement présent grâce à deux zones de texte. La première zone de texte dans le rectangle rouge de la figure \ref{Tutoriel} raconte le développement de l'histoire du tutoriel. C'est dans cette partie que les raisons des actions de Ille sont expliquées, ce qui donne une logique à l'existence du tutoriel. Ce texte est temporaire et ne reste que peu de temps à l'écran car celui-ci prend beaucoup de place et risquerait d'encombrer la vision du joueur. 
 
 La seconde zone de texte dans le rectangle vert de la figure \ref{Tutoriel} est directement adressée au joueur. Ce texte explique concrètement quels sont les objectifs du joueur et comment les accomplir. Il donne par exemple des indications sur les touches sur lesquelles appuyer pour ouvrir l'inventaire ou sauter. Tant que les objectifs ne sont pas tous accomplis cette zone de texte ne disparaît pas. En appuyant sur la croix se trouvant en bas à droite de cette zone une fenêtre apparaît nous demandant si nous souhaitons terminer automatiquement le tutoriel. Cette option a été rajoutée pour les joueurs qui auraient malencontreusement lancé le tutoriel ou pour les joueurs voulant sauter la dernière étape du tutoriel car celle-ci demande d'utiliser tout ce qui a été appris dans le  tutoriel et est donc assez longue.
 
 Si un joueur quitte le jeu au milieu du tutoriel sa progression sera sauvegardée et il pourra continuer le tutoriel en relançant sa partie sans tout recommencer depuis le début.
 
-Récemment, nous avons ajouté des fiches d'aide accessibles depuis le menu ou lors de certaines étapes du tutoriel (figure \ref{AideCombat}). Celles-ci donnent une explication plus détaillée de certains systèmes du jeu comme le système de combat par exemple.
+Récemment, nous avons ajouté des fiches d'aide accessibles depuis le menu ou lors de certaines étapes du tutoriel. Celles-ci donnent une explication plus détaillée de certains systèmes du jeu comme le système de combat par exemple.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=12cm]{res/AideCombat}
-\caption{Fiche d'aide au combat} 
-\label{AideCombat}
-\end{center}
-\end{figure}
 
 \subsubsection{Le système de succès (Julien)} 
  
@@ -290,16 +285,16 @@ La deuxième structure est une liste de succès à mettre à jour, présente uniqueme
 \end{center}
 \end{figure}
 
+Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. Pour se déplacer dans l'interface, il suffit de maintenir un clic gauche en déplaçant la souris.
+
+La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvant pas l'être se fait par l'utilisation de trois \textit{Shader}. Un \textit{Shader} indique à la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
+
 \begin{figure}[h!]
 \begin{center}\includegraphics[width=14cm]{res/Succes} % image à changer
 \caption{Interface des succès} 
 \label{Succes}
 \end{center}
 \end{figure}
-
-Une interface est également présente pour permettre aux joueurs de contempler les succès qu'ils ont accomplis (voir figure~\ref{Succes}). Dans cette interface, chaque succès est représenté par une image et leur hiérarchie est visible grâce à des lignes. Pour se déplacer dans l'interface, il suffit de maintenir un clic gauche en déplaçant la souris.
-
-La distinction entre les succès accomplis, les succès présents dans la liste (pouvant être accomplis) et ceux ne pouvant pas l'être se fait par l'utilisation de trois \textit{Shader}. Un \textit{Shader} indique à la carte graphique comment calculer la couleur de chaque pixel de l'écran. 
 
 Le premier \textit{Shader} affiche l'image du succès sans la modifier \textit{(succès accompli)}, le deuxième ne tient compte que de la transparence de l'image et affiche un gris là où l'image n'est pas transparente \textit{(succès pouvant être accompli)} et le dernier n'affiche pas du tout l'image \textit{(succès impossible à accomplir pour le moment)}.
 
@@ -319,7 +314,12 @@ Si les joueurs ont tué moins de 100 créatures lors de la partie, fait difficile 
 
 \subsubsection{Le boss Final}
 
-% rajouter image du boss final.
+\begin{figure}[h!]
+\begin{center}\includegraphics[width=10cm]{res/Boss}
+\caption{Le Boss} 
+\label{Boss}
+\end{center}
+\end{figure}
 
 La zone du boss final est divisée en deux parties. La zone de repos où les joueurs apparaissent et réapparaissent à leur mort ainsi que la zone de combat où il est possible d'affronter le boss. Lorsque le combat commence il n'est plus possible d'aller de la zone de repos à la zone de combat et les joueurs qui meurent doivent attendre la fin du combat pour retenter leur chance.
 
@@ -342,7 +342,11 @@ Si le serveur est arrêté pendant le combat contre le boss, les joueurs se retrou
 
 Nous avons décidé de doter notre jeu d'un style graphique original. Nous avons cherché l'inspiration en parcourant l'asset store. Nous y avons trouvé le modèle de notre personnage principal et nous nous sommes accordés pour un univers cartoon.
 
+
+
 Nous avons donc commencé la réalisation de notre première île mais ce fut un échec (figure~\ref{premierIle}). Nous n'avions pas assez bien défini la forme que nous voulions lui donner et il a donc fallu recommencer le modèle car celui-ci n'était pas vraiment cartoon et n'était pas adapté à la génération aléatoire du monde. 
+
+
 
 
 Nous avons alors décidé de réaliser tous nos futurs modèles grâce au logiciel Blender et d'importer le moins possible depuis l'asset store. Nous nous sommes donc recentrés sur l'aspect cartoon et en avons profité pour réaliser nos premiers éléments à savoir les arbres et un rocher (figure~\ref{premiersElements}).
@@ -357,6 +361,8 @@ La réalisation des modèles suivants s'est faite petit à petit en fonction des de
 \end{center}
 \end{figure}
 
+\pagebreak
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=8cm]{res/environment.png}
@@ -365,7 +371,9 @@ La réalisation des modèles suivants s'est faite petit à petit en fonction des de
 \end{center}
 \end{figure}
 
-\pagebreak
+
+
+
 
 \subsection{Animations}
 
@@ -485,8 +493,6 @@ Dans cette interface, il est possible de sélectionner un serveur ou un monde en 
 
 Enfin il est possible d'accéder à une interface de création de monde ou de serveur en appuyant sur le bouton \og Create \fg.
 
-Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{graine} de la map en base 36 (\textit{graine} composée d'au maximum six chiffres et lettres en minuscule). Cette \textit{graine} est propre à un monde particulier et permet donc de régénérer le même monde (sans prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 mondes différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie. Pour des raisons de comptabilité des sauvegardes il est impossible de créer plusieurs sauvegardes du même nom.
-
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10cm]{res/CreationMonde}
@@ -494,6 +500,10 @@ Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut 
 \label{CreationMonde}
 \end{center}
 \end{figure}
+
+Dans l'interface de création de monde (voir figure \ref{CreationMonde}) Il faut donner un nom à son monde, choisir le type de jeu que l'on veut faire en appuyant sur le bouton \og Coop/PVP \fg{} pour changer de type et si l'on veut on peut préciser la \textit{graine} de la map en base 36 (\textit{graine} composée d'au maximum six chiffres et lettres en minuscule). Cette \textit{graine} est propre à un monde particulier et permet donc de régénérer le même monde (sans prendre en compte les modifications faites pas le joueur). Il y a donc 2 176 782 336 mondes différents qui peuvent être générés. Il suffit alors d'appuyer sur le bouton \og Create \fg{} pour créer un nouveau monde et commencer une partie. Pour des raisons de comptabilité des sauvegardes il est impossible de créer plusieurs sauvegardes du même nom.
+
+
 
 Dans l'interface d'enregistrement de serveur (voir figure \ref{CreationServeur}) il nous est seulement demandé de choisir une adresse IP et un nom sous laquelle l'enregistrer puis d'appuyer sur le bouton \og Create\fg{} pour enregistrer un nouveau serveur. Contrairement à la création de monde on peut créer plusieurs serveurs de même nom ou de même adresse IP sans créer de conflit.
 
@@ -529,8 +539,15 @@ De plus nous avons également rajouté un camp sur l'île centrale de l'archipel av
 
 \paragraph{Personnalisation du personnage}
 
-Nous avons donné aux joueurs la possibilité de personnaliser leur personnage pour que celui se distingue visuellement des autres lorsque l'on joue à plusieurs. En allant dans les options du menu principal, il est possible de choisir l'option personnage qui amène la caméra en face du personnage se trouvant dans le camp. On peut ensuite choisir les différents éléments de notre personnage que l'on veut changer (voir figure ).
-%rajouter image personnalisation du personnage
+Nous avons donné aux joueurs la possibilité de personnaliser leur personnage pour que celui se distingue visuellement des autres lorsque l'on joue à plusieurs. En allant dans les options du menu principal, il est possible de choisir l'option personnage qui amène la caméra en face du personnage se trouvant dans le camp. On peut ensuite choisir les différents éléments de notre personnage que l'on veut changer (voir figure \ref{Personnalisation}).
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{res/Personnalisation}
+\caption{Personnalisation du personnage} 
+\label{Personnalisation}
+\end{center}
+\end{figure}
 
 Il est possible de changer les yeux, la peau, les cheveux, la pilosité du visage, les gants, le chapeau, le pantalon et le buste du personnage. Dans chacune de ces catégories on a le choix entre plusieurs éléments et couleurs.
 
@@ -611,8 +628,8 @@ Enfin, certaines recettes sont initialement cachées et il est impossible de savo
 En jeu, il est possible d'accéder au système de création d'objet en même temps que l'inventaire. Sur la partie gauche de l'écran cinq boutons permettent de choisir quelle catégorie d'objets on veut créer (entourée en bleue sur la figure \ref{Craft}). Après avoir cliqué sur ce bouton, une liste d'éléments pouvant être créés apparaît (entourée en rouge sur la figure \ref{Craft}). Les flèches en haut et en bas permettent de faire défiler les éléments. En sélectionnant l'un de ces éléments, sa recette s'affiche sous la forme d'une liste de composants (entourée en vert sur la figure \ref{Craft}). Dans cette liste, la dernière case est cochée en vert si l'objet peut être créé, ou occupée par une croix rouge dans le cas contraire. La création d'un objet se fait en cliquant sur la case cochée en vert.
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=14cm]{res/CraftHUD}
-\caption{Interface de la création d'objet} % mettre à jour après l'ajout des armures.
+\begin{center}\includegraphics[width=10cm]{res/CraftHUD}
+\caption{Interface de la création d'objet} 
 \label{Craft}
 \end{center}
 \end{figure}
@@ -633,6 +650,13 @@ Notre jeu est avant tout un jeu de survie dans lequel notre joueur doit interagi
 
 Une particularité du monde d'Aegina est la présence, sur certaines de ses îles, d'un cristal. Ce cristal n'est pas semblable autres éléments du décors tels que les arbres ou les pierres qui sont là pour être  récoltés et transformés par les joueurs. Les cristaux eux sont indestructibles. Dans la nature, les cristaux ont une couleur grise indiquant qu'il n'ont pas été activés par un joueur, ils n'ont alors par d'influence visible sur l'environnement. Lorsqu'un joueur tente d'interagir avec un cristal inactif, une fenêtre (figure \ref{CristalHUD}) apparaît proposant au joueur d'activer le cristal en échange des ressources se trouvant dans le cadre rouge de la figure \ref{CristalHUD}.
 
+ \begin{figure}[h!]
+\begin{center}\includegraphics[width=12cm]{res/CristalHUD} 
+\caption{Interface de l'interaction avec le cristal} 
+\label{CristalHUD}
+\end{center}
+\end{figure}
+
 Une fois activé, le cristal change de couleur pour prendre celle de l'équipe du joueur (bleu lorsque tout les joueurs sont dans la même équipe). A l'activation, un cristal se spécialise dans l'une des trois catégories suivantes de manière aléatoire : 
 \begin{itemize}
 \item \textbf{Guerre (60\%):} catégorie des cristaux d'attaque (ou de défense ce qui revient au même).
@@ -649,13 +673,6 @@ Dans le cadre bleu de la figure \ref{CristalHUD} se trouvent les informations su
 \item le pouvoir divin qui a une influence plus tactique sur les joueurs. Ce pouvoir permet de désigner un cristal comme un point de réapparition possible pour le joueur. Ceci peut sembler anecdotique mais a une grande importance dans l'histoire du jeu.
 \end{itemize}
 
- \begin{figure}[h!]
-\begin{center}\includegraphics[width=14cm]{res/CristalHUD} % mettre à jour l'image
-\caption{Interface de l'interaction avec le cristal} 
-\label{CristalHUD}
-\end{center}
-\end{figure}
-
  Il est possible d'augmenter n'importe quel pouvoir du cristal en appuyant sur le bouton \og Upgrade\fg{} de la colonne du pouvoir voulu et en consommant les ressources présentent dans le cadre rouge sur la figure \ref{CristalHUD}. Cependant un cristal après son activation ne peut être amélioré que trois fois et chaque amélioration est plus chère que la précédente.
  
  En mode \og joueur contre joueur \fg{}, un cristal est associé à l'équipe du joueur qui l'a activé. Ses pouvoirs de guerre et divin ne s'appliquent qu'aux joueurs de cette équipe.
@@ -670,7 +687,7 @@ La survie étant le thème de notre jeu, il nous fallait construire de bonnes base
  Lorsque le barre de faim ou de soif est vide, les point de vie du personnage commencent à diminuer. Cependant ces deux attributs (soif et faim) ne sont pas les seuls à pouvoir s'attaquer aux points de vie. Si le personnage décide de sauter dans le vide, sa santé en souffrira également car malgré sa force et sa volonté, Ille ne sait pas voler.
  
   \begin{figure}[h!]
-\begin{center}\includegraphics[width=10cm]{res/BarreLHT}
+\begin{center}\includegraphics[width=12cm]{res/BarreLHT}
 \caption{Disposition des différentes barres} 
 \label{LHT}
 \end{center}
@@ -746,7 +763,7 @@ L'arrivée des créatures dans le monde d'Aegina a imposé la création d'intelligen
 Pour gérer les déplacements des créatures, nous avions besoin de connaître les chemins possibles et donc la topographie des îles. Nous avons commencé par la génération de graphes lors du chargement des chunks. Chaque chunk possède son graphe qui contient un certain nombre de noeuds comportant tous plusieurs informations telles que la présence d'éléments, par exemple un arbre ou un rocher, et les liens entre ces  éléments (voir figure~\ref{Graphe}).
 
 \begin{figure}[h!]
-\begin{center}\includegraphics[width=16cm]{res/graphe}
+\begin{center}\includegraphics[width=12cm]{res/graphe}
 \caption{Graphe} 
 \label{Graphe}
 \end{center}
@@ -872,7 +889,6 @@ La dernière étape avant la seconde soutenance était de partager notre version ac
 \end{itemize}
 Nous avons corrigé la totalité des bugs rapportés, puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques et de gameplay. Ces modifications ont abouti à la version \textit{v.1.1-beta} qui était la version présentée lors de la seconde soutenance.
 
-\pagebreak
 
 \subsection{Le site web (Théo)}
 
@@ -986,9 +1002,11 @@ Enfin nous avons fait face à quelques conflits mineurs lors du projet concernant
 
 \pagebreak
 
+ \listoffigures
 
 \tableofcontents
- \listoffigures
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
