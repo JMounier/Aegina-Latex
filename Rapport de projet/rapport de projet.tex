@@ -237,7 +237,7 @@ Cependant, avec de telles réactions, on peut se demander comment ils ont réussi 
 
 Un des éléments que nous avions promis lors de la création de notre jeu était qu'il possède une histoire. Pas seulement une intrigue donnant une raison d'être à notre jeu mais une histoire que le joueur découvrirait au fur et à mesure de sa progression. Cette histoire apparaît dans le jeu à travers le tutoriel et les succès pouvant être réalisés par le joueur. Des trames d'histoire sont également racontées au joueur pour lui donner une raison d'atteindre des objectifs. Enfin, l'histoire se termine par un combat contre un boss final. Tous ces éléments sont présentés dans cette partie.
 
-\subsubsection{Le tutoriel (Théo et Romain)}
+\subsubsection{Le tutoriel}
 
 Un  défaut majeur de la première version de notre jeu était que celui-ci permettait de nombreuses actions (comme ouvrir un inventaire, se déplacer, jeter des objets) mais aucune information ne disait comment les réaliser. Nous avons donc décidé de créer un tutoriel expliquant au joueur comment effectuer l'ensemble de ces actions. Nous profitons également de ce tutoriel pour introduire l'histoire du jeu puisque qui se poursuivra à la suite du tutoriel. Seulement, contrairement au tutoriel qui est propre au joueur puisque chaque joueur doit pouvoir apprendre à joueur, l'histoire sera propre au monde et ne se répètera pas pour chaque joueur.
 
@@ -262,7 +262,7 @@ Si un joueur quitte le jeu au milieu du tutoriel sa progression sera sauvegardée
 Récemment, nous avons ajouté des fiches d'aide accessibles depuis le menu ou lors de certaines étapes du tutoriel. Celles-ci donnent une explication plus détaillée de certains systèmes du jeu comme le système de combat par exemple.
 
 
-\subsubsection{Le système de succès (Julien)} 
+\subsubsection{Le système de succès} 
  
 Les succès représentent les exploits réalisés par les joueurs, ils sont propres à une partie et sont donc partagés entre les joueurs qui peuvent coopérer pour réaliser un succès. Notre jeu laissant beaucoup de liberté au joueur, il est possible que celui-ci ne sache plus quoi faire. C'est là que les succès interviennent, car ils proposent différents défis auxquels le joueur peut se confronter. Ces exploits peuvent porter sur différents aspects de la survie comme le nombre de créatures tuées ou encore la quantité de potions consommées.
 
@@ -423,7 +423,7 @@ Ces multiples ajouts de bruitages et musiques ont nettement amélioré l'environne
 
 Les systèmes fondamentaux sont des systèmes qui sont nécessaires non pas pour que notre jeu soit amusant mais tout simplement pour que l'on puisse y jouer. Ces systèmes  comportent les systèmes de déplacement du joueur et de la caméra, la génération du monde, la sauvegarde et les menus. 
 
-\subsubsection{Déplacement du personnage et de sa caméra (Théo et Julien)}
+\subsubsection{Déplacement du personnage et de sa caméra}
 
 Le joueur détermine les déplacements de son personnage. Celui-ci peut avancer (avec la touche  \og w  \fg{}  ou  \og up  \fg{} ), reculer (avec la touche  \og s  \fg{}  ou  \og down  \fg{} ), s'orienter vers la droite (avec la touche  \og q  \fg{}  ou  \og right  \fg{} ) et s'orienter vers la gauche (avec la touche  \og d  \fg{}  ou  \og left  \fg{} ).
 Notre personnage peut courir si ce dernier se déplace et que l'utilisateur appuie sur la touche  \og shift  \fg{}, il peut aussi sauter si l'utilisateur appuie sur la barre d'espace.
@@ -439,7 +439,7 @@ La vue à la troisième personne permet au joueur de voir son personnage de coté, 
 
 La vue à la première personne permet au joueur de voir exactement ce que son personnage voit. La passage d'une vue à l'autre se fait automatiquement en approchant ou éloignant la caméra du personnage.
 
-\subsubsection{Génération aléatoire du monde (Florian et Julien)}
+\subsubsection{Génération aléatoire du monde}
 
 Comme nous l'avions spécifié dans notre cahier des charges, le monde du jeu est généré de manière aléatoire. Pour la première soutenance, nous avions implémenté la génération aléatoire d'un \textit{chunk}, et la liaison des \textit{chunks} entre eux, pour pouvoir générer un monde différent à chaque début de partie.
 
@@ -448,7 +448,7 @@ Maintenant, le monde contient des \textit{chunks} reliés par des ponts, chacun d
 Cependant toutes ces générations ne se font pas instantanément et prennent du temps. Pour éviter de ralentir à chaque création d'un nouveau \textit{chunk}, la génération se fait petit à petit sur un temps plus long. De plus, pour éviter la présence d'un trop grand nombre d'îles de manière simultanée les \textit{chunk} disparaissent quand ils sont trop éloignés d'un joueur et de nouveaux apparaissent. Cela permet la création d'un monde infini.
 
 
-\subsubsection{La sauvegarde (Florian)}
+\subsubsection{La sauvegarde}
 
 La sauvegarde permet aux joueurs d'arrêter une partie et de la reprendre quand ils veulent. Le joueur qui crée une partie en est en quelque sorte le \og propriétaire \fg. La partie est hébergée sur son ordinateur qui devient le serveur pour cette partie. C'est sur ce même ordinateur que les sauvegardes seront effectuées.
 
@@ -468,7 +468,7 @@ Pour finir, pour chaque joueur les informations suivantes sont à sauvegarder  :
 
 Enfin la sauvegarde s'effectue automatiquement lors de l'arrêt du serveur, mais cela ne suffit pas.  En cas de crash ou si le  \og propriétaire \fg{} ne ferme pas correctement l'application, la sauvegarde ne peut pas s'effectuer. Il y a donc une sauvegarde automatique toutes les minutes. Celle-ci ne provoque aucun ralentissement du jeu car elle est très légère.
 
-\subsubsection{Menus (Romain et Florian)}
+\subsubsection{Menus}
 
 Un élément essentiel à tout jeu est indéniablement de pouvoir le quitter et le commencer. Cela paraît évident mais il a tout de même fallu créer des interfaces permettant ces actions au début du jeu (pour commencer une partie) et au milieu du jeu (pour arrêter de jouer).
 
@@ -615,7 +615,7 @@ Nous avons donc ajouté une barre de sélection (figure~\ref{Toolbar}) synchronisé
 
 
 
-\subsubsection{La création d'objets (Romain)}
+\subsubsection{La création d'objets}
 
 Une nécessité en survie, et donc dans tous les jeux de survie, est l'obtention d'outils primitifs pour fabriquer un abri ou chasser. Pour cela, il faut pouvoir créer ces outils.  Nous avons donc rajouté un système de création d'objets. Chaque objet peut être créé à partir d'une recette définissant le type et le nombre d'ingrédients nécessaires à sa réalisation. Les objets qu'il est possible de créer se classent en cinq catégories : les établis qui permettent de fabriquer plus d'outils, les ressources de construction qui sont principalement utilisées pour fabriquer des objets plus évolués, les consommables, les outils et les armures 
 
@@ -636,7 +636,7 @@ En jeu, il est possible d'accéder au système de création d'objet en même temps q
 
 Pour permettre au joueur d'améliorer les capacités de son personnage, nous lui donnons la possibilité de réaliser des potions, qui sont bien sûr des consommables.
 
-\subsubsection{Drop d'Item (Florian et Julien)}
+\subsubsection{Drop d'Item}
 
 Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cela, le joueur a la possibilité, depuis son inventaire, de  glisser un \textit{tas} d'objets hors de l'inventaire. Il peut aussi grâce à une touche (la touche \og Q\fg par défaut), lancer l'objet sélectionné dans sa barre d'outil. Ces actions vont faire apparaître l'objet dans le monde proche du personnage. Dans cet état, n'importe quel joueur peut alors ramasser l'objet dès qu'il est assez proche de lui. La récupération de l'objet se fait par des échanges d'information entre serveur et clients pour garantir que seul un joueur ramasse l'objet, et qu'il a suffisamment de place dans son inventaire pour le stocker. De plus, si deux objets identiques sont assez proches alors ils vont se rassembler. Cela permet d'afficher moins d'objets et donc d'améliorer les performances du jeu. D'autre part, les objets \og hors inventaire \fg{} depuis plus d'une minute disparaissent, cela permet encore une fois d'améliorer les performances et de ne pas avoir une île envahie de ressources non utilisées.
 
@@ -646,7 +646,7 @@ Le drop d'un item correspond à son passage de l'inventaire au monde 3D. Pour cel
 
 Notre jeu est avant tout un jeu de survie dans lequel notre joueur doit interagir avec l'environnement  pour rester en vie et progresser dans l'historie. Cette partie va se concentrer sur les éléments de la survie.
 
-\subsubsection{Cristal (Romain et Julien)}
+\subsubsection{Cristal}
 
 Une particularité du monde d'Aegina est la présence, sur certaines de ses îles, d'un cristal. Ce cristal n'est pas semblable autres éléments du décors tels que les arbres ou les pierres qui sont là pour être  récoltés et transformés par les joueurs. Les cristaux eux sont indestructibles. Dans la nature, les cristaux ont une couleur grise indiquant qu'il n'ont pas été activés par un joueur, ils n'ont alors par d'influence visible sur l'environnement. Lorsqu'un joueur tente d'interagir avec un cristal inactif, une fenêtre (figure \ref{CristalHUD}) apparaît proposant au joueur d'activer le cristal en échange des ressources se trouvant dans le cadre rouge de la figure \ref{CristalHUD}.
 
@@ -741,7 +741,7 @@ Ainsi, la \textit{directional light} suit une orbite circulaire autour du point 
 
 
 
-\subsubsection{Les Créatures (Florian)}
+\subsubsection{Les Créatures}
 
 Chaque type de créature est défini par un ensemble de caractéristiques permettant de les générer dans les biomes adaptés, de récupérer des ressources lors de leur mort, \ldots Voici l'ensemble de ces caractéristiques:
 \begin{itemize}
@@ -869,7 +869,7 @@ Même si notre projet est avant tout un projet d'étude devant seulement être éval
 
 Pendant le développement, nous avons demandé à nos différents contacts de tester le jeu pour nous donner leur avis sur des points à modifier. Nous avons fait deux sessions de tests, une avant chaque soutenance intermédiaire, que nous avons appelées l'alpha et la bêta de notre jeu.
 
-\subsubsection{Alpha (Florian)}
+\subsubsection{Alpha}
 
 La dernière étape avant la première soutenance était de partager notre première version, \textit{v1.0-alpha}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapportés étaient :
 \begin{itemize}
@@ -879,7 +879,7 @@ La dernière étape avant la première soutenance était de partager notre première 
 \end{itemize}
 Nous avons corrigé la totalité des bugs rapportés pour produire la version \textit{v1.1-alpha} puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques. Ces modifications ont abouti à la version \textit{v.1.2-alpha} qui était la version présentée lors de la première soutenance.
 
-\subsubsection{Bêta (Florian)}
+\subsubsection{Bêta}
 
 La dernière étape avant la seconde soutenance était de partager notre version actuelle, \textit{v1.0-beta}. Ce partage nous a permis d'avoir des retours de bugs et quelques avis. Les bugs importants rapportés étaient :
 \begin{itemize}
@@ -890,7 +890,7 @@ La dernière étape avant la seconde soutenance était de partager notre version ac
 Nous avons corrigé la totalité des bugs rapportés, puis grâce aux avis, nous avons ajouté et modifié quelques détails artistiques et de gameplay. Ces modifications ont abouti à la version \textit{v.1.1-beta} qui était la version présentée lors de la seconde soutenance.
 
 
-\subsection{Le site web (Théo)}
+\subsection{Le site web}
 
 Le site web que nous avons créé (accessible à  l'adresse http://jmounier.github.io/Aegina-Website/) avait pour notre équipe plusieurs objectifs à remplir :
 \begin{itemize}
